@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jalak — Creative Strategist | Professional Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0e27;
+            --bg-card: #0f1535;
+            --accent-gold: #C4A747;
+            --accent-blue: #1B7C9A;
+            --accent-cyan: #00A8CC;
+            --text-primary: #E8E8E8;
+            --text-secondary: #A8A8A8;
+            --border-subtle: #2A3050;
+        }
+
+        html, body {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Space Grotesk', 'Helvetica', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* SCROLLBAR */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-gold);
+            border-radius: 5px;
+        }
+
+        /* HEADER / NAV */
+        header {
+            background: linear-gradient(135deg, rgba(15, 21, 53, 0.95), rgba(27, 124, 154, 0.05));
+            border-bottom: 2px solid var(--accent-gold);
+            padding: 1.2rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            padding: 0.4rem 0;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(15, 21, 53, 0.7), rgba(27, 124, 154, 0.08));
+            margin-bottom: 4rem;
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+        }
+
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .hero-subtitle {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            color: var(--accent-cyan);
+            margin: 0.8rem 0;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-tagline {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 1.5rem auto 2.5rem;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .stat-box {
+            background: rgba(27, 124, 154, 0.08);
+            border: 1px solid var(--accent-blue);
+            padding: 1.8rem;
+            text-align: center;
+            transition: all 0.3s;
+            border-radius: 6px;
+        }
+
+        .stat-box:hover {
+            background: rgba(27, 124, 154, 0.12);
+            border-color: var(--accent-gold);
+            transform: translateY(-4px);
+        }
+
+        .stat-value {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--accent-gold);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .stat-label {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-top: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        /* JOURNEY SECTION */
+        .journey-section {
+            margin: 4rem 0;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 2.5rem;
+            border-left: 3px solid var(--accent-cyan);
+            padding-left: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 400;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 2.5rem;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--accent-cyan), var(--accent-gold));
+        }
+
+        .timeline-item {
+            background: rgba(15, 21, 53, 0.5);
+            border: 1px solid var(--border-subtle);
+            padding: 2rem;
+            margin-left: 60px;
+            position: relative;
+            transition: all 0.3s;
+            border-radius: 6px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 28px;
+            width: 16px;
+            height: 16px;
+            background: var(--accent-gold);
+            border: 2px solid var(--bg-dark);
+            border-radius: 50%;
+        }
+
+        .timeline-item:hover {
+            border-color: var(--accent-gold);
+            background: rgba(15, 21, 53, 0.7);
+            transform: translateX(8px);
+        }
+
+        .company-badge {
+            display: inline-block;
+            background: rgba(27, 124, 154, 0.15);
+            color: var(--accent-cyan);
+            padding: 0.5rem 1rem;
+            margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            border: 1px solid var(--accent-blue);
+        }
+
+        .company-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            color: var(--accent-cyan);
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .company-period {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .company-description {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .learnings-list {
+            background: rgba(27, 124, 154, 0.08);
+            border-left: 2px solid var(--accent-cyan);
+            padding: 1rem;
+            margin: 1.2rem 0;
+            border-radius: 4px;
+        }
+
+        .learnings-list h4 {
+            color: var(--accent-cyan);
+            margin-bottom: 0.8rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .learnings-list li {
+            color: var(--text-primary);
+            margin-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.9rem;
+        }
+
+        /* CASE STUDY SECTION */
+        .case-studies-section {
+            margin: 4rem 0;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .case-card {
+            background: rgba(15, 21, 53, 0.6);
+            border: 1px solid var(--border-subtle);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        .case-card:hover {
+            border-color: var(--accent-gold);
+            background: rgba(15, 21, 53, 0.8);
+            transform: translateY(-6px);
+        }
+
+        .case-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .case-company {
+            color: var(--accent-cyan);
+            font-size: 0.8rem;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .case-title {
+            font-family: 'Bebas Neue', sans-serif;
+            color: var(--accent-gold);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .case-summary {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .case-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-bottom: 1rem;
+        }
+
+        .metric-tag {
+            background: rgba(27, 124, 154, 0.15);
+            border: 1px solid var(--accent-blue);
+            color: var(--accent-cyan);
+            padding: 0.35rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 3px;
+        }
+
+        .case-status {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        /* SKILLS SECTION */
+        .skills-section {
+            margin: 4rem 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: rgba(27, 124, 154, 0.08);
+            border: 1px solid var(--border-subtle);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            border-radius: 6px;
+        }
+
+        .skill-card:hover {
+            border-color: var(--accent-cyan);
+            background: rgba(27, 124, 154, 0.12);
+            transform: scale(1.02);
+        }
+
+        .skill-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            font-family: 'Bebas Neue', sans-serif;
+            color: var(--accent-cyan);
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            background: linear-gradient(135deg, rgba(27, 124, 154, 0.12), rgba(196, 167, 71, 0.08));
+            border: 1px solid var(--accent-blue);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .contact-section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-section p {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 0.9rem 2rem;
+            border: 1.5px solid;
+            background: transparent;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.85rem;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .btn-primary:hover {
+            background: rgba(196, 167, 71, 0.1);
+            border-color: var(--accent-gold);
+        }
+
+        .btn-secondary {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 168, 204, 0.1);
+            border-color: var(--accent-cyan);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 4rem;
+            color: var(--text-secondary);
+            background: linear-gradient(135deg, rgba(15, 21, 53, 0.8), rgba(27, 124, 154, 0.05));
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            nav a {
+                padding: 0.3rem 0;
+                font-size: 0.8rem;
+            }
+
+            .timeline::before {
+                left: 8px;
+            }
+
+            .timeline-item {
+                margin-left: 45px;
+            }
+
+            .timeline-item::before {
+                left: -26px;
+                width: 14px;
+                height: 14px;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .stat-value {
+                font-size: 1.6rem;
+            }
+
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 0.8rem 1.5rem;
+                font-size: 0.8rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            header {
+                padding: 1rem;
+            }
+        }
+
+        /* IMAGE PLACEHOLDER */
+        .case-image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(27, 124, 154, 0.1), rgba(196, 167, 71, 0.08));
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            text-align: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <div class="logo">JALAK</div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#journey">Journey</a>
+                <a href="#work">Work</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <h1>JALAK</h1>
+            <div class="hero-subtitle">Creative Strategist | Content Systems Architect</div>
+            <div class="hero-tagline">Building brands & audiences through systems that compound</div>
+            
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <div class="stat-value">16M+</div>
+                    <div class="stat-label">Total Views</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">₹9Cr+</div>
+                    <div class="stat-label">Attributed Sales</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">130K+</div>
+                    <div class="stat-label">Subscribers Grown</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">5–6%</div>
+                    <div class="stat-label">Avg CTR</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- JOURNEY SECTION -->
+        <section class="journey-section" id="journey">
+            <h2 class="section-title">PROFESSIONAL JOURNEY</h2>
+            
+            <div class="timeline">
+                <!-- COMPANY 1 -->
+                <div class="timeline-item">
+                    <div class="company-badge">01 — FOUNDATION</div>
+                    <div class="company-title">AJMERA FASHION</div>
+                    <div class="company-period">Jul 2022 – Jul 2023 • Digital Marketing Executive</div>
+                    <div class="company-description">
+                        Built foundational expertise in multilingual content production and creative team coordination across 6 languages.
+                    </div>
+                    <div class="learnings-list">
+                        <h4>Key Outcomes</h4>
+                        <ul>
+                            <li>40% increase in content output efficiency</li>
+                            <li>30% YouTube subscriber growth</li>
+                            <li>Scaled production team from 2 to 5 members</li>
+                            <li>Established multilingual workflow standards</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- COMPANY 2 -->
+                <div class="timeline-item">
+                    <div class="company-badge">02 — ACCOUNTABILITY</div>
+                    <div class="company-title">JALAN MEGA MART</div>
+                    <div class="company-period">Jul 2023 – Nov 2024 • Social Media Manager</div>
+                    <div class="company-description">
+                        Led production teams and influencer partnerships, translating digital campaigns into measurable revenue impact.
+                    </div>
+                    <div class="learnings-list">
+                        <h4>Key Outcomes</h4>
+                        <ul>
+                            <li>₹9 crore+ in attributed sales</li>
+                            <li>100K+ combined subscriber growth</li>
+                            <li>120% Instagram reach increase</li>
+                            <li>Managed ₹24 lakh marketing budget</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- COMPANY 3 -->
+                <div class="timeline-item">
+                    <div class="company-badge">03 — STRATEGY</div>
+                    <div class="company-title">SWAD COOKING INSTITUTE</div>
+                    <div class="company-period">Nov 2024 – Oct 2025 • YouTube Strategist</div>
+                    <div class="company-description">
+                        Rebuilt YouTube channel from content-driven to system-driven growth, optimizing retention architecture and channel economics.
+                    </div>
+                    <div class="learnings-list">
+                        <h4>Key Outcomes</h4>
+                        <ul>
+                            <li>16M+ total views generated</li>
+                            <li>130K+ new subscribers acquired</li>
+                            <li>5–6% average CTR (vs 2–3% industry)</li>
+                            <li>1.42M+ watch hours accumulated</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- COMPANY 4 (CURRENT) -->
+                <div class="timeline-item">
+                    <div class="company-badge">04 — SCALE</div>
+                    <div class="company-title">CINEKORN ENTERTAINMENT & VEROMA MEDIA</div>
+                    <div class="company-period">Jan 2026 – Present • Senior Social Media Manager</div>
+                    <div class="company-description">
+                        Operating at entertainment scale. Managing 9M+ subscriber YouTube channel and designing narrative architecture for studio brand strategy.
+                    </div>
+                    <div class="learnings-list">
+                        <h4>Current Focus</h4>
+                        <ul>
+                            <li>Enterprise-scale YouTube operations</li>
+                            <li>Studio narrative & brand positioning</li>
+                            <li>Synthesis of production, strategy, and systems</li>
+                            <li>Building toward creative direction role</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORK / CASE STUDIES SECTION -->
+        <section class="case-studies-section" id="work">
+            <h2 class="section-title">CASE STUDIES</h2>
+            
+            <div class="case-grid">
+                <!-- CASE 1: SWAD -->
+                <div class="case-card">
+                    <div class="case-image-placeholder">
+                        Image Coming Soon
+                    </div>
+                    <div class="case-content">
+                        <div class="case-company">Swad Cooking Institute</div>
+                        <div class="case-title">YouTube Retention System</div>
+                        <div class="case-summary">
+                            Restructured channel strategy around retention architecture rather than posting frequency. Redesigned scripts, thumbnails, and upload cadence.
+                        </div>
+                        <div class="case-metrics">
+                            <span class="metric-tag">16M+ views</span>
+                            <span class="metric-tag">130K+ subs</span>
+                            <span class="metric-tag">5–6% CTR</span>
+                        </div>
+                        <div class="case-status">Case study in development</div>
+                    </div>
+                </div>
+
+                <!-- CASE 2: JALAN -->
+                <div class="case-card">
+                    <div class="case-image-placeholder">
+                        Image Coming Soon
+                    </div>
+                    <div class="case-content">
+                        <div class="case-company">Jalan Mega Mart</div>
+                        <div class="case-title">Campaign Attribution Model</div>
+                        <div class="case-summary">
+                            Integrated social media, influencer partnerships, and retail activation into unified attribution framework. Delivered 375:1 ROI.
+                        </div>
+                        <div class="case-metrics">
+                            <span class="metric-tag">₹9Cr+ revenue</span>
+                            <span class="metric-tag">375:1 ROI</span>
+                            <span class="metric-tag">100K+ growth</span>
+                        </div>
+                        <div class="case-status">Case study in development</div>
+                    </div>
+                </div>
+
+                <!-- CASE 3: AJMERA -->
+                <div class="case-card">
+                    <div class="case-image-placeholder">
+                        Image Coming Soon
+                    </div>
+                    <div class="case-content">
+                        <div class="case-company">Ajmera Fashion</div>
+                        <div class="case-title">Multilingual Production Scaling</div>
+                        <div class="case-summary">
+                            Built production systems supporting 6-language output. Increased content velocity 40% while maintaining quality consistency.
+                        </div>
+                        <div class="case-metrics">
+                            <span class="metric-tag">+40% output</span>
+                            <span class="metric-tag">6 languages</span>
+                            <span class="metric-tag">30% growth</span>
+                        </div>
+                        <div class="case-status">Case study in development</div>
+                    </div>
+                </div>
+
+                <!-- CASE 4: CINEKORN -->
+                <div class="case-card">
+                    <div class="case-image-placeholder">
+                        Image Coming Soon
+                    </div>
+                    <div class="case-content">
+                        <div class="case-company">Cinekorn Entertainment</div>
+                        <div class="case-title">Entertainment-Scale Operations</div>
+                        <div class="case-summary">
+                            Leading YouTube operations for 9M+ subscriber channel. Managing studio narrative strategy and brand positioning at enterprise scale.
+                        </div>
+                        <div class="case-metrics">
+                            <span class="metric-tag">9M+ subscribers</span>
+                            <span class="metric-tag">YouTube ops</span>
+                            <span class="metric-tag">Strategy</span>
+                        </div>
+                        <div class="case-status">Case study in development</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section class="skills-section" id="skills">
+            <h2 class="section-title">CAPABILITIES</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🎯</div>
+                    <div class="skill-name">Content Strategy</div>
+                    <div class="skill-desc">Systems architecture, retention optimization, audience psychology</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📊</div>
+                    <div class="skill-name">Performance Analytics</div>
+                    <div class="skill-desc">CTR analysis, attribution modeling, data-driven decisions</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">👥</div>
+                    <div class="skill-name">Team Leadership</div>
+                    <div class="skill-desc">Production management, creative direction, process optimization</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📈</div>
+                    <div class="skill-name">Growth Systems</div>
+                    <div class="skill-desc">Channel scaling, subscriber growth, audience building</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💼</div>
+                    <div class="skill-name">Business Acumen</div>
+                    <div class="skill-desc">Revenue attribution, ROI measurement, business impact</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <div class="skill-name">Global Operations</div>
+                    <div class="skill-desc">Multilingual content, cross-cultural adaptation, scaling</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="contact-section" id="contact">
+            <h2>READY TO BUILD</h2>
+            <p>
+                Open to strategic conversations about systems, growth, and brand building. Interested in working with agencies, media companies, and ambitious brands.
+            </p>
+            <div class="contact-buttons">
+                <a href="https://www.linkedin.com/in/jalak-patel-63ab50220" target="_blank" class="btn btn-primary">
+                    LinkedIn
+                </a>
+                <a href="mailto:your-email@example.com" class="btn btn-secondary">
+                    Email
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 JALAK — Creative Strategist</p>
+        <p style="font-size: 0.85rem;">Professional systems architect for media & entertainment</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation to cards on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.stat-box, .case-card, .skill-card, .timeline-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(15px)';
+            el.style.transition = 'all 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
