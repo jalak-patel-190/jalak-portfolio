@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jalan Mega Mart Case Study | Jalak — Creative Strategist</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0e27;
+            --bg-card: #0f1535;
+            --accent-gold: #C4A747;
+            --accent-blue: #1B7C9A;
+            --accent-cyan: #00A8CC;
+            --text-primary: #E8E8E8;
+            --text-secondary: #A8A8A8;
+            --border-subtle: #2A3050;
+        }
+
+        html, body {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Space Grotesk', 'Helvetica', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-gold);
+            border-radius: 5px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(15, 21, 53, 0.95), rgba(27, 124, 154, 0.05));
+            border-bottom: 2px solid var(--accent-gold);
+            padding: 1.2rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .logo:hover {
+            color: var(--accent-cyan);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .breadcrumb {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .breadcrumb a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-gold);
+        }
+
+        .case-hero {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(27, 124, 154, 0.12), rgba(196, 167, 71, 0.08));
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+        }
+
+        .case-hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .case-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .meta-item {
+            background: rgba(27, 124, 154, 0.1);
+            padding: 1rem;
+            border-left: 2px solid var(--accent-cyan);
+            border-radius: 4px;
+        }
+
+        .meta-label {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .meta-value {
+            color: var(--accent-gold);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .section {
+            margin: 3rem 0;
+        }
+
+        .section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            color: var(--accent-cyan);
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+
+        .section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section li {
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            background: rgba(27, 124, 154, 0.12);
+            border: 1px solid var(--accent-blue);
+            padding: 1.5rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--accent-gold);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: rgba(196, 167, 71, 0.08);
+            border-left: 3px solid var(--accent-gold);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .challenge-box {
+            background: rgba(27, 124, 154, 0.08);
+            border-left: 3px solid var(--accent-cyan);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .channel-link {
+            display: inline-block;
+            background: rgba(0, 168, 204, 0.1);
+            border: 1px solid var(--accent-cyan);
+            padding: 0.8rem 1.2rem;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            border-radius: 4px;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .channel-link:hover {
+            background: rgba(0, 168, 204, 0.2);
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        .learnings {
+            background: rgba(196, 167, 71, 0.08);
+            border-left: 3px solid var(--accent-gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .learnings h3 {
+            margin-top: 0;
+        }
+
+        .learnings ul {
+            margin-top: 1rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(27, 124, 154, 0.12), rgba(196, 167, 71, 0.08));
+            border: 1px solid var(--border-subtle);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin: 3rem 0;
+        }
+
+        .cta-section h2 {
+            border: none;
+            padding: 0;
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border: 1.5px solid;
+            background: transparent;
+            cursor: pointer;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            color: var(--text-primary);
+        }
+
+        .btn-primary {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .btn-primary:hover {
+            background: rgba(196, 167, 71, 0.1);
+        }
+
+        .btn-secondary {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 168, 204, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 4rem;
+            color: var(--text-secondary);
+            background: linear-gradient(135deg, rgba(15, 21, 53, 0.8), rgba(27, 124, 154, 0.05));
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+
+            .case-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">JALAK</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/">← Back to Portfolio</a>
+        </div>
+
+        <section class="case-hero">
+            <h1>Jalan Mega Mart</h1>
+            <p style="font-size: 1.1rem; color: var(--accent-cyan); margin-bottom: 1rem;">From Social Media Manager to Marketing Operations Lead</p>
+            
+            <div class="case-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Duration</div>
+                    <div class="meta-value">Jul 2023 – Oct 2024</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Role</div>
+                    <div class="meta-value">SMM → Ops Lead</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Channels Built</div>
+                    <div class="meta-value">10-15 YouTube</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Social Pages</div>
+                    <div class="meta-value">5+ Platforms</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Context: Sister Company of Shalini Fashion</h2>
+            
+            <p>
+                Jalan Mega Mart is a B2B textile company founded by the same group behind Shalini Fashion. 
+                Shalini Fashion has dominated the Banaras (Varanasi) textile market for years. 
+                Jalan Mega Mart launched as a strategic pivot: a Surat-based manufacturing-to-wholesaler operation.
+            </p>
+
+            <div class="highlight-box">
+                <p>
+                    <strong>The Business Model:</strong> By 2023, every textile company was trying to go B2B (wholesale direct to retailers). 
+                    Shalini Fashion decided to launch Jalan as a separate B2B entity. Own manufacturing quality + wholesale reach = 
+                    competitive advantage in an increasingly crowded B2B textile market.
+                </p>
+            </div>
+
+            <p style="margin-top: 1rem;">
+                When I joined, the company was 3-4 months old. They needed someone to build marketing from scratch.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>The Challenge: Building Marketing at Zero</h2>
+
+            <div class="challenge-box">
+                <p>
+                    <strong>Official Title:</strong> Social Media Manager
+                </p>
+                <p style="margin-top: 0.8rem;">
+                    <strong>Actual Scope (discovered after 4-5 months):</strong> I was managing the entire marketing team.
+                </p>
+            </div>
+
+            <p style="margin-top: 1rem;">
+                This wasn't a typical "social media manager" role. The company had:
+            </p>
+            <ul>
+                <li>No content strategy</li>
+                <li>No marketing team structure</li>
+                <li>No existing YouTube presence</li>
+                <li>No social media accounts</li>
+                <li>No influencer relationships</li>
+                <li>No budget allocation framework</li>
+            </ul>
+
+            <p style="margin-top: 1rem;">
+                And I had to build all of it. Alone. Then manage it.
+            </p>
+
+            <p style="margin-top: 1rem;">
+                <strong>The Role Expanded Quickly:</strong> What started as "manage social media" became "manage the entire marketing function, 
+                all teams, all budgets, all strategies."
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>What I Built (Year 1)</h2>
+
+            <h3>1. YouTube Channel Portfolio (10-15 Channels Created)</h3>
+            <p>
+                Built a portfolio of YouTube channels serving different segments of the B2B textile market. 
+                Each channel had a specific strategy tied to product category or regional audience.
+            </p>
+            
+            <p style="margin-top: 1rem;">
+                <strong>Channels I Created:</strong>
+            </p>
+            <div style="margin: 1.5rem 0;">
+                <a href="https://youtu.be/40KX-cBq3SQ?si=hhKHuJNm0effgD5F" target="_blank" class="channel-link">
+                    Main Jalan Channel →
+                </a>
+                <a href="https://www.youtube.com/@JMMMarathishorts/shorts/popular" target="_blank" class="channel-link">
+                    Marathi Shorts Channel →
+                </a>
+                <a href="https://www.youtube.com/@MantraGujaratiDigital/shorts" target="_blank" class="channel-link">
+                    Gujarati Shorts Channel →
+                </a>
+            </div>
+
+            <p style="margin-top: 1rem;">
+                Plus 7-12 additional product-specific and regional channels (details coming).
+            </p>
+
+            <h3>2. Social Media Expansion (5+ Instagram & Facebook Pages)</h3>
+            <p>
+                Built Facebook and Instagram presence across product categories and regional markets. 
+                Managed single-handedly, with content calendar and daily posting strategy.
+            </p>
+
+            <h3>3. Content Strategy (Festival Offers & Seasonal Campaigns)</h3>
+            <p>
+                Created content calendar aligned with:
+            </p>
+            <ul>
+                <li>Festival seasons (Diwali, Holi, regional festivals)</li>
+                <li>B2B retail cycles (peak buying seasons)</li>
+                <li>Seasonal textile demand (summer silks, winter wear, monsoon materials)</li>
+            </ul>
+
+            <p style="margin-top: 1rem;">
+                Designed festival offer campaigns to drive wholesale inquiries.
+            </p>
+
+            <h3>4. Influencer Marketing (₹2 Lakh Budget Allocation)</h3>
+            <p>
+                Built and managed influencer marketing strategy with ₹2 lakh budget (online + offline mix).
+            </p>
+
+            <ul>
+                <li><strong>Research:</strong> Identified 20+ influencers across textile, fashion, and business content niches</li>
+                <li><strong>Outreach:</strong> Searched for contact information, found phone numbers, negotiated directly</li>
+                <li><strong>Deal Making:</strong> Negotiated rates, deliverables, timelines</li>
+                <li><strong>Creative Direction:</strong> Guided influencers on which products to feature, how to position them</li>
+                <li><strong>Relationship Management:</strong> Handled influencer logistics when they visited for shoots</li>
+            </ul>
+
+            <h3>5. Team Leadership (That I Didn't Know I Had)</h3>
+            <p>
+                Within 4-5 months, I realized I wasn't just managing channels. I was managing people:
+            </p>
+
+            <ul>
+                <li><strong>Tele-calling Team:</strong> Motivated team to generate leads, tracked their performance</li>
+                <li><strong>Creative Team:</strong> Managed graph designers, videographers, video editors</li>
+                <li><strong>Content Production:</strong> Directed creative output, quality control, alignment with strategy</li>
+            </ul>
+
+            <h3>6. Script Writing & Video Production</h3>
+            <p>
+                Wrote scripts for business-focused videos:
+            </p>
+            <ul>
+                <li>Product showcase videos</li>
+                <li>Wholesale/business opportunity videos</li>
+                <li>Educational content for retailers (how to stock, how to position products)</li>
+                <li>CEO/brand storytelling videos</li>
+            </ul>
+
+            <h3>7. Offline Marketing</h3>
+            <p>
+                Managed offline marketing alongside digital (part of the ₹2 lakh budget):
+            </p>
+            <ul>
+                <li>Banner design and placement</li>
+                <li>Pamphlet production</li>
+                <li>Trade show presence</li>
+                <li>Local retail partnerships</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>The Role Expansion (The Real Story)</h2>
+
+            <div class="highlight-box">
+                <p>
+                    <strong>Job Title:</strong> Social Media Manager
+                </p>
+                <p style="margin-top: 0.8rem;">
+                    <strong>Actual Role:</strong> Head of Marketing Operations
+                </p>
+            </div>
+
+            <p style="margin-top: 1rem;">
+                This wasn't a miscommunication. This was entrepreneurial necessity.
+            </p>
+
+            <p style="margin-top: 1rem;">
+                As a 3-4 month old company trying to scale a B2B textile operation, they couldn't afford to hire separate people for:
+                - Social media
+                - Influencer marketing
+                - Creative management
+                - Team leadership
+                - Budget allocation
+                - Offline marketing
+            </p>
+
+            <p style="margin-top: 1rem;">
+                So one person (me) ended up doing all of it. And making it work.
+            </p>
+
+            <p style="margin-top: 1rem;">
+                <strong>What This Proved:</strong> I could take a "social media manager" job description and scale it into a complete marketing function. 
+                Not because the job was written that way, but because I saw what was needed and built it.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Results (Metrics Coming)</h2>
+
+            <p>
+                Right now, I'm collecting the metrics from Jalan Mega Mart to provide complete data on:
+            </p>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">10-15</div>
+                    <div class="metric-label">YouTube Channels Created</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">5+</div>
+                    <div class="metric-label">Social Media Pages Built</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">₹2L</div>
+                    <div class="metric-label">Budget Managed (Year)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">20+</div>
+                    <div class="metric-label">Influencers Negotiated</div>
+                </div>
+            </div>
+
+            <p style="margin-top: 2rem;">
+                <strong>Detailed Metrics Coming:</strong>
+            </p>
+            <ul>
+                <li>YouTube views/subscribers across 10-15 channels</li>
+                <li>Influencer campaign results (impressions, engagement, attributed sales)</li>
+                <li>Lead generation from tele-calling team (qualified leads, conversion)</li>
+                <li>Social media engagement (reach, saves, shares)</li>
+                <li>Budget efficiency (ROI on ₹2 lakh spend)</li>
+                <li>Team productivity (tele-calling team lead generation metrics)</li>
+                <li>Revenue impact (if tracked/available)</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Key Learnings</h2>
+
+            <div class="learnings">
+                <h3>1. Job Titles Are Flexible (You Define Your Role)</h3>
+                <p>
+                    Started as "Social Media Manager." Became de facto "Head of Marketing Operations" because the business needed it. 
+                    Don't wait for job descriptions to expand. See what's needed and build it.
+                </p>
+
+                <h3>2. Influencer Marketing Is Negotiation + Direction</h3>
+                <p>
+                    Finding influencers is easy. Negotiating rates is medium. But directing their content—telling them specifically 
+                    which products, how to position them, what story to tell—that's what converts followers into customers.
+                </p>
+
+                <h3>3. Teams Need Leadership, Not Just Management</h3>
+                <p>
+                    Managing a tele-calling team isn't about tracking calls. It's about motivation, coaching, showing them their 
+                    work matters. A team that understands strategy performs better than a team that just executes tasks.
+                </p>
+
+                <h3>4. Scale Happens Through Systems & Delegation</h3>
+                <p>
+                    I didn't personally make every video or design every graphic. I built a system where designers, videographers, 
+                    and editors knew the strategy, the quality standards, and could execute independently.
+                </p>
+
+                <h3>5. Budget Allocation Drives Strategy</h3>
+                <p>
+                    With ₹2 lakh, I had to choose: influencer marketing or paid ads or production quality. I split it strategically. 
+                    Budget constraints force you to be intentional. That's good.
+                </p>
+
+                <h3>6. B2B Marketing Is Different</h3>
+                <p>
+                    B2C wants engagement and virality. B2B wants trust and leads. Educational content, product knowledge, 
+                    industry credibility matter more than follower counts.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Career Progression Moment</h2>
+
+            <p>
+                This role was pivotal. It wasn't just scaling what existed (Ajmera). It was building from scratch.
+            </p>
+
+            <p style="margin-top: 1rem;">
+                <strong>Ajmera:</strong> I learned systems thinking. Scaled existing operations. Got promoted to an internship role.
+            </p>
+
+            <p style="margin-top: 1rem;">
+                <strong>Jalan:</strong> I built a function. Managed teams. Allocated budgets. Made strategic decisions. 
+                Took initiative beyond my job description and made it work.
+            </p>
+
+            <p style="margin-top: 1rem;">
+                This is the transition from individual contributor to leader.
+            </p>
+        </section>
+
+        <section class="cta-section">
+            <h2>Building Marketing Functions</h2>
+            <p>
+                If you're starting a company or launching a new product line, you don't need to hire a full marketing team immediately. 
+                You need someone who can see what's needed and build it. Someone who can manage teams, allocate budgets, and execute across 
+                multiple channels.
+            </p>
+            <p style="margin-top: 1rem;">
+                That's the skill this role taught me.
+            </p>
+            
+            <div class="btn-group">
+                <a href="https://www.linkedin.com/in/jalak-patel-63ab50220" target="_blank" class="btn btn-primary">
+                    Connect on LinkedIn
+                </a>
+                <a href="/" class="btn btn-secondary">
+                    Back to Portfolio
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026 JALAK — Creative Strategist</p>
+        <p style="font-size: 0.85rem;">Case Study: Jalan Mega Mart | Building Marketing from Zero</p>
+    </footer>
+</body>
+</html>
