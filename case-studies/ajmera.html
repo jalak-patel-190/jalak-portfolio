@@ -369,6 +369,79 @@
                 width: 100%;
             }
         }
+    
+        .video-card {
+            display: inline-block;
+            width: 190px;
+            margin: 0.5rem 0.6rem 0.5rem 0;
+            text-decoration: none;
+            vertical-align: top;
+        }
+        .video-thumb-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 6px;
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-card);
+        }
+        .video-thumb-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .video-card:hover .video-thumb-wrap img { transform: scale(1.06); }
+        .video-card:hover .video-thumb-wrap { border-color: var(--accent-gold); }
+        .play-icon {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 34px; height: 34px;
+            background: rgba(10, 14, 39, 0.75);
+            border-radius: 50%;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            border: 1px solid var(--accent-gold);
+        }
+        .video-card-label {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.78rem;
+            color: var(--accent-cyan);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        .video-card:hover .video-card-label { color: var(--accent-gold); }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 1rem;
+            margin: 1.2rem 0;
+        }
+        .video-grid .video-card { width: 100%; margin: 0; }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1rem;
+            margin: 1.3rem 0;
+        }
+        .story-card {
+            background: rgba(15, 21, 53, 0.5);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        .story-card strong { color: var(--accent-gold); }
+        .story-card p { font-size: 0.88rem; margin-bottom: 0; color: var(--text-primary); }
+        .story-card .video-card { width: 100%; margin: 0.8rem 0 0 0; }
+
     </style>
 </head>
 <body>
@@ -502,24 +575,22 @@
                 They care about culturally relevant products.
             </p>
 
-            <ul>
-                <li>
-                    <strong>Maharashtra:</strong> Women prefer silk sarees. But specifically—"Paithani sarees," "Karpabardi sarees." 
-                    I added these regional keywords to titles and descriptions. Views went up significantly.
-                    <br><strong>Example:</strong> <a href="https://youtu.be/2bMASguJVu0?si=ZxoOkruJw0Lctdyr" target="_blank" class="video-link">Watch this video</a> (Marathi saree strategy)
-                </li>
-                <li>
-                    <strong>Odisha:</strong> Women wear cotton sarees. Prefer handloom. Cultural items like "Sambalpuri Ikat sarees" 
-                    perform better than generic keywords. Changed the keyword strategy immediately.
-                    <br><strong>Example:</strong> <a href="https://youtu.be/4Whd2WeVfGM?si=kfrQcd-aC1gCFs7N" target="_blank" class="video-link">Watch this video</a> (Odia handloom strategy)
-                </li>
-                <li>
-                    <strong>Gujarat:</strong> Daily-wear sarees, Gandhi-pattern sarees, chiffon sarees perform better than formal wear.
-                </li>
-                <li>
-                    <strong>Other regions:</strong> Similar regional analysis applied to each language channel.
-                </li>
-            </ul>
+            <div class="story-grid">
+                <div class="story-card">
+                    <p><strong>Maharashtra:</strong> Women prefer silk sarees — but specifically "Paithani" or "Karpabardi" sarees. Adding these regional keywords to titles and descriptions lifted views significantly.</p>
+                    <a href="https://youtu.be/2bMASguJVu0?si=ZxoOkruJw0Lctdyr" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/2bMASguJVu0/hqdefault.jpg" alt="Marathi saree strategy" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Marathi Saree Strategy</span></a>
+                </div>
+                <div class="story-card">
+                    <p><strong>Odisha:</strong> Women prefer cotton and handloom sarees. Cultural terms like "Sambalpuri Ikat" consistently outperformed generic keywords once the strategy shifted.</p>
+                    <a href="https://youtu.be/4Whd2WeVfGM?si=kfrQcd-aC1gCFs7N" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/4Whd2WeVfGM/hqdefault.jpg" alt="Odia handloom strategy" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Odia Handloom Strategy</span></a>
+                </div>
+                <div class="story-card">
+                    <p><strong>Gujarat:</strong> Daily-wear sarees, Gandhi-pattern sarees, and chiffon sarees consistently outperformed formal wear.</p>
+                </div>
+                <div class="story-card">
+                    <p><strong>Other regions:</strong> The same regional analysis was applied to every language channel in the portfolio.</p>
+                </div>
+            </div>
 
             <h3>System 2: Educational Content Mix (Product + Business Education)</h3>
             <p>
@@ -527,20 +598,20 @@
                 I started creating educational videos about how to start a business using these products.
             </p>
 
-            <ul>
-                <li>
-                    <strong>"How to Start a Saree Business"</strong> (Full business model explained)
-                    <br><a href="https://youtu.be/U8zxEuoOn1k?si=PEJGe6cDhfE0UsjZ" target="_blank" class="video-link">Watch →</a>
-                </li>
-                <li>
-                    <strong>"How Housewives Can Start a Business from Home with Less Capital"</strong> (Practical guide)
-                    <br><a href="https://youtu.be/wZvuslwl_n0?si=0NH-D8cqbojbsiya" target="_blank" class="video-link">Watch →</a>
-                </li>
-                <li>
-                    <strong>"How Students Can Generate Side Income"</strong> (Alternative revenue for students)
-                    <br><a href="https://youtu.be/eizwLEdPviU?si=jun-36OMs9yJtUU7" target="_blank" class="video-link">Watch →</a>
-                </li>
-            </ul>
+            <div class="story-grid">
+                <div class="story-card">
+                    <p><strong>"How to Start a Saree Business"</strong><br>Full business model explained.</p>
+                    <a href="https://youtu.be/U8zxEuoOn1k?si=PEJGe6cDhfE0UsjZ" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/U8zxEuoOn1k/hqdefault.jpg" alt="How to Start a Saree Business" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Watch</span></a>
+                </div>
+                <div class="story-card">
+                    <p><strong>"How Housewives Can Start a Business from Home with Less Capital"</strong><br>Practical guide.</p>
+                    <a href="https://youtu.be/wZvuslwl_n0?si=0NH-D8cqbojbsiya" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/wZvuslwl_n0/hqdefault.jpg" alt="Housewife entrepreneur guide" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Watch</span></a>
+                </div>
+                <div class="story-card">
+                    <p><strong>"How Students Can Generate Side Income"</strong><br>Alternative revenue for students.</p>
+                    <a href="https://youtu.be/eizwLEdPviU?si=jun-36OMs9yJtUU7" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/eizwLEdPviU/hqdefault.jpg" alt="Student side income" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Watch</span></a>
+                </div>
+            </div>
 
             <p style="margin-top: 1rem;">
                 <strong>The result:</strong> Viewers weren't just watching products. They were learning a business model. 
@@ -553,11 +624,12 @@
                 Real people explaining the business, modeling the products, telling their stories.
             </p>
 
-            <ul>
-                <li>
-                    <strong>Example:</strong> <a href="https://youtu.be/Ed7H6o5QLbo?si=PxHRQ42yR8Kv8OOz" target="_blank" class="video-link">Brand ambassador video →</a>
-                </li>
-            </ul>
+            <div class="story-grid">
+                <div class="story-card">
+                    <p><strong>Example</strong></p>
+                    <a href="https://youtu.be/Ed7H6o5QLbo?si=PxHRQ42yR8Kv8OOz" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/Ed7H6o5QLbo/hqdefault.jpg" alt="Brand ambassador video" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Brand Ambassador Video</span></a>
+                </div>
+            </div>
 
             <p style="margin-top: 1rem;">
                 Brand ambassadors increased trust signals. Viewers saw real people, not just products.
@@ -605,13 +677,13 @@
             <p style="margin-top: 1rem;">
                 <strong>Example videos I worked on:</strong>
             </p>
-            <ul>
-                <li><a href="https://youtu.be/yjCx8foXXD4?si=MlGhTFREz2ilrbKD" target="_blank" class="video-link">CEO Content 1 →</a></li>
-                <li><a href="https://youtu.be/CqAJ63ahnKs?si=_DbYcci_p-fyXqIB" target="_blank" class="video-link">CEO Content 2 →</a></li>
-                <li><a href="https://youtu.be/UVidGTqq2C0?si=X6VxXtQzqEYqFzG9Z" target="_blank" class="video-link">CEO Content 3 →</a></li>
-                <li><a href="https://youtu.be/jNj6MuVwqaY?si=afufhnLvn8EgK9jF" target="_blank" class="video-link">CEO Content 4 →</a></li>
-                <li><a href="https://youtu.be/-Ux_ToAFzG8?si=Gh75s3d_TphOtT-I" target="_blank" class="video-link">CEO Content 5 →</a></li>
-            </ul>
+            <div class="video-grid">
+                <a href="https://youtu.be/yjCx8foXXD4?si=MlGhTFREz2ilrbKD" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/yjCx8foXXD4/hqdefault.jpg" alt="CEO Content 1" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">CEO Content 1</span></a>
+                <a href="https://youtu.be/CqAJ63ahnKs?si=_DbYcci_p-fyXqIB" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/CqAJ63ahnKs/hqdefault.jpg" alt="CEO Content 2" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">CEO Content 2</span></a>
+                <a href="https://youtu.be/UVidGTqq2C0?si=X6VxXtQzqEYqFzG9Z" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/UVidGTqq2C0/hqdefault.jpg" alt="CEO Content 3" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">CEO Content 3</span></a>
+                <a href="https://youtu.be/jNj6MuVwqaY?si=afufhnLvn8EgK9jF" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/jNj6MuVwqaY/hqdefault.jpg" alt="CEO Content 4" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">CEO Content 4</span></a>
+                <a href="https://youtu.be/-Ux_ToAFzG8?si=Gh75s3d_TphOtT-I" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/-Ux_ToAFzG8/hqdefault.jpg" alt="CEO Content 5" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">CEO Content 5</span></a>
+            </div>
         </section>
 
         <section class="section">
