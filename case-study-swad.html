@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swad Cooking Institute Case Study | Jalak — Creative Strategist</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-dark: #0a0e27;
+            --bg-card: #0f1535;
+            --accent-gold: #C4A747;
+            --accent-blue: #1B7C9A;
+            --accent-cyan: #00A8CC;
+            --text-primary: #E8E8E8;
+            --text-secondary: #A8A8A8;
+            --border-subtle: #2A3050;
+        }
+
+        html, body { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Space Grotesk', 'Helvetica', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--accent-gold); border-radius: 5px; }
+
+        header {
+            background: linear-gradient(135deg, rgba(15, 21, 53, 0.95), rgba(27, 124, 154, 0.05));
+            border-bottom: 2px solid var(--accent-gold);
+            padding: 1.2rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .logo:hover { color: var(--accent-cyan); }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+
+        .breadcrumb {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .breadcrumb a { color: var(--accent-cyan); text-decoration: none; font-weight: 600; }
+        .breadcrumb a:hover { color: var(--accent-gold); }
+
+        .case-hero {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(27, 124, 154, 0.12), rgba(196, 167, 71, 0.08));
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+        }
+        .case-hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .case-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .meta-item {
+            background: rgba(27, 124, 154, 0.1);
+            padding: 1rem;
+            border-left: 2px solid var(--accent-cyan);
+            border-radius: 4px;
+        }
+        .meta-label {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+        .meta-value {
+            color: var(--accent-gold);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .section { margin: 3rem 0; }
+        .section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            color: var(--accent-cyan);
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .section h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            color: var(--accent-gold);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .section p { margin-bottom: 1rem; line-height: 1.8; color: var(--text-primary); }
+        .section ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+        .section li { margin-bottom: 0.7rem; color: var(--text-primary); line-height: 1.7; }
+
+        /* CASE STUDY BLOCKS */
+        .case-block {
+            background: rgba(15, 21, 53, 0.5);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 1.8rem;
+            margin: 1.8rem 0;
+        }
+        .case-block-number {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.85rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 3px;
+            margin-bottom: 0.8rem;
+            letter-spacing: 1px;
+        }
+        .case-block h3 { margin-top: 0; font-size: 1.25rem; }
+
+        /* TOC */
+        .toc {
+            background: rgba(196, 167, 71, 0.06);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+        }
+        .toc h3 { color: var(--accent-gold); margin-top: 0; margin-bottom: 1rem; }
+        .toc ol { margin-left: 1.2rem; }
+        .toc li { margin-bottom: 0.5rem; }
+        .toc a { color: var(--accent-cyan); text-decoration: none; }
+        .toc a:hover { color: var(--accent-gold); text-decoration: underline; }
+
+        /* METRICS TABLE */
+        .metrics-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+        .metrics-table th, .metrics-table td {
+            border: 1px solid var(--border-subtle);
+            padding: 0.9rem 1rem;
+            text-align: left;
+        }
+        .metrics-table th {
+            background: rgba(27, 124, 154, 0.15);
+            color: var(--accent-cyan);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+        .metrics-table td { color: var(--text-primary); }
+        .metrics-table td.number { color: var(--accent-gold); font-weight: 700; }
+        .metrics-table tr:last-child td { border-bottom: 2px solid var(--accent-gold); }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .metric-card {
+            background: rgba(27, 124, 154, 0.12);
+            border: 1px solid var(--accent-blue);
+            padding: 1.5rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+        .metric-value {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-top: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: rgba(196, 167, 71, 0.08);
+            border-left: 3px solid var(--accent-gold);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        .challenge-box {
+            background: rgba(27, 124, 154, 0.08);
+            border-left: 3px solid var(--accent-cyan);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        .tribute-box {
+            background: linear-gradient(135deg, rgba(196, 167, 71, 0.1), rgba(27, 124, 154, 0.08));
+            border: 1px solid var(--accent-gold);
+            padding: 1.8rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+        }
+
+        .video-link {
+            display: inline-block;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0.2rem 0;
+        }
+        .video-link:hover { color: var(--accent-gold); text-decoration: underline; }
+
+        .link-chip {
+            display: inline-block;
+            background: rgba(0, 168, 204, 0.1);
+            border: 1px solid var(--accent-cyan);
+            padding: 0.5rem 0.9rem;
+            margin: 0.3rem 0.3rem 0.3rem 0;
+            border-radius: 4px;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+        .link-chip:hover { background: rgba(0, 168, 204, 0.2); color: var(--accent-gold); border-color: var(--accent-gold); }
+
+        .recipe-list {
+            columns: 2;
+            column-gap: 2rem;
+            margin: 1rem 0;
+        }
+        .recipe-list li { break-inside: avoid; font-size: 0.9rem; }
+
+        .learnings {
+            background: rgba(196, 167, 71, 0.08);
+            border-left: 3px solid var(--accent-gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+        .learnings h3 { margin-top: 0; }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(27, 124, 154, 0.12), rgba(196, 167, 71, 0.08));
+            border: 1px solid var(--border-subtle);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin: 3rem 0;
+        }
+        .cta-section h2 { border: none; padding: 0; text-transform: uppercase; font-size: 1.8rem; margin-bottom: 1rem; }
+
+        .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
+        .btn {
+            padding: 0.9rem 2rem;
+            border: 1.5px solid;
+            background: transparent;
+            cursor: pointer;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            color: var(--text-primary);
+        }
+        .btn-primary { border-color: var(--accent-gold); color: var(--accent-gold); }
+        .btn-primary:hover { background: rgba(196, 167, 71, 0.1); }
+        .btn-secondary { border-color: var(--accent-cyan); color: var(--accent-cyan); }
+        .btn-secondary:hover { background: rgba(0, 168, 204, 0.1); }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 4rem;
+            color: var(--text-secondary);
+            background: linear-gradient(135deg, rgba(15, 21, 53, 0.8), rgba(27, 124, 154, 0.05));
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 1.5rem 1rem; }
+            .case-hero h1 { font-size: 1.8rem; }
+            .section h2 { font-size: 1.5rem; }
+            .metrics-grid { grid-template-columns: 1fr; }
+            .recipe-list { columns: 1; }
+            .btn-group { flex-direction: column; }
+            .btn { width: 100%; }
+            .metrics-table { font-size: 0.8rem; }
+            .metrics-table th, .metrics-table td { padding: 0.5rem; }
+        }
+    
+        .video-card {
+            display: inline-block;
+            width: 190px;
+            margin: 0.5rem 0.6rem 0.5rem 0;
+            text-decoration: none;
+            vertical-align: top;
+        }
+        .video-thumb-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 6px;
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-card);
+        }
+        .video-thumb-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .video-card:hover .video-thumb-wrap img { transform: scale(1.06); }
+        .video-card:hover .video-thumb-wrap { border-color: var(--accent-gold); }
+        .play-icon {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 34px; height: 34px;
+            background: rgba(10, 14, 39, 0.75);
+            border-radius: 50%;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            border: 1px solid var(--accent-gold);
+        }
+        .video-card-label {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.78rem;
+            color: var(--accent-cyan);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        .video-card:hover .video-card-label { color: var(--accent-gold); }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 1rem;
+            margin: 1.2rem 0;
+        }
+        .video-grid .video-card { width: 100%; margin: 0; }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1rem;
+            margin: 1.3rem 0;
+        }
+        .story-card {
+            background: rgba(15, 21, 53, 0.5);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        .story-card strong { color: var(--accent-gold); }
+        .story-card p { font-size: 0.88rem; margin-bottom: 0; color: var(--text-primary); }
+        .story-card .video-card { width: 100%; margin: 0.8rem 0 0 0; }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">JALAK</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb"><a href="/">← Back to Portfolio</a></div>
+
+        <section class="case-hero">
+            <h1>Swad Cooking Institute</h1>
+            <p style="font-size: 1.1rem; color: var(--accent-cyan); margin-bottom: 1rem;">Growing Two Culinary Brands to 23.4M+ Combined Views in One Year</p>
+            
+            <div class="case-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Duration</div>
+                    <div class="meta-value">Nov 2024 – Oct 2025</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Role</div>
+                    <div class="meta-value">Social Media Manager & Content Lead</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Business Model</div>
+                    <div class="meta-value">B2C — Cooking Courses</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Channels</div>
+                    <div class="meta-value">2 (Institute + Owner IP)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTEXT -->
+        <section class="section">
+            <h2>Context: From B2B to B2C</h2>
+            <p>
+                After two years in B2B textile marketing (Ajmera Fashion, Jalan Mega Mart), Swad Cooking Institute was a deliberate shift 
+                into B2C. Swad's business is selling cooking and baking courses — offline masterclasses, online video programs, and 
+                membership subscriptions.
+            </p>
+            <p>
+                I joined as Social Media Manager. As someone genuinely passionate about food and cooking, I could evaluate content quality 
+                and culinary credibility quickly — which turned out to matter more than expected, since it shaped which chefs, recipes, 
+                and formats I chose to push.
+            </p>
+
+            <h3>The Course Catalogue</h3>
+            <ul>
+                <li><strong>Offline Classes:</strong> Physical masterclasses and hobby/diploma batches with 100% hands-on training, including knife and cutting technique. The Basic Cooking offline course runs 10–12 days at roughly ₹10,000.</li>
+                <li><strong>Online Classes:</strong> Pre-recorded video lessons, detailed recipe PDFs, and WhatsApp voice-message support for kitchen queries.</li>
+                <li><strong>Key Topics:</strong> Bakery & Confectionery, Street Food & Chaat, Regional Indian Thalis (Punjabi, Rajasthani, Maharashtrian), International Cuisines, Fast Food, and Food Business Startup training.</li>
+            </ul>
+
+            <h3>Pricing & Membership Structure</h3>
+            <ul>
+                <li><strong>Free Workshops:</strong> Regular introductory or festival-special sessions (Mango Mania Baking, Ice Cream & Sandwich workshops)</li>
+                <li><strong>Individual/Specialty Courses:</strong> $4.99–$61.99 depending on depth</li>
+                <li><strong>SWAD Super Save 1-Year Membership:</strong> ~₹3,499 / $37.99 — access to 160–170+ courses, 2,000+ recipes, and completion certificates</li>
+                <li><strong>Lifetime Membership:</strong> ~₹44,999 for lifetime access to standard courses</li>
+            </ul>
+        </section>
+
+        <!-- CORE RESPONSIBILITIES -->
+        <section class="section">
+            <h2>Core Responsibilities</h2>
+            <p>What began as a straightforward social media role expanded quickly given the operation's complexity: five kitchen studios, each running offline and online classes simultaneously.</p>
+            <ul>
+                <li>Co-hosted YouTube livestreams from behind the camera</li>
+                <li>Built the content calendar across all social platforms</li>
+                <li>Scheduled all chefs for YouTube Live across 5 kitchen studios — coordinating so no chef was overloaded between offline classes, online classes, and livestreams</li>
+                <li>Built the monthly release schedule for new online courses</li>
+                <li>Co-created offers and seasonal schemes with management and chefs</li>
+                <li>Managed Chef Sneha Thakkar's personal YouTube channel end-to-end</li>
+                <li>Handled food photography for YouTube content</li>
+                <li>Wrote, directed, and helped edit the anniversary offer advertisement</li>
+            </ul>
+        </section>
+
+        <!-- METRICS -->
+        <section class="section">
+            <h2>Verified Performance (Nov 2024 – Oct 2025)</h2>
+            <p>Data verified through October 2025. Figures reflect combined ownership of the Swad Cooking Institute channel and Chef Sneha Thakkar's personal IP channel.</p>
+
+            <table class="metrics-table">
+                <tr>
+                    <th>Metric</th>
+                    <th>Swad Cooking Institute</th>
+                    <th>Chef Sneha Thakkar</th>
+                    <th>Combined Total</th>
+                </tr>
+                <tr>
+                    <td>Total Views</td>
+                    <td class="number">16.06M+</td>
+                    <td class="number">7.38M+</td>
+                    <td class="number">23.44M+</td>
+                </tr>
+                <tr>
+                    <td>Watch Hours</td>
+                    <td class="number">1.30M+</td>
+                    <td class="number">126.4K+</td>
+                    <td class="number">1.43M+</td>
+                </tr>
+                <tr>
+                    <td>Subscriber Growth</td>
+                    <td class="number">+83.7K</td>
+                    <td class="number">+50K</td>
+                    <td class="number">+141.9K</td>
+                </tr>
+                <tr>
+                    <td>Est. Revenue</td>
+                    <td class="number">₹12.82L+</td>
+                    <td class="number">₹1.85L+</td>
+                    <td class="number">₹16.47L+</td>
+                </tr>
+                <tr>
+                    <td>Avg. CTR</td>
+                    <td class="number">6.47%</td>
+                    <td class="number">6.33%</td>
+                    <td class="number">~7.3% (avg)</td>
+                </tr>
+            </table>
+
+            <div class="highlight-box">
+                <p><strong>Strategic overview:</strong> Led the end-to-end digital growth strategy for two culinary brands under one roof. Implemented SEO keyword clusters, bilingual captions, and data-backed thumbnail optimization to position both channels as authorities in vegetarian, regional Indian cuisine — driving ₹14.4L+ in directly attributed revenue through improved content frequency and retention.</p>
+            </div>
+
+            <h3>YouTube Channels</h3>
+            <a href="https://www.youtube.com/@swadcooking" target="_blank" class="link-chip">Swad Cooking Institute →</a>
+            <a href="https://www.youtube.com/@snehathakkarrecipes/videos" target="_blank" class="link-chip">Chef Sneha Thakkar Recipes →</a>
+        </section>
+
+        <!-- TABLE OF CONTENTS -->
+        <div class="toc">
+            <h3>11 Case Studies from This Role</h3>
+            <ol>
+                <li><a href="#case1">The Flagship Diploma Course — Turning Students Into Marketing Assets</a></li>
+                <li><a href="#case2">Basic Cooking Course — Shareable Comedy for Lead Generation</a></li>
+                <li><a href="#case3">Matching Content to Chef Face-Value</a></li>
+                <li><a href="#case4">The "Monday Mistake" Series</a></li>
+                <li><a href="#case5">The Farewell Diwali Marathon</a></li>
+                <li><a href="#case6">Chef Sneha Thakkar Recipes — Zero to 7.38M Views</a></li>
+                <li><a href="#case7">Becoming a Director — Cinematography & Storytelling</a></li>
+                <li><a href="#case8">The Short-Form Engine & Original Series</a></li>
+                <li><a href="#case9">Creative Recovery Under Technical Failure</a></li>
+                <li><a href="#case10">Backend Workshop Operations</a></li>
+                <li><a href="#case11">The Revenue Insight the Company Didn't Act On</a></li>
+            </ol>
+        </div>
+
+        <!-- CASE 1 -->
+        <section class="section" id="case1">
+            <h2>Case Studies</h2>
+            <div class="case-block">
+                <span class="case-block-number">CASE 01</span>
+                <h3>The Flagship Diploma Course — Turning Students Into Marketing Assets</h3>
+                <p>
+                    The One-Year Diploma in Culinary Arts & Bakery was Swad's highest-ticket course — six months of hands-on training 
+                    plus a six-month internship. It was the institute's biggest revenue driver and its strongest credibility signal with 
+                    5-star hotel recruiters and competitors alike.
+                </p>
+                <p>
+                    I noticed most diploma enrollments originated from Instagram and YouTube, so I built a strategy specifically to grow 
+                    that funnel: partnering with chefs to run live sessions featuring current students.
+                </p>
+                <p>
+                    <strong>The logic:</strong> giving students a public platform to showcase their skill built their confidence — and 
+                    confident students shared their own livestream appearances, turning them into organic promoters. Prospective viewers 
+                    got to see exactly how the course worked and left motivated to pursue a restaurant career themselves.
+                </p>
+                <p><strong>Result:</strong> higher views, stronger engagement, new-viewer growth, more qualified leads for the sales team, and free PR for both chefs and students — a self-reinforcing loop of enrollment revenue and organic marketing.</p>
+                
+                <div class="video-grid">
+                    <a href="https://www.youtube.com/watch?v=dsKzY5CL4HY&list=PLxc6zX4m_IJCXb4q6kHaYIDfb8GwyqLOr" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/dsKzY5CL4HY/hqdefault.jpg" alt="Student Live Session" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Student Live Session</span></a>
+                </div>
+                <a href="https://www.instagram.com/swadinstitute.careers/" target="_blank" class="link-chip">Careers Instagram →</a>
+                <a href="https://www.instagram.com/reel/DHJHuNXBWDM/" target="_blank" class="link-chip">Educational Reel →</a>
+                <a href="https://www.instagram.com/reel/DG7qnsUt-Hz/" target="_blank" class="link-chip">Bread Dough Kneading Techniques →</a>
+                <a href="https://www.instagram.com/reel/DGqLE73BVx0/" target="_blank" class="link-chip">Educational Reel →</a>
+            </div>
+        </section>
+
+        <!-- CASE 2 -->
+        <section class="section" id="case2">
+            <div class="case-block">
+                <span class="case-block-number">CASE 02</span>
+                <h3>Basic Cooking Course — Shareable Comedy for Lead Generation</h3>
+                <p>
+                    Basic Cooking was Swad's second-best-selling course. Rather than another straight promotional video, I built 
+                    relatable, funny content designed specifically to be shared — and it generated a strong volume of leads directly 
+                    from organic shares.
+                </p>
+                <a href="https://www.instagram.com/reel/DGQccY9qiIe/" target="_blank" class="link-chip">Basic Cooking Promo Reel →</a>
+            </div>
+        </section>
+
+        <!-- CASE 3 -->
+        <section class="section" id="case3">
+            <div class="case-block">
+                <span class="case-block-number">CASE 03</span>
+                <h3>Matching Content to Chef Face-Value</h3>
+                <p>
+                    Spending more time embedded with the chef team surfaced a pattern: certain chefs carried more on-camera "face value" 
+                    for certain topics. Chef Sneha, the institute's owner, consistently drove higher views when she taught authentic, 
+                    traditional recipes or shared cooking tips — more than on other topic types.
+                </p>
+                <p>
+                    I ran the same analysis across the rest of the chef roster and matched each of them to the topics and recipes that 
+                    played to their individual strengths. I also pushed topics beyond straight recipes, which drew a noticeably more 
+                    positive comment section.
+                </p>
+                <p>
+                    <strong>The sharpest insight:</strong> everyday topics that viewers assume they already know — but told with one new 
+                    fact or method — consistently outperformed novel recipes. A simple video on making ghee at home, reframed around an 
+                    easier method, became the seed for a full "How to Store" series:
+                </p>
+                <ul>
+                    <li>How to Store / Freeze Mangoes, How to Store Mango Pulp Long-Term — <strong>359K views</strong></li>
+                    <li>Free Dry Masala Workshop, non-preservative Dry Masala at home — <strong>233K views</strong></li>
+                    <li>Storage Tricks: Green Chilli Paste, Lemon Juice, Green Peas — <strong>208K views</strong></li>
+                    <li>How to Store Green Leaves & Mint Leaves Longer — <strong>133K views</strong></li>
+                    <li>How to Select Safe & Smart Kitchen Tools (Best & Worst Cookware Materials) — <strong>115K views</strong></li>
+                </ul>
+                <div class="video-grid">
+                    <a href="https://www.youtube.com/live/TSZFW12DaaY?si=HYMTBIPbWqL3b_Vd" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/TSZFW12DaaY/hqdefault.jpg" alt="Easy Ghee Method (Original)" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Easy Ghee Method (Original)</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CASE 4 -->
+        <section class="section" id="case4">
+            <div class="case-block">
+                <span class="case-block-number">CASE 04</span>
+                <h3>The "Monday Mistake" Series</h3>
+                <p>
+                    Building on the same insight — familiar topics reframed with new information outperform novelty — I launched a 
+                    dedicated weekly series called "Monday Mistake," spotlighting common kitchen mistakes most home cooks don't realize 
+                    they're making. It drew an exceptional response from the audience.
+                </p>
+                <div class="video-grid">
+                    <a href="https://www.youtube.com/watch?v=QV0aMwU_iSg&list=PLxc6zX4m_IJCL4HWTQe80DUOZ5ugmlDIZ" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/QV0aMwU_iSg/hqdefault.jpg" alt="Monday Mistake Series" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Monday Mistake Series</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CASE 5 -->
+        <section class="section" id="case5">
+            <div class="case-block">
+                <span class="case-block-number">CASE 05</span>
+                <h3>The Farewell Diwali Marathon</h3>
+                <div class="tribute-box">
+                    <p>
+                        When I resigned from Swad, I knew I'd miss the team and the audience we'd built together. As a personal tribute — 
+                        not a growth play, not a revenue play — I organized a Diwali celebration livestream for the community.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        We ran a single continuous 5 hour 34 minute livestream teaching 20 recipes across six chefs. To my knowledge, no 
+                        other cooking channel has attempted a farewell livestream at this scale for its audience.
+                    </p>
+                    <p style="margin-top: 1rem;"><strong>The Diwali Menu (20 Recipes, 6 Chefs):</strong></p>
+                    <ul class="recipe-list">
+                        <li><strong>Chef Sneha:</strong> Curdami & Crispy Kunafa Vol-Au-Vent</li>
+                        <li>Gourmet Mushroom Vol-Au-Vent with Cheese</li>
+                        <li>Smoky Chilli Cheese Spinach Vol-Au-Vent (+ Chocolate Matcha Drink)</li>
+                        <li>Tangy Lemon Rice & Veggies Cup (+ Cheesy Veg Curry)</li>
+                        <li><strong>Chef Maya:</strong> Avocado Mousse</li>
+                        <li>Mushroom Ricotta Phyllo Cup</li>
+                        <li>Paneer Molletes</li>
+                        <li><strong>Chef Jeni:</strong> Cheesy Schezwan Fritters with Tostada Bites</li>
+                        <li>Broccoli Kebab</li>
+                        <li>Cheesy Sauce</li>
+                        <li>Paan Shots</li>
+                        <li>Tandoori Chole Khicha Bites</li>
+                        <li><strong>Chef Rakhi & Chef Siddhant:</strong> Berry Cream Dip</li>
+                        <li>Choco Chip Cookie</li>
+                        <li>Chocolate Coffee Sauce</li>
+                        <li>Churros</li>
+                        <li>Pistachio Sauce</li>
+                        <li>Salted Caramel Sauce</li>
+                        <li><strong>Chef Vinay:</strong> Labneh Dip Ball</li>
+                        <li>Paneer Changezi Cone (+ Red Gravy & Garnishing)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CASE 6 -->
+        <section class="section" id="case6">
+            <div class="case-block">
+                <span class="case-block-number">CASE 06</span>
+                <h3>Chef Sneha Thakkar Recipes — Zero to 7.38M Views</h3>
+                <p>
+                    When I joined Swad, the company had just launched "Sneha Thakkar Recipes" as a separate personal IP channel for the 
+                    owner. When it was handed to me, the channel had barely 4,000–5,000 subscribers and just three uploaded videos 
+                    averaging around 15K views each.
+                </p>
+                <p>
+                    I applied my YouTube growth strategy to the first video I uploaded under my management — it reached 
+                    <strong>30,000 views within one day</strong>.
+                </p>
+                <div class="video-grid">
+                    <a href="https://youtu.be/Y4zSzxL2uw8?si=7UJ5NogQG-eNEoqb" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/Y4zSzxL2uw8/hqdefault.jpg" alt="First Video Under New Strategy" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">First Video Under New Strategy</span></a>
+                </div>
+                <p style="margin-top: 1rem;">
+                    From there, the channel compounded. By the time I left, it had grown to <strong>50,000 subscribers</strong> and 
+                    <strong>7.38M+ total views</strong> — the entire growth curve inside a single year.
+                </p>
+                <div class="video-grid">
+                    <a href="https://youtu.be/oDUUE1328t0?si=luSqBXPeTxZF0eMM" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/oDUUE1328t0/hqdefault.jpg" alt="Last Video I Uploaded" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Last Video I Uploaded</span></a>
+                </div>
+                <p style="margin-top: 1rem;">
+                    The channel's growth trajectory visibly plateaus after that upload — a clear before/after marker of the strategy's impact.
+                </p>
+            </div>
+        </section>
+
+        <!-- CASE 7 -->
+        <section class="section" id="case7">
+            <div class="case-block">
+                <span class="case-block-number">CASE 07</span>
+                <h3>Becoming a Director — Cinematography & Storytelling</h3>
+                <p>
+                    Two to three months into growing the Sneha Thakkar channel, I moved beyond strategy into hands-on direction: 
+                    delivery and pacing, camera angles, cinematic shot composition, food photography, videography, and final presentation.
+                </p>
+                <p>
+                    The first video under this expanded role — Tomato Ketchup at home — reached 22K views. We regularly shot two videos 
+                    in a single day, sometimes running into overtime to get the content right.
+                </p>
+                <a href="https://www.youtube.com/@snehathakkarrecipes/videos" target="_blank" class="link-chip">Tomato Ketchup Video →</a>
+
+                <h3 style="margin-top: 1.5rem;">Favorite Productions</h3>
+                <ul>
+                    <li>
+                        <strong>Nankhatai Recipe:</strong> Added the history of nankhatai into the narrative and leaned into more 
+                        cinematic shots and creative risk during the edit. It didn't perform as strongly on the channel, but remains a 
+                        personal favorite for the craft that went into it.
+                    </li>
+                    <li>
+                        <strong>Bombay Ice Halwa (Mahim Halwa):</strong> Convinced the lead chef to shoot additional footage outdoors — 
+                        a small creative push that paid off in the final cut.
+                    </li>
+                    <li>
+                        <strong>Perfect Potato Wafers Recipe — 16K views:</strong> and <strong>How to Make Samosa at Home (History of 
+                        Samosa, folding technique) — 7.3K views:</strong> Both wove food history into the format, a technique that 
+                        became a signature of the channel's editorial voice.
+                    </li>
+                    <li>
+                        <strong>Paneer Tikka Dum Biryani — 5.3K views:</strong> No strategic reasoning behind this one — genuinely one of 
+                        the best-tasting recipes shot on the channel.
+                    </li>
+                    <li>
+                        <strong>"Roz Kya Banau?" (Indian Weekly Meal Planning for Working Women) — 204K views:</strong> The most 
+                        demanding shoot on the channel. Filming ran from 10 AM to 9 PM. The final edit was 40 minutes long, split into 
+                        two parts to stay watchable. Script and shot list evolved live during filming as new ideas surfaced on set.
+                    </li>
+                    <li>
+                        <strong>Part 2 — Advance Weekly Meal Planning:</strong> Shot horizontal and vertical simultaneously to maximize 
+                        output; two source videos were cut down into 20 separate reels.
+                    </li>
+                </ul>
+                <a href="https://www.youtube.com/@snehathakkarrecipes/shorts" target="_blank" class="link-chip">Sneha Thakkar Shorts →</a>
+
+                <h3 style="margin-top: 1.5rem;">Ad Films (Written & Directed)</h3>
+                <a href="https://www.instagram.com/reel/DHve8LJpJ5S/" target="_blank" class="link-chip">Workshop Ad →</a>
+                <a href="https://www.instagram.com/reel/DHFlYowBP1Z/" target="_blank" class="link-chip">Workshop Ad (Shot + Edited) →</a>
+                <a href="https://www.instagram.com/reel/DK2JsOxJt8G/" target="_blank" class="link-chip">Workshop Ad →</a>
+                <a href="https://www.instagram.com/reel/DL65SIsxIMR/" target="_blank" class="link-chip">Workshop Ad →</a>
+                <a href="https://www.instagram.com/reel/DNHyYM5Kp00/" target="_blank" class="link-chip">Workshop Ad →</a>
+            </div>
+        </section>
+
+        <!-- CASE 8 -->
+        <section class="section" id="case8">
+            <div class="case-block">
+                <span class="case-block-number">CASE 08</span>
+                <h3>The Short-Form Engine & Original Series R&D</h3>
+                <p>
+                    For every long-form video, we cut 3–4 shorts or reels to promote it — I directed the majority of this vertical-format 
+                    content across both the Swad and Sneha Thakkar channels on Instagram and YouTube.
+                </p>
+                <p>Beyond promotional cutdowns, I developed original short-form concepts and formats from scratch:</p>
+                <a href="https://www.instagram.com/reel/DC1dzaMt_up/" target="_blank" class="link-chip">Cooking Tips Series →</a>
+                <a href="https://www.instagram.com/reel/DJRmj89pH-H/" target="_blank" class="link-chip">A-to-Z Food Series →</a>
+                <a href="https://www.instagram.com/reel/DOsbcsTiprq/" target="_blank" class="link-chip">Navratri Special Series →</a>
+                <a href="https://www.instagram.com/reel/DOV6ff3ibdq/" target="_blank" class="link-chip">Chaar Ka Khaana →</a>
+            </div>
+        </section>
+
+        <!-- CASE 9 -->
+        <section class="section" id="case9">
+            <div class="case-block">
+                <span class="case-block-number">CASE 09</span>
+                <h3>Creative Recovery Under Technical Failure</h3>
+                <p>
+                    Footage sometimes gets lost to hardware failure — it happened to us, and a reshoot wasn't possible. Rather than 
+                    scrap the surviving clips, I built a comedic script around the partial recipe footage so the content wasn't wasted.
+                </p>
+                <a href="https://www.instagram.com/reel/DGnsmEaqtPw/" target="_blank" class="link-chip">Recovery Reel #1 →</a>
+                <p style="margin-top: 1rem;">It worked well enough that we repeated the format deliberately:</p>
+                <a href="https://www.instagram.com/reel/DG5risdtdVp/" target="_blank" class="link-chip">Recovery Reel #2 →</a>
+                <p style="margin-top: 1rem;">
+                    The third time the same trick wouldn't have felt fresh, so I pitched a horror-themed concept instead — and acted in 
+                    it myself. It performed below the first two, but drew strong qualitative praise for creative risk-taking.
+                </p>
+                <a href="https://www.instagram.com/reel/DH8nYEkTVt8/" target="_blank" class="link-chip">Horror-Concept Recovery Reel →</a>
+                <p style="margin-top: 1rem;">
+                    As de facto creative director for this content stream, every reel or video passed through my review before 
+                    publishing — some fully conceived by me, others refined from other team members' drafts.
+                </p>
+            </div>
+        </section>
+
+        <!-- CASE 10 -->
+        <section class="section" id="case10">
+            <div class="case-block">
+                <span class="case-block-number">CASE 10</span>
+                <h3>Backend Workshop Operations</h3>
+                <p>
+                    Alongside content, I managed backend logistics for every live workshop — paid and free YouTube workshops — 
+                    coordinating scheduling and operations behind each session on a monthly basis.
+                </p>
+            </div>
+        </section>
+
+        <!-- CASE 11 -->
+        <section class="section" id="case11">
+            <div class="case-block">
+                <span class="case-block-number">CASE 11</span>
+                <h3>The Revenue Insight the Company Didn't Act On</h3>
+                <p>
+                    After months of steady livestream output, one problem remained unresolved: YouTube ad revenue wasn't scaling with 
+                    watch hours. I introduced YouTube Membership as a new revenue lever — but the gap between total watch hours and 
+                    estimated revenue stayed disproportionate.
+                </p>
+                <a href="https://www.youtube.com/@swadcooking/join" target="_blank" class="link-chip">YouTube Membership Page →</a>
+                <p style="margin-top: 1rem;">
+                    The diagnosis: daily livestreams drew strong same-day views and engagement, but became functionally "dead" 
+                    afterward — almost nobody rewatches a 50-minute live recording cluttered with off-topic chat and unrelated 
+                    discussion once the live moment has passed.
+                </p>
+                <div class="highlight-box">
+                    <p>
+                        <strong>My recommendation:</strong> reduce raw livestream output and instead upload tightly edited recipe videos. 
+                        Edited uploads attract new viewers, generate repeat views, and produce more durable revenue — while doing 
+                        <em>fewer</em> lives actually increases the credibility and appointment-value of the lives that remain.
+                    </p>
+                </div>
+                <a href="https://www.youtube.com/@swadcooking" target="_blank" class="link-chip">Example: Dry Kachori / Diwali Farsan Edited Upload →</a>
+                <p style="margin-top: 1rem;">
+                    The strategy began working, but leadership reversed course and paused the edited-upload format before it had time 
+                    to mature. My assessment: any new content algorithm strategy needs a minimum six-month runway to properly train the 
+                    platform and the audience — reverting early undercut the results before they could compound.
+                </p>
+                <p style="margin-top: 1rem;">
+                    I also proposed shooting livestreams and standalone videos simultaneously to capture both formats from a single 
+                    session — this wasn't implemented before I left.
+                </p>
+            </div>
+        </section>
+
+        <!-- LEARNINGS -->
+        <section class="section">
+            <h2>Key Learnings</h2>
+            <div class="learnings">
+                <h3>1. Familiar Topics Beat Novel Ones — With the Right Twist</h3>
+                <p>Viewers don't need a new recipe. They need one new fact about something they think they already know. The entire "How to Store" series and Monday Mistake series were built on this single insight.</p>
+
+                <h3>2. Talent Has a Topic-Fit, Not Just a Follower Count</h3>
+                <p>Matching each chef's face-value to the right topic type outperformed treating all chefs as interchangeable hosts.</p>
+
+                <h3>3. Watch Hours ≠ Revenue Without a Content-Format Strategy</h3>
+                <p>Livestreams generate real-time engagement but poor long-tail value. Edited uploads compound. A channel needs both — and the mix has to be deliberate.</p>
+
+                <h3>4. New Strategies Need Minimum Runway</h3>
+                <p>Reversing a working strategy before six months undercuts it before the platform algorithm and audience habits can mature around it.</p>
+
+                <h3>5. Constraints Can Become Content</h3>
+                <p>Lost footage became three successful reels rather than a wasted shoot — creative recovery is a skill, not luck.</p>
+
+                <h3>6. People Remember How You Leave</h3>
+                <p>The farewell Diwali marathon wasn't a growth tactic. It was five and a half hours of gratitude to a team and audience. That instinct — to close well, not just perform well — is part of how I work.</p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Building Culinary & Content Brands</h2>
+            <p>
+                Swad proved that content strategy for a course-selling business isn't just about views — it's about building trust 
+                that converts into enrollment. If you're running a B2C education or course brand and need someone who understands both 
+                the content and the commerce behind it, let's talk.
+            </p>
+            <div class="btn-group">
+                <a href="https://www.linkedin.com/in/jalak-patel-63ab50220" target="_blank" class="btn btn-primary">Connect on LinkedIn</a>
+                <a href="/" class="btn btn-secondary">Back to Portfolio</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026 JALAK — Creative Strategist</p>
+        <p style="font-size: 0.85rem;">Case Study: Swad Cooking Institute | 23.44M+ Combined Views Across Two Channels</p>
+    </footer>
+</body>
+</html>
