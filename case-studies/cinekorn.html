@@ -56,7 +56,7 @@
         .breadcrumb a:hover { color: var(--accent-gold); }
 
         .case-hero {
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             padding: 2rem;
             background: linear-gradient(135deg, rgba(27, 124, 154, 0.12), rgba(196, 167, 71, 0.08));
             border: 1px solid var(--border-subtle);
@@ -69,6 +69,10 @@
         .meta-item { background: rgba(27, 124, 154, 0.1); padding: 1rem; border-left: 2px solid var(--accent-cyan); border-radius: 4px; }
         .meta-label { color: var(--text-secondary); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; margin-bottom: 0.4rem; }
         .meta-value { color: var(--accent-gold); font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem; letter-spacing: 0.5px; }
+
+        /* Anchor Image Style */
+        .hero-anchor-image { width: 100%; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-subtle); margin-bottom: 3rem; background: var(--bg-card); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+        .hero-anchor-image img { width: 100%; display: block; }
 
         .section { margin: 3rem 0; }
         .section h2 {
@@ -99,14 +103,8 @@
         .metrics-table td.number { color: var(--accent-gold); font-weight: 700; }
         .metrics-table tr:last-child td { border-bottom: 2px solid var(--accent-gold); }
 
-        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.3rem; margin: 2rem 0; }
-        .metric-card { background: rgba(27, 124, 154, 0.12); border: 1px solid var(--accent-blue); padding: 1.3rem; border-radius: 6px; text-align: center; }
-        .metric-value { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--accent-gold); font-weight: bold; letter-spacing: 1px; }
-        .metric-label { color: var(--text-secondary); font-size: 0.76rem; margin-top: 0.6rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
-
         .highlight-box { background: rgba(196, 167, 71, 0.08); border-left: 3px solid var(--accent-gold); padding: 1.5rem; margin: 1.5rem 0; border-radius: 4px; }
         .challenge-box { background: rgba(27, 124, 154, 0.08); border-left: 3px solid var(--accent-cyan); padding: 1.5rem; margin: 1.5rem 0; border-radius: 4px; }
-        .caution-box { background: rgba(196, 84, 71, 0.08); border-left: 3px solid #C45447; padding: 1.5rem; margin: 1.5rem 0; border-radius: 4px; }
 
         .video-card { display: inline-block; width: 180px; margin: 0.5rem 0.6rem 0.5rem 0; text-decoration: none; vertical-align: top; }
         .video-thumb-wrap { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 6px; border: 1px solid var(--border-subtle); background: var(--bg-card); }
@@ -125,7 +123,7 @@
         .story-card strong { color: var(--accent-gold); }
         .story-card p { font-size: 0.86rem; margin-bottom: 0; color: var(--text-primary); }
         .story-card .video-card { width: 100%; margin: 0.8rem 0 0 0; }
-
+        
         .link-chip { display: inline-block; background: rgba(0, 168, 204, 0.1); border: 1px solid var(--accent-cyan); padding: 0.5rem 0.9rem; margin: 0.3rem 0.3rem 0.3rem 0; border-radius: 4px; color: var(--accent-cyan); text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s; }
         .link-chip:hover { background: rgba(0, 168, 204, 0.2); color: var(--accent-gold); border-color: var(--accent-gold); }
 
@@ -154,7 +152,6 @@
             .container { padding: 1.5rem 1rem; }
             .case-hero h1 { font-size: 1.9rem; }
             .section h2 { font-size: 1.5rem; }
-            .metrics-grid { grid-template-columns: 1fr; }
             .btn-group { flex-direction: column; }
             .btn { width: 100%; }
             .metrics-table { font-size: 0.78rem; }
@@ -181,14 +178,29 @@
             </div>
         </section>
 
+        <!-- NEW ANCHOR HERO IMAGE -->
+        <div class="hero-anchor-image">
+            <img src="../media/cinekorn/yt-movies.png" alt="Cinekorn Movies Dashboard showing 6.5Cr Views">
+        </div>
+
         <section class="section">
             <h2>The Company</h2>
             <p>Cinekorn Entertainment is a Mumbai based film distribution, production, and content syndication company, incorporated in January 2010 under founders Kalapi Vinit Nagada and Ilachi Vinit Nagada. The business runs theatrical releases, satellite distribution, and OTT syndication across Bollywood, South Indian, regional Gujarati and Marathi, and Hollywood titles, alongside a significant digital footprint anchored by the Cinekorn Movies YouTube channel.</p>
             <p>I joined as Senior Social Media Manager, holding direct responsibility for digital movie content strategy, revenue generation across platforms, and LinkedIn accounts for both the company and its founder. What follows is a portfolio strategy applied across nine live accounts, not a single channel playbook. That distinction matters for the role I am building toward. A Creative Director does not own one channel well, they design a system that holds together across many.</p>
 
-            <h3>What I Currently Manage</h3>
-            <p><strong>YouTube:</strong> Cinekorn Movies, Cinekorn Cineplex, Cinekorn Gujarati, Cinekorn Gujarati Shorts, Cinekorn Telugu, Cinekorn Kannada</p>
-            <p><strong>Social and Professional:</strong> Cinekorn Gujarati Facebook, Cinekorn Entertainment LinkedIn, Kalapi Nagada's personal LinkedIn</p>
+            <h3>Live Channel Directory</h3>
+            <p>Explore the active platforms and pages currently under my daily management strategy:</p>
+            <div style="margin-top: 1rem; margin-bottom: 2rem;">
+                <a href="https://www.youtube.com/@cinekornmovies" target="_blank" class="link-chip">▶ Cinekorn Movies</a>
+                <a href="https://www.youtube.com/@CinekornGujarati" target="_blank" class="link-chip">▶ Cinekorn Gujarati</a>
+                <a href="https://www.youtube.com/@cinekorngujaratishorts" target="_blank" class="link-chip">▶ Cinekorn Gujarati Shorts</a>
+                <a href="https://www.youtube.com/@CinekornMultiplex" target="_blank" class="link-chip">▶ Cinekorn Cineplex</a>
+                <a href="https://www.youtube.com/@CinekornEntertainment" target="_blank" class="link-chip">▶ Cinekorn Telugu</a>
+                <a href="https://www.youtube.com/@CinekornEntertainment" target="_blank" class="link-chip">▶ Cinekorn Kannada</a>
+                <a href="https://www.facebook.com/CinekornEnt" target="_blank" class="link-chip">Facebook: Cinekorn Gujarati</a>
+                <a href="https://www.linkedin.com/company/cinekorn-entertainment/" target="_blank" class="link-chip">LinkedIn: Cinekorn Ent.</a>
+                <a href="https://www.linkedin.com/in/kalapi-nagada/" target="_blank" class="link-chip">LinkedIn: Kalapi Nagada</a>
+            </div>
         </section>
 
         <section class="section">
@@ -239,7 +251,7 @@
             <div class="case-block">
                 <span class="case-block-number">CASE 02</span>
                 <h3>Telugu and Kannada, Proof of Judgment Under Constraint</h3>
-                <p>Not every channel in a portfolio starts with a strong hand. Telugu and Kannada arrived with the weakest source material I manage, low resolution prints, thin catalogs, and in Kannada's case, a channel history where the majority of historical views trace back to content that no longer exists in the library, almost certainly removed under a copyright claim before my time.</p>
+                <p>Not every channel in a portfolio starts with a strong hand. Telugu and Kannada arrived with the weakest source material I manage, low resolution prints, thin catalogs, and in Kannada's case, a channel history where the majority of historic views trace back to content that no longer exists in the library, almost certainly removed under a copyright claim before my time.</p>
 
                 <h3>The Quality Workaround</h3>
                 <p>When source footage is capped at 480p, presenting it as premium content invites unfavourable comparison and viewer drop off. Instead, I reframed the positioning entirely. Titles and descriptions lean into language like old movies, cult classic, and classic cinema, setting viewer expectation before they click rather than disappointing it after. Thumbnail quality gets toned down to match, and on the lowest quality uploads I skip a custom thumbnail altogether, because a Tier 3 audience responds to authenticity signals differently than a Tier 1 audience does.</p>
@@ -363,11 +375,11 @@
 
             <div class="screenshot-gallery">
                 <div class="screenshot-card">
-                    <img src="images/fb-earnings.png" alt="Facebook Earnings dashboard for Cinekorn Gujarati">
+                    <img src="../media/cinekorn/fb-earnings.png" alt="Facebook Earnings dashboard for Cinekorn Gujarati">
                     <div class="screenshot-caption"><strong>Facebook Earnings, Overview</strong>Content monetisation is the sole active revenue line. Top five earning posts include multiple Ventilator series parts.</div>
                 </div>
                 <div class="screenshot-card">
-                    <img src="images/fb-top-formats.png" alt="Facebook Top Content Formats report">
+                    <img src="../media/cinekorn/fb-top-formats.png" alt="Facebook Top Content Formats report">
                     <div class="screenshot-caption"><strong>Top Content Formats</strong>Reels carried 63.39M views against a published content volume up 246.8 percent year over year.</div>
                 </div>
             </div>
@@ -426,12 +438,12 @@
             <h2>Verified Dashboards</h2>
             <p>The following are direct exports from YouTube Studio for all six channels, included as primary source proof rather than a summary I generated.</p>
             <div class="screenshot-gallery">
-                <div class="screenshot-card"><img src="images/yt-movies.png" alt="Cinekorn Movies YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Movies</strong>Jan 1 to Sep 14, 2026</div></div>
-                <div class="screenshot-card"><img src="images/yt-gujarati.png" alt="Cinekorn Gujarati YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Gujarati</strong>Jan 1 to Sep 14, 2026</div></div>
-                <div class="screenshot-card"><img src="images/yt-gujarati-shorts.png" alt="Cinekorn Gujarati Shorts YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Gujarati Shorts</strong>Jan 1 to Sep 14, 2026</div></div>
-                <div class="screenshot-card"><img src="images/yt-cineplex.png" alt="Cinekorn Cineplex YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Cineplex</strong>Jan 1 to Sep 14, 2026</div></div>
-                <div class="screenshot-card"><img src="images/yt-telugu.png" alt="Cinekorn Telugu YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Telugu</strong>Lifetime, May 2025 to Sep 2026</div></div>
-                <div class="screenshot-card"><img src="images/yt-kannada.png" alt="Cinekorn Kannada YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Kannada</strong>Lifetime, May 2025 to Sep 2026</div></div>
+                <div class="screenshot-card"><img src="../media/cinekorn/yt-movies.png" alt="Cinekorn Movies YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Movies</strong>Jan 1 to Sep 14, 2026</div></div>
+                <div class="screenshot-card"><img src="../media/cinekorn/yt-gujarati.png" alt="Cinekorn Gujarati YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Gujarati</strong>Jan 1 to Sep 14, 2026</div></div>
+                <div class="screenshot-card"><img src="../media/cinekorn/yt-gujarati-shorts.png" alt="Cinekorn Gujarati Shorts YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Gujarati Shorts</strong>Jan 1 to Sep 14, 2026</div></div>
+                <div class="screenshot-card"><img src="../media/cinekorn/yt-cineplex.png" alt="Cinekorn Cineplex YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Cineplex</strong>Jan 1 to Sep 14, 2026</div></div>
+                <div class="screenshot-card"><img src="../media/cinekorn/yt-telugu.png" alt="Cinekorn Telugu YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Telugu</strong>Lifetime, May 2025 to Sep 2026</div></div>
+                <div class="screenshot-card"><img src="../media/cinekorn/yt-kannada.png" alt="Cinekorn Kannada YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Kannada</strong>Lifetime, May 2025 to Sep 2026</div></div>
             </div>
         </section>
 
