@@ -7,7 +7,7 @@
     
     <!-- Primary Meta Tags -->
     <meta name="title" content="Jalak Patel | Creative Strategist & Content Systems Architect">
-    <meta name="description" content="Creative Strategist & Content Systems Architect. 16M+ views, 9Cr+ attributed sales, 130K+ subscribers grown. YouTube growth systems, retention architecture & revenue attribution for media brands.">
+    <meta name="description" content="Jalak Patel is a creative strategist and content systems architect building brands and audiences through YouTube growth, campaign attribution, and multilingual content systems.">
     <meta name="author" content="Jalak Patel">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://jalak-patel-190.github.io/jalak-portfolio/">
@@ -15,16 +15,16 @@
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jalak-patel-190.github.io/jalak-portfolio/">
-    <meta property="og:title" content="Jalak Patel | Creative Strategist & Content Systems Architect">
-    <meta property="og:description" content="16M+ views, 9Cr+ attributed sales, 130K+ subscribers grown. Building brands through systems that compound.">
+    <meta property="og:title" content="Jalak Patel | Creative Strategist | Professional Portfolio">
+    <meta property="og:description" content="Building brands & audiences through systems that compound.">
     <meta property="og:image" content="https://jalak-patel-190.github.io/jalak-portfolio/media/cinekorn/yt-movies.png">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://jalak-patel-190.github.io/jalak-portfolio/">
-    <meta property="twitter:title" content="Jalak Patel | Creative Strategist & Content Systems Architect">
-    <meta property="twitter:description" content="16M+ views, 9Cr+ attributed sales, 130K+ subscribers grown. Content systems for media & entertainment.">
-    <meta property="twitter:image" content="https://jalak-patel-190.github.io/jalak-portfolio/media/cinekorn/yt-movies.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://jalak-patel-190.github.io/jalak-portfolio/">
+    <meta name="twitter:title" content="Jalak Patel | Creative Strategist">
+    <meta name="twitter:description" content="Content systems for media & entertainment.">
+    <meta name="twitter:image" content="https://jalak-patel-190.github.io/jalak-portfolio/media/cinekorn/yt-movies.png">
 
     <!-- Favicon Fallback -->
     <link rel="icon" type="image/png" href="favicon.png">
@@ -75,6 +75,34 @@
             border-radius: 4px;
         }
 
+        /* Screen Reader Skip Link */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 10px;
+            padding: 10px 15px;
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            z-index: 9999;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            left: 10px;
+        }
+
+        /* Accessibility: Respect Motion Settings */
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* 3-Column Header */
         header {
             background: linear-gradient(135deg, rgba(15, 21, 53, 0.95), rgba(27, 124, 154, 0.05));
             border-bottom: 2px solid var(--accent-gold);
@@ -88,11 +116,36 @@
         .header-content {
             max-width: 1200px;
             margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
-            flex-wrap: wrap;
             gap: 1rem;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .header-center {
+            text-align: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            letter-spacing: 4px;
+        }
+
+        .header-right {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
         }
 
         .logo {
@@ -100,8 +153,18 @@
             font-size: 1.8rem;
             color: var(--accent-gold);
             letter-spacing: 2px;
-            text-decoration: none;
+            line-height: 1;
             text-transform: uppercase;
+        }
+
+        .logo-subtitle {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.65rem;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-top: 4px;
         }
 
         .nav-toggle {
@@ -311,9 +374,16 @@
             display: flex;
             flex-direction: column;
             transition: transform 0.3s ease, border-color 0.3s ease;
+            text-decoration: none;
+            color: inherit;
         }
 
-        .case-card:hover {
+        .case-card--linked {
+            cursor: pointer;
+        }
+
+        .case-card--linked:hover,
+        .case-card--linked:focus-visible {
             transform: translateY(-4px);
             border-color: var(--accent-gold);
         }
@@ -384,7 +454,47 @@
             font-weight: 600;
         }
 
-        /* Timeline with Inline Logos */
+        /* Core Capabilities Grid */
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .capability-card {
+            background: rgba(27, 124, 154, 0.05);
+            border: 1px solid var(--border-subtle);
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 3px solid var(--accent-gold);
+            transition: transform 0.3s ease;
+        }
+
+        .capability-card:hover {
+            transform: translateY(-5px);
+            background: rgba(27, 124, 154, 0.1);
+        }
+
+        .capability-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .capability-title {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .capability-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Timeline with Clickable Links */
         .timeline {
             position: relative;
             margin: 2rem 0;
@@ -412,6 +522,17 @@
             border: 2px solid var(--bg-dark);
         }
 
+        .timeline-link-group {
+            text-decoration: none;
+            display: block;
+            transition: transform 0.2s ease;
+            margin-bottom: 0.3rem;
+        }
+        
+        .timeline-link-group:hover {
+            transform: translateX(4px);
+        }
+
         .timeline-header {
             display: flex;
             align-items: center;
@@ -430,17 +551,16 @@
             padding: 2px;
         }
 
-        .company-name {
+        h3.company-name {
             font-size: 1.15rem;
             font-weight: 700;
             color: var(--accent-gold);
         }
 
-        .timeline-role {
+        h4.timeline-role {
             font-size: 0.9rem;
             color: var(--accent-cyan);
             font-weight: 600;
-            margin-bottom: 0.3rem;
         }
 
         .timeline-date {
@@ -455,6 +575,18 @@
             font-size: 0.92rem;
             color: var(--text-primary);
             line-height: 1.7;
+        }
+
+        .read-more-link {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .read-more-link:hover {
+            text-decoration: underline;
         }
 
         /* Contact Section */
@@ -490,6 +622,14 @@
         }
 
         @media (max-width: 768px) {
+            .header-content {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            .header-center {
+                display: none;
+            }
             .nav-toggle {
                 display: block;
             }
@@ -521,15 +661,27 @@
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#work">Skip to content</a>
+
     <header>
         <div class="header-content">
-            <a href="index.html" class="logo">JALAK</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
-            <nav id="mainNav">
-                <a href="#work">Case Studies</a>
-                <a href="#journey">Journey</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            <div class="header-left">
+                <a href="index.html" class="logo-wrapper">
+                    <span class="logo">JALAK PATEL</span>
+                    <span class="logo-subtitle">Creative Strategist</span>
+                </a>
+            </div>
+            
+            <div class="header-center">PORTFOLIO</div>
+            
+            <div class="header-right">
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+                <nav id="mainNav">
+                    <a href="#work">Case Studies</a>
+                    <a href="#journey">Journey</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -543,6 +695,7 @@
             
             <div class="btn-group">
                 <a href="#work" class="btn btn-primary">View Selected Work</a>
+                <a href="Jalak-Patel-Resume.pdf" target="_blank" class="btn btn-secondary" style="border-color: var(--text-secondary); color: var(--text-secondary);">↓ Download Resume</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
 
@@ -575,7 +728,7 @@
 
             <div class="case-slider">
                 <!-- Cinekorn Entertainment -->
-                <div class="case-card">
+                <a href="case-studies/cinekorn.html" class="case-card case-card--linked">
                     <div class="case-media">
                         <img src="media/cinekorn/yt-movies.png" alt="Cinekorn Entertainment Multi-Channel Distribution" loading="lazy">
                     </div>
@@ -588,12 +741,12 @@
                             <span class="tag">9 Accounts</span>
                             <span class="tag">IP Syndication</span>
                         </div>
-                        <a href="case-studies/cinekorn.html" class="btn btn-primary">→ Read Full Case Study</a>
+                        <span class="btn btn-primary" style="pointer-events: none;">→ Read Full Case Study</span>
                     </div>
-                </div>
+                </a>
 
                 <!-- Ajmera Fashion -->
-                <div class="case-card">
+                <a href="case-studies/ajmera.html" class="case-card case-card--linked">
                     <div class="case-media">
                         <img src="media/cinekorn/fb-top-formats.png" alt="Ajmera Fashion Multilingual Production" loading="lazy">
                     </div>
@@ -606,12 +759,12 @@
                             <span class="tag">6 Languages</span>
                             <span class="tag">B2B Content</span>
                         </div>
-                        <a href="case-studies/ajmera.html" class="btn btn-primary">→ Read Full Case Study</a>
+                        <span class="btn btn-primary" style="pointer-events: none;">→ Read Full Case Study</span>
                     </div>
-                </div>
+                </a>
 
                 <!-- Swad Cooking Institute -->
-                <div class="case-card">
+                <a href="case-studies/swad.html" class="case-card case-card--linked">
                     <div class="case-media">
                         <img src="media/cinekorn/yt-gujarati-shorts.png" alt="Swad Cooking Institute Channel Growth" loading="lazy">
                     </div>
@@ -624,12 +777,12 @@
                             <span class="tag">Retention</span>
                             <span class="tag">EdTech</span>
                         </div>
-                        <a href="case-studies/swad.html" class="btn btn-primary">→ Read Full Case Study</a>
+                        <span class="btn btn-primary" style="pointer-events: none;">→ Read Full Case Study</span>
                     </div>
-                </div>
+                </a>
 
                 <!-- Jalan Mega Mart -->
-                <div class="case-card">
+                <a href="case-studies/jalan-megamart.html" class="case-card case-card--linked">
                     <div class="case-media">
                         <img src="media/cinekorn/fb-earnings.png" alt="Jalan Mega Mart Retail Performance" loading="lazy">
                     </div>
@@ -642,8 +795,33 @@
                             <span class="tag">Retail</span>
                             <span class="tag">Local SEO</span>
                         </div>
-                        <a href="case-studies/jalan-megamart.html" class="btn btn-primary">→ Read Full Case Study</a>
+                        <span class="btn btn-primary" style="pointer-events: none;">→ Read Full Case Study</span>
                     </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Core Capabilities -->
+        <section class="section" id="capabilities">
+            <div class="section-header">
+                <h2>Core Capabilities</h2>
+            </div>
+            
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <div class="capability-icon">📺</div>
+                    <div class="capability-title">Multi-Channel Syndication</div>
+                    <div class="capability-desc">Engineering systems to extract 4-6 platform-native deliverables from a single IP, maximizing audience reach across YouTube, Meta, and Shorts.</div>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">📈</div>
+                    <div class="capability-title">Audience & Revenue Growth</div>
+                    <div class="capability-desc">Architecting retention frameworks and lead capture mechanics that convert passive viewership into attributed sales and retail footfall.</div>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">🌍</div>
+                    <div class="capability-title">Regional Market Penetration</div>
+                    <div class="capability-desc">Directing multilingual content workflows with native fluency in English, Hindi, and Gujarati to ensure brand authenticity across diverse demographics.</div>
                 </div>
             </div>
         </section>
@@ -658,49 +836,65 @@
                 <!-- Cinekorn -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-header">
-                        <img src="media/logos/cinekorn-logo.png" alt="Cinekorn Logo" class="company-logo" onerror="this.style.display='none'">
-                        <span class="company-name">Cinekorn Entertainment</span>
-                    </div>
-                    <div class="timeline-role">Sr. Social Media Manager & Content Strategist</div>
+                    
+                    <a href="case-studies/cinekorn.html" class="timeline-link-group">
+                        <div class="timeline-header">
+                            <img src="media/logos/cinekorn-logo.png" alt="Cinekorn Logo" class="company-logo" onerror="this.style.display='none'">
+                            <h3 class="company-name">Cinekorn Entertainment</h3>
+                        </div>
+                        <h4 class="timeline-role">Sr. Social Media Manager & Content Strategist</h4>
+                    </a>
+                    
                     <div class="timeline-date">Jan 2026 – Present</div>
-                    <div class="timeline-desc">Leading digital operations, content syndication, and channel growth systems across 6 YouTube properties, Facebook monetization funnels, and executive personal brand strategy.</div>
+                    <div class="timeline-desc">Leading digital operations, content syndication, and channel growth systems across 6 YouTube properties, Facebook monetization funnels, and executive personal brand strategy.<a href="case-studies/cinekorn.html" class="read-more-link">...more</a></div>
                 </div>
 
                 <!-- Ajmera Fashion -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-header">
-                        <img src="media/logos/ajmera-logo.png" alt="Ajmera Fashion Logo" class="company-logo" onerror="this.style.display='none'">
-                        <span class="company-name">Ajmera Fashion</span>
-                    </div>
-                    <div class="timeline-role">Social Media Strategist</div>
+
+                    <a href="case-studies/ajmera.html" class="timeline-link-group">
+                        <div class="timeline-header">
+                            <img src="media/logos/ajmera-logo.png" alt="Ajmera Fashion Logo" class="company-logo" onerror="this.style.display='none'">
+                            <h3 class="company-name">Ajmera Fashion</h3>
+                        </div>
+                        <h4 class="timeline-role">Social Media Strategist</h4>
+                    </a>
+
                     <div class="timeline-date">2024 – 2025</div>
-                    <div class="timeline-desc">Managed multilingual content systems spanning regional languages, scaling production velocity by 40% and deploying data-backed content testing matrices.</div>
+                    <div class="timeline-desc">Managed multilingual content systems spanning regional languages, scaling production velocity by 40% and deploying data-backed content testing matrices.<a href="case-studies/ajmera.html" class="read-more-link">...more</a></div>
                 </div>
 
                 <!-- Swad Cooking Institute -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-header">
-                        <img src="media/logos/swad-logo.png" alt="Swad Cooking Institute Logo" class="company-logo" onerror="this.style.display='none'">
-                        <span class="company-name">Swad Cooking Institute</span>
-                    </div>
-                    <div class="timeline-role">Digital Growth Strategist</div>
+
+                    <a href="case-studies/swad.html" class="timeline-link-group">
+                        <div class="timeline-header">
+                            <img src="media/logos/swad-logo.png" alt="Swad Cooking Institute Logo" class="company-logo" onerror="this.style.display='none'">
+                            <h3 class="company-name">Swad Cooking Institute</h3>
+                        </div>
+                        <h4 class="timeline-role">Digital Growth Strategist</h4>
+                    </a>
+
                     <div class="timeline-date">2023 – 2024</div>
-                    <div class="timeline-desc">Scaled channel viewership to 6.38M views, re-architecting video pacing, audience retention parameters, and lead capture mechanics.</div>
+                    <div class="timeline-desc">Scaled channel viewership to 6.38M views, re-architecting video pacing, audience retention parameters, and lead capture mechanics.<a href="case-studies/swad.html" class="read-more-link">...more</a></div>
                 </div>
 
                 <!-- Jalan Mega Mart -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-header">
-                        <img src="media/logos/jalan-logo.png" alt="Jalan Mega Mart Logo" class="company-logo" onerror="this.style.display='none'">
-                        <span class="company-name">Jalan Mega Mart</span>
-                    </div>
-                    <div class="timeline-role">Marketing & Growth Associate</div>
+
+                    <a href="case-studies/jalan-megamart.html" class="timeline-link-group">
+                        <div class="timeline-header">
+                            <img src="media/logos/jalan-logo.png" alt="Jalan Mega Mart Logo" class="company-logo" onerror="this.style.display='none'">
+                            <h3 class="company-name">Jalan Mega Mart</h3>
+                        </div>
+                        <h4 class="timeline-role">Marketing & Growth Associate</h4>
+                    </a>
+
                     <div class="timeline-date">2022 – 2023</div>
-                    <div class="timeline-desc">Executed targeted regional advertising, localized retail footfall generation, and promotional performance creative frameworks.</div>
+                    <div class="timeline-desc">Executed targeted regional advertising, localized retail footfall generation, and promotional performance creative frameworks.<a href="case-studies/jalan-megamart.html" class="read-more-link">...more</a></div>
                 </div>
             </div>
         </section>
