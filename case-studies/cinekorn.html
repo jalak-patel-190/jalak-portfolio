@@ -129,6 +129,13 @@
         .link-chip { display: inline-block; background: rgba(0, 168, 204, 0.1); border: 1px solid var(--accent-cyan); padding: 0.5rem 0.9rem; margin: 0.3rem 0.3rem 0.3rem 0; border-radius: 4px; color: var(--accent-cyan); text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s; }
         .link-chip:hover { background: rgba(0, 168, 204, 0.2); color: var(--accent-gold); border-color: var(--accent-gold); }
 
+        .channel-directory { display: flex; flex-wrap: wrap; gap: 1.2rem; margin: 1.3rem 0; }
+        .channel-badge { display: flex; flex-direction: column; align-items: center; text-decoration: none; width: 92px; text-align: center; }
+        .channel-badge img { width: 64px; height: 64px; border-radius: 50%; border: 2px solid var(--border-subtle); object-fit: cover; transition: all 0.3s; }
+        .channel-badge:hover img { border-color: var(--accent-gold); transform: scale(1.06); }
+        .channel-badge span { margin-top: 0.5rem; font-size: 0.74rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.25; }
+        .channel-badge:hover span { color: var(--accent-gold); }
+
         .screenshot-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
         .screenshot-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; overflow: hidden; }
         .screenshot-card img { width: 100%; display: block; border-bottom: 1px solid var(--border-subtle); }
@@ -164,13 +171,14 @@
 </head>
 <body>
     <header>
-        <div class="header-content"><a href="/" class="logo">JALAK</a></div>
+        <div class="header-content"><a href="../index.html" class="logo">JALAK</a></div>
     </header>
 
     <div class="container">
-        <div class="breadcrumb"><a href="/">Back to Portfolio</a></div>
+        <div class="breadcrumb"><a href="../index.html">Back to Portfolio</a></div>
 
         <section class="case-hero">
+            <img src="../media/cinekorn/cinekorn-logo.png" alt="Cinekorn Entertainment logo" style="width: 84px; height: 84px; border-radius: 50%; display: block; margin-bottom: 1rem; border: 2px solid var(--accent-gold);">
             <h1>Cinekorn Entertainment</h1>
             <p class="subtitle">Building and Operating a Six Channel Content Distribution System</p>
             <div class="case-meta">
@@ -191,16 +199,34 @@
             <p><strong>Social and Professional:</strong> Cinekorn Gujarati Facebook, Cinekorn Entertainment LinkedIn, Kalapi Nagada's personal LinkedIn</p>
 
             <h3>Live Channel Directory</h3>
-            <p>Explore the active platforms and pages currently under my daily management strategy.</p>
-            <div style="margin: 1rem 0;">
-                <a href="https://www.youtube.com/@cinekornmovies" target="_blank" class="link-chip">Cinekorn Movies</a>
-                <a href="https://www.youtube.com/@CinekornGujarati" target="_blank" class="link-chip">Cinekorn Gujarati</a>
-                <a href="https://www.youtube.com/@cinekorngujaratishorts" target="_blank" class="link-chip">Cinekorn Gujarati Shorts</a>
-                <a href="https://www.youtube.com/@CinekornCineplex" target="_blank" class="link-chip">Cinekorn Cineplex</a>
-                <a href="https://www.facebook.com/cinekorngujarati" target="_blank" class="link-chip">Facebook, Cinekorn Gujarati</a>
-                <a href="https://www.instagram.com/cinekornguj/reels/" target="_blank" class="link-chip">Instagram, Cinekorn Gujarati</a>
+            <p>Explore the active platforms and pages currently under my daily management strategy. Each icon is the channel's own logo, not a placeholder.</p>
+            <div class="channel-directory">
+                <a href="https://www.youtube.com/@cinekornmovies" target="_blank" class="channel-badge">
+                    <img src="../media/cinekorn/logo-movies.png" alt="Cinekorn Movies logo">
+                    <span>Cinekorn Movies</span>
+                </a>
+                <a href="https://www.youtube.com/@CinekornGujarati" target="_blank" class="channel-badge">
+                    <img src="../media/cinekorn/logo-gujarati.png" alt="Cinekorn Gujarati logo">
+                    <span>Cinekorn Gujarati</span>
+                </a>
+                <a href="https://www.youtube.com/@cinekorngujaratishorts" target="_blank" class="channel-badge">
+                    <img src="../media/cinekorn/logo-gujarati-shorts.png" alt="Cinekorn Gujarati Shorts logo">
+                    <span>Gujarati Shorts</span>
+                </a>
+                <a href="https://www.youtube.com/@CinekornCineplex" target="_blank" class="channel-badge">
+                    <img src="../media/cinekorn/logo-cineplex.png" alt="Cinekorn Cineplex logo">
+                    <span>Cinekorn Cineplex</span>
+                </a>
+                <a href="https://www.facebook.com/cinekorngujarati" target="_blank" class="channel-badge">
+                    <img src="../media/cinekorn/logo-gujarati.png" alt="Cinekorn Gujarati Facebook">
+                    <span>Facebook, Gujarati</span>
+                </a>
+                <a href="https://www.instagram.com/cinekornguj/reels/" target="_blank" class="channel-badge">
+                    <img src="../media/cinekorn/logo-gujarati.png" alt="Cinekorn Gujarati Instagram">
+                    <span>Instagram, Gujarati</span>
+                </a>
             </div>
-            <p style="font-size: 0.82rem; color: var(--text-secondary);">Telugu, Kannada, Cinekorn Entertainment LinkedIn, and Kalapi Nagada's LinkedIn are intentionally left out of this directory until their exact handles are confirmed, so this section never links to the wrong channel.</p>
+            <p style="font-size: 0.82rem; color: var(--text-secondary);">Telugu, Kannada, Cinekorn Entertainment LinkedIn, and Kalapi Nagada's LinkedIn are intentionally left out of this directory until their exact handles are confirmed, so this section never links to the wrong channel. Their logos exist and are ready, only the URLs are pending.</p>
         </section>
 
         <section class="section">
@@ -375,11 +401,11 @@
 
             <div class="screenshot-gallery">
                 <div class="screenshot-card">
-                    <img src="images/fb-earnings.png" alt="Facebook Earnings dashboard for Cinekorn Gujarati">
+                    <img src="../media/cinekorn/fb-earnings.png" alt="Facebook Earnings dashboard for Cinekorn Gujarati">
                     <div class="screenshot-caption"><strong>Facebook Earnings, Overview</strong>Content monetisation is the sole active revenue line. Top five earning posts include multiple Ventilator series parts.</div>
                 </div>
                 <div class="screenshot-card">
-                    <img src="images/fb-top-formats.png" alt="Facebook Top Content Formats report">
+                    <img src="../media/cinekorn/fb-top-formats.png" alt="Facebook Top Content Formats report">
                     <div class="screenshot-caption"><strong>Top Content Formats</strong>Reels carried 63.39M views against a published content volume up 246.8 percent year over year.</div>
                 </div>
             </div>
@@ -438,12 +464,12 @@
             <h2>Verified Dashboards</h2>
             <p>The following are direct exports from YouTube Studio for all six channels, included as primary source proof rather than a summary I generated.</p>
             <div class="screenshot-gallery">
-                <div class="screenshot-card"><img src="images/yt-movies.png" alt="Cinekorn Movies YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Movies</strong>Jan 1 to Sep 14, 2026</div></div>
-                <div class="screenshot-card"><img src="images/yt-gujarati.png" alt="Cinekorn Gujarati YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Gujarati</strong>Jan 1 to Sep 14, 2026</div></div>
-                <div class="screenshot-card"><img src="images/yt-gujarati-shorts.png" alt="Cinekorn Gujarati Shorts YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Gujarati Shorts</strong>Jan 1 to Sep 14, 2026</div></div>
-                <div class="screenshot-card"><img src="images/yt-cineplex.png" alt="Cinekorn Cineplex YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Cineplex</strong>Jan 1 to Sep 14, 2026</div></div>
-                <div class="screenshot-card"><img src="images/yt-telugu.png" alt="Cinekorn Telugu YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Telugu</strong>Lifetime, May 2025 to Sep 2026</div></div>
-                <div class="screenshot-card"><img src="images/yt-kannada.png" alt="Cinekorn Kannada YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Kannada</strong>Lifetime, May 2025 to Sep 2026</div></div>
+                <div class="screenshot-card"><img src="../media/cinekorn/yt-movies.png" alt="Cinekorn Movies YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Movies</strong>Jan 1 to Sep 14, 2026</div></div>
+                <div class="screenshot-card"><img src="../media/cinekorn/yt-gujarati.png" alt="Cinekorn Gujarati YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Gujarati</strong>Jan 1 to Sep 14, 2026</div></div>
+                <div class="screenshot-card"><img src="../media/cinekorn/yt-gujarati-shorts.png" alt="Cinekorn Gujarati Shorts YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Gujarati Shorts</strong>Jan 1 to Sep 14, 2026</div></div>
+                <div class="screenshot-card"><img src="../media/cinekorn/yt-cineplex.png" alt="Cinekorn Cineplex YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Cineplex</strong>Jan 1 to Sep 14, 2026</div></div>
+                <div class="screenshot-card"><img src="../media/cinekorn/yt-telugu.png" alt="Cinekorn Telugu YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Telugu</strong>Lifetime, May 2025 to Sep 2026</div></div>
+                <div class="screenshot-card"><img src="../media/cinekorn/yt-kannada.png" alt="Cinekorn Kannada YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Kannada</strong>Lifetime, May 2025 to Sep 2026</div></div>
             </div>
         </section>
 
@@ -472,7 +498,7 @@
             <p>This portfolio spans nine accounts across three platforms, a legacy catalog, two rebuilt channels, and two LinkedIn presences, held together by one distribution logic applied consistently. That is the operating range I am bringing to a Creative Strategist role today, and the foundation I am building toward Creative Director.</p>
             <div class="btn-group">
                 <a href="https://www.linkedin.com/in/jalak-patel-63ab50220" target="_blank" class="btn btn-primary">Connect on LinkedIn</a>
-                <a href="/" class="btn btn-secondary">Back to Portfolio</a>
+                <a href="../index.html" class="btn btn-secondary">Back to Portfolio</a>
             </div>
         </section>
     </div>
