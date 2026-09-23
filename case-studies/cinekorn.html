@@ -1,1446 +1,557 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cinekorn Entertainment Case Studies | Jalak Patel</title>
-  <meta name="description" content="Cinekorn Entertainment case studies by Jalak Patel, covering AI-assisted data tooling, regional YouTube channels, legacy catalog management, cross-platform distribution, and LinkedIn strategy.">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://jalak-patel-190.github.io/jalak-portfolio/case-studies/cinekorn.html">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Cinekorn Entertainment Case Studies | Jalak Patel">
-  <meta property="og:description" content="Six case studies from Jalak Patel's Sr. Social Media Manager role at Cinekorn Entertainment.">
-  <meta property="og:url" content="https://jalak-patel-190.github.io/jalak-portfolio/case-studies/cinekorn.html">
-  <meta property="og:image" content="https://jalak-patel-190.github.io/jalak-portfolio/media/cinekorn/cinekorn-logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinekorn Entertainment Case Study | Jalak Patel</title>
 
-  <style>
-    :root{
-      --bg:#0b0b0c;
-      --panel:#121214;
-      --panel-2:#171719;
-      --text:#f4f2ed;
-      --muted:#a9a7a1;
-      --line:#2a2a2d;
-      --gold:#c9a84c;
-      --gold-soft:#e7d39a;
-      --max:1180px;
-      --radius:18px;
-      --shadow:0 22px 70px rgba(0,0,0,.25);
-    }
+    <meta name="description" content="Building and Operating a Six Channel Content Distribution System across YouTube and Meta.">
+    <meta name="robots" content="index, follow">
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:92px}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      line-height:1.65;
-      -webkit-font-smoothing:antialiased;
-    }
-    body:before{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      background:linear-gradient(180deg,rgba(201,168,76,.025),transparent 30%);
-      z-index:-1;
-    }
-    img{display:block;max-width:100%;height:auto}
-    a{color:inherit;text-decoration:none}
-    button{font:inherit}
-    ::selection{background:var(--gold);color:#111}
-    :focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
-    .skip-link{
-      position:fixed;
-      top:12px;
-      left:12px;
-      transform:translateY(-160%);
-      z-index:999;
-      padding:10px 14px;
-      background:#fff;
-      color:#000;
-      border-radius:8px;
-    }
-    .skip-link:focus{transform:none}
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    .site-nav{
-      position:sticky;
-      top:0;
-      z-index:50;
-      background:rgba(11,11,12,.9);
-      border-bottom:1px solid rgba(255,255,255,.08);
-      backdrop-filter:blur(14px);
-    }
-    .nav-inner{
-      width:min(calc(100% - 40px),var(--max));
-      margin:auto;
-      min-height:66px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-    }
-    .brand{
-      font-size:13px;
-      font-weight:800;
-      letter-spacing:.16em;
-    }
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:18px;
-      font-size:12px;
-      color:var(--muted);
-      font-weight:700;
-    }
-    .nav-links a:hover{color:var(--text)}
-    .nav-cta{
-      color:#111!important;
-      background:var(--gold);
-      padding:9px 13px;
-      border-radius:999px;
-    }
+        :root {
+            --bg-dark: #0a0e27;
+            --bg-card: #0f1535;
+            --accent-gold: #C4A747;
+            --accent-blue: #1B7C9A;
+            --accent-cyan: #00A8CC;
+            --text-primary: #E8E8E8;
+            --text-secondary: #A8A8A8;
+            --border-subtle: #2A3050;
+        }
 
-    .container{
-      width:min(calc(100% - 40px),var(--max));
-      margin:auto;
-    }
-    .eyebrow{
-      color:var(--gold-soft);
-      font-size:11px;
-      font-weight:800;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-    }
-    h1,h2,h3,h4{margin:0;line-height:1.08}
-    h1{font-size:clamp(46px,8vw,92px);letter-spacing:-.055em}
-    h2{font-size:clamp(32px,5vw,58px);letter-spacing:-.04em}
-    h3{font-size:clamp(22px,3vw,34px);letter-spacing:-.025em}
-    p{margin:0;color:#d1cfca}
-    .muted{color:var(--muted)}
-    .gold{color:var(--gold-soft)}
+        html, body { scroll-behavior: smooth; }
 
-    .hero{
-      padding:86px 0 64px;
-      border-bottom:1px solid var(--line);
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);
-      gap:56px;
-      align-items:end;
-    }
-    .hero h1{margin:14px 0 24px}
-    .hero-lead{
-      max-width:720px;
-      font-size:19px;
-      color:#c9c6bf;
-    }
-    .hero-logo{
-      display:flex;
-      justify-content:flex-end;
-    }
-    .hero-logo img{
-      width:min(300px,100%);
-      aspect-ratio:1;
-      object-fit:contain;
-      padding:24px;
-      background:#111;
-      border:1px solid var(--line);
-      border-radius:24px;
-    }
-    .meta-grid{
-      margin-top:48px;
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-    .meta{
-      padding:20px 18px 20px 0;
-      border-right:1px solid var(--line);
-    }
-    .meta:last-child{border-right:0;padding-left:18px}
-    .meta:not(:first-child){padding-left:18px}
-    .meta-label{
-      display:block;
-      color:var(--muted);
-      font-size:10px;
-      letter-spacing:.13em;
-      text-transform:uppercase;
-      margin-bottom:5px;
-    }
-    .meta-value{font-weight:800}
+        body {
+            font-family: 'Space Grotesk', 'Helvetica', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
 
-    .intro{
-      padding:72px 0 30px;
-      display:grid;
-      grid-template-columns:.65fr 1.35fr;
-      gap:50px;
-    }
-    .intro-copy{max-width:780px}
-    .intro-copy p+p{margin-top:16px}
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--accent-gold); border-radius: 5px; }
 
-    .directory{
-      padding:28px 0 78px;
-    }
-    .section-head{
-      display:flex;
-      justify-content:space-between;
-      align-items:end;
-      gap:24px;
-      margin-bottom:24px;
-    }
-    .directory-grid{
-      display:grid;
-      grid-template-columns:repeat(6,1fr);
-      gap:12px;
-    }
-    .channel{
-      min-height:128px;
-      padding:16px;
-      border:1px solid var(--line);
-      background:var(--panel);
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      transition:.2s ease;
-    }
-    .channel:hover{border-color:#5c5131;transform:translateY(-2px)}
-    .channel-name{font-weight:800;font-size:13px}
-    .channel-type{font-size:11px;color:var(--muted)}
+        /* 3-Column Header to Match Index */
+        header {
+            background: linear-gradient(135deg, rgba(15, 21, 53, 0.95), rgba(27, 124, 154, 0.05));
+            border-bottom: 2px solid var(--accent-gold);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        }
 
-    .scale{
-      padding:74px 0;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-    .scale-table-wrap{overflow-x:auto;margin-top:28px}
-    table{
-      width:100%;
-      border-collapse:collapse;
-      min-width:760px;
-    }
-    th,td{
-      text-align:left;
-      padding:15px 14px;
-      border-bottom:1px solid var(--line);
-      font-size:13px;
-    }
-    th{
-      color:var(--muted);
-      font-size:10px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      font-weight:800;
-    }
-    .table-total td{font-weight:800;color:var(--gold-soft)}
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 1rem;
+        }
 
-    .case-index{
-      padding:76px 0 10px;
-    }
-    .case-index-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:12px;
-      margin-top:26px;
-    }
-    .case-index a{
-      border:1px solid var(--line);
-      background:var(--panel);
-      padding:22px;
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      align-items:flex-start;
-      transition:.2s ease;
-    }
-    .case-index a:hover{border-color:#5c5131;transform:translateY(-2px)}
-    .case-num{color:var(--gold);font-weight:900;font-size:12px}
-    .case-index-title{font-weight:800;margin-top:6px}
-    .arrow{color:var(--gold);font-size:20px}
+        .header-left { display: flex; align-items: center; justify-content: flex-start; }
+        
+        .header-center {
+            text-align: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            letter-spacing: 4px;
+        }
 
-    .case{
-      padding:90px 0;
-      border-top:1px solid var(--line);
-    }
-    .case-head{
-      display:grid;
-      grid-template-columns:130px minmax(0,1fr);
-      gap:32px;
-      margin-bottom:54px;
-    }
-    .case-number{
-      font-size:13px;
-      color:var(--gold);
-      font-weight:900;
-      letter-spacing:.16em;
-      padding-top:9px;
-    }
-    .case-title{
-      font-size:clamp(38px,6vw,76px);
-      max-width:920px;
-      margin:10px 0 16px;
-    }
-    .case-subtitle{
-      max-width:760px;
-      font-size:18px;
-      color:#bbb8b1;
-    }
+        .header-right { display: flex; justify-content: flex-end; align-items: center; }
 
-    .proof-strip{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-      margin:42px 0 54px;
-    }
-    .proof{
-      padding:22px 18px;
-      border-right:1px solid var(--line);
-    }
-    .proof:last-child{border-right:0}
-    .proof strong{
-      display:block;
-      font-size:clamp(24px,3vw,38px);
-      letter-spacing:-.03em;
-      color:var(--gold-soft);
-      line-height:1.1;
-    }
-    .proof span{
-      display:block;
-      margin-top:7px;
-      color:var(--muted);
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:.09em;
-    }
+        .logo-wrapper { display: flex; flex-direction: column; text-decoration: none; }
+        .logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--accent-gold); letter-spacing: 2px; line-height: 1; text-transform: uppercase; }
+        .logo-subtitle { font-family: 'Space Grotesk', sans-serif; font-size: 0.65rem; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-top: 4px; }
 
-    .case-body{
-      display:grid;
-      grid-template-columns:.55fr 1.45fr;
-      gap:60px;
-    }
-    .sticky-label{
-      position:sticky;
-      top:94px;
-      align-self:start;
-    }
-    .content-block{
-      margin-bottom:56px;
-    }
-    .content-block h3{margin-bottom:15px}
-    .content-block p+p{margin-top:14px}
-    .content-block ul{
-      margin:15px 0 0;
-      padding-left:20px;
-      color:#d1cfca;
-    }
-    .content-block li+li{margin-top:8px}
+        .nav-toggle { display: none; background: none; border: 1px solid var(--accent-gold); color: var(--accent-gold); font-size: 1.4rem; padding: 0.3rem 0.7rem; cursor: pointer; border-radius: 4px; }
+        
+        nav { display: flex; gap: 1.5rem; align-items: center; }
+        nav a { color: var(--text-secondary); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
+        nav a:hover { color: var(--accent-cyan); }
 
-    .visual{
-      margin:26px 0;
-      border:1px solid var(--line);
-      background:var(--panel);
-      overflow:hidden;
-      border-radius:16px;
-    }
-    .visual img{
-      width:100%;
-      max-height:720px;
-      object-fit:cover;
-    }
-    .visual figcaption{
-      padding:12px 15px;
-      color:var(--muted);
-      font-size:11px;
-      border-top:1px solid var(--line);
-    }
-    .visual.contain img{
-      object-fit:contain;
-      background:#0f0f10;
-    }
+        .container { max-width: 940px; margin: 0 auto; padding: 3rem 2rem; }
 
-    .image-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:14px;
-      margin:26px 0;
-    }
-    .image-grid .visual{margin:0}
+        .breadcrumb { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .breadcrumb a { color: var(--accent-cyan); text-decoration: none; font-weight: 600; }
+        .breadcrumb a:hover { color: var(--accent-gold); }
 
-    .mini-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
-      margin-top:22px;
-    }
-    .mini-card{
-      border:1px solid var(--line);
-      background:var(--panel);
-      padding:20px;
-    }
-    .mini-card strong{display:block;color:var(--gold-soft);font-size:24px;line-height:1.15}
-    .mini-card span{display:block;color:var(--muted);font-size:11px;margin-top:8px}
+        .case-hero {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(27, 124, 154, 0.12), rgba(196, 167, 71, 0.08));
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+        }
+        .case-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: 2.6rem; color: var(--accent-gold); margin-bottom: 0.6rem; letter-spacing: 1px; }
+        .case-hero .subtitle { font-size: 1.15rem; color: var(--accent-cyan); margin-bottom: 1.2rem; font-weight: 600; }
 
-    .quote{
-      border-left:2px solid var(--gold);
-      padding:4px 0 4px 20px;
-      margin:25px 0;
-      color:#ddd9d0;
-      font-size:18px;
-    }
+        .case-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .meta-item { background: rgba(27, 124, 154, 0.1); padding: 1rem; border-left: 2px solid var(--accent-cyan); border-radius: 4px; }
+        .meta-label { color: var(--text-secondary); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; margin-bottom: 0.4rem; }
+        .meta-value { color: var(--accent-gold); font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem; letter-spacing: 0.5px; }
 
-    .link-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:20px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:42px;
-      padding:10px 15px;
-      border:1px solid #3b3b3f;
-      border-radius:999px;
-      font-size:12px;
-      font-weight:800;
-      color:#e7e3da;
-      transition:.2s ease;
-    }
-    .btn:hover{border-color:var(--gold);color:var(--gold-soft)}
-    .btn.primary{
-      background:var(--gold);
-      color:#111;
-      border-color:var(--gold);
-    }
+        .hero-anchor-image { width: 100%; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-subtle); margin-bottom: 3rem; background: var(--bg-card); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+        .hero-anchor-image img { width: 100%; display: block; }
 
-    .note{
-      padding:18px 20px;
-      background:#101012;
-      border:1px solid #29292d;
-      color:#aaa79f;
-      font-size:12px;
-      margin-top:20px;
-    }
-    .note strong{color:#e4dfd5}
+        .section { margin: 3rem 0; }
+        .section h2 { font-family: 'Bebas Neue', sans-serif; font-size: 1.85rem; color: var(--accent-cyan); margin-bottom: 1.5rem; border-left: 3px solid var(--accent-gold); padding-left: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .section h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.12rem; color: var(--accent-gold); margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 700; }
+        .section p { margin-bottom: 1rem; line-height: 1.85; color: var(--text-primary); }
+        .section ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+        .section li { margin-bottom: 0.7rem; color: var(--text-primary); line-height: 1.75; }
 
-    .whats-next{
-      padding-top:50px;
-      margin-top:60px;
-      border-top:1px solid var(--line);
-    }
-    .next-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
-      margin-top:20px;
-    }
-    .next-card{
-      display:block;
-      border:1px solid var(--line);
-      background:var(--panel);
-      padding:20px;
-      min-height:140px;
-      transition:.2s ease;
-    }
-    .next-card:hover{border-color:#5c5131;transform:translateY(-2px)}
-    .next-card small{color:var(--gold);font-weight:900;letter-spacing:.12em}
-    .next-card strong{display:block;margin-top:12px;font-size:17px}
-    .next-card span{display:block;color:var(--muted);font-size:12px;margin-top:6px}
+        .case-block { background: rgba(15, 21, 53, 0.5); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.8rem; margin: 1.8rem 0; }
+        .case-block-number { display: inline-block; background: var(--accent-gold); color: var(--bg-dark); font-family: 'Bebas Neue', sans-serif; font-size: 0.85rem; padding: 0.2rem 0.7rem; border-radius: 3px; margin-bottom: 0.8rem; letter-spacing: 1px; }
+        .case-block h3 { margin-top: 0; font-size: 1.3rem; }
 
-    .final{
-      padding:86px 0;
-      border-top:1px solid var(--line);
-      background:#0d0d0e;
-    }
-    .final-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:50px;
-    }
-    .final-copy{max-width:700px}
-    .final-copy p{margin-top:18px}
-    .footer{
-      border-top:1px solid var(--line);
-      padding:26px 0 40px;
-      color:var(--muted);
-      font-size:11px;
-    }
-    .footer-inner{
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      flex-wrap:wrap;
-    }
+        .toc { background: rgba(196, 167, 71, 0.06); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem 2rem; margin: 2rem 0; }
+        .toc h3 { color: var(--accent-gold); margin-top: 0; margin-bottom: 1rem; }
+        .toc ol { margin-left: 1.2rem; }
+        .toc li { margin-bottom: 0.5rem; }
+        .toc a { color: var(--accent-cyan); text-decoration: none; }
+        .toc a:hover { color: var(--accent-gold); text-decoration: underline; }
 
-    .fallback{
-      min-height:260px;
-      display:grid;
-      place-items:center;
-      padding:30px;
-      text-align:center;
-      color:var(--muted);
-      background:
-        linear-gradient(135deg,rgba(201,168,76,.07),transparent 45%),
-        #101012;
-    }
+        .metrics-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.92rem; }
+        .metrics-table th, .metrics-table td { border: 1px solid var(--border-subtle); padding: 0.85rem 0.9rem; text-align: left; }
+        .metrics-table th { background: rgba(27, 124, 154, 0.15); color: var(--accent-cyan); font-weight: 700; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.5px; }
+        .metrics-table td { color: var(--text-primary); }
+        .metrics-table td.number { color: var(--accent-gold); font-weight: 700; }
+        .metrics-table tr:last-child td { border-bottom: 2px solid var(--accent-gold); }
 
-    @media (max-width: 900px){
-      .hero-grid,.intro,.final-grid,.case-body{grid-template-columns:1fr}
-      .hero-logo{justify-content:flex-start}
-      .hero-logo img{width:220px}
-      .directory-grid{grid-template-columns:repeat(3,1fr)}
-      .proof-strip{grid-template-columns:repeat(2,1fr)}
-      .proof:nth-child(2){border-right:0}
-      .proof:nth-child(-n+2){border-bottom:1px solid var(--line)}
-      .case-head{grid-template-columns:1fr;gap:8px}
-      .sticky-label{position:static}
-    }
+        .highlight-box { background: rgba(196, 167, 71, 0.08); border-left: 3px solid var(--accent-gold); padding: 1.5rem; margin: 1.5rem 0; border-radius: 4px; }
+        .challenge-box { background: rgba(27, 124, 154, 0.08); border-left: 3px solid var(--accent-cyan); padding: 1.5rem; margin: 1.5rem 0; border-radius: 4px; }
 
-    @media (max-width: 650px){
-      .container,.nav-inner{width:min(calc(100% - 28px),var(--max))}
-      .nav-inner{min-height:60px}
-      .nav-links a:not(.nav-cta){display:none}
-      .hero{padding:58px 0 46px}
-      .hero h1{font-size:clamp(44px,15vw,68px)}
-      .hero-lead{font-size:16px}
-      .meta-grid{grid-template-columns:1fr 1fr}
-      .meta{border-bottom:1px solid var(--line);border-right:1px solid var(--line)!important;padding:16px!important}
-      .meta:nth-child(2n){border-right:0!important}
-      .meta:nth-last-child(-n+2){border-bottom:0}
-      .intro{padding:50px 0 20px;gap:28px}
-      .directory{padding-bottom:54px}
-      .directory-grid{grid-template-columns:1fr 1fr}
-      .case-index-grid{grid-template-columns:1fr}
-      .case{padding:64px 0}
-      .case-title{font-size:clamp(38px,12vw,58px)}
-      .case-subtitle{font-size:16px}
-      .proof-strip{grid-template-columns:1fr 1fr}
-      .proof{padding:17px 13px}
-      .proof strong{font-size:25px}
-      .image-grid,.mini-grid,.next-grid{grid-template-columns:1fr}
-      .section-head{align-items:flex-start;flex-direction:column}
-      table{min-width:680px}
-      .visual img{max-height:none}
-      .link-row .btn{width:100%}
-      .final{padding:60px 0}
-    }
-  </style>
+        .video-card { display: inline-block; width: 180px; margin: 0.5rem 0.6rem 0.5rem 0; text-decoration: none; vertical-align: top; }
+        .video-thumb-wrap { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 6px; border: 1px solid var(--border-subtle); background: var(--bg-card); }
+        .video-thumb-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+        .video-card:hover .video-thumb-wrap img { transform: scale(1.06); }
+        .video-card:hover .video-thumb-wrap { border-color: var(--accent-gold); }
+        .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 32px; height: 32px; background: rgba(10, 14, 39, 0.75); border-radius: 50%; color: var(--accent-gold); display: flex; align-items: center; justify-content: center; font-size: 0.78rem; border: 1px solid var(--accent-gold); }
+        .video-card-label { display: block; margin-top: 0.5rem; font-size: 0.76rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.3; }
+        .video-card:hover .video-card-label { color: var(--accent-gold); }
+
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 1rem; margin: 1.2rem 0; }
+        .video-grid .video-card { width: 100%; margin: 0; }
+
+        .story-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; margin: 1.3rem 0; }
+        .story-card { background: rgba(15, 21, 53, 0.5); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1rem; }
+        .story-card strong { color: var(--accent-gold); }
+        .story-card p { font-size: 0.86rem; margin-bottom: 0; color: var(--text-primary); }
+        .story-card .video-card { width: 100%; margin: 0.8rem 0 0 0; }
+
+        .link-chip { display: inline-block; background: rgba(0, 168, 204, 0.1); border: 1px solid var(--accent-cyan); padding: 0.5rem 0.9rem; margin: 0.3rem 0.3rem 0.3rem 0; border-radius: 4px; color: var(--accent-cyan); text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s; }
+        .link-chip:hover { background: rgba(0, 168, 204, 0.2); color: var(--accent-gold); border-color: var(--accent-gold); }
+
+        .screenshot-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+        .screenshot-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; overflow: hidden; }
+        .screenshot-card img { width: 100%; display: block; border-bottom: 1px solid var(--border-subtle); }
+        .screenshot-caption { padding: 0.9rem 1rem; font-size: 0.82rem; color: var(--text-secondary); }
+        .screenshot-caption strong { color: var(--accent-gold); display: block; margin-bottom: 0.2rem; font-size: 0.9rem; }
+
+        .learnings { background: rgba(196, 167, 71, 0.08); border-left: 3px solid var(--accent-gold); padding: 1.5rem; margin: 2rem 0; border-radius: 4px; }
+        .learnings h3 { margin-top: 0; }
+
+        .cta-section { background: linear-gradient(135deg, rgba(27, 124, 154, 0.12), rgba(196, 167, 71, 0.08)); border: 1px solid var(--border-subtle); padding: 2rem; text-align: center; border-radius: 8px; margin: 3rem 0; }
+        .cta-section h2 { border: none; padding: 0; text-transform: uppercase; font-size: 1.8rem; margin-bottom: 1rem; }
+
+        .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
+        .btn { padding: 0.9rem 2rem; border: 1.5px solid; background: transparent; cursor: pointer; font-family: 'Space Grotesk', sans-serif; font-weight: 700; transition: all 0.3s; text-decoration: none; display: inline-block; text-transform: uppercase; letter-spacing: 0.5px; font-size: 0.85rem; border-radius: 4px; color: var(--text-primary); }
+        .btn-primary { border-color: var(--accent-gold); color: var(--accent-gold); }
+        .btn-primary:hover { background: rgba(196, 167, 71, 0.1); }
+        .btn-secondary { border-color: var(--accent-cyan); color: var(--accent-cyan); }
+        .btn-secondary:hover { background: rgba(0, 168, 204, 0.1); }
+
+        footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-subtle); margin-top: 4rem; color: var(--text-secondary); background: linear-gradient(135deg, rgba(15, 21, 53, 0.8), rgba(27, 124, 154, 0.05)); }
+
+        @media (max-width: 768px) {
+            .header-content { display: flex; justify-content: space-between; flex-wrap: wrap; }
+            .header-center { display: none; }
+            .nav-toggle { display: block; }
+            nav { display: none; width: 100%; flex-direction: column; align-items: flex-start; gap: 0.8rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle); }
+            nav.open { display: flex; }
+            .container { padding: 1.5rem 1rem; }
+            .case-hero h1 { font-size: 1.9rem; }
+            .section h2 { font-size: 1.5rem; }
+            .btn-group { flex-direction: column; }
+            .btn { width: 100%; }
+            .metrics-table { font-size: 0.78rem; }
+            .metrics-table th, .metrics-table td { padding: 0.5rem; }
+        }
+    </style>
 </head>
-
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+    <header>
+        <div class="header-content">
+            <div class="header-left">
+                <!-- Links backward to index.html -->
+                <a href="../index.html" class="logo-wrapper">
+                    <span class="logo">JALAK PATEL</span>
+                    <span class="logo-subtitle">Creative Strategist</span>
+                </a>
+            </div>
+            
+            <div class="header-center">PORTFOLIO</div>
+            
+            <div class="header-right">
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+                <nav id="mainNav">
+                    <!-- Specific backward routing for anchor links -->
+                    <a href="../index.html#work">Case Studies</a>
+                    <a href="../index.html#journey">Journey</a>
+                    <a href="../index.html#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-<header class="site-nav">
-  <div class="nav-inner">
-    <a class="brand" href="../index.html">JALAK</a>
-    <nav class="nav-links" aria-label="Page navigation">
-      <a href="#company">Company</a>
-      <a href="#cases">Cases</a>
-      <a href="#evidence">Evidence</a>
-      <a class="nav-cta" href="../index.html">Back to Portfolio</a>
-    </nav>
-  </div>
-</header>
-
-<main id="main">
-
-  <section class="hero" id="company">
     <div class="container">
-      <div class="hero-grid">
-        <div>
-          <div class="eyebrow">Cinekorn Entertainment</div>
-          <h1>Film Distribution.<br>Content Syndication.<br>Digital Entertainment.</h1>
-          <p class="hero-lead">
-            A six-case portfolio from my role as Sr. Social Media Manager, covering YouTube operations,
-            regional channels, catalog management, cross-platform distribution, founder-led content and B2B LinkedIn.
-          </p>
-        </div>
-        <div class="hero-logo">
-          <img src="../media/cinekorn/cinekorn-logo.png" alt="Cinekorn Entertainment logo">
-        </div>
-      </div>
+        <!-- Breadcrumb fix -->
+        <div class="breadcrumb"><a href="../index.html">← Back to Portfolio</a></div>
 
-      <div class="meta-grid" aria-label="Role information">
-        <div class="meta"><span class="meta-label">Duration</span><span class="meta-value">Jan 2026 to Present</span></div>
-        <div class="meta"><span class="meta-label">Role</span><span class="meta-value">Sr. Social Media Manager</span></div>
-        <div class="meta"><span class="meta-label">Platforms</span><span class="meta-value">YouTube, LinkedIn, Facebook</span></div>
-        <div class="meta"><span class="meta-label">Managed Accounts</span><span class="meta-value">9 accounts</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="intro">
-    <div class="container" style="display:contents">
-      <div>
-        <div class="eyebrow">The Company</div>
-      </div>
-      <div class="intro-copy">
-        <p>
-          Cinekorn Entertainment is a Mumbai-based film distribution and content syndication company
-          working across theatrical, digital, OTT and related entertainment rights.
-        </p>
-        <p>
-          My role covers digital movie content strategy, YouTube publishing and analysis, the Cinekorn
-          Gujarati Facebook operation, and LinkedIn content for both the company and its founder.
-        </p>
-        <p>
-          The work below is intentionally separated by problem. The goal is not to claim every lifetime
-          channel number as my own. It is to show what I inherited, what I changed, what I built, and what
-          the evidence actually supports.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="directory">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">The Work</div>
-          <h2>9 accounts, 3 platforms.</h2>
-        </div>
-        <p class="muted" style="max-width:430px">
-          Six YouTube channels, one Facebook operation and two LinkedIn presences.
-        </p>
-      </div>
-
-      <div class="directory-grid">
-        <a class="channel" href="https://www.youtube.com/@cinekornmovies" target="_blank" rel="noopener">
-          <span class="channel-name">Cinekorn Movies</span><span class="channel-type">YouTube</span>
-        </a>
-        <a class="channel" href="https://www.youtube.com/@CinekornGujarati" target="_blank" rel="noopener">
-          <span class="channel-name">Cinekorn Gujarati</span><span class="channel-type">YouTube</span>
-        </a>
-        <a class="channel" href="https://www.youtube.com/@cinekorngujaratishorts" target="_blank" rel="noopener">
-          <span class="channel-name">Gujarati Shorts</span><span class="channel-type">YouTube</span>
-        </a>
-        <a class="channel" href="https://www.youtube.com/@CinekornCineplex" target="_blank" rel="noopener">
-          <span class="channel-name">Cinekorn Cineplex</span><span class="channel-type">YouTube</span>
-        </a>
-        <a class="channel" href="https://www.facebook.com/cinekorngujarati" target="_blank" rel="noopener">
-          <span class="channel-name">Cinekorn Gujarati</span><span class="channel-type">Facebook</span>
-        </a>
-        <a class="channel" href="https://www.linkedin.com/in/kalapi-nagada/" target="_blank" rel="noopener">
-          <span class="channel-name">Kalapi Nagada</span><span class="channel-type">LinkedIn</span>
-        </a>
-      </div>
-
-      <div class="note">
-        <strong>Directory note:</strong> The Telugu, Kannada and Cinekorn Entertainment LinkedIn handles are not
-        linked here because their exact public URLs were not verified in the source page. The nine-account scope
-        remains documented above.
-      </div>
-    </div>
-  </section>
-
-  <section class="scale" id="evidence">
-    <div class="container">
-      <div class="eyebrow">Verified Scale</div>
-      <h2 style="margin-top:10px">Lifetime channel data, with attribution kept separate.</h2>
-      <p class="muted" style="max-width:760px;margin-top:16px">
-        These are channel-level lifetime figures. They include legacy content where applicable and are not presented
-        as personal tenure results unless the relevant case below establishes that attribution.
-      </p>
-
-      <div class="scale-table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Channel</th><th>Lifetime Views</th><th>Watch Hours</th><th>Subscriber Growth</th><th>Revenue</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Cinekorn Movies</td><td>65,481,183</td><td>5.54M</td><td>+39,155</td><td>$17,445.30</td></tr>
-            <tr><td>Cinekorn Gujarati</td><td>26,631,620</td><td>4.83M</td><td>+35,665</td><td>$9,884.83</td></tr>
-            <tr><td>Cinekorn Gujarati Shorts</td><td>12,472,452</td><td>168.5K</td><td>+9,638</td><td>$391.78</td></tr>
-            <tr><td>Cinekorn Cineplex</td><td>3,822,536</td><td>552.8K</td><td>+2,174</td><td>$1,573.08</td></tr>
-            <tr><td>Cinekorn Kannada</td><td>78,782</td><td>5.5K</td><td>+1,093</td><td>$0.00</td></tr>
-            <tr><td>Cinekorn Telugu</td><td>3,516</td><td>166</td><td>+14</td><td>Not monetised</td></tr>
-            <tr class="table-total"><td>Combined, 6 channels</td><td>108,490,089</td><td>11.09M</td><td>+87,739</td><td>$29,294.99</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section class="case-index" id="cases">
-    <div class="container">
-      <div class="eyebrow">Six Case Studies From This Role</div>
-      <div class="case-index-grid">
-        <a href="#case1"><span><span class="case-num">01</span><span class="case-index-title">Solving a Data Bottleneck With AI-Assisted Tooling</span></span><span class="arrow">↗</span></a>
-        <a href="#case2"><span><span class="case-num">02</span><span class="case-index-title">Telugu and Kannada, Proof of Judgment Under Constraint</span></span><span class="arrow">↗</span></a>
-        <a href="#case3"><span><span class="case-num">03</span><span class="case-index-title">Cinekorn Movies, Operating a Legacy Catalog Honestly</span></span><span class="arrow">↗</span></a>
-        <a href="#case4"><span><span class="case-num">04</span><span class="case-index-title">Cinekorn Gujarati, A Cross-Platform Distribution System</span></span><span class="arrow">↗</span></a>
-        <a href="#case5"><span><span class="case-num">05</span><span class="case-index-title">Kalapi Nagada's LinkedIn Transformation</span></span><span class="arrow">↗</span></a>
-        <a href="#case6"><span><span class="case-num">06</span><span class="case-index-title">Cinekorn Entertainment's LinkedIn Growth</span></span><span class="arrow">↗</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CASE 01 -->
-  <article class="case" id="case1">
-    <div class="container">
-      <div class="case-head">
-        <div class="case-number">CASE 01</div>
-        <div>
-          <div class="eyebrow">AI-assisted workflow</div>
-          <h2 class="case-title">Solving a Data Bottleneck With AI-Assisted Tooling</h2>
-          <p class="case-subtitle">Turning a repetitive 6,000 to 8,000-row classification task into a two-day workflow.</p>
-        </div>
-      </div>
-
-      <div class="proof-strip">
-        <div class="proof"><strong>6K to 8K</strong><span>Rows classified</span></div>
-        <div class="proof"><strong>3 to 4</strong><span>Source files</span></div>
-        <div class="proof"><strong>1K to 2K</strong><span>Rows per file</span></div>
-        <div class="proof"><strong>2 days</strong><span>Task completion</span></div>
-      </div>
-
-      <div class="case-body">
-        <div class="sticky-label"><div class="eyebrow">Context / Decision / Result</div></div>
-        <div>
-          <section class="content-block">
-            <h3>The Context</h3>
-            <p>
-              Early in the role, I was given a data-heavy classification task outside normal social media execution.
-              Three to four files, each containing roughly 1,000 to 2,000 rows, needed to be sorted by tier.
-            </p>
-          </section>
-
-          <section class="content-block">
-            <h3>The Problem</h3>
-            <p>
-              The data was usable, but the repetitive classification work created a bottleneck between raw information
-              and actual strategic analysis. Doing the same operation thousands of times manually was not the best use
-              of working time.
-            </p>
-          </section>
-
-          <section class="content-block">
-            <h3>The Strategic Decision</h3>
-            <p>
-              I treated AI as a production tool, not as the decision-maker. The objective was to automate the
-              repetitive processing while keeping the classification logic, review and final interpretation under human control.
-            </p>
-          </section>
-
-          <section class="content-block">
-            <h3>The Execution</h3>
-            <div class="mini-grid">
-              <div class="mini-card"><strong>01</strong><span>Understand the classification logic and desired output.</span></div>
-              <div class="mini-card"><strong>02</strong><span>Use Gemini to help generate the Python workflow.</span></div>
-              <div class="mini-card"><strong>03</strong><span>Run the workflow in Google Colab.</span></div>
+        <section class="case-hero">
+            <h1>Cinekorn Entertainment</h1>
+            <p class="subtitle">Building and Operating a Six Channel Content Distribution System</p>
+            <div class="case-meta">
+                <div class="meta-item"><div class="meta-label">Duration</div><div class="meta-value">Jan 2026 to Current</div></div>
+                <div class="meta-item"><div class="meta-label">Role</div><div class="meta-value">Sr. Social Media Manager</div></div>
+                <div class="meta-item"><div class="meta-label">Scope</div><div class="meta-value">YouTube, LinkedIn, Facebook</div></div>
+                <div class="meta-item"><div class="meta-label">Platforms Managed</div><div class="meta-value">9 Accounts</div></div>
             </div>
-            <div class="quote">The workflow accelerated the repetitive work. It did not replace the judgement used to check and interpret the output.</div>
-          </section>
+        </section>
 
-          <section class="content-block">
-            <h3>The Result</h3>
-            <p>
-              The classification task was completed in two days. I am deliberately not publishing a fabricated
-              percentage of time saved because the original manual baseline was not formally recorded.
-            </p>
-            <div class="note"><strong>Evidence rule:</strong> the result is the documented task volume and completion time, not an invented efficiency percentage.</div>
-          </section>
-
-          <section class="content-block">
-            <h3>My Role</h3>
-            <ul>
-              <li>Identified the repetitive bottleneck.</li>
-              <li>Defined the classification requirement.</li>
-              <li>Selected the AI-assisted workflow.</li>
-              <li>Used Gemini to help generate the Python logic.</li>
-              <li>Ran the workflow in Google Colab.</li>
-              <li>Reviewed the output and used the processed data for strategy.</li>
-            </ul>
-          </section>
-
-          <section class="content-block">
-            <h3>What This Changed</h3>
-            <p>
-              When a task becomes repetitive at scale, the useful question is not always how to do it faster manually.
-              It can be whether it needs to remain manual at all.
-            </p>
-          </section>
-
-          <div class="whats-next">
-            <div class="eyebrow">What's Next</div>
-            <div class="next-grid">
-              <a class="next-card" href="#case2"><small>CASE 02</small><strong>Telugu and Kannada</strong><span>Proof of judgment under constraint</span></a>
-              <a class="next-card" href="#case3"><small>CASE 03</small><strong>Cinekorn Movies</strong><span>Operating a legacy catalog honestly</span></a>
-              <a class="next-card" href="#case4"><small>CASE 04</small><strong>Cinekorn Gujarati</strong><span>A cross-platform distribution system</span></a>
-            </div>
-          </div>
+        <!-- Hero Anchor Image -->
+        <div class="hero-anchor-image">
+            <img src="../media/cinekorn/yt-movies.png" alt="Cinekorn Movies Dashboard showing 6.5Cr Views">
         </div>
-      </div>
-    </div>
-  </article>
 
-  <!-- CASE 02 -->
-  <article class="case" id="case2">
-    <div class="container">
-      <div class="case-head">
-        <div class="case-number">CASE 02</div>
-        <div>
-          <div class="eyebrow">Regional channels</div>
-          <h2 class="case-title">Telugu and Kannada, Proof of Judgment Under Constraint</h2>
-          <p class="case-subtitle">Working with weak source material without pretending it was premium content.</p>
+        <section class="section">
+            <h2>The Company</h2>
+            <p>Cinekorn Entertainment is a Mumbai based film distribution, production, and content syndication company, incorporated in January 2010 under founders Kalapi Vinit Nagada and Ilachi Vinit Nagada. The business runs theatrical releases, satellite distribution, and OTT syndication across Bollywood, South Indian, regional Gujarati and Marathi, and Hollywood titles, alongside a significant digital footprint anchored by the Cinekorn Movies YouTube channel.</p>
+            <p>I joined as Senior Social Media Manager, holding direct responsibility for digital movie content strategy, revenue generation across platforms, and LinkedIn accounts for both the company and its founder. What follows is a portfolio strategy applied across nine live accounts, not a single channel playbook. That distinction matters for the role I am building toward. A Creative Director does not own one channel well, they design a system that holds together across many.</p>
+
+            <h3>Live Channel Directory</h3>
+            <p>Explore the active platforms and pages currently under my daily management strategy:</p>
+            <div style="margin-top: 1rem; margin-bottom: 2rem;">
+                <a href="https://www.youtube.com/@cinekornmovies" target="_blank" class="link-chip">▶ Cinekorn Movies</a>
+                <a href="https://www.youtube.com/@CinekornGujarati" target="_blank" class="link-chip">▶ Cinekorn Gujarati</a>
+                <a href="https://www.youtube.com/@cinekorngujaratishorts" target="_blank" class="link-chip">▶ Cinekorn Gujarati Shorts</a>
+                <a href="https://www.youtube.com/@CinekornMultiplex" target="_blank" class="link-chip">▶ Cinekorn Cineplex</a>
+                <a href="https://www.youtube.com/@CinekornEntertainment" target="_blank" class="link-chip">▶ Cinekorn Telugu</a>
+                <a href="https://www.youtube.com/@CinekornEntertainment" target="_blank" class="link-chip">▶ Cinekorn Kannada</a>
+                <a href="https://www.facebook.com/CinekornEnt" target="_blank" class="link-chip">Facebook: Cinekorn Gujarati</a>
+                <a href="https://www.linkedin.com/company/cinekorn-entertainment/" target="_blank" class="link-chip">LinkedIn: Cinekorn Ent.</a>
+                <a href="https://www.linkedin.com/in/kalapi-nagada/" target="_blank" class="link-chip">LinkedIn: Kalapi Nagada</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Verified Scale Across the Portfolio</h2>
+            <p>Every figure below is pulled directly from platform level exports and cross checked against the raw data twice before publishing here. Where a number includes content published before my tenure, that is stated plainly rather than folded into a total that implies it is mine.</p>
+
+            <table class="metrics-table">
+                <tr><th>Channel</th><th>Lifetime Views</th><th>Watch Hours</th><th>Subscriber Growth</th><th>Revenue</th></tr>
+                <tr><td>Cinekorn Movies</td><td class="number">65,481,183</td><td class="number">5.54M</td><td class="number">+39,155</td><td class="number">$17,445.30</td></tr>
+                <tr><td>Cinekorn Gujarati</td><td class="number">26,631,620</td><td class="number">4.83M</td><td class="number">+35,665</td><td class="number">$9,884.83</td></tr>
+                <tr><td>Cinekorn Gujarati Shorts</td><td class="number">12,472,452</td><td class="number">168.5K</td><td class="number">+9,638</td><td class="number">$391.78</td></tr>
+                <tr><td>Cinekorn Cineplex</td><td class="number">3,822,536</td><td class="number">552.8K</td><td class="number">+2,174</td><td class="number">$1,573.08</td></tr>
+                <tr><td>Cinekorn Kannada</td><td class="number">78,782</td><td class="number">5.5K</td><td class="number">+1,093</td><td class="number">$0.00</td></tr>
+                <tr><td>Cinekorn Telugu</td><td class="number">3,516</td><td class="number">166</td><td class="number">+14</td><td class="number">Not monetised</td></tr>
+                <tr><td><strong>Combined, 6 channels</strong></td><td class="number">108,490,089</td><td class="number">11.09M</td><td class="number">+87,739</td><td class="number">$29,294.99</td></tr>
+            </table>
+
+            <div class="highlight-box">
+                <p>This total spans channels I inherited with years of catalog history and channels I activated from a dead start. The honest breakdown of what is legacy versus what I personally built is inside each case below. I would rather hand you a number you can defend under questioning than a bigger one you cannot.</p>
+            </div>
+        </section>
+
+        <div class="toc">
+            <h3>Six Case Studies From This Role</h3>
+            <ol>
+                <li><a href="#case1">Solving a Data Bottleneck With AI Assisted Tooling</a></li>
+                <li><a href="#case2">Telugu and Kannada, Proof of Judgment Under Constraint</a></li>
+                <li><a href="#case3">Cinekorn Movies, Operating a Legacy Catalog Honestly</a></li>
+                <li><a href="#case4">Cinekorn Gujarati, A Cross Platform Distribution System</a></li>
+                <li><a href="#case5">Kalapi Nagada's LinkedIn Transformation</a></li>
+                <li><a href="#case6">Cinekorn Entertainment's LinkedIn Growth</a></li>
+            </ol>
         </div>
-      </div>
 
-      <div class="proof-strip">
-        <div class="proof"><strong>31</strong><span>Telugu videos</span></div>
-        <div class="proof"><strong>3,516</strong><span>Telugu lifetime views</span></div>
-        <div class="proof"><strong>98</strong><span>Kannada rebuilt-base videos</span></div>
-        <div class="proof"><strong>7,425</strong><span>Clean attributable Kannada views</span></div>
-      </div>
-
-      <div class="case-body">
-        <div class="sticky-label"><div class="eyebrow">Constraint / Packaging / Attribution</div></div>
-        <div>
-          <section class="content-block">
-            <h3>The Context</h3>
-            <p>
-              Telugu and Kannada entered the portfolio with weaker source material than the flagship channels.
-              The available library included low-resolution prints, thin catalogs and uneven historical channel data.
-            </p>
-          </section>
-
-          <section class="content-block">
-            <h3>The Problem</h3>
-            <p>
-              Better production alone could not solve a source-quality ceiling. Presenting older or low-resolution
-              footage like a premium contemporary release would create an expectation the content could not meet.
-            </p>
-          </section>
-
-          <section class="content-block">
-            <h3>The Strategic Decision</h3>
-            <p>
-              Instead of disguising the limitations, I adjusted the positioning and packaging around what the content
-              actually was. Metadata and presentation could make the value of older regional cinema clearer before the click.
-            </p>
-          </section>
-
-          <section class="content-block">
-            <h3>The Execution</h3>
-            <ul>
-              <li>Used positioning such as old movies, classic cinema and cult classic where appropriate.</li>
-              <li>Adjusted titles and descriptions to set a clearer viewer expectation.</li>
-              <li>Kept thumbnail treatment proportional to the quality of the source material.</li>
-              <li>Published consistently even when the available catalog was limited.</li>
-            </ul>
-
-            <div class="image-grid">
-              <figure class="visual">
-                <img src="../media/cinekorn/yt-telugu.png" alt="Cinekorn Telugu YouTube Studio analytics" loading="lazy">
-                <figcaption>Cinekorn Telugu, channel-level evidence.</figcaption>
-              </figure>
-              <figure class="visual">
-                <img src="../media/cinekorn/yt-kannada.png" alt="Cinekorn Kannada YouTube Studio analytics" loading="lazy">
-                <figcaption>Cinekorn Kannada, channel-level evidence.</figcaption>
-              </figure>
+        <!-- CASE 1 -->
+        <section class="section" id="case1">
+            <div class="case-block">
+                <span class="case-block-number">CASE 01</span>
+                <h3>Solving a Data Bottleneck With AI Assisted Tooling</h3>
+                <p>Early in this role I was handed a task well outside standard content work. Three to four files, each holding 1,000 to 2,000 rows, needed sorting by tier classification. That is 6,000 to 8,000 rows of manual categorisation sitting between me and actual strategy work.</p>
+                <p>I opened Google Colab, used Gemini to generate the Python needed to automate the sort, and closed the task out in two days.</p>
+                <p>The point of including this isn't the code. It's the instinct. I had already built fluency with AI tools before joining Cinekorn, and I integrate that fluency into how I execute everywhere, not as a novelty but as a default. Knowing which tool collapses a multi day task into an afternoon is a strategist's judgment call, not an engineer's. That judgment is the same one a Creative Director needs when deciding where a team's time actually belongs.</p>
             </div>
-          </section>
+        </section>
 
-          <section class="content-block">
-            <h3>Telugu</h3>
-            <p>
-              The channel had zero recorded activity before 2026. After I took over, 31 videos were published and
-              the channel recorded 3,516 lifetime views. Every one of those recorded views is from the post-takeover videos.
-            </p>
-          </section>
+        <!-- CASE 2 -->
+        <section class="section" id="case2">
+            <div class="case-block">
+                <span class="case-block-number">CASE 02</span>
+                <h3>Telugu and Kannada, Proof of Judgment Under Constraint</h3>
+                <p>Not every channel in a portfolio starts with a strong hand. Telugu and Kannada arrived with the weakest source material I manage, low resolution prints, thin catalogs, and in Kannada's case, a channel history where the majority of historic views trace back to content that no longer exists in the library, almost certainly removed under a copyright claim before my time.</p>
 
-          <section class="content-block">
-            <h3>Kannada</h3>
-            <p>
-              Kannada shows 78,782 lifetime views, but 71,357 of those views came from pre-2026 content that is no longer
-              in the current library. The cleaner attributable figure is 7,425 views across 98 videos published from the rebuilt base.
-            </p>
-            <div class="note"><strong>Attribution rule:</strong> the 78,782 figure is a channel lifetime number. The 7,425 figure is the cleaner number for the content published from the rebuilt base.</div>
-          </section>
+                <h3>The Quality Workaround</h3>
+                <p>When source footage is capped at 480p, presenting it as premium content invites unfavourable comparison and viewer drop off. Instead, I reframed the positioning entirely. Titles and descriptions lean into language like old movies, cult classic, and classic cinema, setting viewer expectation before they click rather than disappointing it after. Thumbnail quality gets toned down to match, and on the lowest quality uploads I skip a custom thumbnail altogether, because a Tier 3 audience responds to authenticity signals differently than a Tier 1 audience does.</p>
 
-          <section class="content-block">
-            <h3>What This Proves</h3>
-            <p>
-              These channels are not presented as a large growth story. They demonstrate decision-making under a hard
-              content constraint: understanding what can be improved, what cannot, and where effort should go.
-            </p>
-          </section>
+                <div class="story-grid">
+                    <div class="story-card">
+                        <p><strong>Cinekorn Telugu</strong><br>Zero recorded activity of any kind before 2026. Every one of its 3,516 lifetime views comes from the 31 videos I published after taking the channel from a complete standstill.</p>
+                    </div>
+                    <div class="story-card">
+                        <p><strong>Cinekorn Kannada</strong><br>78,782 lifetime views, but 71,357 of those sit on content published before 2026 that is no longer in the current library. The clean, attributable number is 7,425 views across 98 videos I published from a rebuilt base.</p>
+                    </div>
+                </div>
 
-          <section class="content-block">
-            <h3>My Role</h3>
-            <ul>
-              <li>Channel management and publishing.</li>
-              <li>Titles, descriptions and content positioning.</li>
-              <li>Thumbnail decisions based on source quality.</li>
-              <li>Performance interpretation and attribution analysis.</li>
-            </ul>
-          </section>
+                <h3>Representative Output</h3>
+                <div class="video-grid">
+                    <a href="https://youtu.be/hDN2yUmBICQ" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/hDN2yUmBICQ/hqdefault.jpg" alt="Veera Bhadrudu Full Movie" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Telugu: Veera Bhadrudu</span></a>
+                    <a href="https://youtu.be/A_bXtUgI_9k" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/A_bXtUgI_9k/hqdefault.jpg" alt="Aadi 2005 Full Movie" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Kannada: Aadi 2005</span></a>
+                    <a href="https://youtu.be/6U-BagEikk0" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/6U-BagEikk0/hqdefault.jpg" alt="Jagadeka Veera Full Movie" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Kannada: Jagadeka Veera</span></a>
+                </div>
 
-          <div class="whats-next">
-            <div class="eyebrow">What's Next</div>
-            <div class="next-grid">
-              <a class="next-card" href="#case1"><small>CASE 01</small><strong>AI-Assisted Tooling</strong><span>Solving a data bottleneck</span></a>
-              <a class="next-card" href="#case3"><small>CASE 03</small><strong>Cinekorn Movies</strong><span>Operating a legacy catalog honestly</span></a>
-              <a class="next-card" href="#case5"><small>CASE 05</small><strong>Kalapi Nagada</strong><span>Building a founder-led industry voice</span></a>
+                <p style="margin-top: 1.2rem;">I want to be direct about scale here rather than let a chart do the talking. These two channels are small next to the rest of the portfolio, and I am not presenting them as a growth story. I am presenting them as proof that the same disciplined process I run on a flagship channel still gets applied when the material is weak and the ceiling is low. A Gujarati blockbuster is not the hard test of a strategist's judgment. A dead channel with damaged source content is.</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>
+        </section>
 
-  <!-- CASE 03 -->
-  <article class="case" id="case3">
-    <div class="container">
-      <div class="case-head">
-        <div class="case-number">CASE 03</div>
-        <div>
-          <div class="eyebrow">Legacy catalog</div>
-          <h2 class="case-title">Cinekorn Movies, Operating a Legacy Catalog Honestly</h2>
-          <p class="case-subtitle">Separating inherited channel performance from the results that can actually be attributed to my tenure.</p>
-        </div>
-      </div>
+        <!-- CASE 3 -->
+        <section class="section" id="case3">
+            <div class="case-block">
+                <span class="case-block-number">CASE 03</span>
+                <h3>Cinekorn Movies, Operating a Legacy Catalog Honestly</h3>
+                <p>Cinekorn Movies is the flagship channel and carries the portfolio's largest number, 65,481,183 lifetime views. I want to walk through exactly what share of that is mine before claiming any of it.</p>
 
-      <div class="proof-strip">
-        <div class="proof"><strong>65.48M</strong><span>Lifetime channel views</span></div>
-        <div class="proof"><strong>61.97M</strong><span>Pre-tenure catalog views</span></div>
-        <div class="proof"><strong>3.50M</strong><span>Views from 89 tenure videos</span></div>
-        <div class="proof"><strong>1.40M</strong><span>Strong fresh release</span></div>
-      </div>
+                <table class="metrics-table">
+                    <tr><th>Segment</th><th>Videos</th><th>Views</th><th>Avg Views per Video</th></tr>
+                    <tr><td>Legacy catalog, published before Jan 2026</td><td>411</td><td class="number">61,969,474</td><td>67,021 excluding one outlier</td></tr>
+                    <tr><td>Published during my tenure</td><td>89</td><td class="number">3,504,208</td><td class="number">39,373</td></tr>
+                </table>
 
-      <div class="case-body">
-        <div class="sticky-label"><div class="eyebrow">Baseline / Attribution / New Evidence</div></div>
-        <div>
-          <section class="content-block">
-            <h3>The Context</h3>
-            <p>
-              Cinekorn Movies is the flagship channel, with 65,481,183 lifetime views. Most of that performance,
-              however, predates my tenure.
-            </p>
-          </section>
+                <p>Only 5.4 percent of this channel's tracked views come from content I published. The overwhelming majority sits on a catalog that predates me, including a single 2025 upload, Chudail Ne Rachaya Natak, that alone carries 34,490,689 views. That is not my result, and I am not going to let a channel total imply otherwise.</p>
 
-          <section class="content-block">
-            <h3>The Problem</h3>
-            <p>
-              A lifetime channel total can make an inherited catalog look like a current operator's result.
-              I needed a clean baseline before making any performance claim.
-            </p>
-          </section>
+                <div class="story-grid">
+                    <div class="story-card">
+                        <p><strong>The legacy outlier</strong><br>Published April 2025, before my tenure. Still the single largest asset on the channel.</p>
+                        <a href="https://youtu.be/y6x9HMEB7-8" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/y6x9HMEB7-8/hqdefault.jpg" alt="Chudail Ne Rachaya Natak" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">34.49M views, pre-tenure</span></a>
+                    </div>
+                    <div class="story-card">
+                        <p><strong>My strongest fresh release</strong><br>Published June 23, 2026, genuinely mine from acquisition to upload strategy.</p>
+                        <a href="https://youtu.be/O8Q-9saYBpg" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/O8Q-9saYBpg/hqdefault.jpg" alt="Haiwaniyat Full Movie" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">1.40M views, tenure release</span></a>
+                    </div>
+                </div>
 
-          <section class="content-block">
-            <h3>The Attribution Model</h3>
-            <div class="scale-table-wrap">
-              <table>
-                <thead><tr><th>Segment</th><th>Videos</th><th>Views</th><th>Avg. Views / Video</th></tr></thead>
-                <tbody>
-                  <tr><td>Legacy catalog, before Jan 2026</td><td>411</td><td>61,969,474</td><td>67,021*</td></tr>
-                  <tr><td>Published during my tenure</td><td>89</td><td>3,504,208</td><td>39,373</td></tr>
-                </tbody>
-              </table>
+                <h3>What This Channel Is Teaching Me</h3>
+                <p>Managing a channel where the historic hits dwarf your own output is its own discipline. My job here is upload cadence, catalog health, and finding the next Haiwaniyat, not inheriting credit for a 2025 upload I had nothing to do with. Excluding that single outlier, the rest of the legacy catalog averages 67,021 views per video against my own tenure average of 39,373. That gap is the honest target I am closing, not a number I would round up to look finished.</p>
+
+                <div class="highlight-box">
+                    <p>Cinekorn Cineplex, a smaller sibling channel in the same portfolio, shows a healthier tenure share by comparison. 61.1 percent of its tracked views come from the 55 videos I published, averaging 41,737 views each. It is not the biggest number in the portfolio, but it is one of the most fully mine.</p>
+                </div>
             </div>
-            <p class="muted" style="margin-top:12px;font-size:12px">* Legacy average excludes the single extreme outlier.</p>
-          </section>
+        </section>
 
-          <section class="content-block">
-            <h3>The Outlier</h3>
-            <p>
-              <strong>Chudail Ne Rachaya Natak</strong>, published in April 2025, had 34,490,689 views before my tenure.
-              It remains the single largest asset in the channel's historical performance.
-            </p>
-            <div class="link-row">
-              <a class="btn" href="https://youtu.be/8u0Y9qvKJ8Q" target="_blank" rel="noopener">View pre-tenure outlier</a>
-            </div>
-            <div class="note"><strong>Important:</strong> the outlier is channel history, not my result.</div>
-          </section>
+        <!-- CASE 4 -->
+        <section class="section" id="case4">
+            <h2>Case 4: Cinekorn Gujarati, A Cross Platform Distribution System</h2>
 
-          <section class="content-block">
-            <h3>My Strongest Fresh Release</h3>
-            <p>
-              A fresh release published June 23, 2026 reached 1.40M views. This is directly connected to my tenure
-              because the release happened after I took responsibility for the active channel operation.
-            </p>
-            <div class="link-row">
-              <a class="btn primary" href="https://youtu.be/8u0Y9qvKJ8Q" target="_blank" rel="noopener">View tenure release</a>
-            </div>
-            <div class="note">
-              If the two YouTube URLs above are changed in your source page, update only these two buttons. The
-              performance figures remain the verified figures used in this case.
-            </div>
-          </section>
-
-          <section class="content-block">
-            <h3>What the Baseline Tells Me</h3>
-            <p>
-              Excluding the single outlier, the rest of the legacy catalog averages 67,021 views per video against
-              39,373 for my tenure uploads. That gap is the honest benchmark, not something to hide by quoting the
-              65M channel total alone.
-            </p>
-          </section>
-
-          <section class="content-block">
-            <h3>Internal Comparison</h3>
-            <p>
-              Cinekorn Cineplex provides a cleaner tenure comparison. 61.1% of its tracked views came from the 55
-              videos I published, averaging 41,737 views each. The point is not that one channel is better than another.
-              The point is that attribution becomes easier when the active content base is clearly separated.
-            </p>
-          </section>
-
-          <section class="content-block">
-            <h3>My Role</h3>
-            <ul>
-              <li>Upload strategy and publishing cadence.</li>
-              <li>New-release packaging and channel management.</li>
-              <li>Catalog health and performance analysis.</li>
-              <li>Separating legacy performance from tenure performance.</li>
-              <li>Identifying meaningful new-release benchmarks.</li>
-            </ul>
-          </section>
-
-          <div class="whats-next">
-            <div class="eyebrow">What's Next</div>
-            <div class="next-grid">
-              <a class="next-card" href="#case2"><small>CASE 02</small><strong>Telugu and Kannada</strong><span>Judgment under constraint</span></a>
-              <a class="next-card" href="#case4"><small>CASE 04</small><strong>Cinekorn Gujarati</strong><span>Cross-platform distribution</span></a>
-              <a class="next-card" href="#case5"><small>CASE 05</small><strong>Kalapi Nagada</strong><span>Founder-led LinkedIn</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <!-- CASE 04 -->
-  <article class="case" id="case4">
-    <div class="container">
-      <div class="case-head">
-        <div class="case-number">CASE 04</div>
-        <div>
-          <div class="eyebrow">Cross-platform distribution</div>
-          <h2 class="case-title">Cinekorn Gujarati, A Cross-Platform Distribution System</h2>
-          <p class="case-subtitle">Turning one licensed film into multiple platform-specific content products.</p>
-        </div>
-      </div>
-
-      <div class="proof-strip">
-        <div class="proof"><strong>163</strong><span>Rakhewal pieces</span></div>
-        <div class="proof"><strong>17.77M</strong><span>Rakhewal views</span></div>
-        <div class="proof"><strong>2.7×</strong><span>Original release multiple</span></div>
-        <div class="proof"><strong>6.42M</strong><span>Radha Tara re-release views</span></div>
-      </div>
-
-      <div class="case-body">
-        <div class="sticky-label"><div class="eyebrow">System / Proof / Recovery</div></div>
-        <div>
-          <section class="content-block">
             <h3>The System</h3>
-            <p>
-              I treated a licensed film as source material for multiple audience-specific products rather than as
-              one release event. YouTube carried full-length viewing, Facebook was used for mobile-first serial content,
-              and Instagram was used for short, hooked scenes.
-            </p>
-          </section>
+            <p>Cinekorn Gujarati does not run out of content the way most teams think it does. I built a distribution architecture where one licensed film gets deliberately engineered into three to six separate content products, each matched to a specific platform's audience behaviour, so the same asset earns multiple independent lives instead of one release.</p>
+            <p>This is not repetition, it is audience segmentation applied to content strategy. YouTube carries the primary audience, viewers who came to watch a full film, so that release gets full SEO treatment across Hindi, English, and regional keyword sets. Facebook skews 35 and older, concentrated in Tier 3 cities, and the audience there wants something to watch on a phone more than it wants a specific format, so a three minute cut performs the same job a full film would. Instagram is a scroll audience, so the job there is one hooked scene, not the story.</p>
+            <p>Because each platform draws a genuinely different viewer by age, city tier, and intent, releasing the same IP across all three multiplies reach instead of splitting it.</p>
 
-          <section class="content-block">
             <h3>Proof: The Rakhewal Distribution Run</h3>
-            <div class="scale-table-wrap">
-              <table>
-                <thead><tr><th>Format</th><th>Volume</th><th>Views</th></tr></thead>
-                <tbody>
-                  <tr><td>Fresh full release, Jan 1, 2026</td><td>1 video</td><td>6,556,372</td></tr>
-                  <tr><td>14-part serialised re-cut, June 2026</td><td>14 videos</td><td>248,990</td></tr>
-                  <tr><td>Shorts extraction run, June to September</td><td>148 videos</td><td>10,967,825</td></tr>
-                  <tr class="table-total"><td>Total from tenure strategy</td><td>163 pieces</td><td>17,773,187</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <p style="margin-top:16px">
-              The 163 pieces generated 2.7 times the original full release's 6,556,372 views. I excluded a further
-              1.06M views on three pre-2026 Rakhewal uploads because they predate my involvement.
-            </p>
-          </section>
+            <p>I traced every Rakhewal upload across both YouTube channels by title to verify this against real numbers, not a description written after the fact.</p>
 
-          <section class="content-block">
+            <table class="metrics-table">
+                <tr><th>Format</th><th>Volume</th><th>Views</th></tr>
+                <tr><td>Fresh full release, Jan 1, 2026</td><td>1 video</td><td class="number">6,556,372</td></tr>
+                <tr><td>14 part serialised re-cut, June 2026</td><td>14 videos</td><td class="number">248,990</td></tr>
+                <tr><td>Shorts extraction run, June to September</td><td>148 videos</td><td class="number">10,967,825</td></tr>
+                <tr><td><strong>Total generated from tenure strategy</strong></td><td><strong>163 pieces</strong></td><td class="number">17,773,187</td></tr>
+            </table>
+
+            <div class="video-grid">
+                <a href="https://youtu.be/T41r9tjoVw8" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/T41r9tjoVw8/hqdefault.jpg" alt="Rakhewal Full Movie" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Fresh Release</span></a>
+                <a href="https://youtu.be/KYDrMuUvga8" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/KYDrMuUvga8/hqdefault.jpg" alt="Rakhewal Short 1" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Shorts Cut, 802K views</span></a>
+                <a href="https://youtu.be/SkX-u89VCH4" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/SkX-u89VCH4/hqdefault.jpg" alt="Rakhewal Short 2" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Shorts Cut, 766K views</span></a>
+                <a href="https://youtu.be/d8cau-3hX3w" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/d8cau-3hX3w/hqdefault.jpg" alt="Rakhewal Short 3" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Shorts Cut, 592K views</span></a>
+            </div>
+
+            <p>One IP, systematically redistributed across formats, produced 2.7 times what the original release earned on its own. I am deliberately excluding a further 1.06 million views sitting on three pre-2026 Rakhewal uploads that predate my involvement, because attributing legacy performance to current strategy is exactly the kind of inflation I will not put in front of a reader.</p>
+
             <h3>Proof: A Re-Release That Outperformed the Original</h3>
-            <p>
-              Radha Tara Vina Mane Gamtu Nathi had 3,785,146 lifetime views from its 2023 release. In July 2026,
-              I split it into 15 parts and released one per day for two weeks. The 15 parts generated 6,423,457 views,
-              69.7% more than the original full film's lifetime views.
-            </p>
-            <div class="image-grid">
-              <figure class="visual">
-                <img src="../media/cinekorn/rakhewal-youtube-analytics.png" alt="Rakhewal YouTube analytics evidence" loading="lazy">
-                <figcaption>Rakhewal performance evidence.</figcaption>
-              </figure>
-              <figure class="visual">
-                <img src="../media/cinekorn/radha-tara-original-vs-rerelease.png" alt="Radha Tara original release versus July 2026 re-release evidence" loading="lazy">
-                <figcaption>Radha Tara original versus re-release evidence.</figcaption>
-              </figure>
-            </div>
-          </section>
+            <p>Radha Tara Vina Mane Gamtu Nathi released in 2023, before my tenure, and sat at 3,785,146 lifetime views. In July 2026 I split it into 15 parts and released one per day for two weeks.</p>
 
-          <section class="content-block">
-            <h3>Facebook Recovery</h3>
-            <p>
-              Cinekorn Gujarati's Facebook page was restricted by Meta. The last post before the restriction was
-              May 18, 2025, and the next post was March 25, 2026.
-            </p>
-            <div class="scale-table-wrap">
-              <table>
-                <thead><tr><th>Window</th><th>Posts</th><th>Total Views</th><th>Approx. Views / Day</th></tr></thead>
-                <tbody>
-                  <tr><td>2025 pre-restriction, 11 active weeks</td><td>65</td><td>26,325,860</td><td>333,239</td></tr>
-                  <tr><td>2026 post-recovery, 176 days</td><td>433</td><td>47,351,230</td><td>269,041</td></tr>
-                </tbody>
-              </table>
+            <div class="video-grid">
+                <a href="https://youtu.be/ybcdJypfKgo" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/ybcdJypfKgo/hqdefault.jpg" alt="RTVMGN Original" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Original, 2023</span></a>
+                <a href="https://youtu.be/Gv-aqvfSUkA" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/Gv-aqvfSUkA/hqdefault.jpg" alt="RTVMGN Part 4" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Part 4, top performer</span></a>
+                <a href="https://youtu.be/ltaEgWRz8WM" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/ltaEgWRz8WM/hqdefault.jpg" alt="RTVMGN Part 3" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Part 3</span></a>
+                <a href="https://youtu.be/y-BrN__4Sh0" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/y-BrN__4Sh0/hqdefault.jpg" alt="RTVMGN Part 10" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Part 10</span></a>
             </div>
-            <p style="margin-top:16px">
-              The 2026 posting volume was 6.7 times the 2025 pre-restriction volume. Meta's dashboard reports a 41%
-              year-over-year decline, but the comparison is affected by the short 2025 viral baseline and the subsequent
-              ten-month blackout.
-            </p>
-          </section>
 
-          <section class="content-block">
+            <div class="highlight-box">
+                <p>The 15 parts alone earned 6,423,457 views, 69 percent more than the original full film earned across three years, generated in fourteen days. This is the single strongest proof point in the portfolio. The re-release format did not supplement the original, it beat it outright.</p>
+            </div>
+
+            <h3>Rebuilding the Facebook Page From Zero</h3>
+            <p>Cinekorn Gujarati's Facebook page was restricted by Meta. Its last post before the restriction was May 18, 2025. Its next post was March 25, 2026, a ten month blackout with zero output.</p>
+
+            <table class="metrics-table">
+                <tr><th>Window</th><th>Posts</th><th>Total Views</th><th>Views per Day</th></tr>
+                <tr><td>2025, pre-restriction, 11 active weeks</td><td>65</td><td class="number">26,325,860</td><td class="number">333,239</td></tr>
+                <tr><td>2026, post-recovery, 176 days</td><td>433</td><td class="number">47,351,230</td><td class="number">270,578</td></tr>
+            </table>
+
+            <p>Meta's own dashboard reports this as a 41 percent decline year over year. That framing is technically accurate and strategically misleading, and I want to be precise about why rather than simply dispute it. The 2025 baseline was not a steady, healthy year. It was an eleven week hot streak where one post carried 17 percent of all views and three posts carried nearly a third of the total, followed immediately by a ten month collapse. Comparing a sustained 176 day, 433 post rebuild against a short viral spike is not a fair year over year read.</p>
+
+            <div class="challenge-box">
+                <p>The honest claim, the one I will defend in any interview, is this. I took a dead page and rebuilt it to 6.7 times its prior posting volume, sustained across six straight months. The 2025 run had higher intensity while it lasted. What it did not have was consistency, and consistency is the harder thing to engineer.</p>
+            </div>
+
             <h3>The Ventilator Funnel</h3>
-            <p>
-              I split Ventilator into 39 parts between April 20 and May 28, generating 4,015,837 views. When viewers
-              asked what film a clip came from or where to watch the full version, I answered with the YouTube link.
-              The comment section became a manual bridge from short-form discovery to full-length viewing.
-            </p>
-            <div class="image-grid">
-              <figure class="visual contain">
-                <img src="../media/cinekorn/fb-earnings.png" alt="Cinekorn Gujarati Facebook Earnings dashboard" loading="lazy">
-                <figcaption>Facebook Earnings dashboard.</figcaption>
-              </figure>
-              <figure class="visual contain">
-                <img src="../media/cinekorn/fb-top-formats.png" alt="Cinekorn Gujarati Facebook Top Content Formats report" loading="lazy">
-                <figcaption>Top Content Formats report.</figcaption>
-              </figure>
-            </div>
-          </section>
+            <p>Inside the recovery window, I ran the same distribution logic against a second licensed film, Ventilator, splitting it into 39 parts released April 20 through May 28, generating 4,015,837 views. Several of these parts became the page's top earning content in that window.</p>
+            <p>One tactic came directly out of this campaign. When viewers commented asking what film a clip was from or where to watch it complete, I answered personally with the YouTube link to the full version, turning the Facebook comment section into a manual redirect channel feeding the platform where full length, ad supported viewing actually lives. That is not community management, that is cross platform funnel design.</p>
 
-          <section class="content-block">
+            <div class="screenshot-gallery">
+                <div class="screenshot-card">
+                    <img src="../media/cinekorn/fb-earnings.png" alt="Facebook Earnings dashboard for Cinekorn Gujarati">
+                    <div class="screenshot-caption"><strong>Facebook Earnings, Overview</strong>Content monetisation is the sole active revenue line. Top five earning posts include multiple Ventilator series parts.</div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="../media/cinekorn/fb-top-formats.png" alt="Facebook Top Content Formats report">
+                    <div class="screenshot-caption"><strong>Top Content Formats</strong>Reels carried 63.39M views against a published content volume up 246.8 percent year over year.</div>
+                </div>
+            </div>
+
             <h3>What I Am Still Diagnosing</h3>
-            <p>
-              Average views per post fell from roughly 104,000 to 23,000 between July and August while posting volume
-              roughly halved. The original restriction cause also remains unconfirmed. I am keeping both points visible
-              rather than inventing explanations.
-            </p>
-          </section>
-
-          <section class="content-block">
-            <h3>My Role</h3>
+            <p>Two open items, stated plainly, because owning the gaps as directly as the wins is part of the job.</p>
             <ul>
-              <li>Content distribution strategy across YouTube and Facebook.</li>
-              <li>Format selection and sequencing.</li>
-              <li>Publishing and performance analysis.</li>
-              <li>Manual comment-to-YouTube routing.</li>
-              <li>Catalog and re-release decisions.</li>
+                <li><strong>The July to August drop.</strong> Average views per post fell from roughly 104,000 to 23,000, and posting volume roughly halved, well after the restriction had lifted. This is not the blackout resurfacing. Something in the format, cadence, or platform behaviour shifted, and identifying which one is my next priority on this account.</li>
+                <li><strong>The restriction cause.</strong> I do not yet have a confirmed explanation for why Meta flagged the page originally. I will have one ready before this goes in front of anyone who asks.</li>
             </ul>
-          </section>
 
-          <div class="whats-next">
-            <div class="eyebrow">What's Next</div>
-            <div class="next-grid">
-              <a class="next-card" href="#case3"><small>CASE 03</small><strong>Cinekorn Movies</strong><span>Legacy catalog attribution</span></a>
-              <a class="next-card" href="#case5"><small>CASE 05</small><strong>Kalapi Nagada</strong><span>Founder-led industry voice</span></a>
-              <a class="next-card" href="#case6"><small>CASE 06</small><strong>Cinekorn LinkedIn</strong><span>Company-page content channel</span></a>
+            <div class="highlight-box">
+                <p><strong>The strategic principle.</strong> A single piece of IP is not one asset, it is raw material for as many audience relationships as you are willing to architect around it. Most operators treat a film as a single release event. I treat it as a portfolio decision, which formats, which platforms, which sequencing extracts the most total audience value from one piece of licensed content. That is the difference between running a channel and running a content system, and it is the exact muscle a Creative Director role requires.</p>
             </div>
-          </div>
-        </div>
-      </div>
+        </section>
+
+        <!-- CASE 5 -->
+        <section class="section" id="case5">
+            <div class="case-block">
+                <span class="case-block-number">CASE 05</span>
+                <h3>Kalapi Nagada's LinkedIn Transformation</h3>
+                <p>I have managed the founder's personal LinkedIn presence since March 31, 2026. The comparison below splits the full year of available data at that exact date, so every number after the line is mine to claim and every number before it is the baseline I inherited.</p>
+
+                <table class="metrics-table">
+                    <tr><th>Metric</th><th>Before, 196 days</th><th>After, 169 days</th><th>Change</th></tr>
+                    <tr><td>Total Impressions</td><td>19,581</td><td class="number">61,570</td><td class="number">+265% daily avg</td></tr>
+                    <tr><td>Total Engagements</td><td>176</td><td class="number">850</td><td class="number">+460% daily avg</td></tr>
+                    <tr><td>Engagement Rate</td><td>0.90%</td><td class="number">1.38%</td><td class="number">+0.48 pts</td></tr>
+                    <tr><td>New Followers per Day, avg</td><td>3.15</td><td class="number">6.09</td><td class="number">+93%</td></tr>
+                </table>
+
+                <p>The clearest signal sits in the Top Posts data rather than the averages. Of the fifty best performing posts across the entire measured year, ranked by both engagement and impressions, 37 were published after March 31, despite that window covering less than half the days in the dataset. Performance concentrated into the period I have been running the account, not before it.</p>
+            </div>
+        </section>
+
+        <!-- CASE 6 -->
+        <section class="section" id="case6">
+            <div class="case-block">
+                <span class="case-block-number">CASE 06</span>
+                <h3>Cinekorn Entertainment's LinkedIn Growth</h3>
+                <p>I have managed the company page since April 13, 2026. Same method, same rigour, numbers recalculated from raw totals rather than trusting a platform provided average that can be skewed by low volume days.</p>
+
+                <table class="metrics-table">
+                    <tr><th>Metric</th><th>Before, 211 days</th><th>After, 154 days</th><th>Change</th></tr>
+                    <tr><td>Total Impressions</td><td>6,263</td><td class="number">17,289</td><td class="number">+278% daily avg</td></tr>
+                    <tr><td>Total Clicks</td><td>1,230</td><td class="number">2,838</td><td class="number">+216% daily avg</td></tr>
+                    <tr><td>Total Reactions</td><td>94</td><td class="number">525</td><td class="number">+665% daily avg</td></tr>
+                    <tr><td>Engagement Rate</td><td>1.56%</td><td class="number">3.16%</td><td class="number">Roughly doubled</td></tr>
+                </table>
+
+                <p>The mechanism behind the growth is posting cadence, not a single viral post carrying the average. Before my tenure the page published once every 8.1 days on average. Since April 13, that has run at once every 2.4 days, a 3.4 times increase in publishing frequency, sustained rather than a short burst. I checked the sponsored spend columns across the entire dataset before writing this. Every impression, click, and reaction here is organic. Zero paid spend, before or after.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Verified Dashboards</h2>
+            <p>The following are direct exports from YouTube Studio for all six channels, included as primary source proof rather than a summary I generated.</p>
+            <div class="screenshot-gallery">
+                <div class="screenshot-card"><img src="../media/cinekorn/yt-movies.png" alt="Cinekorn Movies YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Movies</strong>Jan 1 to Sep 14, 2026</div></div>
+                <div class="screenshot-card"><img src="../media/cinekorn/yt-gujarati.png" alt="Cinekorn Gujarati YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Gujarati</strong>Jan 1 to Sep 14, 2026</div></div>
+                <div class="screenshot-card"><img src="../media/cinekorn/yt-gujarati-shorts.png" alt="Cinekorn Gujarati Shorts YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Gujarati Shorts</strong>Jan 1 to Sep 14, 2026</div></div>
+                <div class="screenshot-card"><img src="../media/cinekorn/yt-cineplex.png" alt="Cinekorn Cineplex YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Cineplex</strong>Jan 1 to Sep 14, 2026</div></div>
+                <div class="screenshot-card"><img src="../media/cinekorn/yt-telugu.png" alt="Cinekorn Telugu YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Telugu</strong>Lifetime, May 2025 to Sep 2026</div></div>
+                <div class="screenshot-card"><img src="../media/cinekorn/yt-kannada.png" alt="Cinekorn Kannada YouTube Studio analytics"><div class="screenshot-caption"><strong>Cinekorn Kannada</strong>Lifetime, May 2025 to Sep 2026</div></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>What This Role Is Building Toward</h2>
+            <div class="learnings">
+                <h3>One IP, many audiences</h3>
+                <p>A film is not a single release, it is raw material for as many format and platform relationships as the audience data supports.</p>
+
+                <h3>Legacy performance is not your performance</h3>
+                <p>A channel total that includes content you did not touch is a number that collapses the moment someone asks you to defend it. Separating the two, every time, is what makes the rest of the portfolio trustworthy.</p>
+
+                <h3>A percentage without context is a trap</h3>
+                <p>A 41 percent year over year decline sounds damning until you know the prior year was an eleven week viral spike followed by a ten month blackout. Knowing when to interrogate a metric instead of reporting it is strategic judgment, not spin.</p>
+
+                <h3>Consistency is the harder skill</h3>
+                <p>Anyone can catch a viral post. Rebuilding a dead page to 6.7 times its prior volume and holding that pace for six months is systems thinking applied to content operations.</p>
+
+                <h3>Own the gaps as directly as the wins</h3>
+                <p>The August drop on Facebook does not have an answer yet. Saying so, and naming it as an active priority, is what separates a strategist from someone reporting a highlight reel.</p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Designing Systems, Not Just Managing Channels</h2>
+            <p>This portfolio spans nine accounts across three platforms, a legacy catalog, two rebuilt channels, and two LinkedIn presences, held together by one distribution logic applied consistently. That is the operating range I am bringing to a Creative Strategist role today, and the foundation I am building toward Creative Director.</p>
+            <div class="btn-group">
+                <!-- Backward routed index links and Resume download injected here -->
+                <a href="../index.html" class="btn btn-secondary">← Back to Portfolio</a>
+                <a href="../Jalak-Patel-Resume.pdf" target="_blank" class="btn btn-secondary" style="border-color: var(--text-secondary); color: var(--text-secondary);">↓ Download Resume</a>
+                <a href="https://www.linkedin.com/in/jalak-patel-63ab50220" target="_blank" class="btn btn-primary">Connect on LinkedIn</a>
+            </div>
+        </section>
     </div>
-  </article>
 
-  <!-- CASE 05 -->
-  <article class="case" id="case5">
-    <div class="container">
-      <div class="case-head">
-        <div class="case-number">CASE 05</div>
-        <div>
-          <div class="eyebrow">Founder-led content</div>
-          <h2 class="case-title">Kalapi Nagada's LinkedIn Transformation</h2>
-          <p class="case-subtitle">Turning film-industry experience into a consistent founder-led editorial voice.</p>
-        </div>
-      </div>
+    <footer>
+        <p>&copy; 2026 JALAK PATEL, Creative Strategist</p>
+        <p style="font-size: 0.85rem;">Case Study: Cinekorn Entertainment, Six Channels, Two LinkedIn Accounts, One System</p>
+    </footer>
 
-      <div class="proof-strip">
-        <div class="proof"><strong>+265%</strong><span>Daily-average impressions</span></div>
-        <div class="proof"><strong>+460%</strong><span>Daily-average engagements</span></div>
-        <div class="proof"><strong>+93%</strong><span>Followers per day</span></div>
-        <div class="proof"><strong>37 / 50</strong><span>Top posts after takeover</span></div>
-      </div>
-
-      <div class="case-body">
-        <div class="sticky-label"><div class="eyebrow">Editorial / Audience / Evidence</div></div>
-        <div>
-          <section class="content-block">
-            <h3>The Context</h3>
-            <p>
-              I have managed Kalapi Nagada's founder-led LinkedIn presence since March 31, 2026. The content focus
-              is film distribution, cinema economics, OTT, production and the operating decisions behind entertainment businesses.
-            </p>
-          </section>
-
-          <section class="content-block">
-            <h3>The Editorial Decision</h3>
-            <p>
-              The page needed a point of view, not generic founder advice. Industry events became questions, numbers
-              became explanations, and operating experience became lessons that a professional audience could use.
-            </p>
-          </section>
-
-          <figure class="visual">
-            <img src="../media/cinekorn/kalapi-profile.png" alt="Kalapi Nagada LinkedIn profile" loading="lazy">
-            <figcaption>Founder profile context.</figcaption>
-          </figure>
-
-          <div class="image-grid">
-            <figure class="visual contain">
-              <img src="../media/cinekorn/kalapi-analytics.png" alt="Kalapi Nagada LinkedIn analytics comparison" loading="lazy">
-              <figcaption>Analytics comparison.</figcaption>
-            </figure>
-            <figure class="visual contain">
-              <img src="../media/cinekorn/kalapi-top-posts.png" alt="Kalapi Nagada LinkedIn top posts analytics" loading="lazy">
-              <figcaption>Top Posts evidence.</figcaption>
-            </figure>
-          </div>
-
-          <section class="content-block">
-            <h3>The Numbers</h3>
-            <div class="scale-table-wrap">
-              <table>
-                <thead><tr><th>Metric</th><th>Before, 196 days</th><th>After, 169 days</th><th>Change</th></tr></thead>
-                <tbody>
-                  <tr><td>Total impressions</td><td>19,581</td><td>61,570</td><td>+265% daily average</td></tr>
-                  <tr><td>Total engagements</td><td>176</td><td>850</td><td>+460% daily average</td></tr>
-                  <tr><td>Engagement rate</td><td>0.90%</td><td>1.38%</td><td>+0.48 pts</td></tr>
-                  <tr><td>New followers / day</td><td>3.15</td><td>6.09</td><td>+93%</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="note"><strong>Metric note:</strong> the totals are shown as exported. The percentage changes marked daily average are calculated after normalising for the different number of days in each period.</div>
-          </section>
-
-          <section class="content-block">
-            <h3>Top Posts</h3>
-            <p>
-              Of the 50 best-performing posts across the measured year, 37 were published after March 31. The strongest
-              examples include a September 5 post with 17,293 impressions and 51 engagements, a May 19 post with 6,658
-              impressions and 42 engagements, and a July 9 post with 6,650 impressions and 40 engagements.
-            </p>
-            <div class="link-row">
-              <a class="btn" href="https://www.linkedin.com/posts/kalapi-nagada-400661381_wordofmouth-cinekornentertainment-filmdistribution-ugcPost-7501213421497991168-aVCN" target="_blank" rel="noopener">Sep 5 post</a>
-              <a class="btn" href="https://www.linkedin.com/posts/kalapi-nagada-400661381_indiancinema-boxoffice-filmdistribution-share-7461037914697818113-0TCu" target="_blank" rel="noopener">May 19 post</a>
-              <a class="btn" href="https://www.linkedin.com/posts/kalapi-nagada-400661381_filmproduction-panindia-distributionstrategy-share-7473367874850426880-vAko" target="_blank" rel="noopener">Jul 9 post</a>
-            </div>
-          </section>
-
-          <figure class="visual">
-            <img src="../media/cinekorn/kalapi-audience.png" alt="Kalapi Nagada LinkedIn audience demographics" loading="lazy">
-            <figcaption>Audience and content demographics.</figcaption>
-          </figure>
-
-          <figure class="visual">
-            <img src="../media/cinekorn/kalapi-articles.png" alt="Kalapi Nagada LinkedIn articles" loading="lazy">
-            <figcaption>Long-form editorial work, 9 LinkedIn articles.</figcaption>
-          </figure>
-
-          <section class="content-block">
-            <h3>My Role</h3>
-            <ul>
-              <li>Topic research and selection.</li>
-              <li>Editorial framing and copywriting.</li>
-              <li>Visual direction and publishing.</li>
-              <li>Performance analysis and content refinement.</li>
-              <li>Long-form LinkedIn article development.</li>
-            </ul>
-          </section>
-
-          <div class="whats-next">
-            <div class="eyebrow">What's Next</div>
-            <div class="next-grid">
-              <a class="next-card" href="#case6"><small>CASE 06</small><strong>Cinekorn Entertainment LinkedIn</strong><span>Turning a company page into an industry channel</span></a>
-              <a class="next-card" href="#case4"><small>CASE 04</small><strong>Cinekorn Gujarati</strong><span>Cross-platform distribution</span></a>
-              <a class="next-card" href="#case3"><small>CASE 03</small><strong>Cinekorn Movies</strong><span>Legacy catalog management</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <!-- CASE 06 -->
-  <article class="case" id="case6">
-    <div class="container">
-      <div class="case-head">
-        <div class="case-number">CASE 06</div>
-        <div>
-          <div class="eyebrow">B2B content channel</div>
-          <h2 class="case-title">Cinekorn Entertainment's LinkedIn Growth</h2>
-          <p class="case-subtitle">Turning a company page into a channel for industry thinking, not just company updates.</p>
-        </div>
-      </div>
-
-      <div class="proof-strip">
-        <div class="proof"><strong>+278%</strong><span>Daily-average impressions</span></div>
-        <div class="proof"><strong>+216%</strong><span>Daily-average clicks</span></div>
-        <div class="proof"><strong>+665%</strong><span>Daily-average reactions</span></div>
-        <div class="proof"><strong>3.4×</strong><span>Publishing frequency</span></div>
-      </div>
-
-      <div class="case-body">
-        <div class="sticky-label"><div class="eyebrow">Editorial / Cadence / Organic Evidence</div></div>
-        <div>
-          <section class="content-block">
-            <h3>The Context</h3>
-            <p>
-              I have managed the Cinekorn Entertainment company page since April 13, 2026. The editorial focus is
-              distribution, cinema economics, OTT, international markets and the business decisions behind entertainment content.
-            </p>
-          </section>
-
-          <section class="content-block">
-            <h3>The Writing Approach</h3>
-            <p>
-              The content follows a simple editorial sequence: something happened, why it matters, what is underneath
-              it, and why an entertainment professional should care. The goal is to add an explanation rather than simply
-              reposting an announcement.
-            </p>
-          </section>
-
-          <figure class="visual">
-            <img src="../media/cinekorn/cinekorn-linkedin-page.png" alt="Cinekorn Entertainment LinkedIn company page" loading="lazy">
-            <figcaption>Company-page context.</figcaption>
-          </figure>
-
-          <div class="image-grid">
-            <figure class="visual contain">
-              <img src="../media/cinekorn/cinekorn-linkedin-analytics.png" alt="Cinekorn Entertainment LinkedIn analytics" loading="lazy">
-              <figcaption>Account-level analytics.</figcaption>
-            </figure>
-            <figure class="visual contain">
-              <img src="../media/cinekorn/cinekorn-linkedin-content-analytics.png" alt="Cinekorn Entertainment LinkedIn content analytics" loading="lazy">
-              <figcaption>Content-level analytics.</figcaption>
-            </figure>
-          </div>
-
-          <section class="content-block">
-            <h3>The Numbers</h3>
-            <div class="scale-table-wrap">
-              <table>
-                <thead><tr><th>Metric</th><th>Before, 211 days</th><th>After, 154 days</th><th>Change</th></tr></thead>
-                <tbody>
-                  <tr><td>Total impressions</td><td>6,263</td><td>17,289</td><td>+278% daily average</td></tr>
-                  <tr><td>Total clicks</td><td>1,230</td><td>2,838</td><td>+216% daily average</td></tr>
-                  <tr><td>Total reactions</td><td>94</td><td>525</td><td>+665% daily average</td></tr>
-                  <tr><td>Engagement rate</td><td>1.56%</td><td>3.16%</td><td>Roughly doubled</td></tr>
-                  <tr><td>Publishing cadence</td><td>1 post / 8.1 days</td><td>1 post / 2.4 days</td><td>3.4× frequency</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="note"><strong>Organic evidence:</strong> the supplied dataset records zero sponsored spend before and after. The case therefore describes an organic content comparison.</div>
-          </section>
-
-          <section class="content-block">
-            <h3>Post-Level Examples</h3>
-            <p>
-              The account-level numbers are supported by individual content examples. A July 6 post recorded
-              937 impressions, 18 clicks, 8 likes and 2 reposts. A July 17 post recorded 889 impressions and
-              594 clicks. A June 24 post recorded 484 impressions and 242 clicks.
-            </p>
-            <div class="note">
-              <strong>Metric clarification:</strong> LinkedIn's exported CTR is clicks divided by impressions.
-              It should not be described as an engagement rate. High click ratios are therefore reported as CTR where used.
-            </div>
-          </section>
-
-          <section class="content-block">
-            <h3>The Strategic Shift</h3>
-            <p>
-              The page moved toward useful industry explanations: distribution mechanics, market signals, release timing,
-              OTT windows and operational details that entertainment professionals can learn from.
-            </p>
-          </section>
-
-          <section class="content-block">
-            <h3>My Role</h3>
-            <ul>
-              <li>Content research and topic selection.</li>
-              <li>Editorial framing and copywriting.</li>
-              <li>Visual direction and publishing cadence.</li>
-              <li>Content-level and account-level performance analysis.</li>
-              <li>Iteration based on observed performance.</li>
-            </ul>
-          </section>
-
-          <div class="whats-next">
-            <div class="eyebrow">What's Next</div>
-            <div class="next-grid">
-              <a class="next-card" href="#case5"><small>CASE 05</small><strong>Kalapi Nagada</strong><span>Founder-led industry voice</span></a>
-              <a class="next-card" href="#case4"><small>CASE 04</small><strong>Cinekorn Gujarati</strong><span>Cross-platform distribution system</span></a>
-              <a class="next-card" href="#case1"><small>CASE 01</small><strong>AI-Assisted Tooling</strong><span>Solving a data bottleneck</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <section class="final">
-    <div class="container">
-      <div class="final-grid">
-        <div>
-          <div class="eyebrow">The Role</div>
-          <h2 style="margin-top:10px">Different problems.<br>One operating discipline.</h2>
-        </div>
-        <div class="final-copy">
-          <p>
-            Across Cinekorn, the work ranged from AI-assisted data processing and constrained regional channels
-            to legacy catalog analysis, cross-platform distribution, founder-led editorial work and B2B company content.
-          </p>
-          <p>
-            The common thread is not a single channel or metric. It is the discipline of separating the problem,
-            choosing the right format or workflow, measuring what can actually be attributed, and keeping the gaps visible.
-          </p>
-          <div class="link-row">
-            <a class="btn primary" href="../index.html">Back to Portfolio</a>
-            <a class="btn" href="#cases">Back to Case Studies</a>
-            <a class="btn" href="https://www.linkedin.com/in/jalak-patel-63ab50220" target="_blank" rel="noopener">Connect on LinkedIn</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer">
-  <div class="container footer-inner">
-    <span>© 2026 Jalak Patel</span>
-    <span>Cinekorn Entertainment | Six Case Studies</span>
-    <a href="../index.html">Back to Portfolio</a>
-  </div>
-</footer>
-
-<script>
-  document.querySelectorAll("img").forEach(function(img){
-    img.addEventListener("error", function(){
-      const box = document.createElement("div");
-      box.className = "fallback";
-      box.innerHTML = "<div><strong>Image asset not found</strong><br><span>Check the filename in media/cinekorn/</span></div>";
-      img.replaceWith(box);
-    });
-  });
-</script>
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        if (navToggle && mainNav) {
+            navToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('open');
+            });
+            
+            mainNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mainNav.classList.remove('open');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
