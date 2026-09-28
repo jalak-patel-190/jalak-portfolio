@@ -3,19 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajmera Fashion Case Study | Jalak — Creative Strategist</title>
-    
-    <!-- Google Fonts -->
+    <title>Ajmera Fashion Case Study | Jalak, Creative Strategist</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --bg-dark: #0a0e27;
@@ -23,14 +18,13 @@
             --accent-gold: #C4A747;
             --accent-blue: #1B7C9A;
             --accent-cyan: #00A8CC;
+            --accent-warn: #C45447;
             --text-primary: #E8E8E8;
             --text-secondary: #A8A8A8;
             --border-subtle: #2A3050;
         }
 
-        html, body {
-            scroll-behavior: smooth;
-        }
+        html, body { scroll-behavior: smooth; }
 
         body {
             font-family: 'Space Grotesk', 'Helvetica', sans-serif;
@@ -39,18 +33,9 @@
             line-height: 1.7;
         }
 
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg-dark);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent-gold);
-            border-radius: 5px;
-        }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--accent-gold); border-radius: 5px; }
 
         header {
             background: linear-gradient(135deg, rgba(15, 21, 53, 0.95), rgba(27, 124, 154, 0.05));
@@ -61,771 +46,392 @@
             z-index: 100;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
         }
+        .header-content { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: var(--accent-gold); letter-spacing: 2px; text-decoration: none; text-transform: uppercase; }
+        .logo:hover { color: var(--accent-cyan); }
 
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .container { max-width: 780px; margin: 0 auto; padding: 3rem 2rem; }
 
-        .logo {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.3rem;
-            color: var(--accent-gold);
-            letter-spacing: 2px;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
+        .breadcrumb { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .breadcrumb a { color: var(--accent-cyan); text-decoration: none; font-weight: 600; }
+        .breadcrumb a:hover { color: var(--accent-gold); }
 
-        .logo:hover {
-            color: var(--accent-cyan);
-        }
+        /* EDITORIAL DIVIDER */
+        .divider { border: none; border-top: 2px solid var(--border-subtle); margin: 3.5rem 0; }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
+        /* HERO */
+        .case-label { font-family: 'Space Grotesk', sans-serif; font-size: 0.8rem; color: var(--accent-cyan); letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 0.8rem; }
+        .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: var(--accent-gold); line-height: 1.15; letter-spacing: 1px; margin-bottom: 1.5rem; }
+        .hero-sub { font-size: 1.05rem; color: var(--text-primary); margin-bottom: 2rem; max-width: 480px; }
 
-        .breadcrumb {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+        .hero-photo { width: 100%; border-radius: 10px; border: 1px solid var(--border-subtle); margin-bottom: 2rem; display: block; }
 
-        .breadcrumb a {
-            color: var(--accent-cyan);
-            text-decoration: none;
-            font-weight: 600;
-        }
+        .role-line { display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; font-size: 0.85rem; color: var(--text-secondary); }
+        .role-line strong { color: var(--accent-gold); }
 
-        .breadcrumb a:hover {
-            color: var(--accent-gold);
-        }
+        /* NUMBERED SECTION */
+        .num-section { margin: 0; }
+        .num-label { font-family: 'Bebas Neue', sans-serif; font-size: 0.95rem; color: var(--accent-cyan); letter-spacing: 3px; margin-bottom: 1.2rem; }
+        .num-headline { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; color: var(--accent-gold); line-height: 1.25; letter-spacing: 0.5px; margin-bottom: 1.3rem; }
+        .num-section p { margin-bottom: 1rem; line-height: 1.85; color: var(--text-primary); }
+        .num-section ul { margin-left: 1.4rem; margin-bottom: 1rem; }
+        .num-section li { margin-bottom: 0.6rem; line-height: 1.75; }
 
-        .case-hero {
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: linear-gradient(135deg, rgba(27, 124, 154, 0.12), rgba(196, 167, 71, 0.08));
-            border: 1px solid var(--border-subtle);
-            border-radius: 8px;
-        }
+        /* FLOW DIAGRAM */
+        .flow { display: flex; flex-direction: column; align-items: flex-start; gap: 0; margin: 1.5rem 0; }
+        .flow-step { background: rgba(27,124,154,0.1); border: 1px solid var(--accent-cyan); border-radius: 6px; padding: 0.7rem 1.1rem; font-size: 0.88rem; color: var(--accent-cyan); font-weight: 600; }
+        .flow-arrow { color: var(--text-secondary); font-size: 1.1rem; margin: 0.3rem 0 0.3rem 1.4rem; }
 
-        .case-hero h1 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-        }
-
-        .case-meta {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .meta-item {
-            background: rgba(27, 124, 154, 0.1);
-            padding: 1rem;
-            border-left: 2px solid var(--accent-cyan);
-            border-radius: 4px;
-        }
-
-        .meta-label {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-            margin-bottom: 0.4rem;
-        }
-
-        .meta-value {
-            color: var(--accent-gold);
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.2rem;
-            letter-spacing: 0.5px;
-        }
-
-        .section {
-            margin: 3rem 0;
-        }
-
-        .section h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.8rem;
-            color: var(--accent-cyan);
-            margin-bottom: 1.5rem;
-            border-left: 3px solid var(--accent-gold);
-            padding-left: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .section h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
-            color: var(--accent-gold);
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .section p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-            color: var(--text-primary);
-        }
-
-        .section ul {
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .section li {
-            margin-bottom: 0.8rem;
-            color: var(--text-primary);
-            line-height: 1.7;
-        }
-
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .metric-card {
-            background: rgba(27, 124, 154, 0.12);
-            border: 1px solid var(--accent-blue);
-            padding: 1.5rem;
-            border-radius: 6px;
-            text-align: center;
-        }
-
-        .metric-value {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
-            color: var(--accent-gold);
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .metric-label {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            margin-top: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-        }
-
-        .challenge-box {
-            background: rgba(27, 124, 154, 0.08);
-            border-left: 3px solid var(--accent-cyan);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 4px;
-        }
-
-        .challenge-box p {
-            color: var(--text-primary);
-        }
-
-        .highlight-box {
-            background: rgba(196, 167, 71, 0.08);
-            border-left: 3px solid var(--accent-gold);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 4px;
-        }
-
-        .learnings {
-            background: rgba(196, 167, 71, 0.08);
-            border-left: 3px solid var(--accent-gold);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 4px;
-        }
-
-        .learnings h3 {
-            margin-top: 0;
-        }
-
-        .learnings ul {
-            margin-top: 1rem;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, rgba(27, 124, 154, 0.12), rgba(196, 167, 71, 0.08));
-            border: 1px solid var(--border-subtle);
-            padding: 2rem;
-            text-align: center;
-            border-radius: 8px;
-            margin: 3rem 0;
-        }
-
-        .cta-section h2 {
-            border: none;
-            padding: 0;
-            text-transform: uppercase;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
-        }
-
-        .btn {
-            padding: 0.9rem 2rem;
-            border: 1.5px solid;
-            background: transparent;
-            cursor: pointer;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 0.85rem;
-            border-radius: 4px;
-            color: var(--text-primary);
-        }
-
-        .btn-primary {
-            border-color: var(--accent-gold);
-            color: var(--accent-gold);
-        }
-
-        .btn-primary:hover {
-            background: rgba(196, 167, 71, 0.1);
-        }
-
-        .btn-secondary {
-            border-color: var(--accent-cyan);
-            color: var(--accent-cyan);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(0, 168, 204, 0.1);
-        }
-
-        .video-link {
-            color: var(--accent-cyan);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .video-link:hover {
-            color: var(--accent-gold);
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid var(--border-subtle);
-            margin-top: 4rem;
-            color: var(--text-secondary);
-            background: linear-gradient(135deg, rgba(15, 21, 53, 0.8), rgba(27, 124, 154, 0.05));
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 1.5rem 1rem;
-            }
-
-            .case-hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .section h2 {
-                font-size: 1.5rem;
-            }
-
-            .metrics-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .btn-group {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-        }
-    
-        .video-card {
-            display: inline-block;
-            width: 190px;
-            margin: 0.5rem 0.6rem 0.5rem 0;
-            text-decoration: none;
-            vertical-align: top;
-        }
-        .video-thumb-wrap {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            overflow: hidden;
-            border-radius: 6px;
-            border: 1px solid var(--border-subtle);
-            background: var(--bg-card);
-        }
-        .video-thumb-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.3s;
-        }
-        .video-card:hover .video-thumb-wrap img { transform: scale(1.06); }
-        .video-card:hover .video-thumb-wrap { border-color: var(--accent-gold); }
-        .play-icon {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 34px; height: 34px;
-            background: rgba(10, 14, 39, 0.75);
-            border-radius: 50%;
-            color: var(--accent-gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            border: 1px solid var(--accent-gold);
-        }
-        .video-card-label {
-            display: block;
-            margin-top: 0.5rem;
-            font-size: 0.78rem;
-            color: var(--accent-cyan);
-            font-weight: 600;
-            line-height: 1.3;
-        }
-        .video-card:hover .video-card-label { color: var(--accent-gold); }
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-            gap: 1rem;
-            margin: 1.2rem 0;
-        }
-        .video-grid .video-card { width: 100%; margin: 0; }
-
-        .story-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 1rem;
-            margin: 1.3rem 0;
-        }
-        .story-card {
-            background: rgba(15, 21, 53, 0.5);
-            border: 1px solid var(--border-subtle);
-            border-radius: 8px;
-            padding: 1rem;
-        }
+        /* STORY / VIDEO CARDS (reused pattern) */
+        .story-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; margin: 1.3rem 0; }
+        .story-card { background: rgba(15, 21, 53, 0.5); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1rem; }
         .story-card strong { color: var(--accent-gold); }
-        .story-card p { font-size: 0.88rem; margin-bottom: 0; color: var(--text-primary); }
+        .story-card p { font-size: 0.86rem; margin-bottom: 0; color: var(--text-primary); }
         .story-card .video-card { width: 100%; margin: 0.8rem 0 0 0; }
 
+        .video-card { display: inline-block; width: 180px; margin: 0.5rem 0.6rem 0.5rem 0; text-decoration: none; vertical-align: top; }
+        .video-thumb-wrap { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 6px; border: 1px solid var(--border-subtle); background: var(--bg-card); }
+        .video-thumb-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+        .video-card:hover .video-thumb-wrap img { transform: scale(1.06); }
+        .video-card:hover .video-thumb-wrap { border-color: var(--accent-gold); }
+        .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 32px; height: 32px; background: rgba(10, 14, 39, 0.75); border-radius: 50%; color: var(--accent-gold); display: flex; align-items: center; justify-content: center; font-size: 0.78rem; border: 1px solid var(--accent-gold); }
+        .video-card-label { display: block; margin-top: 0.5rem; font-size: 0.76rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.3; }
+        .video-card:hover .video-card-label { color: var(--accent-gold); }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 1rem; margin: 1.2rem 0; }
+        .video-grid .video-card { width: 100%; margin: 0; }
+
+        /* BIG STAT BLOCK */
+        .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin: 1.5rem 0; }
+        .stat-block { text-align: left; }
+        .stat-number { font-family: 'Bebas Neue', sans-serif; font-size: 2.3rem; color: var(--accent-gold); line-height: 1; letter-spacing: 0.5px; }
+        .stat-caption { font-size: 0.78rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.4rem; font-weight: 600; }
+
+        /* CHART CARDS */
+        .chart-card { background: rgba(15,21,53,0.5); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+        .chart-legend { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 1rem; font-size: 0.78rem; color: var(--text-secondary); }
+        .chart-legend span { display: flex; align-items: center; gap: 5px; }
+        .swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+        .highlight-box { background: rgba(196, 167, 71, 0.08); border-left: 3px solid var(--accent-gold); padding: 1.5rem; margin: 1.5rem 0; border-radius: 4px; }
+        .caution-box { background: rgba(196, 84, 71, 0.08); border-left: 3px solid var(--accent-warn); padding: 1.5rem; margin: 1.5rem 0; border-radius: 4px; }
+
+        /* EVIDENCE PHOTO */
+        .evidence-photo-wrap { max-width: 320px; margin: 1.3rem 0; }
+        .evidence-photo-wrap img { width: 100%; border-radius: 8px; border: 1px solid var(--border-subtle); display: block; }
+        .evidence-caption { font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.6rem; }
+        .evidence-caption a { color: var(--accent-cyan); text-decoration: none; }
+        .evidence-caption a:hover { color: var(--accent-gold); }
+
+        /* RELATED CASE STUDIES */
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
+        .related-card { background: rgba(15,21,53,0.5); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1.2rem; text-decoration: none; display: block; transition: all 0.3s; }
+        .related-card:hover { border-color: var(--accent-gold); transform: translateY(-2px); }
+        .related-eyebrow { font-size: 0.72rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.4rem; }
+        .related-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: var(--accent-gold); margin-bottom: 0.6rem; }
+        .related-link { font-size: 0.8rem; color: var(--accent-cyan); font-weight: 600; }
+
+        .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
+        .btn { padding: 0.9rem 2rem; border: 1.5px solid; background: transparent; cursor: pointer; font-family: 'Space Grotesk', sans-serif; font-weight: 700; transition: all 0.3s; text-decoration: none; display: inline-block; text-transform: uppercase; letter-spacing: 0.5px; font-size: 0.85rem; border-radius: 4px; color: var(--text-primary); }
+        .btn-primary { border-color: var(--accent-gold); color: var(--accent-gold); }
+        .btn-primary:hover { background: rgba(196, 167, 71, 0.1); }
+        .btn-secondary { border-color: var(--accent-cyan); color: var(--accent-cyan); }
+        .btn-secondary:hover { background: rgba(0, 168, 204, 0.1); }
+
+        footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-subtle); margin-top: 4rem; color: var(--text-secondary); background: linear-gradient(135deg, rgba(15, 21, 53, 0.8), rgba(27, 124, 154, 0.05)); }
+
+        @media (max-width: 768px) {
+            .container { padding: 1.5rem 1rem; }
+            .hero-title { font-size: 1.9rem; }
+            .num-headline { font-size: 1.4rem; }
+            .stat-grid { grid-template-columns: 1fr 1fr; }
+            .stat-number { font-size: 1.8rem; }
+            .btn-group { flex-direction: column; }
+            .btn { width: 100%; }
+        }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <a href="/" class="logo">JALAK</a>
-        </div>
+        <div class="header-content"><a href="../index.html" class="logo">JALAK</a></div>
     </header>
 
     <div class="container">
-        <div class="breadcrumb">
-            <a href="/">← Back to Portfolio</a>
+        <div class="breadcrumb"><a href="../index.html">Back to Portfolio</a></div>
+
+        <!-- HERO -->
+        <div class="case-label">Case Study</div>
+        <h1 class="hero-title">AJMERA FASHION<br>31 CHANNELS.<br>619,539 SUBSCRIBERS.<br>ONE REGIONAL STRATEGY.</h1>
+        <p class="hero-sub">Turning language variation into a 31-channel distribution system, and being honest about what happened to it after I left.</p>
+
+        <img src="images/linkedin-ajay-ajmera-breakfast.jpg" alt="Ajay Ajmera, Founder and CEO of Ajmera Fashion, having breakfast with the team" class="hero-photo">
+
+        <div class="role-line">
+            <span><strong>Role</strong> Digital Marketing Executive</span>
+            <span><strong>Duration</strong> Jul 2022 to Jul 2023</span>
+            <span><strong>Scope</strong> YouTube, Regional Strategy, Content Systems</span>
         </div>
 
-        <section class="case-hero">
-            <h1>Ajmera Fashion</h1>
-            <p style="font-size: 1.1rem; color: var(--accent-cyan); margin-bottom: 1rem;">From 30-40 to 50 Multilingual YouTube Channels — My First Digital Marketing Role</p>
-            
-            <div class="case-meta">
-                <div class="meta-item">
-                    <div class="meta-label">Duration</div>
-                    <div class="meta-value">Jul 2022 – Jul 2023</div>
-                </div>
-                <div class="meta-item">
-                    <div class="meta-label">Status</div>
-                    <div class="meta-value">First Job (Fresher)</div>
-                </div>
-                <div class="meta-item">
-                    <div class="meta-label">Channels Scaled</div>
-                    <div class="meta-value">30-40 → 50</div>
-                </div>
-                <div class="meta-item">
-                    <div class="meta-label">Languages</div>
-                    <div class="meta-value">6 Languages</div>
-                </div>
+        <hr class="divider">
+
+        <!-- 01 CONTEXT -->
+        <div class="num-section">
+            <div class="num-label">01 / THE CONTEXT</div>
+            <div class="num-headline">What was happening?</div>
+            <p>Ajmera Fashion is a B2B textile wholesaler whose real business is helping small retailers and entrepreneurs start their own clothing businesses. YouTube was not their revenue engine, inventory sales were. But YouTube was how they built trust and reached buyers in Tier 2 and Tier 3 cities before those buyers ever placed an order.</p>
+            <p>This was my first job in digital marketing. No prior experience, no existing playbook. The company already had a large, loosely organized set of YouTube channels split by language, by product category, and by business model. The opportunity was not simply to publish more content. It was to find the actual audience logic underneath a channel portfolio that had grown without one.</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- 02 PROBLEM -->
+        <div class="num-section">
+            <div class="num-label">02 / THE PROBLEM</div>
+            <div class="num-headline">REGIONAL AUDIENCES ARE NOT LANGUAGE AUDIENCES.</div>
+            <p>A video uploaded in Marathi does not automatically reach a Marathi audience if the product, the keywords, and the framing do not match what that specific region actually searches for. The channels existed. The regional logic connecting them to their audience did not.</p>
+            <p>The challenge was not producing more content. It was deciding what each region actually wanted, and building a system that could scale that judgment across more than 30 channels rather than one at a time.</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- 03 STRATEGIC DECISION -->
+        <div class="num-section">
+            <div class="num-label">03 / THE STRATEGIC DECISION</div>
+            <div class="num-headline">DON'T TRANSLATE CONTENT. TRANSLATE THE STRATEGY.</div>
+            <p>Instead of treating language as a translation problem, I treated each region as its own audience with its own vocabulary, its own product preference, and its own reason to trust a seller. A single national campaign copy-pasted across six languages was the default. I built the opposite of that.</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- 04 EXECUTION -->
+        <div class="num-section">
+            <div class="num-label">04 / THE EXECUTION</div>
+            <div class="num-headline">How the system worked</div>
+            <div class="flow">
+                <div class="flow-step">Map regional product preference</div>
+                <div class="flow-arrow">&#8595;</div>
+                <div class="flow-step">Localize keywords per region</div>
+                <div class="flow-arrow">&#8595;</div>
+                <div class="flow-step">Layer in educational content</div>
+                <div class="flow-arrow">&#8595;</div>
+                <div class="flow-step">Build trust with brand ambassadors</div>
+                <div class="flow-arrow">&#8595;</div>
+                <div class="flow-step">Publish across the channel portfolio</div>
+                <div class="flow-arrow">&#8595;</div>
+                <div class="flow-step">Measure per-channel response</div>
             </div>
-        </section>
+        </div>
 
-        <section class="section">
-            <h2>Context: My First Digital Marketing Role</h2>
+        <hr class="divider">
 
-            <p>
-                This was my first job as a digital marketer. I was a fresher. But I'm a quick learner, and Ajmera Fashion gave me 
-                the opportunity to learn rapidly by throwing me into real-world challenges.
-            </p>
-
-            <p style="margin-top: 1rem;">
-                When I started, they had 30-40 YouTube channels. By the time I left, we had scaled to 50 channels—and that growth 
-                happened because I developed systems that worked, not because I worked harder.
-            </p>
-
-            <p style="margin-top: 1rem;">
-                The fact that I did this as a fresher (and was trusted to take on an internship program interview after just 6 months) 
-                shows what rapid learning and systematic thinking can do in a real business.
-            </p>
-        </section>
-
-        <section class="section">
-            <h2>The Business Model</h2>
-            
-            <p>
-                Ajmera Fashion is a B2B textile manufacturer and wholesaler specializing in sarees and traditional Indian clothing. 
-                But here's the strategic part: their business model isn't just selling fabric.
-            </p>
-
-            <p style="margin-top: 1rem;">
-                <strong>Their core value proposition:</strong> Help entrepreneurs and small retailers start their own clothing businesses. 
-                They guide them, mentor them, help them understand what to stock, and sell them inventory at competitive wholesale rates.
-            </p>
-
-            <div class="highlight-box">
-                <p>
-                    YouTube revenue? Secondary income. The real money comes from inventory sales. But YouTube serves a critical strategic role: 
-                    it builds trust, showcases products, educates the market, and reaches potential customers across India—especially in Tier 2 and Tier 3 cities.
-                </p>
-            </div>
-
-            <p style="margin-top: 1rem;">
-                When I joined, they had 30-40 YouTube channels—each serving a specific segment:
-            </p>
-            <ul>
-                <li><strong>Language Channels:</strong> Marathi, Odia, Telugu, Gujarati, Kannada (to reach regional audiences)</li>
-                <li><strong>Product Channels:</strong> Lehengas, Sarees, Suit Material, Dress Material (to showcase specific inventory)</li>
-                <li><strong>Business Model Variations:</strong> Different channels for different customer segments</li>
-            </ul>
-
-            <p style="margin-top: 1rem;">
-                The challenge: Managing 30-40 channels (which grew to 50) with consistent quality, regional relevance, and product strategy was chaotic.
-            </p>
-
-            <p style="margin-top: 1rem;">
-                Most people would have said "we can't scale this without hiring 30-40 people." I built systems instead.
-            </p>
-        </section>
-
-        <section class="section">
-            <h2>The Challenge</h2>
-            
-            <div class="challenge-box">
-                <p>
-                    <strong>The core problem:</strong> 30-40 YouTube channels, multiple languages, multiple product categories, 
-                    no unified strategy. Content was being uploaded, but there was no system connecting regional audience preferences 
-                    to product strategy.
-                </p>
-            </div>
-
-            <h3>Three Specific Problems</h3>
-            <ul>
-                <li>
-                    <strong>Regional Disconnect:</strong> Uploading generic saree videos to regional channels. But Maharashtrian women 
-                    have different taste than Odia women. The algorithm knows this. Viewers know this. We were sending the wrong product to the wrong audience.
-                </li>
-                <li>
-                    <strong>No Language/Keyword Strategy:</strong> Uploading Sarees in Hindi as "silk saree"—generic keyword. 
-                    But in Maharashtra, viewers search for "Paithani saree" or "Karpabardi saree" (specific regional styles). 
-                    We were losing 70% of organic discovery.
-                </li>
-                <li>
-                    <strong>No Content Mix:</strong> Pure product videos. No education. No storytelling. Why should someone watch? 
-                    Why should they subscribe? Why would they buy?
-                </li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>The Strategy: Four Integrated Systems</h2>
-
-            <h3>System 1: Regional Audience Mapping (Language + State + Taste)</h3>
-            <p>
-                I analyzed what actually works on regional YouTube. Discovered: viewers don't just care about language. 
-                They care about culturally relevant products.
-            </p>
-
+        <!-- 05 WORK IN PRACTICE -->
+        <div class="num-section">
+            <div class="num-label">05 / THE WORK IN PRACTICE</div>
+            <div class="num-headline">Regional mapping, in practice</div>
             <div class="story-grid">
                 <div class="story-card">
-                    <p><strong>Maharashtra:</strong> Women prefer silk sarees — but specifically "Paithani" or "Karpabardi" sarees. Adding these regional keywords to titles and descriptions lifted views significantly.</p>
-                    <a href="https://youtu.be/2bMASguJVu0?si=ZxoOkruJw0Lctdyr" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/2bMASguJVu0/hqdefault.jpg" alt="Marathi saree strategy" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Marathi Saree Strategy</span></a>
+                    <p><strong>Maharashtra</strong><br>Viewers search for specific regional saree styles like "Paithani" or "Karpabardi," not generic "silk saree." Titling around the specific term measurably outperformed the generic one.</p>
+                    <a href="https://youtu.be/2bMASguJVu0" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/2bMASguJVu0/hqdefault.jpg" alt="Marathi saree strategy video" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Marathi Saree Strategy</span></a>
                 </div>
                 <div class="story-card">
-                    <p><strong>Odisha:</strong> Women prefer cotton and handloom sarees. Cultural terms like "Sambalpuri Ikat" consistently outperformed generic keywords once the strategy shifted.</p>
-                    <a href="https://youtu.be/4Whd2WeVfGM?si=kfrQcd-aC1gCFs7N" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/4Whd2WeVfGM/hqdefault.jpg" alt="Odia handloom strategy" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Odia Handloom Strategy</span></a>
-                </div>
-                <div class="story-card">
-                    <p><strong>Gujarat:</strong> Daily-wear sarees, Gandhi-pattern sarees, and chiffon sarees consistently outperformed formal wear.</p>
-                </div>
-                <div class="story-card">
-                    <p><strong>Other regions:</strong> The same regional analysis was applied to every language channel in the portfolio.</p>
+                    <p><strong>Odisha</strong><br>Cotton and handloom sarees dominate regional taste. Terms like "Sambalpuri Ikat" consistently outperformed generic keywords once the strategy shifted to match.</p>
+                    <a href="https://youtu.be/4Whd2WeVfGM" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/4Whd2WeVfGM/hqdefault.jpg" alt="Odia handloom strategy video" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Odia Handloom Strategy</span></a>
                 </div>
             </div>
 
-            <h3>System 2: Educational Content Mix (Product + Business Education)</h3>
-            <p>
-                Realized: Just showing products doesn't convert. People need to understand the opportunity. 
-                I started creating educational videos about how to start a business using these products.
-            </p>
-
+            <p style="margin-top: 1.5rem;">Product videos alone don't convert a viewer into a buyer, so I built a parallel content track around the business opportunity itself.</p>
             <div class="story-grid">
                 <div class="story-card">
-                    <p><strong>"How to Start a Saree Business"</strong><br>Full business model explained.</p>
-                    <a href="https://youtu.be/U8zxEuoOn1k?si=PEJGe6cDhfE0UsjZ" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/U8zxEuoOn1k/hqdefault.jpg" alt="How to Start a Saree Business" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Watch</span></a>
+                    <p><strong>How to Start a Saree Business</strong></p>
+                    <a href="https://youtu.be/U8zxEuoOn1k" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/U8zxEuoOn1k/hqdefault.jpg" alt="How to Start a Saree Business" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Watch</span></a>
                 </div>
                 <div class="story-card">
-                    <p><strong>"How Housewives Can Start a Business from Home with Less Capital"</strong><br>Practical guide.</p>
-                    <a href="https://youtu.be/wZvuslwl_n0?si=0NH-D8cqbojbsiya" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/wZvuslwl_n0/hqdefault.jpg" alt="Housewife entrepreneur guide" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Watch</span></a>
+                    <p><strong>Housewife Entrepreneur Guide</strong></p>
+                    <a href="https://youtu.be/wZvuslwl_n0" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/wZvuslwl_n0/hqdefault.jpg" alt="Housewife entrepreneur guide" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Watch</span></a>
                 </div>
                 <div class="story-card">
-                    <p><strong>"How Students Can Generate Side Income"</strong><br>Alternative revenue for students.</p>
-                    <a href="https://youtu.be/eizwLEdPviU?si=jun-36OMs9yJtUU7" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/eizwLEdPviU/hqdefault.jpg" alt="Student side income" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Watch</span></a>
+                    <p><strong>Student Side Income</strong></p>
+                    <a href="https://youtu.be/eizwLEdPviU" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/eizwLEdPviU/hqdefault.jpg" alt="Student side income guide" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Watch</span></a>
                 </div>
             </div>
+        </div>
 
-            <p style="margin-top: 1rem;">
-                <strong>The result:</strong> Viewers weren't just watching products. They were learning a business model. 
-                They were visualizing themselves as entrepreneurs. That's when they became customers.
-            </p>
+        <hr class="divider">
 
-            <h3>System 3: Brand Ambassador Strategy (Trust Building)</h3>
-            <p>
-                To accelerate trust and engagement, I introduced brand ambassadors in the videos. 
-                Real people explaining the business, modeling the products, telling their stories.
-            </p>
-
-            <div class="story-grid">
-                <div class="story-card">
-                    <p><strong>Example</strong></p>
-                    <a href="https://youtu.be/Ed7H6o5QLbo?si=PxHRQ42yR8Kv8OOz" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/Ed7H6o5QLbo/hqdefault.jpg" alt="Brand ambassador video" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Brand Ambassador Video</span></a>
-                </div>
-            </div>
-
-            <p style="margin-top: 1rem;">
-                Brand ambassadors increased trust signals. Viewers saw real people, not just products.
-            </p>
-
-            <h3>System 4: YouTube Analytics-Driven Product Strategy</h3>
-            <p>
-                Used YouTube analytics to see which products perform best on which channels, then doubled down on those.
-            </p>
-
-            <ul>
-                <li><strong>Marathi Channel:</strong> Silk sarees, blouses, petticoats, astars, fall materials performed best → More content on these</li>
-                <li><strong>Gujarati Channel:</strong> Daily-wear sarees, Gandhi-pattern sarees, chiffon sarees performing → Specialized content for these</li>
-                <li><strong>Odia Channel:</strong> Cotton sarees, nighties performing → Product mix shifted to match viewer demand</li>
-            </ul>
-
-            <p style="margin-top: 1rem;">
-                Data informed strategy. Strategy informed production. No guessing.
-            </p>
-
-            <h3>System 5: Community Engagement (Beyond Videos)</h3>
-            <p>
-                Expanded beyond YouTube videos into community posts. Created festival-themed posts, quizzes, product questions to engage audiences.
-            </p>
-
-            <ul>
-                <li>Festival posts aligned with regional calendars (Diwali, Navratri, Durga Puja, etc.)</li>
-                <li>Quizzes that encouraged audience participation in comments</li>
-                <li>Educational content about products to encourage sharing</li>
-                <li>Worked on multiple Tier 2-3 platforms: Facebook, Chingari, and other regional apps</li>
-            </ul>
-
-            <h3>Bonus: CEO/Brand Ambassador PR Content</h3>
-            <p>
-                As I learned the business model, I got the opportunity to work with the CEO's PR team. 
-                Built a personal content calendar for the CEO that showcased:
-            </p>
-
-            <ul>
-                <li>Daily business activities and operations</li>
-                <li>Meetings with employees and partners</li>
-                <li>Business-focused storytelling content</li>
-            </ul>
-
-            <p style="margin-top: 1rem;">
-                <strong>Example videos I worked on:</strong>
-            </p>
+        <!-- 06 WHY IT WORKED -->
+        <div class="num-section">
+            <div class="num-label">06 / WHY IT WORKED</div>
+            <div class="num-headline">Not every channel needed to perform the same job.</div>
+            <p>Language channels reached regional buyers who trusted their own dialect and product terms. Educational content converted casual viewers into people who could picture themselves as sellers. Brand ambassador content and CEO features built the trust a purely transactional channel never earns.</p>
+            <p>The strategy was therefore not "make more videos." It was "give each regional audience a reason that actually applies to them."</p>
             <div class="video-grid">
-                <a href="https://youtu.be/yjCx8foXXD4?si=MlGhTFREz2ilrbKD" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/yjCx8foXXD4/hqdefault.jpg" alt="CEO Content 1" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">CEO Content 1</span></a>
-                <a href="https://youtu.be/CqAJ63ahnKs?si=_DbYcci_p-fyXqIB" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/CqAJ63ahnKs/hqdefault.jpg" alt="CEO Content 2" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">CEO Content 2</span></a>
-                <a href="https://youtu.be/UVidGTqq2C0?si=X6VxXtQzqEYqFzG9Z" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/UVidGTqq2C0/hqdefault.jpg" alt="CEO Content 3" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">CEO Content 3</span></a>
-                <a href="https://youtu.be/jNj6MuVwqaY?si=afufhnLvn8EgK9jF" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/jNj6MuVwqaY/hqdefault.jpg" alt="CEO Content 4" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">CEO Content 4</span></a>
-                <a href="https://youtu.be/-Ux_ToAFzG8?si=Gh75s3d_TphOtT-I" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/-Ux_ToAFzG8/hqdefault.jpg" alt="CEO Content 5" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">CEO Content 5</span></a>
+                <a href="https://youtu.be/Ed7H6o5QLbo" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/Ed7H6o5QLbo/hqdefault.jpg" alt="Brand ambassador video" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">Brand Ambassador</span></a>
+                <a href="https://youtu.be/yjCx8foXXD4" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/yjCx8foXXD4/hqdefault.jpg" alt="CEO Content 1" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">CEO Content 1</span></a>
+                <a href="https://youtu.be/CqAJ63ahnKs" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/CqAJ63ahnKs/hqdefault.jpg" alt="CEO Content 2" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">CEO Content 2</span></a>
+                <a href="https://youtu.be/UVidGTqq2C0" target="_blank" class="video-card"><div class="video-thumb-wrap"><img src="https://img.youtube.com/vi/UVidGTqq2C0/hqdefault.jpg" alt="CEO Content 3" loading="lazy"><span class="play-icon">&#9654;</span></div><span class="video-card-label">CEO Content 3</span></a>
             </div>
-        </section>
+        </div>
 
-        <section class="section">
-            <h2>The Results</h2>
+        <hr class="divider">
 
-            <div class="metrics-grid">
-                <div class="metric-card">
-                    <div class="metric-value">30 → 50</div>
-                    <div class="metric-label">YouTube Channels Scaled</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">+40%</div>
-                    <div class="metric-label">Content Output Increase</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">+30%</div>
-                    <div class="metric-label">Subscriber Growth (6 Months)</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">6</div>
-                    <div class="metric-label">Languages Managed</div>
-                </div>
+        <!-- 07 SECOND EXAMPLE / DATA STORY -->
+        <div class="num-section">
+            <div class="num-label">07 / THE HONEST NUMBER</div>
+            <div class="num-headline">Growth rate more than doubled after I left. Here's the actual breakdown.</div>
+            <p>I left this role in July 2023. Tracking data continues six months past that date. Restricted to the 19 channels with continuous coverage on both sides of that line, so the comparison isn't distorted by channels that simply stopped being tracked, portfolio growth rate went from 328 subscribers a day during my tenure to 685 a day after.</p>
+
+            <div class="caution-box">
+                <p><strong>I'm not going to hide that number or spin it.</strong> But it's misleading left on its own, so here's what's actually underneath it.</p>
             </div>
 
-            <h3>What These Numbers Mean</h3>
+            <div class="chart-card">
+                <div class="chart-legend">
+                    <span><span class="swatch" style="background:#2a78d6"></span>Shorts channels, faster</span>
+                    <span><span class="swatch" style="background:#eda100"></span>Product channels, flat</span>
+                    <span><span class="swatch" style="background:#e34948"></span>Regional long-form, slower</span>
+                </div>
+                <div style="position: relative; width: 100%; height: 180px;">
+                    <canvas id="categoryChart" role="img" aria-label="Diverging bar chart: Shorts channels plus 24.1 subscribers per day faster after departure, Product channels plus 0.8 faster, Regional long-form channels minus 7.7 slower">Shorts +24.1, Product +0.8, Regional -7.7</canvas>
+                </div>
+            </div>
+
+            <p>Main channel and Gujarati Shorts drove most of the acceleration, Main went from roughly 191 to 419 subscribers a day, Gujarati Shorts from 21 to 123. At the same time, regional long-form channels that depend on ongoing cultural and keyword localization slowed down. Telugu specifically fell from roughly 37 a day to 18, more than halving.</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- 08 THE DATA -->
+        <div class="num-section">
+            <div class="num-label">08 / THE DATA</div>
+            <div class="num-headline">What I measured</div>
+            <p>Subscriber counts and 48 hour view velocity, tracked daily across the channel portfolio, December 2022 through December 2023. Every figure here is a direct calculation from that raw data, not an estimate.</p>
+
+            <div class="chart-card">
+                <div class="chart-legend">
+                    <span><span class="swatch" style="background:#2a78d6"></span>Main 69%</span>
+                    <span><span class="swatch" style="background:#eb6834"></span>Regional 18%</span>
+                    <span><span class="swatch" style="background:#1baf7a"></span>Shorts 10%</span>
+                    <span><span class="swatch" style="background:#eda100"></span>Product 3%</span>
+                </div>
+                <div style="position: relative; width: 100%; height: 220px;">
+                    <canvas id="portfolioPie" role="img" aria-label="Pie chart of subscriber distribution across 31 Ajmera Fashion channels: Main channel 69 percent, Regional language channels 18 percent, Shorts channels 10 percent, Product channels 3 percent">Main 425717, Regional 109390, Shorts 62820, Product 21612</canvas>
+                </div>
+            </div>
+
+            <p>The channel count normalization alone surfaced a real finding: the raw tracking sheets contained 31 distinct channels once every naming variant and typo was corrected, not the 3 to 5 an unprocessed read of the sheets would suggest.</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- 09 RESULT -->
+        <div class="num-section">
+            <div class="num-label">09 / THE RESULT</div>
+            <div class="stat-grid">
+                <div class="stat-block"><div class="stat-number">619,539</div><div class="stat-caption">Total Subscribers</div></div>
+                <div class="stat-block"><div class="stat-number">31</div><div class="stat-caption">Channels Tracked</div></div>
+                <div class="stat-block"><div class="stat-number">+108.7%</div><div class="stat-caption">Growth Rate Change</div></div>
+                <div class="stat-block"><div class="stat-number">+74.7%</div><div class="stat-caption">Main Channel View Velocity</div></div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- 10 WHAT THIS CHANGED -->
+        <div class="num-section">
+            <div class="num-label">10 / WHAT THIS CHANGED</div>
+            <div class="num-headline">The lesson wasn't that growth continued. It was where it continued.</div>
+            <p>Two entirely new channels, Telugu 2 and Lehenga, launched from zero during this window and had real subscriber bases by the time tracking ends. Momentum on the flagship and Shorts-format channels kept compounding after I left. Momentum on the regional long-form channels, the ones that depend on continuous hands-on cultural judgment, did not.</p>
+            <p>That changed how I think about content systems generally. Some parts of a system are self-sustaining once built. Others need a person still paying attention.</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- 11 MY ROLE -->
+        <div class="num-section">
+            <div class="num-label">11 / MY ROLE</div>
+            <div class="num-headline">What I actually owned</div>
             <ul>
-                <li>
-                    <strong>30 → 50 Channels (67% Growth):</strong> Started with 30-40 channels. Scaled to 50. This growth happened because 
-                    I built systems that worked. As a fresher, I could have just maintained what existed. Instead, I grew it—and the 
-                    quality didn't drop. That's the power of systems.
-                </li>
-                <li>
-                    <strong>40% Content Output:</strong> More videos being produced consistently across all 50 channels 
-                    without proportional team growth. This is what systems do.
-                </li>
-                <li>
-                    <strong>30% Subscriber Growth in 6 Months:</strong> Regional audiences finding the channels through 
-                    culturally relevant keywords. Not viral—steady, sustainable growth from targeted regional audiences.
-                </li>
-                <li>
-                    <strong>6 Languages:</strong> Successfully managed 6 regional language channels with culturally relevant 
-                    content strategies. Not just translation—regional customization.
-                </li>
+                <li>Regional audience strategy across 31 channels</li>
+                <li>Keyword and title localization per region</li>
+                <li>Educational content planning and scripting</li>
+                <li>Brand ambassador and CEO content calendar</li>
+                <li>Subscriber and view-velocity performance tracking</li>
             </ul>
-        </section>
+        </div>
 
-        <section class="section">
-            <h2>Key Learnings</h2>
+        <hr class="divider">
 
-            <div class="learnings">
-                <h3>1. Regional Preference ≠ Language Preference</h3>
-                <p>
-                    Uploading a saree video in Marathi language doesn't make it relevant to Marathi audiences. 
-                    You need to understand what Marathi audiences wear, what they value, what keywords they search for. 
-                    That's regional strategy.
-                </p>
-
-                <h3>2. Keywords Are Business Intelligence</h3>
-                <p>
-                    "Silk saree" vs. "Paithani saree" isn't just a title. It's the difference between getting discovered 
-                    or getting lost in the algorithm. Regional keywords connect products to specific audiences.
-                </p>
-
-                <h3>3. Product Videos Alone Don't Convert</h3>
-                <p>
-                    "Here's a saree" doesn't move the needle. "Here's how you can start a saree business, earn income, 
-                    build your future" does. Education sells products. Stories sell businesses.
-                </p>
-
-                <h3>4. Analytics Should Drive Strategy</h3>
-                <p>
-                    Don't guess what products perform. Watch YouTube analytics. See what gets watched, shared, and searched. 
-                    Then make that. Data-informed strategy beats intuition.
-                </p>
-
-                <h3>5. Scale Through Systems, Not Hiring</h3>
-                <p>
-                    Managing 30-40 channels could require 30-40 people. But with clear templates, regional strategies, 
-                    and an analytics framework, one person with the right systems can manage the portfolio.
-                </p>
+        <!-- 12 EVIDENCE -->
+        <div class="num-section">
+            <div class="num-label">12 / EVIDENCE</div>
+            <div class="num-headline">Source material</div>
+            <div class="evidence-photo-wrap">
+                <img src="images/linkedin-ajay-ajmera-breakfast.jpg" alt="LinkedIn post from Ajay Ajmera, Founder and CEO, showing team breakfast bonding">
+                <div class="evidence-caption">Posted by <a href="https://www.linkedin.com/in/ajay-ajmeraofficial/" target="_blank">Ajay Ajmera</a>, Founder and CEO of Ajmera Fashion. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7079031257216499712/" target="_blank">View original post</a></div>
             </div>
-        </section>
+            <p>All numbers in this case study are based on raw subscriber and 48 hour view tracking sheets. Attribution is separated where lifetime channel data includes content published before or after my tenure, stated explicitly in each section rather than folded into a single total.</p>
+        </div>
 
-        <section class="section">
-            <h2>The Progression: Fresher to Fast Learner</h2>
+        <hr class="divider">
 
-            <p>
-                Here's what makes this case study relevant: This was my first digital marketing job. I was a fresher. 
-                No experience. No proven track record.
-            </p>
-
-            <p style="margin-top: 1rem;">
-                Within 6 months, I was trusted to take an internship program interview. Why? Because I'd proven that I:
-            </p>
-
-            <ul>
-                <li>Learn quickly (mastered YouTube analytics, regional strategy, content systems in months)</li>
-                <li>Build systems (not just execute tasks)</li>
-                <li>Add value (grew channels from 30-40 to 50)</li>
-                <li>Think strategically (discovered regional preference insights)</li>
-            </ul>
-
-            <p style="margin-top: 1rem;">
-                This trajectory—fresher to trusted strategic contributor in 6 months—is what rapid learning + systematic thinking looks like in practice.
-            </p>
-        </section>
-
-        <section class="section">
-            <h2>Why This Matters</h2>
-            
-            <p>
-                This wasn't a viral moment or a lucky algorithm play. This was systematic regional audience management 
-                at scale. Understanding that Tier 2-3 India has specific preferences, specific languages, specific products 
-                they're searching for. And building channels that speak to them specifically.
-            </p>
-
-            <p style="margin-top: 1rem;">
-                That insight—regional customization, not just translation—is what drove growth. That's content strategy.
-            </p>
-        </section>
-
-        <section class="cta-section">
-            <h2>Building for Regional Scale</h2>
-            <p>
-                If you're building a brand that serves India—or any multilingual, multi-regional market—regional strategy 
-                isn't an afterthought. It's the core of your growth strategy.
-            </p>
-            
-            <div class="btn-group">
-                <a href="https://www.linkedin.com/in/jalak-patel-63ab50220" target="_blank" class="btn btn-primary">
-                    Connect on LinkedIn
+        <!-- WHAT'S NEXT -->
+        <div class="num-section">
+            <div class="num-label">WHAT'S NEXT</div>
+            <div class="num-headline">Related Case Studies</div>
+            <div class="related-grid">
+                <a href="jalan-megamart.html" class="related-card">
+                    <div class="related-eyebrow">Operations Build</div>
+                    <div class="related-title">Jalan Mega Mart</div>
+                    <div class="related-link">Read Case &#8594;</div>
                 </a>
-                <a href="/" class="btn btn-secondary">
-                    Back to Portfolio
+                <a href="swad.html" class="related-card">
+                    <div class="related-eyebrow">Content System</div>
+                    <div class="related-title">Swad Cooking Institute</div>
+                    <div class="related-link">Read Case &#8594;</div>
+                </a>
+                <a href="cinekorn.html" class="related-card">
+                    <div class="related-eyebrow">Distribution System</div>
+                    <div class="related-title">Cinekorn Entertainment</div>
+                    <div class="related-link">Read Case &#8594;</div>
                 </a>
             </div>
-        </section>
+        </div>
+
+        <div class="btn-group" style="margin-top: 3rem;">
+            <a href="https://www.linkedin.com/in/jalak-patel-63ab50220" target="_blank" class="btn btn-primary">Connect on LinkedIn</a>
+            <a href="../index.html" class="btn btn-secondary">Back to Portfolio</a>
+        </div>
     </div>
 
     <footer>
-        <p>© 2026 JALAK — Creative Strategist</p>
-        <p style="font-size: 0.85rem;">Case Study: Ajmera Fashion | Regional YouTube Strategy at Scale</p>
+        <p>&copy; 2026 JALAK, Creative Strategist</p>
+        <p style="font-size: 0.85rem;">Case Study: Ajmera Fashion, 31-Channel Portfolio Strategy and Honest Post-Tenure Data</p>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+    <script>
+    new Chart(document.getElementById('portfolioPie'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Main','Regional language','Shorts','Product'],
+            datasets: [{ data: [425717,109390,62820,21612], backgroundColor: ['#2a78d6','#eb6834','#1baf7a','#eda100'], borderColor: '#0f1535', borderWidth: 2 }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+    });
+    new Chart(document.getElementById('categoryChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Shorts channels','Product channels','Regional long-form'],
+            datasets: [{ data: [24.1, 0.8, -7.7], backgroundColor: [24.1,0.8,-7.7].map(v => v >= 0 ? '#2a78d6' : '#e34948'), borderRadius: 4 }]
+        },
+        options: {
+            indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return (c.raw>=0?'+':'') + c.raw + ' subs per day'; } } } },
+            scales: {
+                x: { grid: { color: '#2c2c2a' }, ticks: { color: '#A8A8A8', callback: function(v) { return (v>=0?'+':'') + v; } } },
+                y: { grid: { display: false }, ticks: { color: '#E8E8E8' } }
+            }
+        }
+    });
+    </script>
 </body>
 </html>
