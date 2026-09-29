@@ -4,934 +4,1156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jalak Patel | Creative Strategist & Content Systems Architect</title>
-    
-    <!-- Primary Meta Tags -->
+
     <meta name="title" content="Jalak Patel | Creative Strategist & Content Systems Architect">
     <meta name="description" content="Jalak Patel is a creative strategist and content systems architect building brands and audiences through YouTube growth, campaign attribution, and multilingual content systems.">
     <meta name="author" content="Jalak Patel">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://jalak-patel-190.github.io/jalak-portfolio/">
 
-    <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jalak-patel-190.github.io/jalak-portfolio/">
     <meta property="og:title" content="Jalak Patel | Creative Strategist | Professional Portfolio">
-    <meta property="og:description" content="Building brands & audiences through systems that compound.">
+    <meta property="og:description" content="Building brands and audiences through systems that compound.">
     <meta property="og:image" content="https://jalak-patel-190.github.io/jalak-portfolio/media/cinekorn/yt-movies.png">
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://jalak-patel-190.github.io/jalak-portfolio/">
     <meta name="twitter:title" content="Jalak Patel | Creative Strategist">
-    <meta name="twitter:description" content="Content systems for media & entertainment.">
+    <meta name="twitter:description" content="Content systems for media and entertainment.">
     <meta name="twitter:image" content="https://jalak-patel-190.github.io/jalak-portfolio/media/cinekorn/yt-movies.png">
 
-    <!-- Favicon Fallback -->
     <link rel="icon" type="image/png" href="favicon.png">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg-dark: #0a0e27;
-            --bg-card: #0f1535;
-            --accent-gold: #C4A747;
-            --accent-blue: #1B7C9A;
-            --accent-cyan: #00A8CC;
-            --text-primary: #E8E8E8;
-            --text-secondary: #A8A8A8;
-            --border-subtle: #2A3050;
+            --bg: #F7F4EF;
+            --surface: #FFFFFF;
+            --text: #141414;
+            --text-muted: #5A5A5A;
+            --border: #E8E2D8;
+            --link: #1F5C6B;
+            --cta-start: #E85A2A;
+            --cta-end: #C45B9B;
+            --wash-peach: rgba(255, 212, 184, 0.45);
+            --wash-lavender: rgba(224, 212, 245, 0.40);
+            --wash-mist: rgba(212, 232, 228, 0.35);
+            --shadow: 0 8px 30px rgba(20, 20, 20, 0.06);
+            --radius: 12px;
+            --max: 1100px;
+            --header-h: 72px;
         }
 
-        html, body {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
-        body {
-            font-family: 'Space Grotesk', 'Helvetica', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-primary);
-            line-height: 1.6;
-        }
-
-        ::-webkit-scrollbar {
-            width: 10px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-dark);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent-gold);
-            border-radius: 4px;
-        }
-
-        /* Screen Reader Skip Link */
-        .skip-link {
-            position: absolute;
-            left: -9999px;
-            top: 10px;
-            padding: 10px 15px;
-            background: var(--accent-gold);
-            color: var(--bg-dark);
-            z-index: 9999;
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 4px;
-        }
-        .skip-link:focus {
-            left: 10px;
-        }
-
-        /* Accessibility: Respect Motion Settings */
         @media (prefers-reduced-motion: reduce) {
-            *, ::before, ::after {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
             }
+            .proof-track { animation: none !important; }
+            .bg-wash { transition: none !important; }
         }
 
-        /* 3-Column Header */
+        body {
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-wash {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            transition: opacity 0.6s ease;
+        }
+        .bg-wash--peach {
+            background:
+                radial-gradient(ellipse 80% 60% at 15% 10%, var(--wash-peach), transparent 55%),
+                radial-gradient(ellipse 70% 50% at 90% 20%, rgba(255, 200, 170, 0.25), transparent 50%);
+            opacity: 1;
+        }
+        .bg-wash--lavender {
+            background:
+                radial-gradient(ellipse 75% 55% at 80% 40%, var(--wash-lavender), transparent 55%),
+                radial-gradient(ellipse 60% 45% at 10% 60%, rgba(230, 210, 245, 0.28), transparent 50%);
+            opacity: 0;
+        }
+        .bg-wash--mist {
+            background:
+                radial-gradient(ellipse 70% 50% at 50% 80%, var(--wash-mist), transparent 55%),
+                radial-gradient(ellipse 50% 40% at 20% 90%, rgba(220, 235, 230, 0.3), transparent 50%);
+            opacity: 0;
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 12px;
+            padding: 10px 16px;
+            background: var(--text);
+            color: var(--bg);
+            z-index: 9999;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 6px;
+        }
+        .skip-link:focus { left: 12px; }
+
         header {
-            background: linear-gradient(135deg, rgba(15, 21, 53, 0.95), rgba(27, 124, 154, 0.05));
-            border-bottom: 2px solid var(--accent-gold);
-            padding: 1rem 2rem;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+            height: var(--header-h);
+            background: rgba(247, 244, 239, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
         }
-
-        .header-content {
-            max-width: 1200px;
+        .header-inner {
+            max-width: var(--max);
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
+            padding: 0 1.5rem;
+            height: 100%;
+            display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 1rem;
         }
-
-        .header-left {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-        }
-
-        .header-center {
-            text-align: center;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.4rem;
-            color: var(--text-secondary);
-            letter-spacing: 4px;
-        }
-
-        .header-right {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
         .logo-wrapper {
+            text-decoration: none;
+            color: inherit;
             display: flex;
             flex-direction: column;
-            text-decoration: none;
+            line-height: 1.15;
         }
-
         .logo {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.8rem;
-            color: var(--accent-gold);
-            letter-spacing: 2px;
-            line-height: 1;
-            text-transform: uppercase;
+            font-size: 1.55rem;
+            letter-spacing: 1.5px;
+            color: var(--text);
         }
-
         .logo-subtitle {
-            font-family: 'Space Grotesk', sans-serif;
             font-size: 0.65rem;
-            color: var(--accent-cyan);
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
-            margin-top: 4px;
+            letter-spacing: 1.2px;
+            color: var(--text-muted);
         }
-
         .nav-toggle {
             display: none;
-            background: none;
-            border: 1px solid var(--accent-gold);
-            color: var(--accent-gold);
-            font-size: 1.4rem;
-            padding: 0.3rem 0.7rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            font-size: 1.25rem;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
             cursor: pointer;
-            border-radius: 4px;
+            align-items: center;
+            justify-content: center;
         }
-
+        .nav-toggle:focus-visible {
+            outline: 2px solid var(--cta-start);
+            outline-offset: 2px;
+        }
         nav {
             display: flex;
-            gap: 1.5rem;
             align-items: center;
+            gap: 1.75rem;
         }
-
         nav a {
-            color: var(--text-secondary);
+            color: var(--text-muted);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s;
+            font-size: 0.9rem;
+            position: relative;
+            transition: color 0.2s ease;
         }
-
-        nav a:hover {
-            color: var(--accent-cyan);
+        nav a:hover,
+        nav a:focus-visible { color: var(--text); }
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 2px;
+            background: var(--cta-start);
+            transition: width 0.25s ease;
+        }
+        nav a:hover::after,
+        nav a:focus-visible::after { width: 100%; }
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.55rem 1.1rem;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #fff !important;
+            background: linear-gradient(135deg, var(--cta-start), var(--cta-end));
+            background-size: 150% 150%;
+            transition: background-position 0.35s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 14px rgba(232, 90, 42, 0.25);
+        }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover,
+        .nav-cta:focus-visible {
+            background-position: 100% 50%;
+            transform: translateY(-1px);
+            color: #fff !important;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: var(--max);
             margin: 0 auto;
-            padding: 3rem 1.5rem;
+            padding: 0 1.5rem 4rem;
         }
 
-        .hero {
-            padding: 4rem 0 3rem;
-            text-align: left;
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
         }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.06s; }
+        .reveal-delay-2 { transition-delay: 0.12s; }
+        .reveal-delay-3 { transition-delay: 0.18s; }
+        .reveal-delay-4 { transition-delay: 0.24s; }
 
+        .hero { padding: 4.5rem 0 3rem; }
         .eyebrow {
-            color: var(--accent-cyan);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin-bottom: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.85rem;
         }
-
         .hero h1 {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            color: var(--accent-gold);
-            letter-spacing: 1px;
+            font-size: clamp(2.6rem, 6.5vw, 4.25rem);
             line-height: 1.05;
-            margin-bottom: 1.2rem;
+            letter-spacing: 0.5px;
+            color: var(--text);
+            max-width: 16ch;
+            margin-bottom: 1.15rem;
         }
-
         .hero-lead {
-            font-size: clamp(1.1rem, 2vw, 1.35rem);
-            color: var(--text-primary);
-            max-width: 820px;
-            margin-bottom: 1rem;
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
             font-weight: 600;
+            color: var(--text);
+            max-width: 38rem;
+            margin-bottom: 0.75rem;
         }
-
         .hero-subtext {
-            color: var(--text-secondary);
-            max-width: 780px;
             font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 40rem;
             margin-bottom: 2rem;
             line-height: 1.7;
         }
-
         .btn-group {
             display: flex;
-            gap: 1rem;
             flex-wrap: wrap;
-            margin-bottom: 3.5rem;
+            gap: 0.85rem;
+            margin-bottom: 2.75rem;
         }
-
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.85rem 1.8rem;
-            border: 1.5px solid;
-            cursor: pointer;
-            font-family: 'Space Grotesk', sans-serif;
+            gap: 0.4rem;
+            min-height: 48px;
+            padding: 0.8rem 1.6rem;
+            border-radius: 999px;
+            font-family: inherit;
+            font-size: 0.88rem;
             font-weight: 700;
             text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 0.85rem;
-            border-radius: 4px;
-            min-height: 46px;
-            transition: all 0.3s ease;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.25s ease, border-color 0.2s ease, color 0.2s ease;
         }
-
+        .btn:focus-visible {
+            outline: 2px solid var(--cta-start);
+            outline-offset: 3px;
+        }
         .btn-primary {
-            border-color: var(--accent-gold);
-            color: var(--accent-gold);
-            background: rgba(196, 167, 71, 0.05);
+            color: #fff;
+            border: none;
+            background: linear-gradient(135deg, var(--cta-start), var(--cta-end));
+            background-size: 160% 160%;
+            box-shadow: 0 6px 20px rgba(232, 90, 42, 0.28);
         }
-
         .btn-primary:hover {
-            background: var(--accent-gold);
-            color: var(--bg-dark);
+            background-position: 100% 50%;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(196, 91, 155, 0.3);
         }
-
         .btn-secondary {
-            border-color: var(--accent-cyan);
-            color: var(--accent-cyan);
-            background: rgba(0, 168, 204, 0.05);
+            color: var(--text);
+            background: var(--surface);
+            border: 1.5px solid var(--border);
         }
-
         .btn-secondary:hover {
-            background: var(--accent-cyan);
-            color: var(--bg-dark);
+            border-color: var(--text-muted);
+            transform: translateY(-2px);
         }
 
         .hero-metrics {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-            padding-top: 2.5rem;
-            border-top: 1px solid var(--border-subtle);
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
         }
-
         .metric-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            padding: 1.5rem;
-            border-radius: 6px;
-            text-align: left;
-            border-left: 3px solid var(--accent-cyan);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem 1.15rem;
+            box-shadow: var(--shadow);
         }
-
         .metric-value {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.4rem;
-            color: var(--accent-gold);
-            letter-spacing: 1px;
-            line-height: 1;
-            margin-bottom: 0.4rem;
-        }
-
-        .metric-label {
-            color: var(--text-secondary);
-            font-size: 0.82rem;
-            text-transform: uppercase;
+            font-size: clamp(1.9rem, 3vw, 2.35rem);
             letter-spacing: 0.5px;
+            line-height: 1;
+            color: var(--text);
+            margin-bottom: 0.35rem;
+        }
+        .metric-label {
+            font-size: 0.72rem;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--text-muted);
+        }
+        .metrics-note {
+            margin-top: 0.85rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
         }
 
         .section {
             margin: 4.5rem 0;
+            scroll-margin-top: calc(var(--header-h) + 16px);
         }
-
         .section-header {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid var(--border-subtle);
-            padding-bottom: 1rem;
             flex-wrap: wrap;
-            gap: 1rem;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 1.75rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
         }
-
         .section-header h2 {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.2rem;
-            color: var(--accent-gold);
-            letter-spacing: 1px;
-            border-left: 4px solid var(--accent-cyan);
-            padding-left: 1rem;
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            letter-spacing: 0.8px;
+            color: var(--text);
         }
-
-        .section-header .slider-hint {
-            color: var(--text-secondary);
-            font-size: 0.82rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* Swiping Horizontal Slideshow */
-        .case-slider {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 1.5rem;
-            padding-bottom: 1.5rem;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .case-card {
-            flex: 0 0 340px;
-            scroll-snap-align: start;
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .case-card--linked {
-            cursor: pointer;
-        }
-
-        .case-card--linked:hover,
-        .case-card--linked:focus-visible {
-            transform: translateY(-4px);
-            border-color: var(--accent-gold);
-        }
-
-        .case-media {
-            width: 100%;
-            height: 180px;
-            background: rgba(27, 124, 154, 0.15);
-            overflow: hidden;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .case-media img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .case-body {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .case-company {
-            font-size: 0.8rem;
-            color: var(--accent-cyan);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-        }
-
-        .case-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.8rem;
-            line-height: 1.3;
-        }
-
-        .case-summary {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.2rem;
-            line-height: 1.6;
-            flex-grow: 1;
-        }
-
-        .tag-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+        .section-intro {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            max-width: 36rem;
             margin-bottom: 1.5rem;
         }
 
-        .tag {
+        .proof {
+            margin: 1rem 0 0;
+            padding: 1.1rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.45);
+        }
+        .proof-label {
+            text-align: center;
             font-size: 0.72rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border: 1px solid var(--border-subtle);
-            background: rgba(27, 124, 154, 0.1);
-            color: var(--accent-gold);
-            border-radius: 4px;
-            padding: 0.25rem 0.55rem;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 0.85rem;
+        }
+        .proof-viewport {
+            overflow: hidden;
+            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+            -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+        }
+        .proof-track {
+            display: flex;
+            gap: 2.5rem;
+            width: max-content;
+            animation: marquee 32s linear infinite;
+        }
+        .proof-viewport:hover .proof-track { animation-play-state: paused; }
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        .proof-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            white-space: nowrap;
+            font-size: 0.88rem;
             font-weight: 600;
+            color: var(--text);
+        }
+        .proof-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--cta-start);
+            flex-shrink: 0;
         }
 
-        /* Core Capabilities Grid */
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.35rem;
+        }
+        .case-card {
+            display: flex;
+            flex-direction: column;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: var(--shadow);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .case-card:hover,
+        .case-card:focus-visible {
+            transform: translateY(-4px);
+            border-color: #d0c8bc;
+            box-shadow: 0 14px 36px rgba(20, 20, 20, 0.09);
+            outline: none;
+        }
+        .case-media {
+            height: 160px;
+            background: linear-gradient(145deg, #f0ebe3, #e8e4ef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border);
+            padding: 1.25rem;
+        }
+        .case-media img {
+            max-height: 72px;
+            max-width: 70%;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+        .case-media--photo { padding: 0; }
+        .case-media--photo img {
+            max-height: none;
+            max-width: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .case-body {
+            padding: 1.35rem 1.35rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .case-company {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--link);
+            margin-bottom: 0.3rem;
+        }
+        .case-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 0.65rem;
+            color: var(--text);
+        }
+        .case-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-bottom: 1.15rem;
+        }
+        .tag {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            padding: 0.28rem 0.55rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: #faf8f5;
+            color: var(--text-muted);
+        }
+        .tag a {
+            color: var(--link);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .tag a:hover { text-decoration: underline; }
+        .case-cta {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .case-card:hover .case-cta { color: var(--cta-start); }
+
         .capabilities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
         }
-
         .capability-card {
-            background: rgba(27, 124, 154, 0.05);
-            border: 1px solid var(--border-subtle);
-            padding: 2rem;
-            border-radius: 8px;
-            border-top: 3px solid var(--accent-gold);
-            transition: transform 0.3s ease;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.6rem 1.4rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.25s ease;
         }
-
-        .capability-card:hover {
-            transform: translateY(-5px);
-            background: rgba(27, 124, 154, 0.1);
-        }
-
-        .capability-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
+        .capability-card:hover { transform: translateY(-3px); }
+        .capability-icon { font-size: 1.5rem; margin-bottom: 0.85rem; }
         .capability-title {
-            font-size: 1.2rem;
-            color: var(--text-primary);
+            font-size: 1.05rem;
             font-weight: 700;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.55rem;
+            color: var(--text);
         }
-
         .capability-desc {
             font-size: 0.9rem;
-            color: var(--text-secondary);
+            color: var(--text-muted);
             line-height: 1.6;
         }
 
-        /* Timeline with Clickable Links */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+        .process-step {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem 1.35rem;
+            box-shadow: var(--shadow);
+        }
+        .process-num {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            color: var(--cta-start);
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+        .process-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 0.45rem;
+        }
+        .process-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
         .timeline {
             position: relative;
-            margin: 2rem 0;
-            padding-left: 2rem;
-            border-left: 2px solid var(--border-subtle);
+            padding-left: 1.75rem;
+            border-left: 2px solid var(--border);
         }
-
         .timeline-item {
             position: relative;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2.25rem;
         }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
+        .timeline-item:last-child { margin-bottom: 0; }
         .timeline-dot {
             position: absolute;
-            left: -2.45rem;
-            top: 0.2rem;
-            width: 12px;
-            height: 12px;
+            left: -2.2rem;
+            top: 0.35rem;
+            width: 11px;
+            height: 11px;
             border-radius: 50%;
-            background: var(--accent-gold);
-            border: 2px solid var(--bg-dark);
+            background: var(--cta-start);
+            border: 2px solid var(--bg);
+            box-shadow: 0 0 0 2px var(--border);
         }
-
         .timeline-link-group {
             text-decoration: none;
+            color: inherit;
             display: block;
-            transition: transform 0.2s ease;
-            margin-bottom: 0.3rem;
         }
-        
-        .timeline-link-group:hover {
-            transform: translateX(4px);
-        }
-
+        .timeline-link-group:hover .company-name { color: var(--cta-start); }
         .timeline-header {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
-            margin-bottom: 0.4rem;
+            gap: 0.7rem;
             flex-wrap: wrap;
+            margin-bottom: 0.25rem;
         }
-
         .company-logo {
-            height: 24px;
+            height: 22px;
             width: auto;
-            max-width: 80px;
+            max-width: 72px;
             object-fit: contain;
-            border-radius: 2px;
-            background: rgba(255,255,255,0.05);
-            padding: 2px;
         }
-
-        h3.company-name {
-            font-size: 1.15rem;
+        .company-name {
+            font-size: 1.1rem;
             font-weight: 700;
-            color: var(--accent-gold);
+            color: var(--text);
+            transition: color 0.2s ease;
         }
-
-        h4.timeline-role {
+        .timeline-role {
             font-size: 0.9rem;
-            color: var(--accent-cyan);
             font-weight: 600;
+            color: var(--link);
+            margin-bottom: 0.25rem;
         }
-
         .timeline-date {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.8rem;
+            font-size: 0.78rem;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 0.55rem;
         }
-
         .timeline-desc {
             font-size: 0.92rem;
-            color: var(--text-primary);
-            line-height: 1.7;
+            color: var(--text-muted);
+            line-height: 1.65;
         }
-
         .read-more-link {
-            color: var(--accent-gold);
+            color: var(--cta-start);
+            font-weight: 700;
             text-decoration: none;
-            font-weight: 600;
-            margin-left: 5px;
-            transition: color 0.3s ease;
+            margin-left: 0.25rem;
         }
+        .read-more-link:hover { text-decoration: underline; }
 
-        .read-more-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Contact Section */
         .contact-box {
-            background: linear-gradient(135deg, rgba(15, 21, 53, 0.85), rgba(27, 124, 154, 0.1));
-            border: 1px solid var(--border-subtle);
-            border-radius: 8px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
             padding: 3rem 2rem;
             text-align: center;
+            box-shadow: var(--shadow);
         }
-
         .contact-box h2 {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
+            font-size: clamp(1.9rem, 4vw, 2.5rem);
+            letter-spacing: 0.8px;
+            margin-bottom: 0.85rem;
+            color: var(--text);
         }
-
         .contact-box p {
-            max-width: 650px;
-            margin: 0 auto 2rem;
-            color: var(--text-secondary);
-            font-size: 1.05rem;
+            max-width: 34rem;
+            margin: 0 auto 0.75rem;
+            color: var(--text-muted);
+            font-size: 1.02rem;
+        }
+        .contact-open {
+            font-size: 0.9rem;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 1.75rem !important;
+        }
+        .contact-box .btn-group {
+            justify-content: center;
+            margin-bottom: 0;
         }
 
         footer {
             text-align: center;
-            padding: 2.5rem 1.5rem;
-            border-top: 1px solid var(--border-subtle);
-            color: var(--text-secondary);
-            font-size: 0.85rem;
+            padding: 2.5rem 1.5rem 2.75rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            background: rgba(255, 255, 255, 0.35);
+        }
+        footer .footer-copy { margin-bottom: 0.5rem; }
+        footer .footer-credit { font-size: 0.78rem; color: var(--text-muted); }
+        footer .footer-credit strong { color: var(--text); font-weight: 600; }
+
+        @media (max-width: 900px) {
+            .hero-metrics { grid-template-columns: repeat(2, 1fr); }
+            .case-grid { grid-template-columns: 1fr; }
+            .capabilities-grid,
+            .process-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
-            .header-content {
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            }
-            .header-center {
-                display: none;
-            }
-            .nav-toggle {
-                display: block;
-            }
+            .nav-toggle { display: inline-flex; }
             nav {
                 display: none;
-                width: 100%;
+                position: absolute;
+                top: var(--header-h);
+                left: 0;
+                right: 0;
                 flex-direction: column;
-                align-items: flex-start;
-                gap: 0.8rem;
-                padding-top: 1rem;
-                border-top: 1px solid var(--border-subtle);
+                align-items: stretch;
+                gap: 0;
+                background: rgba(247, 244, 239, 0.98);
+                backdrop-filter: blur(12px);
+                border-bottom: 1px solid var(--border);
+                padding: 0.5rem 1.5rem 1.25rem;
+                box-shadow: var(--shadow);
             }
-            nav.open {
-                display: flex;
+            nav.open { display: flex; }
+            nav a {
+                padding: 0.85rem 0;
+                border-bottom: 1px solid var(--border);
             }
-            .case-card {
-                flex: 0 0 280px;
+            nav a:last-child { border-bottom: none; }
+            nav a::after { display: none; }
+            .nav-cta {
+                justify-content: center;
+                margin-top: 0.5rem;
             }
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            .timeline {
-                padding-left: 1.5rem;
-            }
-            .timeline-dot {
-                left: -1.95rem;
-            }
+            .hero { padding: 3rem 0 2rem; }
+            .hero h1 { max-width: none; }
+            .timeline { padding-left: 1.4rem; }
+            .timeline-dot { left: -1.85rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-metrics { grid-template-columns: 1fr; }
+            .btn { width: 100%; }
+            .btn-group { flex-direction: column; }
         }
     </style>
 </head>
 <body>
+    <div class="bg-wash bg-wash--peach" id="washPeach" aria-hidden="true"></div>
+    <div class="bg-wash bg-wash--lavender" id="washLavender" aria-hidden="true"></div>
+    <div class="bg-wash bg-wash--mist" id="washMist" aria-hidden="true"></div>
+
     <a class="skip-link" href="#work">Skip to content</a>
 
     <header>
-        <div class="header-content">
-            <div class="header-left">
-                <a href="index.html" class="logo-wrapper">
-                    <span class="logo">JALAK PATEL</span>
-                    <span class="logo-subtitle">Creative Strategist</span>
-                </a>
-            </div>
-            
-            <div class="header-center">PORTFOLIO</div>
-            
-            <div class="header-right">
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
-                <nav id="mainNav">
-                    <a href="#work">Case Studies</a>
-                    <a href="#journey">Journey</a>
-                    <a href="#contact">Contact</a>
-                </nav>
-            </div>
+        <div class="header-inner">
+            <a href="index.html" class="logo-wrapper">
+                <span class="logo">JALAK PATEL</span>
+                <span class="logo-subtitle">Creative Strategist</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">Menu</button>
+            <nav id="mainNav">
+                <a href="#work">Case Studies</a>
+                <a href="#approach">Approach</a>
+                <a href="#journey">Journey</a>
+                <a href="#contact" class="nav-cta">Get In Touch</a>
+            </nav>
         </div>
     </header>
 
-    <div class="container">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="eyebrow">Creative Strategist & Content Systems Architect</div>
-            <h1>I Turn Ideas Into Content, Campaigns, And Measurable Growth.</h1>
-            <p class="hero-lead">Scaling digital entertainment, multi-channel video distribution, and audience retention engines.</p>
-            <p class="hero-subtext">Currently managing multi-channel video distribution architectures, audience acquisition funnels, and executive brand positioning across 9 platforms with over 108M+ views.</p>
-            
-            <div class="btn-group">
-                <a href="#work" class="btn btn-primary">View Selected Work</a>
-                <a href="Jalak-Patel-Resume.pdf" target="_blank" class="btn btn-secondary" style="border-color: var(--text-secondary); color: var(--text-secondary);">↓ Download Resume</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+    <main class="container">
+        <section class="hero" id="top">
+            <p class="eyebrow reveal">Creative Strategist &amp; Content Systems Architect</p>
+            <h1 class="reveal reveal-delay-1">I Turn Ideas Into Content, Campaigns, And Measurable Growth.</h1>
+            <p class="hero-lead reveal reveal-delay-2">Scaling digital entertainment, multi-channel video distribution, and audience retention engines.</p>
+            <p class="hero-subtext reveal reveal-delay-2">I design content systems that compound - from multilingual production workflows to multi-account distribution architectures that turn single assets into measurable reach, retention, and revenue across platforms.</p>
+
+            <div class="btn-group reveal reveal-delay-3">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#work" class="btn btn-secondary">View Selected Work</a>
             </div>
 
-            <div class="hero-metrics">
+            <div class="hero-metrics reveal reveal-delay-4" id="metrics">
                 <div class="metric-card">
-                    <div class="metric-value">16M+</div>
-                    <div class="metric-label">Organic Video Views</div>
+                    <div class="metric-value" data-count="108" data-suffix="M+">0</div>
+                    <div class="metric-label">Multi-account views</div>
                 </div>
                 <div class="metric-card">
-                    <div class="metric-value">9Cr+</div>
-                    <div class="metric-label">Attributed Sales Scaled</div>
+                    <div class="metric-value" data-count="9" data-prefix="Rs " data-suffix=" Cr+">0</div>
+                    <div class="metric-label">Attributed sales</div>
                 </div>
                 <div class="metric-card">
-                    <div class="metric-value">130K+</div>
-                    <div class="metric-label">Subscribers Acquired</div>
+                    <div class="metric-value" data-count="130" data-suffix="K+">0</div>
+                    <div class="metric-label">Subscribers grown</div>
                 </div>
                 <div class="metric-card">
-                    <div class="metric-value">6+</div>
-                    <div class="metric-label">Languages Managed</div>
+                    <div class="metric-value" data-count="6" data-suffix="+">0</div>
+                    <div class="metric-label">Languages managed</div>
                 </div>
             </div>
+            <p class="metrics-note reveal">Selected outcomes across roles - figures are tenure-linked where noted in case studies.</p>
         </section>
 
-        <!-- Case Studies Horizontal Slideshow -->
-        <section class="section" id="work">
-            <div class="section-header">
-                <h2>Selected Case Studies</h2>
-                <div class="slider-hint">Swipe / Scroll horizontally →</div>
+        <div class="proof reveal" aria-label="Proof highlights">
+            <div class="proof-label">Numbers do not lie · Real channels · Real outcomes</div>
+            <div class="proof-viewport">
+                <div class="proof-track">
+                    <div class="proof-item"><span class="proof-dot"></span>Cinekorn · multi-account distribution</div>
+                    <div class="proof-item"><span class="proof-dot"></span>108M+ views across managed systems</div>
+                    <div class="proof-item"><span class="proof-dot"></span>Rs 9 Cr+ attributed sales</div>
+                    <div class="proof-item"><span class="proof-dot"></span>Swad · retention and funnel architecture</div>
+                    <div class="proof-item"><span class="proof-dot"></span>130K+ subscribers grown</div>
+                    <div class="proof-item"><span class="proof-dot"></span>6+ languages · regional workflows</div>
+                    <div class="proof-item"><span class="proof-dot"></span>Ajmera · multilingual production scale</div>
+                    <div class="proof-item"><span class="proof-dot"></span>Jalan · retail and performance systems</div>
+                    <div class="proof-item"><span class="proof-dot"></span>Cinekorn · multi-account distribution</div>
+                    <div class="proof-item"><span class="proof-dot"></span>108M+ views across managed systems</div>
+                    <div class="proof-item"><span class="proof-dot"></span>Rs 9 Cr+ attributed sales</div>
+                    <div class="proof-item"><span class="proof-dot"></span>Swad · retention and funnel architecture</div>
+                    <div class="proof-item"><span class="proof-dot"></span>130K+ subscribers grown</div>
+                    <div class="proof-item"><span class="proof-dot"></span>6+ languages · regional workflows</div>
+                    <div class="proof-item"><span class="proof-dot"></span>Ajmera · multilingual production scale</div>
+                    <div class="proof-item"><span class="proof-dot"></span>Jalan · retail and performance systems</div>
+                </div>
             </div>
+        </div>
 
-            <div class="case-slider">
-                <!-- Cinekorn Entertainment -->
-                <a href="case-studies/cinekorn.html" class="case-card case-card--linked">
-                    <div class="case-media">
-                        <img src="media/cinekorn/yt-movies.png" alt="Cinekorn Entertainment Multi-Channel Distribution" loading="lazy">
+        <section class="section" id="work">
+            <div class="section-header reveal">
+                <h2>Selected Case Studies</h2>
+            </div>
+            <p class="section-intro reveal">Deep dives into distribution systems, audience growth, and measurable outcomes across entertainment, edtech, and retail.</p>
+
+            <div class="case-grid">
+                <a href="case-studies/cinekorn.html" class="case-card reveal">
+                    <div class="case-media case-media--photo">
+                        <img src="media/cinekorn/yt-movies.png" alt="YouTube analytics dashboard from Cinekorn multi-channel distribution work" loading="lazy" width="640" height="320">
                     </div>
                     <div class="case-body">
                         <div class="case-company">Cinekorn Entertainment</div>
                         <div class="case-title">Multi-Channel Distribution Architecture</div>
-                        <div class="case-summary">Engineered a multi-format asset extraction system turning single film IPs into 3 to 6 cross-platform deliverables across 6 YouTube channels and Meta pages.</div>
+                        <p class="case-summary">Engineered a multi-format asset extraction system turning single film IPs into 3 to 6 cross-platform deliverables across YouTube channels and Meta pages.</p>
                         <div class="tag-row">
                             <span class="tag">108M+ Views</span>
                             <span class="tag">9 Accounts</span>
                             <span class="tag">IP Syndication</span>
                         </div>
-                        <span class="btn btn-primary" style="pointer-events: none;">→ Read Full Case Study</span>
+                        <span class="case-cta">Read full case study -&gt;</span>
                     </div>
                 </a>
 
-                <!-- Ajmera Fashion -->
-                <a href="case-studies/ajmera.html" class="case-card case-card--linked">
+                <a href="case-studies/swad.html" class="case-card reveal reveal-delay-1">
                     <div class="case-media">
-                        <img src="media/cinekorn/fb-top-formats.png" alt="Ajmera Fashion Multilingual Production" loading="lazy">
+                        <img src="media/logos/swad-logo.png" alt="Swad Cooking Institute logo" loading="lazy" width="160" height="72" onerror="this.style.display='none'">
+                    </div>
+                    <div class="case-body">
+                        <div class="case-company">Swad Cooking Institute</div>
+                        <div class="case-title">Audience Retention and Funnel Architecture</div>
+                        <p class="case-summary">Revamped video pacing and hook frameworks to scale long-form watch time, converting passive food content viewership into direct culinary academy inquiries.</p>
+                        <div class="tag-row">
+                            <span class="tag"><a href="https://www.youtube.com/@swadcooking" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Swad Cooking Institute</a> · 16M+</span>
+                            <span class="tag"><a href="https://www.youtube.com/@snehathakkarrecipes" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Chef Sneha Thakkar Recipes</a> · 7.3M+</span>
+                            <span class="tag">Retention</span>
+                        </div>
+                        <span class="case-cta">Read full case study -&gt;</span>
+                    </div>
+                </a>
+
+                <a href="case-studies/jalan-megamart.html" class="case-card reveal reveal-delay-2">
+                    <div class="case-media">
+                        <img src="media/logos/jalan-logo.png" alt="Jalan Mega Mart logo" loading="lazy" width="160" height="72" onerror="this.style.display='none'">
+                    </div>
+                    <div class="case-body">
+                        <div class="case-company">Jalan Mega Mart</div>
+                        <div class="case-title">Retail Footfall and Revenue Strategy</div>
+                        <p class="case-summary">Built regional promotion and performance creative systems that drove measurable retail walk-ins, wholesale interest, and multi-channel presence from a near-zero marketing base.</p>
+                        <div class="tag-row">
+                            <span class="tag">Performance</span>
+                            <span class="tag">Retail</span>
+                            <span class="tag">B2B Growth</span>
+                        </div>
+                        <span class="case-cta">Read full case study -&gt;</span>
+                    </div>
+                </a>
+
+                <a href="case-studies/ajmera.html" class="case-card reveal reveal-delay-3">
+                    <div class="case-media">
+                        <img src="media/logos/ajmera-logo.png" alt="Ajmera Fashion logo" loading="lazy" width="160" height="72" onerror="this.style.display='none'">
                     </div>
                     <div class="case-body">
                         <div class="case-company">Ajmera Fashion</div>
                         <div class="case-title">Multilingual Production Scaling</div>
-                        <div class="case-summary">Built multilingual production workflows supporting simultaneous output across 6 languages while maintaining voice authenticity and brand consistency.</div>
+                        <p class="case-summary">Built multilingual production workflows supporting simultaneous output across regional languages while maintaining voice authenticity and brand consistency.</p>
                         <div class="tag-row">
                             <span class="tag">+40% Output</span>
                             <span class="tag">6 Languages</span>
                             <span class="tag">B2B Content</span>
                         </div>
-                        <span class="btn btn-primary" style="pointer-events: none;">→ Read Full Case Study</span>
-                    </div>
-                </a>
-
-                <!-- Swad Cooking Institute -->
-                <a href="case-studies/swad.html" class="case-card case-card--linked">
-                    <div class="case-media">
-                        <img src="media/cinekorn/yt-gujarati-shorts.png" alt="Swad Cooking Institute Channel Growth" loading="lazy">
-                    </div>
-                    <div class="case-body">
-                        <div class="case-company">Swad Cooking Institute</div>
-                        <div class="case-title">Audience Retention & Funnel Architecture</div>
-                        <div class="case-summary">Revamped video pacing and hook frameworks to scale long-form watch time, converting passive food content viewership into direct culinary academy inquiries.</div>
-                        <div class="tag-row">
-                            <span class="tag">6.38M Views</span>
-                            <span class="tag">Retention</span>
-                            <span class="tag">EdTech</span>
-                        </div>
-                        <span class="btn btn-primary" style="pointer-events: none;">→ Read Full Case Study</span>
-                    </div>
-                </a>
-
-                <!-- Jalan Mega Mart -->
-                <a href="case-studies/jalan-megamart.html" class="case-card case-card--linked">
-                    <div class="case-media">
-                        <img src="media/cinekorn/fb-earnings.png" alt="Jalan Mega Mart Retail Performance" loading="lazy">
-                    </div>
-                    <div class="case-body">
-                        <div class="case-company">Jalan Mega Mart</div>
-                        <div class="case-title">Retail Footfall & Revenue Strategy</div>
-                        <div class="case-summary">Designed regional promotion and promotional ad creative systems that drove measurable retail walk-ins and direct consumer conversions.</div>
-                        <div class="tag-row">
-                            <span class="tag">Performance</span>
-                            <span class="tag">Retail</span>
-                            <span class="tag">Local SEO</span>
-                        </div>
-                        <span class="btn btn-primary" style="pointer-events: none;">→ Read Full Case Study</span>
+                        <span class="case-cta">Read full case study -&gt;</span>
                     </div>
                 </a>
             </div>
         </section>
 
-        <!-- Core Capabilities -->
-        <section class="section" id="capabilities">
-            <div class="section-header">
+        <section class="section" id="approach">
+            <div class="section-header reveal">
+                <h2>How I Work</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-step reveal">
+                    <div class="process-num">01</div>
+                    <div class="process-title">Diagnose</div>
+                    <p class="process-desc">Map channels, audience intent, and content constraints before touching creative. Find where the system leaks reach, retention, or revenue.</p>
+                </div>
+                <div class="process-step reveal reveal-delay-1">
+                    <div class="process-num">02</div>
+                    <div class="process-title">Build the system</div>
+                    <p class="process-desc">Design repeatable workflows - syndication rules, pacing frameworks, regional variants - so one asset can live across platforms without losing quality.</p>
+                </div>
+                <div class="process-step reveal reveal-delay-2">
+                    <div class="process-num">03</div>
+                    <div class="process-title">Measure and compound</div>
+                    <p class="process-desc">Track what is tenure-attributable, cut what does not move the number, and scale the loops that do. Honesty in metrics is part of the method.</p>
+                </div>
+            </div>
+
+            <div class="section-header reveal" style="margin-top: 3rem;">
                 <h2>Core Capabilities</h2>
             </div>
-            
             <div class="capabilities-grid">
-                <div class="capability-card">
-                    <div class="capability-icon">📺</div>
+                <div class="capability-card reveal">
+                    <div class="capability-icon" aria-hidden="true">1</div>
                     <div class="capability-title">Multi-Channel Syndication</div>
-                    <div class="capability-desc">Engineering systems to extract 4-6 platform-native deliverables from a single IP, maximizing audience reach across YouTube, Meta, and Shorts.</div>
+                    <p class="capability-desc">Engineering systems to extract 4-6 platform-native deliverables from a single IP across YouTube, Meta, and Shorts.</p>
                 </div>
-                <div class="capability-card">
-                    <div class="capability-icon">📈</div>
-                    <div class="capability-title">Audience & Revenue Growth</div>
-                    <div class="capability-desc">Architecting retention frameworks and lead capture mechanics that convert passive viewership into attributed sales and retail footfall.</div>
+                <div class="capability-card reveal reveal-delay-1">
+                    <div class="capability-icon" aria-hidden="true">2</div>
+                    <div class="capability-title">Audience and Revenue Growth</div>
+                    <p class="capability-desc">Retention frameworks and lead capture mechanics that convert passive viewership into attributed sales and footfall.</p>
                 </div>
-                <div class="capability-card">
-                    <div class="capability-icon">🌍</div>
+                <div class="capability-card reveal reveal-delay-2">
+                    <div class="capability-icon" aria-hidden="true">3</div>
                     <div class="capability-title">Regional Market Penetration</div>
-                    <div class="capability-desc">Directing multilingual content workflows with native fluency in English, Hindi, and Gujarati to ensure brand authenticity across diverse demographics.</div>
+                    <p class="capability-desc">Multilingual content workflows with fluency in English, Hindi, and Gujarati for authentic regional brand systems.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Professional Journey Timeline -->
         <section class="section" id="journey">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2>Professional Journey</h2>
             </div>
+            <p class="section-intro reveal">Official titles below. Scope often extended into systems design, cross-team coordination, and revenue-linked growth - detailed in each case study.</p>
 
             <div class="timeline">
-                <!-- Cinekorn -->
-                <div class="timeline-item">
+                <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
-                    
                     <a href="case-studies/cinekorn.html" class="timeline-link-group">
                         <div class="timeline-header">
-                            <img src="media/logos/cinekorn-logo.png" alt="Cinekorn Logo" class="company-logo" onerror="this.style.display='none'">
+                            <img src="media/logos/cinekorn-logo.png" alt="" class="company-logo" onerror="this.style.display='none'">
                             <h3 class="company-name">Cinekorn Entertainment</h3>
                         </div>
-                        <h4 class="timeline-role">Sr. Social Media Manager & Content Strategist</h4>
+                        <p class="timeline-role">Sr. Social Media Manager</p>
                     </a>
-                    
-                    <div class="timeline-date">Jan 2026 – Present</div>
-                    <div class="timeline-desc">Leading digital operations, content syndication, and channel growth systems across 6 YouTube properties, Facebook monetization funnels, and executive personal brand strategy.<a href="case-studies/cinekorn.html" class="read-more-link">...more</a></div>
+                    <div class="timeline-date">Jan 2026 - Present</div>
+                    <p class="timeline-desc">Leading digital operations, content syndication, and channel growth systems across multiple YouTube properties, Facebook monetization funnels, and executive brand strategy. <a href="case-studies/cinekorn.html" class="read-more-link">More</a></p>
                 </div>
 
-                <!-- Ajmera Fashion -->
-                <div class="timeline-item">
+                <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
-
-                    <a href="case-studies/ajmera.html" class="timeline-link-group">
-                        <div class="timeline-header">
-                            <img src="media/logos/ajmera-logo.png" alt="Ajmera Fashion Logo" class="company-logo" onerror="this.style.display='none'">
-                            <h3 class="company-name">Ajmera Fashion</h3>
-                        </div>
-                        <h4 class="timeline-role">Social Media Strategist</h4>
-                    </a>
-
-                    <div class="timeline-date">2024 – 2025</div>
-                    <div class="timeline-desc">Managed multilingual content systems spanning regional languages, scaling production velocity by 40% and deploying data-backed content testing matrices.<a href="case-studies/ajmera.html" class="read-more-link">...more</a></div>
-                </div>
-
-                <!-- Swad Cooking Institute -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-
                     <a href="case-studies/swad.html" class="timeline-link-group">
                         <div class="timeline-header">
-                            <img src="media/logos/swad-logo.png" alt="Swad Cooking Institute Logo" class="company-logo" onerror="this.style.display='none'">
+                            <img src="media/logos/swad-logo.png" alt="" class="company-logo" onerror="this.style.display='none'">
                             <h3 class="company-name">Swad Cooking Institute</h3>
                         </div>
-                        <h4 class="timeline-role">Digital Growth Strategist</h4>
+                        <p class="timeline-role">Social Media Manager</p>
                     </a>
-
-                    <div class="timeline-date">2023 – 2024</div>
-                    <div class="timeline-desc">Scaled channel viewership to 6.38M views, re-architecting video pacing, audience retention parameters, and lead capture mechanics.<a href="case-studies/swad.html" class="read-more-link">...more</a></div>
+                    <div class="timeline-date">Nov 2024 - Oct 2025</div>
+                    <p class="timeline-desc">Owned growth systems for institute and owner channels - retention architecture, content calendars, and conversion-oriented food media. <a href="case-studies/swad.html" class="read-more-link">More</a></p>
                 </div>
 
-                <!-- Jalan Mega Mart -->
-                <div class="timeline-item">
+                <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
-
                     <a href="case-studies/jalan-megamart.html" class="timeline-link-group">
                         <div class="timeline-header">
-                            <img src="media/logos/jalan-logo.png" alt="Jalan Mega Mart Logo" class="company-logo" onerror="this.style.display='none'">
+                            <img src="media/logos/jalan-logo.png" alt="" class="company-logo" onerror="this.style.display='none'">
                             <h3 class="company-name">Jalan Mega Mart</h3>
                         </div>
-                        <h4 class="timeline-role">Marketing & Growth Associate</h4>
+                        <p class="timeline-role">Social Media Manager</p>
                     </a>
+                    <div class="timeline-date">Jul 2023 - Nov 2024</div>
+                    <p class="timeline-desc">Built marketing operations from a near-zero base - channels, creative systems, influencer coordination, and regional performance frameworks. <a href="case-studies/jalan-megamart.html" class="read-more-link">More</a></p>
+                </div>
 
-                    <div class="timeline-date">2022 – 2023</div>
-                    <div class="timeline-desc">Executed targeted regional advertising, localized retail footfall generation, and promotional performance creative frameworks.<a href="case-studies/jalan-megamart.html" class="read-more-link">...more</a></div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <a href="case-studies/ajmera.html" class="timeline-link-group">
+                        <div class="timeline-header">
+                            <img src="media/logos/ajmera-logo.png" alt="" class="company-logo" onerror="this.style.display='none'">
+                            <h3 class="company-name">Ajmera Fashion</h3>
+                        </div>
+                        <p class="timeline-role">Digital Marketing Executive</p>
+                    </a>
+                    <div class="timeline-date">Jul 2022 - Jul 2023</div>
+                    <p class="timeline-desc">Multilingual content systems and regional audience logic across a large YouTube channel portfolio for B2B textile growth. <a href="case-studies/ajmera.html" class="read-more-link">More</a></p>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section class="section" id="contact">
-            <div class="contact-box">
-                <h2>Let's Build Something Measurable</h2>
-                <p>Looking for a Creative Strategist or Content Systems Architect who can turn video content and digital platforms into compounded audience growth and revenue? Let's connect.</p>
-                <div class="btn-group" style="justify-content: center; margin-bottom: 0;">
-                    <a href="https://www.linkedin.com/in/jalak-patel-63ab50220" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Connect on LinkedIn</a>
-                    <a href="mailto:jalakpatel190@gmail.com?subject=Strategic%20Inquiry%20-%20Jalak%20Patel%20Portfolio" class="btn btn-secondary">Email Me Directly</a>
+            <div class="contact-box reveal">
+                <h2>Let us Build Something Measurable</h2>
+                <p>Looking for a Creative Strategist or Content Systems Architect who can turn video content and digital platforms into compounded audience growth and revenue? Let us connect.</p>
+                <p class="contact-open">Open to Creative Strategist / Content Systems roles and project-based work in media and entertainment.</p>
+                <div class="btn-group">
+                    <a href="https://www.linkedin.com/in/jalakpatelstrategist" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Connect on LinkedIn</a>
+                    <a href="mailto:Pateljalak019@gmail.com?subject=Strategic%20Inquiry%20-%20Jalak%20Patel%20Portfolio" class="btn btn-secondary">Email Me Directly</a>
                 </div>
             </div>
         </section>
-    </div>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Jalak Patel. Built for high-leverage content operations and creative strategy.</p>
+        <p class="footer-copy">&copy; 2026 Jalak Patel. Built for high-leverage content operations and creative strategy.</p>
+        <p class="footer-credit">Designed &amp; built by <strong>Jalak Patel</strong></p>
     </footer>
 
     <script>
-        const navToggle = document.getElementById('navToggle');
-        const mainNav = document.getElementById('mainNav');
-        
-        if (navToggle && mainNav) {
-            navToggle.addEventListener('click', () => {
-                mainNav.classList.toggle('open');
-            });
-            
-            // Close nav when clicking a link on mobile
-            mainNav.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mainNav.classList.remove('open');
+        (function () {
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            var navToggle = document.getElementById('navToggle');
+            var mainNav = document.getElementById('mainNav');
+            if (navToggle && mainNav) {
+                navToggle.addEventListener('click', function () {
+                    var open = mainNav.classList.toggle('open');
+                    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
                 });
-            });
-        }
+                mainNav.querySelectorAll('a').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        mainNav.classList.remove('open');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+                document.addEventListener('click', function (e) {
+                    if (!mainNav.classList.contains('open')) return;
+                    if (!mainNav.contains(e.target) && !navToggle.contains(e.target)) {
+                        mainNav.classList.remove('open');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+
+            var revealEls = document.querySelectorAll('.reveal');
+            if (reduceMotion) {
+                revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+            } else if ('IntersectionObserver' in window) {
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+                revealEls.forEach(function (el) { io.observe(el); });
+            } else {
+                revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+            }
+
+            function animateValue(el, end, prefix, suffix, duration) {
+                if (reduceMotion) {
+                    el.textContent = prefix + end + suffix;
+                    return;
+                }
+                var startTime = performance.now();
+                function frame(now) {
+                    var t = Math.min(1, (now - startTime) / duration);
+                    var eased = 1 - Math.pow(1 - t, 3);
+                    var current = Math.round(end * eased);
+                    el.textContent = prefix + current + suffix;
+                    if (t < 1) requestAnimationFrame(frame);
+                }
+                requestAnimationFrame(frame);
+            }
+
+            var metricsRoot = document.getElementById('metrics');
+            var metricsDone = false;
+            function runMetrics() {
+                if (metricsDone || !metricsRoot) return;
+                metricsDone = true;
+                metricsRoot.querySelectorAll('[data-count]').forEach(function (el) {
+                    var end = parseInt(el.getAttribute('data-count'), 10);
+                    var prefix = el.getAttribute('data-prefix') || '';
+                    var suffix = el.getAttribute('data-suffix') || '';
+                    animateValue(el, end, prefix, suffix, 1100);
+                });
+            }
+            if (metricsRoot) {
+                if (reduceMotion) {
+                    runMetrics();
+                } else if ('IntersectionObserver' in window) {
+                    var mio = new IntersectionObserver(function (entries) {
+                        if (entries.some(function (e) { return e.isIntersecting; })) {
+                            runMetrics();
+                            mio.disconnect();
+                        }
+                    }, { threshold: 0.35 });
+                    mio.observe(metricsRoot);
+                } else {
+                    runMetrics();
+                }
+            }
+
+            var washPeach = document.getElementById('washPeach');
+            var washLavender = document.getElementById('washLavender');
+            var washMist = document.getElementById('washMist');
+
+            function updateWashes() {
+                if (reduceMotion || !washPeach) return;
+                var maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+                var p = window.scrollY / maxScroll;
+                var peach = Math.max(0, 1 - p * 1.6);
+                var lavender = Math.max(0, 1 - Math.abs(p - 0.45) * 2.2);
+                var mist = Math.max(0, (p - 0.35) * 1.8);
+                washPeach.style.opacity = String(Math.min(1, peach));
+                washLavender.style.opacity = String(Math.min(1, lavender * 0.95));
+                washMist.style.opacity = String(Math.min(1, mist));
+            }
+
+            if (!reduceMotion) {
+                var ticking = false;
+                window.addEventListener('scroll', function () {
+                    if (!ticking) {
+                        requestAnimationFrame(function () {
+                            updateWashes();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                }, { passive: true });
+                updateWashes();
+            }
+        })();
     </script>
 </body>
 </html>
