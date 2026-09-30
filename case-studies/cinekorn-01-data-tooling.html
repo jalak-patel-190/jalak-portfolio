@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case 01: Data Task Into Content Decision | Cinekorn | Jalak Patel</title>
+    <meta name="description" content="How AI-assisted Python in Google Colab turned 6,000–8,000 rows of tier classification into a two-day task — without outsourcing judgment.">
+    <link rel="canonical" href="https://jalak-patel-190.github.io/jalak-portfolio/case-studies/cinekorn-01-data-tooling.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Turning a Manual Data Task Into a Content Decision | Jalak Patel">
+    <meta property="og:description" content="6,000–8,000 rows classified in two days. AI as workflow tool, not replacement for judgment.">
+    <meta property="og:image" content="https://jalak-patel-190.github.io/jalak-portfolio/media/cinekorn/yt-movies.png">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cinekorn-case-shared.css">
+</head>
+<body>
+    <a class="skip-link" href="#context">Skip to content</a>
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo-wrapper">
+                <span class="logo">JALAK PATEL</span>
+                <span class="logo-subtitle">Creative Strategist</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+            <nav id="mainNav">
+                <a href="cinekorn.html">Cinekorn Hub</a>
+                <a href="../index.html#work">All Cases</a>
+                <a href="../index.html#contact" class="nav-cta">Get In Touch</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a> · <a href="cinekorn.html">Cinekorn</a> · Case 01
+        </nav>
+
+        <header class="case-hero">
+            <p class="eyebrow">Case 01 · Cinekorn Entertainment</p>
+            <h1>Turning a Manual Data Task Into a Content Decision</h1>
+            <p class="lede">Content work does not always begin with a creative brief. Sometimes it begins with a messy spreadsheet.</p>
+            <div class="metric-row">
+                <div class="metric-pill">~6,000–8,000 <span>rows</span></div>
+                <div class="metric-pill">2 days <span>to finish</span></div>
+                <div class="metric-pill">AI + human review <span>workflow</span></div>
+            </div>
+        </header>
+
+        <section class="section" id="context">
+            <p class="section-label">Context</p>
+            <h2>Where the work started</h2>
+            <p>Early in the Cinekorn role, I received multiple files containing roughly <strong>6,000 to 8,000 rows</strong> of data that needed to be sorted and classified by tier before the information could support further analysis.</p>
+            <p>The task itself was not complicated. The problem was the volume of repetitive work. Manually reviewing thousands of rows would have taken several days and added little value beyond completing the classification.</p>
+        </section>
+
+        <section class="section" id="problem">
+            <p class="section-label">Problem</p>
+            <h2>Organise data without wasting judgment time</h2>
+            <p>The data had to be organised correctly before it could support any useful decision. There were two paths:</p>
+            <ul>
+                <li>Do the entire task manually, or</li>
+                <li>Remove the repetitive part while keeping human review over the final output</li>
+            </ul>
+            <p>The second option made more sense. The challenge was using AI <strong>without</strong> treating AI output as automatically correct.</p>
+        </section>
+
+        <section class="section" id="strategy">
+            <p class="section-label">Strategy</p>
+            <h2>The decision</h2>
+            <p>I used <strong>Gemini</strong> to help generate the Python workflow and ran the process through <strong>Google Colab</strong>.</p>
+            <p>AI’s role was limited to building the repetitive processing workflow. Responsibility stayed with me:</p>
+            <ul>
+                <li>Understanding what the data needed to be classified into</li>
+                <li>Defining the required output</li>
+                <li>Running the workflow</li>
+                <li>Checking results and correcting issues</li>
+                <li>Making sure the final dataset was usable</li>
+            </ul>
+            <div class="callout">
+                <strong>Goal was not “use AI.”</strong> Goal was remove unnecessary manual work while keeping control over the result.
+            </div>
+        </section>
+
+        <section class="section" id="execution">
+            <p class="section-label">Execution</p>
+            <h2>How the workflow ran</h2>
+            <div class="flow" aria-label="Workflow steps">
+                <span class="flow-step">Raw files</span>
+                <span class="flow-arrow" aria-hidden="true">→</span>
+                <span class="flow-step">AI-assisted Python</span>
+                <span class="flow-arrow" aria-hidden="true">→</span>
+                <span class="flow-step">Classification</span>
+                <span class="flow-arrow" aria-hidden="true">→</span>
+                <span class="flow-step">Manual check</span>
+                <span class="flow-arrow" aria-hidden="true">→</span>
+                <span class="flow-step">Usable dataset</span>
+            </div>
+            <p>Instead of working through every row by hand, repetitive classification ran through the workflow. Output was reviewed before use. The complete task finished within <strong>two days</strong>.</p>
+        </section>
+
+        <section class="section" id="evidence">
+            <p class="section-label">Evidence</p>
+            <h2>Visual proof (optional)</h2>
+            <div class="callout">
+                <strong>When you have it:</strong> Add a Colab or sheet screenshot at <code>media/cinekorn/case-01-colab.png</code> (no sensitive rows). Until then, the flow diagram above is the main visual.
+            </div>
+        </section>
+
+        <section class="section" id="results">
+            <p class="section-label">Results</p>
+            <h2>What changed</h2>
+            <p>Approximately <strong>6,000–8,000 rows</strong> processed and classified within two days.</p>
+            <p>The immediate result was faster data preparation. The more useful result: time moved away from repetitive sorting toward work that required judgment — understanding what the data meant and how it could be used.</p>
+        </section>
+
+        <section class="section" id="takeaway">
+            <p class="section-label">Takeaway</p>
+            <h2>What this showed</h2>
+            <p>AI was useful because it solved a specific bottleneck. I do not see AI as a replacement for judgment. I see it as another production tool.</p>
+            <p>The important skill is knowing where it can remove repetitive work, where it needs checking, and where the decision still belongs to the person doing the work.</p>
+        </section>
+
+        <section class="whats-next">
+            <h2>What’s next</h2>
+            <div class="next-grid">
+                <a class="next-card" href="cinekorn-02-telugu-kannada.html">
+                    <div class="n">Case 02</div>
+                    <div class="t">Telugu &amp; Kannada under constraint</div>
+                </a>
+                <a class="next-card" href="cinekorn-04-gujarati-system.html">
+                    <div class="n">Case 04</div>
+                    <div class="t">Gujarati distribution system</div>
+                </a>
+                <a class="next-card" href="cinekorn.html">
+                    <div class="n">Hub</div>
+                    <div class="t">Back to Cinekorn overview</div>
+                </a>
+            </div>
+        </section>
+
+        <div class="page-nav">
+            <a class="back" href="cinekorn.html">← Cinekorn hub</a>
+            <a class="primary" href="cinekorn-02-telugu-kannada.html">Next case →</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Jalak Patel</p>
+        <p class="footer-credit">Designed &amp; built by <strong>Jalak Patel</strong></p>
+    </footer>
+    <script>
+        (function () {
+            var t = document.getElementById('navToggle');
+            var n = document.getElementById('mainNav');
+            if (t && n) {
+                t.addEventListener('click', function () {
+                    var o = n.classList.toggle('open');
+                    t.setAttribute('aria-expanded', o ? 'true' : 'false');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
