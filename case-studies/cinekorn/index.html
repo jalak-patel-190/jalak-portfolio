@@ -10,33 +10,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="cinekorn-case-shared.css">
 <style>
-.meta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-top:1.25rem}
-.meta-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;box-shadow:var(--shadow)}
-.meta-label{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--text-muted);margin-bottom:.3rem}
+.meta-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;margin-top:1.25rem;max-width:920px}
+.meta-card{background:var(--surface,#fff);border:1px solid var(--border,#E8E2D8);border-radius:10px;padding:1rem;box-shadow:var(--shadow)}
+.meta-label{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--text-muted,#5A5A5A);margin-bottom:.3rem}
 .meta-value{font-size:.95rem;font-weight:700}
-.channel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem}
-.channel-card{display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;text-decoration:none;color:inherit;box-shadow:var(--shadow)}
+.channel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.85rem;max-width:920px}
+.channel-card{display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;background:#fff;border:1px solid #E8E2D8;border-radius:10px;text-decoration:none;color:inherit;box-shadow:0 8px 30px rgba(20,20,20,.06)}
 .channel-card:hover{transform:translateY(-2px);border-color:#d0c8bc}
-.channel-icon{width:40px;height:40px;border-radius:50%;background:#f3efe8;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;color:var(--cta-start);flex-shrink:0}
+.channel-icon{width:40px;height:40px;border-radius:50%;background:#f3efe8;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;color:#E85A2A;flex-shrink:0}
 .channel-name{font-size:.88rem;font-weight:700;display:block}
-.channel-meta{font-size:.72rem;color:var(--text-muted);font-weight:600}
-.case-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.15rem}
-.case-teaser{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:inherit;box-shadow:var(--shadow)}
+.channel-meta{font-size:.72rem;color:#5A5A5A;font-weight:600}
+.case-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.15rem;max-width:1040px}
+.case-teaser{display:flex;flex-direction:column;background:#fff;border:1px solid #E8E2D8;border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 8px 30px rgba(20,20,20,.06)}
 .case-teaser:hover{transform:translateY(-3px);border-color:#d0c8bc}
-.case-teaser-media{height:140px;background:#f3efe8;overflow:hidden}
+.case-teaser-media{aspect-ratio:16/9;background:#1a1a1a;overflow:hidden}
 .case-teaser-media img{width:100%;height:100%;object-fit:cover;display:block}
-.case-teaser-body{padding:1.15rem 1.2rem 1.35rem;display:flex;flex-direction:column;flex:1}
-.case-teaser-num{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--cta-start);margin-bottom:.35rem}
-.case-teaser-title{font-size:1.05rem;font-weight:700;margin-bottom:.5rem;line-height:1.3}
-.case-teaser-brief{font-size:.88rem;color:var(--text-muted);margin-bottom:.85rem;flex:1}
-.case-teaser-result{font-size:.8rem;font-weight:700;color:var(--link);margin-bottom:.75rem}
-.case-teaser-cta{font-size:.85rem;font-weight:700}
-.page-nav{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.case-teaser-body{padding:1.15rem 1.2rem 1.35rem;display:flex;flex-direction:column;flex:1;gap:.35rem}
+.case-teaser-num{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#E85A2A}
+.case-teaser-title{font-size:1.05rem;font-weight:700;line-height:1.3}
+.case-teaser-brief{font-size:.88rem;color:#5A5A5A;flex:1}
+.case-teaser-result{font-size:.8rem;font-weight:700;color:#1F5C6B}
+.case-teaser-cta{font-size:.85rem;font-weight:700;color:#1F5C6B}
+.page-nav{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:3rem;padding-top:1.5rem;border-top:1px solid #E8E2D8}
 .page-nav a{display:inline-flex;align-items:center;min-height:44px;padding:.65rem 1.2rem;border-radius:999px;font-size:.85rem;font-weight:700;text-decoration:none}
-.page-nav .back{color:var(--text);background:var(--surface);border:1.5px solid var(--border)}
-.page-nav .primary{color:#fff;background:linear-gradient(135deg,var(--cta-start),var(--cta-end))}
-@media(max-width:900px){.meta-grid{grid-template-columns:repeat(2,1fr)}.channel-grid{grid-template-columns:repeat(2,1fr)}.case-cards{grid-template-columns:1fr}}
-@media(max-width:480px){.meta-grid,.channel-grid{grid-template-columns:1fr}}
+.page-nav .back{color:#141414;background:#fff;border:1.5px solid #E8E2D8}
+.page-nav .primary{color:#fff;background:linear-gradient(135deg,#E85A2A,#C45B9B)}
+.case-hero .lede{max-width:36rem}
+.case-hero h1{max-width:14ch}
+@media(max-width:800px){.meta-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.meta-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -48,14 +50,14 @@
 <nav id="mainNav">
 <a href="../../index.html#work">Case Studies</a>
 <a href="../../index.html#journey">Journey</a>
-<a href="../../index.html#contact" class="nav-cta">Get In Touch</a>
+<a href="../../index.html#contact" class="btn-nav">Get In Touch</a>
 </nav>
 </div>
 </header>
 <main>
-<div class="container">
+<div class="wrap">
 <nav class="breadcrumb" aria-label="Breadcrumb">
-<a href="../../index.html">Home</a> · <a href="../../index.html#work">Case Studies</a> · Cinekorn Entertainment
+<a href="../../index.html">Home</a><span>·</span><a href="../../index.html#work">Case Studies</a><span>·</span>Cinekorn Entertainment
 </nav>
 <header class="case-hero">
 <p class="eyebrow">Case study hub</p>
@@ -103,12 +105,12 @@
 <h2>Case studies</h2>
 <p>Six deep dives from this role. Each page is a separate case study.</p>
 <div class="case-cards">
-<a class="case-teaser" href="01-data-tooling.html"><div class="case-teaser-media"><img src="../../media/cinekorn/yt-movies.png" alt="" width="480" height="140" loading="lazy"></div><div class="case-teaser-body"><span class="case-teaser-num">Case 01</span><span class="case-teaser-title">Data bottleneck and AI-assisted tooling</span><span class="case-teaser-brief">Automating 6,000 to 8,000 rows of tier classification so strategy work was not blocked by manual sorting.</span><span class="case-teaser-result">Multi-day task to two days</span><span class="case-teaser-cta">Read full case study</span></div></a>
-<a class="case-teaser" href="02-telugu-kannada.html"><div class="case-teaser-media"><img src="../../media/cinekorn/yt-movies.png" alt="" width="480" height="140" loading="lazy"></div><div class="case-teaser-body"><span class="case-teaser-num">Case 02</span><span class="case-teaser-title">Telugu and Kannada under constraint</span><span class="case-teaser-brief">Weak source material, thin catalogs, and honest attribution when historic views sit on removed content.</span><span class="case-teaser-result">Telugu from zero · Kannada rebuilt base</span><span class="case-teaser-cta">Read full case study</span></div></a>
-<a class="case-teaser" href="03-movies-catalog.html"><div class="case-teaser-media"><img src="../../media/cinekorn/yt-movies.png" alt="" width="480" height="140" loading="lazy"></div><div class="case-teaser-body"><span class="case-teaser-num">Case 03</span><span class="case-teaser-title">Cinekorn Movies - legacy catalog</span><span class="case-teaser-brief">Operating a flagship where most lifetime views predate tenure, without claiming credit for inherited hits.</span><span class="case-teaser-result">Tenure share stated plainly</span><span class="case-teaser-cta">Read full case study</span></div></a>
-<a class="case-teaser" href="04-gujarati-system.html"><div class="case-teaser-media"><img src="../../media/cinekorn/yt-movies.png" alt="" width="480" height="140" loading="lazy"></div><div class="case-teaser-body"><span class="case-teaser-num">Case 04</span><span class="case-teaser-title">Gujarati cross-platform system</span><span class="case-teaser-brief">One IP engineered into full release, serialised parts, and Shorts, plus Facebook recovery and funnels.</span><span class="case-teaser-result">Rakhewal · tenure strategy</span><span class="case-teaser-cta">Read full case study</span></div></a>
-<a class="case-teaser" href="05-kalapi-linkedin.html"><div class="case-teaser-media"><img src="../../media/cinekorn/yt-movies.png" alt="" width="480" height="140" loading="lazy"></div><div class="case-teaser-body"><span class="case-teaser-num">Case 05</span><span class="case-teaser-title">Kalapi Nagada - LinkedIn</span><span class="case-teaser-brief">Founder presence: narrative, cadence, and positioning alongside the corporate channel.</span><span class="case-teaser-result">Founder brand system</span><span class="case-teaser-cta">Read full case study</span></div></a>
-<a class="case-teaser" href="06-company-linkedin.html"><div class="case-teaser-media"><img src="../../media/cinekorn/yt-movies.png" alt="" width="480" height="140" loading="lazy"></div><div class="case-teaser-body"><span class="case-teaser-num">Case 06</span><span class="case-teaser-title">Company LinkedIn page</span><span class="case-teaser-brief">Editorial cadence and industry context content that increased activity with zero paid spend.</span><span class="case-teaser-result">Higher frequency · stronger engagement</span><span class="case-teaser-cta">Read full case study</span></div></a>
+<a class="case-teaser" href="01-data-tooling.html"><div class="case-teaser-media"><img src="../../media/cinekorn/media:cinekorn:case-01-colab.png" alt="Colab workflow for tier classification" width="480" height="270" loading="lazy"></div><div class="case-teaser-body"><span class="case-teaser-num">Case 01</span><span class="case-teaser-title">Data bottleneck and AI-assisted tooling</span><span class="case-teaser-brief">Automating 6,000 to 8,000 rows of tier classification so strategy work was not blocked by manual sorting.</span><span class="case-teaser-result">Multi-day task to two days</span><span class="case-teaser-cta">Read full case study</span></div></a>
+<a class="case-teaser" href="02-telugu-kannada.html"><div class="case-teaser-media"><img src="../../media/cinekorn/yt-telugu.png" alt="Telugu and Kannada channel work" width="480" height="270" loading="lazy"></div><div class="case-teaser-body"><span class="case-teaser-num">Case 02</span><span class="case-teaser-title">Telugu and Kannada under constraint</span><span class="case-teaser-brief">Weak source material, thin catalogs, and honest attribution when historic views sit on removed content.</span><span class="case-teaser-result">Telugu from zero · Kannada rebuilt base</span><span class="case-teaser-cta">Read full case study</span></div></a>
+<a class="case-teaser" href="03-movies-catalog.html"><div class="case-teaser-media"><img src="../../media/cinekorn/yt-movies.png" alt="Cinekorn Movies catalog analytics" width="480" height="270" loading="lazy"></div><div class="case-teaser-body"><span class="case-teaser-num">Case 03</span><span class="case-teaser-title">Cinekorn Movies - legacy catalog</span><span class="case-teaser-brief">Operating a flagship where most lifetime views predate tenure, without claiming credit for inherited hits.</span><span class="case-teaser-result">Tenure share stated plainly</span><span class="case-teaser-cta">Read full case study</span></div></a>
+<a class="case-teaser" href="04-gujarati-system.html"><div class="case-teaser-media"><img src="../../media/cinekorn/rakhewal-youtube-analytics.png" alt="Gujarati cross-platform distribution" width="480" height="270" loading="lazy"></div><div class="case-teaser-body"><span class="case-teaser-num">Case 04</span><span class="case-teaser-title">Gujarati cross-platform system</span><span class="case-teaser-brief">One IP engineered into full release, serialised parts, and Shorts, plus Facebook recovery and funnels.</span><span class="case-teaser-result">Rakhewal · tenure strategy</span><span class="case-teaser-cta">Read full case study</span></div></a>
+<a class="case-teaser" href="05-kalapi-linkedin.html"><div class="case-teaser-media"><img src="../../media/cinekorn/kalapi-analytics.png" alt="Kalapi Nagada LinkedIn analytics" width="480" height="270" loading="lazy"></div><div class="case-teaser-body"><span class="case-teaser-num">Case 05</span><span class="case-teaser-title">Kalapi Nagada - LinkedIn</span><span class="case-teaser-brief">Founder presence: narrative, cadence, and positioning alongside the corporate channel.</span><span class="case-teaser-result">Founder brand system</span><span class="case-teaser-cta">Read full case study</span></div></a>
+<a class="case-teaser" href="06-company-linkedin.html"><div class="case-teaser-media"><img src="../../media/cinekorn/cinekorn-linkedin-content-analytics.png" alt="Company LinkedIn content analytics" width="480" height="270" loading="lazy"></div><div class="case-teaser-body"><span class="case-teaser-num">Case 06</span><span class="case-teaser-title">Company LinkedIn page</span><span class="case-teaser-brief">Editorial cadence and industry context content that increased activity with zero paid spend.</span><span class="case-teaser-result">Higher frequency · stronger engagement</span><span class="case-teaser-cta">Read full case study</span></div></a>
 </div>
 </section>
 <div class="page-nav">
@@ -119,7 +121,7 @@
 </main>
 <footer>
 <p>&copy; 2026 Jalak Patel. Built for high-leverage content operations and creative strategy.</p>
-<p class="footer-credit">Designed and built by <strong>Jalak Patel</strong></p>
+<p>Designed and built by <strong>Jalak Patel</strong></p>
 </footer>
 <script>
 (function(){var t=document.getElementById('navToggle'),n=document.getElementById('mainNav');if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false')});n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');t.setAttribute('aria-expanded','false')})})}})();
