@@ -364,18 +364,15 @@ footer {
     .next-grid { grid-template-columns: 1fr; }
 }
 
-/* Proof rows: alternating image + text (desktop zig-zag, mobile stack) */
+/* Proof rows: alternating image + text */
 .proof-row {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   gap: 1.5rem 2rem;
   align-items: center;
   margin: 2rem 0;
-  padding: 0;
 }
-.proof-row + .proof-row {
-  margin-top: 2.5rem;
-}
+.proof-row + .proof-row { margin-top: 2.5rem; }
 .proof-row.reverse {
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
 }
@@ -385,58 +382,78 @@ footer {
   margin: 0;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid var(--border, #E8E2D8);
+  border: 1px solid var(--border);
   background: #1a1a1a;
   box-shadow: 0 8px 28px rgba(20, 20, 20, 0.06);
 }
-.proof-media img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.proof-copy {
-  padding: 0.25rem 0.15rem;
-}
+.proof-media img { width: 100%; height: auto; display: block; }
+.proof-copy { padding: 0.25rem 0.15rem; }
 .proof-copy .proof-label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--cta-start, #E85A2A);
-  margin: 0 0 0.4rem;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--cta-start); margin: 0 0 0.4rem;
 }
 .proof-copy .proof-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin: 0 0 0.5rem;
-  line-height: 1.3;
-  color: var(--text, #1a1a1a);
+  font-size: 1.05rem; font-weight: 700; margin: 0 0 0.5rem; line-height: 1.3;
 }
 .proof-copy p {
-  font-size: 0.88rem;
-  color: var(--text-muted, #5A5A5A);
-  line-height: 1.55;
-  margin: 0;
+  font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin: 0;
 }
-.proof-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin: 1.75rem 0;
-}
+.proof-stack { display: flex; flex-direction: column; gap: 2rem; margin: 1.75rem 0; }
 @media (max-width: 720px) {
-  .proof-row,
-  .proof-row.reverse {
-    grid-template-columns: 1fr;
-    gap: 0.85rem;
-    margin: 1.75rem 0;
+  .proof-row, .proof-row.reverse {
+    grid-template-columns: 1fr; gap: 0.85rem; margin: 1.75rem 0;
   }
   .proof-row.reverse .proof-media,
-  .proof-row.reverse .proof-copy {
-    order: unset;
-  }
+  .proof-row.reverse .proof-copy { order: unset; }
   .proof-row .proof-media { order: 1; }
   .proof-row .proof-copy { order: 2; }
   .proof-row + .proof-row { margin-top: 2.25rem; }
 }
-/* end proof rows */
+
+/* Image lightbox (tap to enlarge) */
+.zoom-trigger {
+  display: block; width: 100%; padding: 0; margin: 0; border: none;
+  background: transparent; cursor: zoom-in; position: relative;
+  text-align: left; border-radius: 12px; overflow: hidden;
+}
+.zoom-trigger img { width: 100%; height: auto; display: block; }
+.zoom-hint {
+  position: absolute; right: 0.65rem; bottom: 0.65rem;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.03em;
+  text-transform: uppercase; color: #fff;
+  background: rgba(20, 20, 20, 0.72);
+  padding: 0.35rem 0.55rem; border-radius: 999px;
+  pointer-events: none; opacity: 0.92;
+}
+.zoom-trigger:focus-visible { outline: 2px solid #E85A2A; outline-offset: 3px; }
+.lightbox {
+  border: none; padding: 0; max-width: min(96vw, 1100px); max-height: 92vh;
+  background: transparent; overflow: visible;
+}
+.lightbox::backdrop {
+  background: rgba(12, 12, 14, 0.88);
+  backdrop-filter: blur(4px);
+}
+.lightbox-inner {
+  position: relative; background: #111; border-radius: 12px;
+  overflow: auto; max-height: 92vh;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+}
+.lightbox-inner img {
+  display: block; width: 100%; height: auto; max-height: 88vh;
+  object-fit: contain; background: #0a0a0a;
+}
+.lightbox-close {
+  position: absolute; top: 0.6rem; right: 0.6rem; z-index: 2;
+  min-height: 44px; min-width: 44px; padding: 0.5rem 0.85rem;
+  border: none; border-radius: 999px; font-size: 0.8rem; font-weight: 700;
+  color: #141414; background: #fff; cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}
+.lightbox-close:focus-visible { outline: 2px solid #E85A2A; outline-offset: 2px; }
+@media (max-width: 720px) {
+  .zoom-hint { font-size: 0.62rem; bottom: 0.5rem; right: 0.5rem; }
+  .lightbox { max-width: 100vw; max-height: 100vh; width: 100%; }
+  .lightbox-inner { border-radius: 0; max-height: 100vh; }
+  .lightbox-inner img { max-height: 100vh; }
+}
