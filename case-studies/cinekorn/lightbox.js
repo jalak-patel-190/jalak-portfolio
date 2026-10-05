@@ -1,4 +1,4 @@
-/*! Cinekorn image lightbox — no library */
+/*! Cinekorn image lightbox — auto-wraps figure images */
 (function () {
   function ready(fn) {
     if (document.readyState !== 'loading') fn();
@@ -6,6 +6,23 @@
   }
 
   ready(function () {
+    // Auto-wrap evidence images so every case gets zoom without HTML edits
+    document.querySelectorAll('figure.figure img, .evidence-block img, .proof-media img').forEach(function (img) {
+      if (img.closest('.zoom-trigger')) return;
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'zoom-trigger';
+      btn.setAttribute('data-full', img.getAttribute('src') || '');
+      btn.setAttribute('aria-label', 'View larger image');
+      img.parentNode.insertBefore(btn, img);
+      btn.appendChild(img);
+      var hint = document.createElement('span');
+      hint.className = 'zoom-hint';
+      hint.setAttribute('aria-hidden', 'true');
+      hint.textContent = 'Tap to enlarge';
+      btn.appendChild(hint);
+    });
+
     var dialog = document.getElementById('imgLightbox');
     if (!dialog) {
       dialog = document.createElement('dialog');
