@@ -1,4 +1,4 @@
-/*! Cinekorn image lightbox — auto-wraps figure images */
+/*! Cinekorn: lightbox + scroll-triggered chart animations */
 (function () {
   function ready(fn) {
     if (document.readyState !== 'loading') fn();
@@ -6,7 +6,48 @@
   }
 
   ready(function () {
-    // Auto-wrap evidence images so every case gets zoom without HTML edits
+    /* ---- Charts: animate when scrolled into view; click to replay ---- */
+    (function initCharts() {
+      var cards = document.querySelectorAll('.chart-card');
+      if (!cards.length) return;
+
+      function arm(card) {
+        card.classList.remove('is-inview');
+        void card.offsetWidth;
+        card.classList.add('is-inview');
+      }
+
+      cards.forEach(function (card) {
+        if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
+        card.setAttribute('title', 'Click to replay chart animation');
+        card.addEventListener('click', function () { arm(card); });
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            arm(card);
+          }
+        });
+      });
+
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                arm(entry.target);
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.28, rootMargin: '0px 0px -10% 0px' }
+        );
+        cards.forEach(function (c) { io.observe(c); });
+      } else {
+        cards.forEach(arm);
+      }
+    })();
+
+    /* ---- Image lightbox ---- */
     document.querySelectorAll('figure.figure img, .evidence-block img, .proof-media img').forEach(function (img) {
       if (img.closest('.zoom-trigger')) return;
       var btn = document.createElement('button');

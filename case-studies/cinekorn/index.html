@@ -19,12 +19,11 @@ body{background:radial-gradient(1200px 600px at 10% -10%,rgba(255,214,186,.55),t
 .channel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.85rem;max-width:960px}
 .channel-card{display:flex;align-items:center;gap:.8rem;padding:.85rem 1rem;background:rgba(255,255,255,.95);border:1px solid #E8E2D8;border-radius:12px;text-decoration:none;color:inherit;box-shadow:0 8px 24px rgba(20,20,20,.05);transition:transform .15s ease,border-color .15s ease}
 .channel-card:hover{transform:translateY(-2px);border-color:#d0c8bc}
-.channel-logo{width:44px;height:44px;border-radius:10px;object-fit:contain;background:#f3efe8;flex-shrink:0;padding:4px;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;letter-spacing:.02em;color:#fff}
-.channel-logo.mark-li{background:#0A66C2;padding:0}
-.channel-logo.mark-fb{background:#1877F2;padding:0}
-.channel-logo.mark-yt{background:#FF0000;padding:0;font-size:.65rem}
-.channel-logo.mark-te{background:#1F5C6B;padding:0}
-.channel-logo.mark-ka{background:#C45B9B;padding:0}
+.channel-logo{width:44px;height:44px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;color:#fff}
+.channel-logo.mark-li{background:#0A66C2}
+.channel-logo.mark-fb{background:#1877F2;font-size:.95rem}
+.channel-logo.mark-yt{background:#FF0000}
+.channel-logo.mark-yt svg{width:22px;height:16px;display:block}
 .channel-name{font-size:.88rem;font-weight:700;display:block}
 .channel-meta{font-size:.72rem;color:#5A5A5A;font-weight:600}
 .case-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.15rem;max-width:1040px}
@@ -112,27 +111,27 @@ body{background:radial-gradient(1200px 600px at 10% -10%,rgba(255,214,186,.55),t
 <span><span class="channel-name">Cinekorn Gujarati</span><span class="channel-meta">Facebook</span></span>
 </a>
 <a class="channel-card" href="https://www.youtube.com/@cinekornmovies" target="_blank" rel="noopener noreferrer">
-<img class="channel-logo" src="../../media/cinekorn/logo-movies.png" alt="" width="44" height="44" loading="lazy">
+<span class="channel-logo mark-yt" aria-hidden="true"><svg viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 2.6A3 3 0 0 0 21.4.5C19.5 0 12 0 12 0S4.5 0 2.6.5A3 3 0 0 0 .5 2.6C0 4.5 0 8.5 0 8.5s0 4 .5 5.9a3 3 0 0 0 2.1 2.1C4.5 17 12 17 12 17s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.9.5-5.9s0-4-.5-5.9z" fill="#fff" fill-opacity=".15"/><path d="M9.75 12.2V4.8L15.5 8.5 9.75 12.2z" fill="#fff"/></svg></span>
 <span><span class="channel-name">Cinekorn Movies</span><span class="channel-meta">YouTube · main catalog</span></span>
 </a>
 <a class="channel-card" href="https://www.youtube.com/@CinekornCineplex" target="_blank" rel="noopener noreferrer">
-<img class="channel-logo" src="../../media/cinekorn/logo-cineplex.png" alt="" width="44" height="44" loading="lazy">
+<span class="channel-logo mark-yt" aria-hidden="true"><svg viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.75 12.2V4.8L15.5 8.5 9.75 12.2z" fill="#fff"/></svg></span>
 <span><span class="channel-name">Cinekorn Cineplex</span><span class="channel-meta">YouTube</span></span>
 </a>
 <a class="channel-card" href="https://www.youtube.com/@CinekornGujarati" target="_blank" rel="noopener noreferrer">
-<img class="channel-logo" src="../../media/cinekorn/logo-gujarati.png" alt="" width="44" height="44" loading="lazy">
+<span class="channel-logo mark-yt" aria-hidden="true"><svg viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.75 12.2V4.8L15.5 8.5 9.75 12.2z" fill="#fff"/></svg></span>
 <span><span class="channel-name">Cinekorn Gujarati</span><span class="channel-meta">YouTube</span></span>
 </a>
 <a class="channel-card" href="https://www.youtube.com/@CinekornGujaratiShorts" target="_blank" rel="noopener noreferrer">
-<img class="channel-logo" src="../../media/cinekorn/logo-gujarati-shorts.png" alt="" width="44" height="44" loading="lazy">
+<span class="channel-logo mark-yt" aria-hidden="true"><svg viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.75 12.2V4.8L15.5 8.5 9.75 12.2z" fill="#fff"/></svg></span>
 <span><span class="channel-name">Gujarati Shorts</span><span class="channel-meta">YouTube · short-form</span></span>
 </a>
 <a class="channel-card" href="https://www.youtube.com/@CinekornTelugu" target="_blank" rel="noopener noreferrer">
-<span class="channel-logo mark-te" aria-hidden="true">TE</span>
+<span class="channel-logo mark-yt" aria-hidden="true"><svg viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.75 12.2V4.8L15.5 8.5 9.75 12.2z" fill="#fff"/></svg></span>
 <span><span class="channel-name">Cinekorn Telugu</span><span class="channel-meta">YouTube · regional</span></span>
 </a>
 <a class="channel-card" href="https://www.youtube.com/@CinekornKannada" target="_blank" rel="noopener noreferrer">
-<span class="channel-logo mark-ka" aria-hidden="true">KA</span>
+<span class="channel-logo mark-yt" aria-hidden="true"><svg viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.75 12.2V4.8L15.5 8.5 9.75 12.2z" fill="#fff"/></svg></span>
 <span><span class="channel-name">Cinekorn Kannada</span><span class="channel-meta">YouTube · regional</span></span>
 </a>
 </div>
