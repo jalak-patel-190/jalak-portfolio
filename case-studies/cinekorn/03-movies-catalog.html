@@ -74,14 +74,25 @@ body{background:radial-gradient(1200px 600px at 10% -10%,rgba(255,214,186,.5),tr
 </div>
 <div class="chart-card">
 <h3>Catalog motion</h3>
-<p class="chart-sub">Direction of catalog activity across the tenure window</p>
-<svg class="line-chart" viewBox="0 0 320 140" role="img" aria-label="Catalog activity direction">
-  <path class="line-path" d="M15,110 C50,105 70,95 100,85 S150,60 190,50 S250,35 305,28"/>
-  <circle class="pt" cx="15" cy="110" r="4"/>
-  <circle class="pt" cx="100" cy="85" r="4"/>
-  <circle class="pt" cx="190" cy="50" r="4"/>
-  <circle class="pt" cx="305" cy="28" r="4"/>
+<p class="chart-sub">Legacy library through ops to 65.5M lifetime scale</p>
+<svg class="line-chart" viewBox="0 0 340 170" role="img" aria-label="Catalog activity: legacy library to 65.5M lifetime views">
+  <line x1="40" y1="20" x2="40" y2="130" stroke="#E8E2D8"/>
+  <line x1="40" y1="130" x2="320" y2="130" stroke="#E8E2D8"/>
+  <text class="axis-label" x="36" y="28" text-anchor="end">High</text>
+  <text class="axis-label" x="36" y="130" text-anchor="end">Low</text>
+  <text class="axis-label" x="50" y="148">Legacy</text>
+  <text class="axis-label" x="310" y="148" text-anchor="end">Tenure</text>
+  <path class="line-path" d="M50,110 C90,100 120,90 160,75 S220,45 280,32 S310,26 315,24"/>
+  <circle class="pt" cx="50" cy="110" r="5"/>
+  <circle class="pt" cx="160" cy="75" r="5"/>
+  <circle class="pt" cx="280" cy="32" r="5"/>
+  <text class="point-label" x="50" y="102" text-anchor="middle">Library</text>
+  <text class="point-sub" x="50" y="158" text-anchor="middle">pre-tenure</text>
+  <text class="point-label" x="160" y="68" text-anchor="middle">Ops</text>
+  <text class="point-label" x="280" y="24" text-anchor="middle">65.5M</text>
+  <text class="point-sub" x="280" y="158" text-anchor="middle">lifetime</text>
 </svg>
+<p class="chart-caption">Line shows direction of catalog activity. Numbers mark legacy library, ongoing ops, and lifetime scale (65.5M). Most lifetime volume predates tenure.</p>
 </div>
 <p class="evidence-note">Flagship channel analytics used for the lifetime baseline and catalog view.</p>
 <div class="evidence-block">
@@ -125,17 +136,6 @@ body{background:radial-gradient(1200px 600px at 10% -10%,rgba(255,214,186,.5),tr
 (function(){
   var t=document.getElementById('navToggle'),n=document.getElementById('mainNav');
   if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});}
-  function countUp(el){
-    var target=parseFloat(el.getAttribute('data-count')); if(isNaN(target)) return;
-    var suffix=el.getAttribute('data-suffix')||''; var decimals=el.getAttribute('data-decimals');
-    var duration=900,start=null;
-    function frame(ts){ if(!start) start=ts; var p=Math.min(1,(ts-start)/duration); var e=1-Math.pow(1-p,3); var val=target*e; el.textContent=(decimals?val.toFixed(+decimals):Math.round(val).toLocaleString())+suffix; if(p<1) requestAnimationFrame(frame); }
-    requestAnimationFrame(frame);
-  }
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); io.unobserve(e.target);} }); },{threshold:0.35});
-    document.querySelectorAll('[data-count]').forEach(function(el){ io.observe(el); });
-  }
 })();
 </script>
 <script src="lightbox.js" defer></script>
