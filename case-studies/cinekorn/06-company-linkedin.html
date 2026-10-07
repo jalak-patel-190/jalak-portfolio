@@ -71,29 +71,38 @@ body{background:radial-gradient(1200px 600px at 10% -10%,rgba(255,214,186,.5),tr
 </table>
 </div>
 <div class="chart-card">
-<h3>Direction of travel</h3>
-<p class="chart-sub">Daily-average activity across the comparison window</p>
-<svg class="line-chart" viewBox="0 0 320 150" role="img" aria-label="Growth in company page activity">
-  <path class="line-path" d="M15,130 C55,125 80,100 120,85 S180,55 220,40 S280,20 310,18"/>
-  <circle class="pt" cx="15" cy="130" r="4"/>
-  <circle class="pt" cx="120" cy="85" r="4"/>
-  <circle class="pt" cx="220" cy="40" r="4"/>
-  <circle class="pt" cx="310" cy="18" r="4"/>
+<h3>Impressions direction</h3>
+<p class="chart-sub">From 6,263 before to 17,289 after (daily-average window)</p>
+<svg class="line-chart" viewBox="0 0 340 170" role="img" aria-label="Impressions from 6263 to 17289">
+  <line x1="40" y1="20" x2="40" y2="130" stroke="#E8E2D8"/>
+  <line x1="40" y1="130" x2="320" y2="130" stroke="#E8E2D8"/>
+  <text class="axis-label" x="36" y="28" text-anchor="end">High</text>
+  <text class="axis-label" x="36" y="130" text-anchor="end">Low</text>
+  <text class="axis-label" x="50" y="148">Before</text>
+  <text class="axis-label" x="310" y="148" text-anchor="end">After</text>
+  <path class="line-path" d="M60,110 C100,100 140,85 180,65 S240,40 300,28"/>
+  <circle class="pt" cx="60" cy="110" r="5"/>
+  <circle class="pt" cx="180" cy="65" r="5"/>
+  <circle class="pt" cx="300" cy="28" r="5"/>
+  <text class="point-label" x="60" y="102" text-anchor="middle">6,263</text>
+  <text class="point-sub" x="60" y="158" text-anchor="middle">Impressions</text>
+  <text class="point-label" x="300" y="20" text-anchor="end">17,289</text>
+  <text class="point-sub" x="300" y="158" text-anchor="end">+278%</text>
 </svg>
-<p class="chart-caption">Impressions, clicks and reactions moved up together after the editorial shift.</p>
+<p class="chart-caption">Clicks 1,230 → 2,838 (+216%). Reactions 94 → 525 (+665%). Zero paid spend.</p>
 </div>
 <div class="chart-card">
 <h3>Before vs after mix</h3>
-<p class="chart-sub">Relative lift across the tracked window</p>
+<p class="chart-sub">Relative scale of the after window versus before</p>
 <div class="stack-row">
-  <div class="stack-seg" style="--w:25%;background:#8A8478"></div>
-  <div class="stack-seg" style="--w:75%;background:linear-gradient(90deg,#E85A2A,#C45B9B);transition-delay:.15s"></div>
+  <div class="stack-seg" style="--w:27%;background:#8A8478"></div>
+  <div class="stack-seg" style="--w:73%;background:linear-gradient(90deg,#E85A2A,#C45B9B);transition-delay:.15s"></div>
 </div>
 <div class="stack-legend">
-  <span style="--c:#8A8478">Before window</span>
-  <span style="--c:#E85A2A">After window</span>
+  <span style="--c:#8A8478">Before (~6.3K imp.)</span>
+  <span style="--c:#E85A2A">After (~17.3K imp.)</span>
 </div>
-<p class="chart-caption">Impressions +278%, clicks +216%, reactions +665% on a daily-average basis. Zero paid spend. Frequency from ~8.1 days to ~2.4 days between posts.</p>
+<p class="chart-caption">Publishing frequency: about 1 post every 8.1 days → every 2.4 days (~3.4×).</p>
 </div>
 <p class="evidence-note">Company page analytics for the comparison window.</p>
 <div class="evidence-block">
