@@ -12,23 +12,6 @@
 <style>
 body{background:radial-gradient(1200px 600px at 10% -10%,rgba(255,214,186,.5),transparent 55%),radial-gradient(900px 500px at 95% 15%,rgba(214,200,255,.38),transparent 50%),radial-gradient(800px 480px at 50% 105%,rgba(220,235,245,.5),transparent 45%),#F7F4EF;background-attachment:fixed}
 .btn-nav,.nav-cta,.page-nav .primary{box-shadow:0 4px 16px rgba(232,90,42,.35),0 0 0 1px rgba(232,90,42,.12)}
-.chart-card{background:rgba(255,255,255,.96);border:1px solid #E8E2D8;border-radius:14px;box-shadow:0 8px 30px rgba(20,20,20,.06);padding:1.35rem 1.4rem 1.15rem;margin:1.75rem 0 2.5rem;position:relative;overflow:hidden}
-.chart-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#E85A2A,#C45B9B)}
-.chart-card h3{font-size:.9rem;font-weight:700;margin:0 0 .3rem}.chart-sub{font-size:.75rem;color:#5A5A5A;margin:0 0 .85rem}
-.chart-caption{margin-top:.85rem;padding-top:.7rem;border-top:1px solid #E8E2D8;font-size:.74rem;color:#5A5A5A;line-height:1.45}
-.svg-chart-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:1.25rem}
-.chart-key{list-style:none;margin:0;padding:0;font-size:.8rem;color:#5A5A5A;line-height:1.55}
-.chart-key li{display:flex;align-items:flex-start;gap:.45rem;margin-bottom:.35rem}
-.swatch{width:12px;height:12px;border-radius:3px;margin-top:.2rem;flex-shrink:0}
-.swatch.legacy{background:#8A8478}.swatch.tenure{background:linear-gradient(90deg,#E85A2A,#C45B9B)}.swatch.s2{background:#1F5C6B}
-.hbar-fill{transform-origin:left;transform-box:fill-box;animation:hbarGrow 1s cubic-bezier(.22,1,.36,1) both}
-@keyframes hbarGrow{from{transform:scaleX(0);opacity:.4}to{transform:scaleX(1);opacity:1}}
-.evidence-block{margin:2.5rem 0}.evidence-block+.evidence-block{margin-top:3rem}
-.figure{margin:0 0 1.5rem;border-radius:12px;overflow:hidden;border:1px solid #E8E2D8;background:#1a1a1a;box-shadow:0 8px 30px rgba(20,20,20,.06)}
-.figure img{width:100%;height:auto;display:block}
-.figure figcaption{padding:.85rem 1rem;font-size:.8rem;color:#5A5A5A;background:#fff;border-top:1px solid #E8E2D8;line-height:1.45}
-.evidence-note{font-size:.9rem;color:#5A5A5A;margin:0 0 1.5rem;line-height:1.55;max-width:38rem}
-@media(prefers-reduced-motion:reduce){.hbar-fill{animation:none}}
 </style>
 </head>
 <body>
@@ -77,28 +60,24 @@ body{background:radial-gradient(1200px 600px at 10% -10%,rgba(255,214,186,.5),tr
 <p class="section-label">Evidence</p>
 <h2>Profile and performance surface</h2>
 <div class="chart-card">
-<h3>Content system (focus areas)</h3>
-<p class="chart-sub">Relative emphasis across the founder feed</p>
-<div class="svg-chart-wrap">
-<svg viewBox="0 0 360 150" width="100%" height="150" role="img" aria-label="Horizontal emphasis across founder content themes">
-<defs><linearGradient id="hg5" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#E85A2A"/><stop offset="100%" stop-color="#C45B9B"/></linearGradient></defs>
-<text x="0" y="22" font-size="11" fill="#5A5A5A">Industry context</text>
-<rect x="110" y="10" width="230" height="16" rx="4" fill="#efeae2"/>
-<rect class="hbar-fill" x="110" y="10" width="180" height="16" rx="4" fill="url(#hg5)"/>
-<text x="0" y="58" font-size="11" fill="#5A5A5A">Business POV</text>
-<rect x="110" y="46" width="230" height="16" rx="4" fill="#efeae2"/>
-<rect class="hbar-fill" x="110" y="46" width="150" height="16" rx="4" fill="#1F5C6B" style="animation-delay:.15s"/>
-<text x="0" y="94" font-size="11" fill="#5A5A5A">Company signal</text>
-<rect x="110" y="82" width="230" height="16" rx="4" fill="#efeae2"/>
-<rect class="hbar-fill" x="110" y="82" width="90" height="16" rx="4" fill="#8A8478" style="animation-delay:.3s"/>
-</svg>
-<ul class="chart-key">
-<li><span class="swatch tenure"></span> Industry context and pattern posts</li>
-<li><span class="swatch s2"></span> Founder business point of view</li>
-<li><span class="swatch legacy"></span> Selective company-linked signal</li>
-</ul>
+<h3>Founder feed emphasis</h3>
+<p class="chart-sub">Relative weight across content themes</p>
+<div class="ring-wrap">
+  <div class="ring"><svg viewBox="0 0 110 110"><circle class="track" cx="55" cy="55" r="45"/><circle class="val" cx="55" cy="55" r="45" style="--off:70"/></svg><div class="ring-label">High<small>Industry</small></div></div>
+  <div class="ring"><svg viewBox="0 0 110 110"><circle class="track" cx="55" cy="55" r="45"/><circle class="val" cx="55" cy="55" r="45" style="--off:140;stroke:#C45B9B"/></svg><div class="ring-label">Med<small>Business</small></div></div>
+  <div class="ring"><svg viewBox="0 0 110 110"><circle class="track" cx="55" cy="55" r="45"/><circle class="val" cx="55" cy="55" r="45" style="--off:200;stroke:#1F5C6B"/></svg><div class="ring-label">Selective<small>Company</small></div></div>
 </div>
-<p class="chart-caption">Bars show relative emphasis in the system, not a public ranking of post performance.</p>
+<p class="chart-caption">Rings show relative emphasis in the system, not a public ranking of post performance.</p>
+</div>
+<div class="chart-card">
+<h3>Operating loop</h3>
+<p class="chart-sub">How the founder page was run</p>
+<div class="funnel">
+  <div class="funnel-step">Signal from industry</div>
+  <div class="funnel-step">Draft + frame</div>
+  <div class="funnel-step">Publish cadence</div>
+  <div class="funnel-step">Engagement read</div>
+</div>
 </div>
 <p class="evidence-note">Founder profile and analytics surfaces used for cadence and positioning review.</p>
 <div class="evidence-block">
