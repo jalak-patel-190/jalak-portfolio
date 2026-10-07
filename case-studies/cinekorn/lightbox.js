@@ -1,4 +1,4 @@
-/*! Cinekorn: lightbox + scroll-triggered chart animations */
+/*! Charts + lightbox: scroll-in, mobile tap, centered modal */
 (function () {
   function ready(fn) {
     if (document.readyState !== 'loading') fn();
@@ -6,7 +6,6 @@
   }
 
   ready(function () {
-    /* ---- Charts: animate when scrolled into view; click to replay ---- */
     (function initCharts() {
       var cards = document.querySelectorAll('.chart-card');
       if (!cards.length) return;
@@ -19,8 +18,25 @@
 
       cards.forEach(function (card) {
         if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
-        card.setAttribute('title', 'Click to replay chart animation');
-        card.addEventListener('click', function () { arm(card); });
+        card.setAttribute('role', 'img');
+        card.setAttribute('aria-label', (card.querySelector('h3') && card.querySelector('h3').textContent) || 'Chart. Tap to replay animation');
+
+        if (!card.querySelector('.chart-replay')) {
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'chart-replay';
+          btn.textContent = 'Tap to play animation';
+          btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            arm(card);
+          });
+          card.appendChild(btn);
+        }
+
+        card.addEventListener('click', function (e) {
+          if (e.target.closest('.chart-replay')) return;
+          arm(card);
+        });
         card.addEventListener('keydown', function (e) {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -39,7 +55,7 @@
               }
             });
           },
-          { threshold: 0.28, rootMargin: '0px 0px -10% 0px' }
+          { threshold: [0.12, 0.25], rootMargin: '0px 0px -8% 0px' }
         );
         cards.forEach(function (c) { io.observe(c); });
       } else {
@@ -47,8 +63,7 @@
       }
     })();
 
-    /* ---- Image lightbox ---- */
-    document.querySelectorAll('figure.figure img, .evidence-block img, .proof-media img').forEach(function (img) {
+    document.querySelectorAll('figure.figure img, .evidence-block img, .proof-media img, .proof-row img').forEach(function (img) {
       if (img.closest('.zoom-trigger')) return;
       var btn = document.createElement('button');
       btn.type = 'button';
