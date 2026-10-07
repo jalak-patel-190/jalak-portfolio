@@ -12,26 +12,6 @@
 <style>
 body{background:radial-gradient(1200px 600px at 10% -10%,rgba(255,214,186,.5),transparent 55%),radial-gradient(900px 500px at 95% 15%,rgba(214,200,255,.38),transparent 50%),radial-gradient(800px 480px at 50% 105%,rgba(220,235,245,.5),transparent 45%),#F7F4EF;background-attachment:fixed}
 .btn-nav,.nav-cta,.page-nav .primary{box-shadow:0 4px 16px rgba(232,90,42,.35),0 0 0 1px rgba(232,90,42,.12)}
-.chart-card{background:rgba(255,255,255,.96);border:1px solid #E8E2D8;border-radius:14px;box-shadow:0 8px 30px rgba(20,20,20,.06);padding:1.35rem 1.4rem 1.15rem;margin:1.75rem 0 2.5rem;position:relative;overflow:hidden}
-.chart-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#E85A2A,#C45B9B)}
-.chart-card h3{font-size:.9rem;font-weight:700;margin:0 0 .3rem}.chart-sub{font-size:.75rem;color:#5A5A5A;margin:0 0 .85rem}
-.chart-caption{margin-top:.85rem;padding-top:.7rem;border-top:1px solid #E8E2D8;font-size:.74rem;color:#5A5A5A;line-height:1.45}
-.svg-chart-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:1.25rem}
-.chart-key{list-style:none;margin:0;padding:0;font-size:.8rem;color:#5A5A5A;line-height:1.55}
-.chart-key li{display:flex;align-items:flex-start;gap:.45rem;margin-bottom:.35rem}
-.swatch{width:12px;height:12px;border-radius:3px;margin-top:.2rem;flex-shrink:0}
-.swatch.legacy{background:#8A8478}.swatch.tenure{background:linear-gradient(90deg,#E85A2A,#C45B9B)}
-.col-bar{transform-origin:bottom;transform-box:fill-box}.col-bar.grow{animation:colRise 1.1s cubic-bezier(.22,1,.36,1) both}
-@keyframes colRise{from{transform:scaleY(.05);opacity:.35}to{transform:scaleY(1);opacity:1}}
-.flow{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:1.2rem 0 2rem;padding:1.1rem 1.2rem;background:rgba(255,255,255,.96);border:1px solid #E8E2D8;border-radius:14px;box-shadow:0 8px 30px rgba(20,20,20,.06)}
-.flow-step{background:#faf8f5;border:1px solid #E8E2D8;border-radius:10px;padding:.6rem .85rem;font-size:.8rem;font-weight:700}
-.flow-arrow{color:#E85A2A;font-weight:700}
-.evidence-block{margin:2.5rem 0}
-.figure{margin:0 0 1.5rem;border-radius:12px;overflow:hidden;border:1px solid #E8E2D8;background:#1a1a1a;box-shadow:0 8px 30px rgba(20,20,20,.06)}
-.figure img{width:100%;height:auto;display:block}
-.figure figcaption{padding:.85rem 1rem;font-size:.8rem;color:#5A5A5A;background:#fff;border-top:1px solid #E8E2D8;line-height:1.45}
-.evidence-note{font-size:.9rem;color:#5A5A5A;margin:0 0 1.5rem;line-height:1.55;max-width:38rem}
-@media(prefers-reduced-motion:reduce){.col-bar.grow{animation:none}}
 </style>
 </head>
 <body>
@@ -86,23 +66,26 @@ body{background:radial-gradient(1200px 600px at 10% -10%,rgba(255,214,186,.5),tr
 <p class="section-label">Evidence</p>
 <h2>Workflow, not a magic number</h2>
 <div class="chart-card">
-<h3>Effort comparison (illustrative)</h3>
-<p class="chart-sub">Manual review vs assisted workflow for the same classification load</p>
-<div class="svg-chart-wrap">
-<svg viewBox="0 0 340 190" width="100%" height="190" role="img" aria-label="Manual multi-day effort versus two-day assisted completion">
-<defs><linearGradient id="g1" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#E85A2A"/><stop offset="100%" stop-color="#C45B9B"/></linearGradient></defs>
-<line x1="40" y1="20" x2="40" y2="150" stroke="#E8E2D8"/><line x1="40" y1="150" x2="320" y2="150" stroke="#E8E2D8"/>
-<rect class="col-bar grow" x="70" y="40" width="80" height="110" rx="6" fill="#8A8478"/>
-<rect class="col-bar grow" x="200" y="110" width="80" height="40" rx="6" fill="url(#g1)"/>
-<text x="110" y="168" text-anchor="middle" font-size="11" fill="#5A5A5A">Manual (multi-day)</text>
-<text x="240" y="168" text-anchor="middle" font-size="11" fill="#5A5A5A">Assisted (2 days)</text>
-</svg>
-<ul class="chart-key">
-<li><span class="swatch legacy"></span> Full manual classification of 6K–8K rows</li>
-<li><span class="swatch tenure"></span> AI-assisted workflow with human review</li>
-</ul>
+<h3>Workflow shape</h3>
+<p class="chart-sub">From raw rows to classified decision input</p>
+<div class="funnel">
+  <div class="funnel-step">6,000–8,000 rows in</div>
+  <div class="funnel-step">AI-assisted sort</div>
+  <div class="funnel-step">Human review</div>
+  <div class="funnel-step">Tier decision out</div>
 </div>
-<p class="chart-caption">No percentage efficiency claim is published. The source material does not support a controlled before-and-after time study. The verified outcome is completion in two days.</p>
+</div>
+<div class="chart-card">
+<h3>Time shape (illustrative)</h3>
+<p class="chart-sub">Manual multi-day path vs assisted two-day path</p>
+<svg class="line-chart" viewBox="0 0 320 140" role="img" aria-label="Effort over time">
+  <path class="line-path" d="M20,120 C70,115 90,90 130,70 S200,40 250,25 S300,18 310,15"/>
+  <circle class="pt" cx="20" cy="120" r="4"/>
+  <circle class="pt" cx="130" cy="70" r="4"/>
+  <circle class="pt" cx="250" cy="25" r="4"/>
+  <circle class="pt" cx="310" cy="15" r="4"/>
+</svg>
+<p class="chart-caption">No percentage efficiency claim is published. The verified outcome is completion in two days.</p>
 </div>
 <p class="evidence-note">Google Colab workflow used to process classification with human checking of output.</p>
 <div class="evidence-block">
