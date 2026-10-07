@@ -76,16 +76,29 @@ body{background:radial-gradient(1200px 600px at 10% -10%,rgba(255,214,186,.5),tr
 </div>
 </div>
 <div class="chart-card">
-<h3>Time shape (illustrative)</h3>
-<p class="chart-sub">Manual multi-day path vs assisted two-day path</p>
-<svg class="line-chart" viewBox="0 0 320 140" role="img" aria-label="Effort over time">
-  <path class="line-path" d="M20,120 C70,115 90,90 130,70 S200,40 250,25 S300,18 310,15"/>
-  <circle class="pt" cx="20" cy="120" r="4"/>
-  <circle class="pt" cx="130" cy="70" r="4"/>
-  <circle class="pt" cx="250" cy="25" r="4"/>
-  <circle class="pt" cx="310" cy="15" r="4"/>
+<h3>Time to completion</h3>
+<p class="chart-sub">Manual multi-day path vs assisted path that finished in 2 days</p>
+<svg class="line-chart" viewBox="0 0 340 170" role="img" aria-label="Manual multi-day effort versus assisted two-day completion">
+  <line x1="40" y1="20" x2="40" y2="130" stroke="#E8E2D8" stroke-width="1"/>
+  <line x1="40" y1="130" x2="320" y2="130" stroke="#E8E2D8" stroke-width="1"/>
+  <text class="axis-label" x="36" y="28" text-anchor="end">High</text>
+  <text class="axis-label" x="36" y="130" text-anchor="end">Low</text>
+  <text class="axis-label" x="40" y="148">Start</text>
+  <text class="axis-label" x="160" y="148" text-anchor="middle">Mid</text>
+  <text class="axis-label" x="310" y="148" text-anchor="end">Done</text>
+  <path class="line-path" d="M50,115 C90,110 110,95 150,75 S210,45 260,32 S300,24 310,22"/>
+  <circle class="pt" cx="50" cy="115" r="5"/>
+  <circle class="pt" cx="150" cy="75" r="5"/>
+  <circle class="pt" cx="260" cy="32" r="5"/>
+  <circle class="pt" cx="310" cy="22" r="5"/>
+  <text class="point-label" x="50" y="108" text-anchor="middle">Day 0</text>
+  <text class="point-sub" x="50" y="158" text-anchor="middle">6–8K rows</text>
+  <text class="point-label" x="150" y="68" text-anchor="middle">Script</text>
+  <text class="point-sub" x="150" y="158" text-anchor="middle">Colab run</text>
+  <text class="point-label" x="260" y="24" text-anchor="middle">Review</text>
+  <text class="point-label" x="310" y="14" text-anchor="end">2 days</text>
 </svg>
-<p class="chart-caption">No percentage efficiency claim is published. The verified outcome is completion in two days.</p>
+<p class="chart-caption">No percentage efficiency claim is published. The verified outcome is completion in two days with human-led checks.</p>
 </div>
 <p class="evidence-note">Google Colab workflow used to process classification with human checking of output.</p>
 <div class="evidence-block">
