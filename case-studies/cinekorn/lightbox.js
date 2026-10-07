@@ -1,22 +1,26 @@
+(function(){
+  if (document.getElementById('cin-ui-fixes')) return;
+  var s = document.createElement('style');
+  s.id = 'cin-ui-fixes';
+  s.textContent = `.chart-card{overflow:visible!important;cursor:pointer;-webkit-tap-highlight-color:transparent}.chart-replay{display:block!important;width:100%;max-width:280px;margin:1rem auto 0;min-height:44px;padding:.55rem 1rem;border-radius:999px;border:1.5px solid #E85A2A;background:#fff;color:#141414;font-family:inherit;font-size:.8rem;font-weight:700;cursor:pointer;box-shadow:0 2px 10px rgba(232,90,42,.15);-webkit-appearance:none;appearance:none;position:relative;z-index:2}.chart-replay:active{transform:scale(.98);background:#fff5f0}.lightbox{margin:auto!important;border:none!important;padding:0!important;max-width:min(96vw,1100px)!important;max-height:92vh!important;width:fit-content!important;height:fit-content!important;background:transparent!important;position:fixed!important;inset:0!important}.lightbox[open]{display:flex!important;align-items:center!important;justify-content:center!important}.lightbox::backdrop{background:rgba(12,12,14,.92)!important}.lightbox-inner{position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;background:#111!important;border-radius:12px!important;max-width:min(96vw,1100px)!important;max-height:90vh!important;overflow:hidden!important;margin:auto!important}.lightbox-inner img{display:block!important;width:auto!important;height:auto!important;max-width:min(94vw,1080px)!important;max-height:85vh!important;object-fit:contain!important;margin:0 auto!important}.lightbox-close{position:absolute!important;top:.75rem!important;right:.75rem!important;z-index:5!important;min-height:44px!important;min-width:44px!important}@media(max-width:720px){.lightbox[open]{width:100%!important;max-width:100vw!important;height:100%!important;max-height:100vh!important}.lightbox-inner{width:100%!important;height:100%!important;max-width:100vw!important;max-height:100vh!important;border-radius:0!important;background:#0a0a0a!important}.lightbox-inner img{max-width:100vw!important;max-height:calc(100vh - 6rem)!important}}.funnel{display:flex;flex-direction:column;gap:.45rem;max-width:420px;margin:0 auto}.funnel-step{background:linear-gradient(135deg,#E85A2A,#C45B9B);color:#fff;text-align:center;padding:.55rem .75rem;border-radius:8px;font-size:.82rem;font-weight:700;transform:scaleX(.35);opacity:0;transform-origin:center}.chart-card.is-inview .funnel-step{animation:funnelIn .55s ease forwards}.chart-card.is-inview .funnel-step:nth-child(1){animation-delay:.05s;width:100%}.chart-card.is-inview .funnel-step:nth-child(2){animation-delay:.15s;width:88%;margin-left:6%}.chart-card.is-inview .funnel-step:nth-child(3){animation-delay:.25s;width:74%;margin-left:13%}.chart-card.is-inview .funnel-step:nth-child(4){animation-delay:.35s;width:60%;margin-left:20%}@keyframes funnelIn{from{opacity:0;transform:scaleX(.35)}to{opacity:1;transform:scaleX(1)}}.line-chart{width:100%;height:160px;display:block}.line-chart path.line-path{fill:none;stroke:#E85A2A;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:800;stroke-dashoffset:800}.chart-card.is-inview .line-path{animation:lineDraw 1.15s ease forwards}@keyframes lineDraw{to{stroke-dashoffset:0}}.line-chart circle.pt{fill:#C45B9B;opacity:0}.chart-card.is-inview circle.pt{animation:ptIn .35s ease forwards}@keyframes ptIn{to{opacity:1}}.stack-row{display:flex;height:28px;border-radius:8px;overflow:hidden;margin:.5rem 0 .35rem;background:#E8E2D8}.stack-seg{height:100%;width:0}.chart-card.is-inview .stack-seg{width:var(--w,0%);transition:width .9s cubic-bezier(.2,.7,.2,1)}.stack-legend{display:flex;flex-wrap:wrap;gap:.75rem;font-size:.75rem;color:#5A5A5A;margin-top:.5rem}.stack-legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:.35rem;vertical-align:middle;background:var(--c,#E85A2A)}.ring-wrap{display:flex;gap:1.25rem;flex-wrap:wrap;justify-content:center}.ring{width:110px;height:110px;position:relative}.ring svg{width:100%;height:100%;transform:rotate(-90deg)}.ring circle.track{fill:none;stroke:#E8E2D8;stroke-width:10}.ring circle.val{fill:none;stroke:#E85A2A;stroke-width:10;stroke-linecap:round;stroke-dasharray:283;stroke-dashoffset:283}.chart-card.is-inview .ring circle.val{animation:ringDraw 1.1s ease forwards}@keyframes ringDraw{to{stroke-dashoffset:var(--off,100)}}.ring-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}.ring-label small{font-size:.65rem;font-weight:600;color:#5A5A5A}`;
+  document.head.appendChild(s);
+})();
+
 /*! Charts + lightbox — mobile-safe */
 (function () {
   function ready(fn) {
     if (document.readyState !== 'loading') fn();
     else document.addEventListener('DOMContentLoaded', fn);
   }
-
   ready(function () {
     var cards = document.querySelectorAll('.chart-card');
-
     function arm(card) {
       card.classList.remove('is-inview');
       void card.offsetWidth;
       card.classList.add('is-inview');
     }
-
     cards.forEach(function (card) {
       if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
-
       var btn = card.querySelector('.chart-replay');
       if (!btn) {
         btn = document.createElement('button');
@@ -26,35 +30,26 @@
         card.appendChild(btn);
       }
       btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        arm(card);
+        e.preventDefault(); e.stopPropagation(); arm(card);
       });
       btn.addEventListener('touchend', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        arm(card);
+        e.preventDefault(); e.stopPropagation(); arm(card);
       }, { passive: false });
-
       card.addEventListener('click', function (e) {
         if (e.target.closest('.chart-replay')) return;
         arm(card);
       });
     });
-
     if (cards.length) {
       if ('IntersectionObserver' in window) {
-        var io = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting || entry.intersectionRatio > 0) {
-                arm(entry.target);
-                io.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.05, rootMargin: '40px 0px 40px 0px' }
-        );
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting || entry.intersectionRatio > 0) {
+              arm(entry.target);
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.05, rootMargin: '40px 0px 40px 0px' });
         cards.forEach(function (c) { io.observe(c); });
       }
       setTimeout(function () {
@@ -63,7 +58,6 @@
         });
       }, 1200);
     }
-
     document.querySelectorAll('figure.figure img, .evidence-block img, .proof-media img, .proof-row img').forEach(function (img) {
       if (img.closest('.zoom-trigger')) return;
       var wrap = document.createElement('button');
@@ -78,7 +72,6 @@
       hint.textContent = 'Tap to enlarge';
       wrap.appendChild(hint);
     });
-
     var dialog = document.getElementById('imgLightbox');
     if (!dialog) {
       dialog = document.createElement('dialog');
@@ -89,10 +82,8 @@
     }
     var imgEl = dialog.querySelector('img');
     var closeBtn = dialog.querySelector('.lightbox-close');
-
     function openLb(src, alt) {
-      imgEl.src = src;
-      imgEl.alt = alt || '';
+      imgEl.src = src; imgEl.alt = alt || '';
       if (typeof dialog.showModal === 'function') dialog.showModal();
       else dialog.setAttribute('open', '');
     }
@@ -101,7 +92,6 @@
       else dialog.removeAttribute('open');
       imgEl.removeAttribute('src');
     }
-
     document.querySelectorAll('.zoom-trigger').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var full = btn.getAttribute('data-full') || (btn.querySelector('img') && btn.querySelector('img').src);
