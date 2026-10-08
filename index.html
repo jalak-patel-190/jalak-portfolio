@@ -1,1 +1,320 @@
-<PLACEHOLDER>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jalak Patel | Creative Strategist & Content Systems Architect</title>
+    <meta name="title" content="Jalak Patel | Creative Strategist & Content Systems Architect">
+    <meta name="description" content="Jalak Patel is a creative strategist and content systems architect building brands and audiences through YouTube growth, campaign attribution, and multilingual content systems.">
+    <meta name="author" content="Jalak Patel">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jalak-patel-190.github.io/jalak-portfolio/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jalak-patel-190.github.io/jalak-portfolio/">
+    <meta property="og:title" content="Jalak Patel | Creative Strategist | Professional Portfolio">
+    <meta property="og:description" content="Building brands and audiences through systems that compound.">
+    <meta property="og:image" content="https://jalak-patel-190.github.io/jalak-portfolio/media/cinekorn/yt-movies.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jalak Patel | Creative Strategist">
+    <meta name="twitter:description" content="Content systems for media and entertainment.">
+    <meta name="twitter:image" content="https://jalak-patel-190.github.io/jalak-portfolio/media/cinekorn/yt-movies.png">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #F7F4EF; --surface: #FFFFFF; --text: #141414; --text-muted: #5A5A5A;
+            --border: #E8E2D8; --link: #1F5C6B; --cta-start: #E85A2A; --cta-end: #C45B9B;
+            --wash-peach: rgba(255, 212, 184, 0.45); --wash-lavender: rgba(224, 212, 245, 0.40);
+            --wash-mist: rgba(212, 232, 228, 0.35); --shadow: 0 8px 30px rgba(20, 20, 20, 0.06);
+            --radius: 12px; --max: 1100px; --header-h: 72px;
+        }
+        html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+            .bg-wash { transition: none !important; }
+            html.js .reveal { opacity: 1 !important; transform: none !important; }
+        }
+        body { font-family: 'Space Grotesk', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; min-height: 100vh; overflow-x: hidden; }
+        .bg-wash { position: fixed; inset: 0; z-index: -1; pointer-events: none; transition: opacity 0.6s ease; }
+        .bg-wash--peach { background: radial-gradient(ellipse 80% 60% at 15% 10%, var(--wash-peach), transparent 55%), radial-gradient(ellipse 70% 50% at 90% 20%, rgba(255, 200, 170, 0.25), transparent 50%); opacity: 1; }
+        .bg-wash--lavender { background: radial-gradient(ellipse 75% 55% at 80% 40%, var(--wash-lavender), transparent 55%), radial-gradient(ellipse 60% 45% at 10% 60%, rgba(230, 210, 245, 0.28), transparent 50%); opacity: 0; }
+        .bg-wash--mist { background: radial-gradient(ellipse 70% 50% at 50% 80%, var(--wash-mist), transparent 55%), radial-gradient(ellipse 50% 40% at 20% 90%, rgba(220, 235, 230, 0.3), transparent 50%); opacity: 0; }
+        .skip-link { position: absolute; left: -9999px; top: 12px; padding: 10px 16px; background: var(--text); color: var(--bg); z-index: 9999; text-decoration: none; font-weight: 700; border-radius: 6px; }
+        .skip-link:focus { left: 12px; }
+        header { position: sticky; top: 0; z-index: 100; height: var(--header-h); background: rgba(247, 244, 239, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+        .header-inner { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+        .logo-wrapper { text-decoration: none; color: inherit; display: flex; flex-direction: column; line-height: 1.15; }
+        .logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.55rem; letter-spacing: 1.5px; color: var(--text); }
+        .logo-subtitle { font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-muted); }
+        .nav-toggle { display: none; background: var(--surface); border: 1px solid var(--border); color: var(--text); font-size: 0.85rem; font-weight: 700; min-width: 48px; min-height: 42px; padding: 0 0.75rem; border-radius: 8px; cursor: pointer; align-items: center; justify-content: center; }
+        nav { display: flex; align-items: center; gap: 1.75rem; }
+        nav a { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.9rem; position: relative; transition: color 0.2s ease; }
+        nav a:hover, nav a:focus-visible { color: var(--text); }
+        nav a::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px; background: var(--cta-start); transition: width 0.25s ease; }
+        nav a:hover::after, nav a:focus-visible::after { width: 100%; }
+        .nav-cta { display: inline-flex; align-items: center; padding: 0.55rem 1.1rem; border-radius: 999px; font-size: 0.82rem; font-weight: 700; text-decoration: none; color: #fff !important; background: linear-gradient(135deg, var(--cta-start), var(--cta-end)); background-size: 150% 150%; box-shadow: 0 4px 14px rgba(232, 90, 42, 0.25); }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover, .nav-cta:focus-visible { background-position: 100% 50%; transform: translateY(-1px); color: #fff !important; }
+        .container { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem 4rem; }
+        .reveal { opacity: 1; transform: none; }
+        html.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        html.js .reveal.is-visible { opacity: 1; transform: translateY(0); }
+        .hero { padding: 4.5rem 0 3rem; }
+        .eyebrow { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 0.85rem; }
+        .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.6rem, 6.5vw, 4.25rem); line-height: 1.05; letter-spacing: 0.5px; color: var(--text); max-width: 16ch; margin-bottom: 1.15rem; }
+        .hero-lead { font-size: clamp(1.05rem, 2vw, 1.25rem); font-weight: 600; color: var(--text); max-width: 38rem; margin-bottom: 0.75rem; }
+        .hero-subtext { font-size: 1rem; color: var(--text-muted); max-width: 40rem; margin-bottom: 2rem; line-height: 1.7; }
+        .btn-group { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 2.75rem; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; min-height: 48px; padding: 0.8rem 1.6rem; border-radius: 999px; font-family: inherit; font-size: 0.88rem; font-weight: 700; text-decoration: none; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.25s ease, border-color 0.2s ease; }
+        .btn-primary { color: #fff; border: none; background: linear-gradient(135deg, var(--cta-start), var(--cta-end)); background-size: 160% 160%; box-shadow: 0 6px 20px rgba(232, 90, 42, 0.28); }
+        .btn-primary:hover { background-position: 100% 50%; transform: translateY(-2px); }
+        .btn-secondary { color: var(--text); background: var(--surface); border: 1.5px solid var(--border); }
+        .btn-secondary:hover { border-color: var(--text-muted); transform: translateY(-2px); }
+        .hero-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+        .metric-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.15rem; box-shadow: var(--shadow); }
+        .metric-value { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.9rem, 3vw, 2.35rem); letter-spacing: 0.5px; line-height: 1; color: var(--text); margin-bottom: 0.35rem; }
+        .metric-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text-muted); }
+        .section { margin: 4.5rem 0; scroll-margin-top: calc(var(--header-h) + 16px); }
+        .section-header { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 0.75rem; margin-bottom: 1.75rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+        .section-header h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.8rem, 3vw, 2.2rem); letter-spacing: 0.8px; color: var(--text); }
+        .section-intro { font-size: 0.95rem; color: var(--text-muted); max-width: 36rem; margin-bottom: 1.5rem; }
+        .proof { margin: 1.5rem 0 0; padding: 2rem 0 0.5rem; border-top: 1px solid var(--border); }
+        .proof-label { text-align: center; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 0.4rem; }
+        .proof-headline { text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.6rem, 3vw, 2rem); letter-spacing: 0.6px; color: var(--text); margin-bottom: 1.5rem; }
+        .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+        .proof-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: transform 0.25s ease, border-color 0.25s ease; }
+        .proof-card:hover { transform: translateY(-3px); border-color: #d0c8bc; }
+        .proof-card-media { height: 110px; display: flex; align-items: center; justify-content: center; padding: 1rem; background: #f3efe8; border-bottom: 1px solid var(--border); }
+        .proof-card-media img { max-height: 56px; max-width: 85%; object-fit: contain; mix-blend-mode: multiply; }
+        .proof-card-body { padding: 0.9rem 1rem 1.1rem; flex: 1; display: flex; flex-direction: column; gap: 0.25rem; }
+        .proof-card-name { font-size: 0.82rem; font-weight: 700; }
+        .proof-card-metric { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; color: var(--link); }
+        .proof-card-cta { margin-top: 0.45rem; font-size: 0.78rem; font-weight: 700; color: var(--text-muted); }
+        .case-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.35rem; }
+        .case-card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; text-decoration: none; color: inherit; box-shadow: var(--shadow); transition: transform 0.25s ease; }
+        .case-card:hover { transform: translateY(-4px); border-color: #d0c8bc; }
+        .case-media { height: 160px; background: #f3efe8; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border); padding: 1.25rem; }
+        .case-media img { max-height: 72px; max-width: 70%; object-fit: contain; mix-blend-mode: multiply; }
+        .case-body { padding: 1.25rem 1.35rem 1.5rem; display: flex; flex-direction: column; gap: 0.4rem; flex: 1; }
+        .case-company { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--cta-start); }
+        .case-title { font-size: 1.15rem; font-weight: 700; line-height: 1.3; }
+        .case-brief { font-size: 0.9rem; color: var(--text-muted); flex: 1; }
+        .case-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+        .case-tag { font-size: 0.68rem; font-weight: 700; padding: 0.25rem 0.55rem; border-radius: 999px; background: #f3efe8; color: var(--text-muted); }
+        .case-cta { font-size: 0.85rem; font-weight: 700; color: var(--link); margin-top: 0.5rem; }
+        .timeline { display: flex; flex-direction: column; gap: 0; }
+        .timeline-item { display: grid; grid-template-columns: 140px 1fr; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
+        .timeline-dates { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); }
+        .timeline-role { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+        .company-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.35rem; }
+        .timeline-desc { font-size: 0.9rem; color: var(--text-muted); }
+        .read-more-link { color: var(--link); font-weight: 700; text-decoration: none; }
+        .read-more-link:hover { text-decoration: underline; }
+        .timeline-link-group { text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.75rem; }
+        .company-logo { max-height: 36px; max-width: 80px; object-fit: contain; mix-blend-mode: multiply; }
+        .contact { text-align: center; padding: 3rem 0; }
+        .contact h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 0.75rem; }
+        .contact p { color: var(--text-muted); max-width: 32rem; margin: 0 auto 1.5rem; }
+        footer { border-top: 1px solid var(--border); padding: 1.5rem; text-align: center; font-size: 0.78rem; color: var(--text-muted); }
+        @media (max-width: 800px) {
+            .nav-toggle { display: inline-flex; }
+            nav { display: none; position: absolute; top: var(--header-h); left: 0; right: 0; flex-direction: column; background: rgba(247,244,239,0.98); border-bottom: 1px solid var(--border); padding: 1rem; gap: 0.5rem; }
+            nav.open { display: flex; }
+            .hero-metrics, .proof-grid, .case-grid { grid-template-columns: 1fr 1fr; }
+            .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
+        }
+        @media (max-width: 520px) {
+            .hero-metrics, .proof-grid, .case-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-wash bg-wash--peach" id="washPeach" aria-hidden="true"></div>
+    <div class="bg-wash bg-wash--lavender" id="washLavender" aria-hidden="true"></div>
+    <div class="bg-wash bg-wash--mist" id="washMist" aria-hidden="true"></div>
+    <a class="skip-link" href="#work">Skip to content</a>
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo-wrapper"><span class="logo">JALAK PATEL</span><span class="logo-subtitle">Creative Strategist</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+            <nav id="mainNav">
+                <a href="#work">Case Studies</a>
+                <a href="#journey">Journey</a>
+                <a href="#contact" class="nav-cta">Get In Touch</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">Creative Strategist and Content Systems Architect</p>
+            <h1>I Turn Ideas Into Content, Campaigns, And Measurable Growth.</h1>
+            <p class="hero-lead">Scaling digital entertainment, multi-channel video distribution, and audience retention engines.</p>
+            <p class="hero-subtext">Portfolio of systems work across media, B2B textile, food, and retail - with numbers that are attributable and honest about tenure.</p>
+            <div class="btn-group">
+                <a href="#work" class="btn btn-primary">View Case Studies</a>
+                <a href="https://www.linkedin.com/in/jalakpatelstrategist" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn</a>
+            </div>
+            <div class="hero-metrics">
+                <div class="metric-card"><div class="metric-value">108M+</div><div class="metric-label">Views managed</div></div>
+                <div class="metric-card"><div class="metric-value">50+</div><div class="metric-label">Accounts operated</div></div>
+                <div class="metric-card"><div class="metric-value">6+</div><div class="metric-label">Languages</div></div>
+                <div class="metric-card"><div class="metric-value">4</div><div class="metric-label">Company systems</div></div>
+            </div>
+        </section>
+
+        <section class="section proof" id="proof">
+            <p class="proof-label">Numbers do not lie</p>
+            <h2 class="proof-headline">Real results. Real brands. Real revenue.</h2>
+            <div class="proof-grid">
+                <a href="case-studies/cinekorn/" class="proof-card">
+                    <div class="proof-card-media"><img src="media/logos/cinekorn-logo.png" alt="Cinekorn" loading="lazy" onerror="this.style.display='none'"></div>
+                    <div class="proof-card-body"><span class="proof-card-name">Cinekorn Entertainment</span><span class="proof-card-metric">108M+ views</span><span class="proof-card-cta">View work</span></div>
+                </a>
+                <a href="case-studies/ajmera/" class="proof-card">
+                    <div class="proof-card-media"><img src="media/logos/ajmera-logo.png" alt="Ajmera Fashion" loading="lazy" onerror="this.style.display='none'"></div>
+                    <div class="proof-card-body"><span class="proof-card-name">Ajmera Fashion</span><span class="proof-card-metric">+20.3% same accounts</span><span class="proof-card-cta">View work</span></div>
+                </a>
+                <a href="case-studies/swad/" class="proof-card">
+                    <div class="proof-card-media"><img src="media/logos/swad-logo.png" alt="Swad" loading="lazy" onerror="this.style.display='none'"></div>
+                    <div class="proof-card-body"><span class="proof-card-name">Swad</span><span class="proof-card-metric">Retention systems</span><span class="proof-card-cta">View work</span></div>
+                </a>
+                <a href="case-studies/jalan/" class="proof-card">
+                    <div class="proof-card-media"><img src="media/logos/jalan-logo.png" alt="Jalan" loading="lazy" onerror="this.style.display='none'"></div>
+                    <div class="proof-card-body"><span class="proof-card-name">Jalan Mega Mart</span><span class="proof-card-metric">Retail performance</span><span class="proof-card-cta">View work</span></div>
+                </a>
+            </div>
+        </section>
+
+        <section class="section" id="work">
+            <div class="section-header"><h2>Selected case studies</h2></div>
+            <p class="section-intro">Deep dives into distribution systems, regional content operations, and measurable growth. Each company opens its own hub.</p>
+            <div class="case-grid">
+                <a href="case-studies/cinekorn/" class="case-card">
+                    <div class="case-media"><img src="media/logos/cinekorn-logo.png" alt="Cinekorn" loading="lazy" onerror="this.style.display='none'"></div>
+                    <div class="case-body">
+                        <div class="case-company">Cinekorn Entertainment</div>
+                        <div class="case-title">Multi-channel distribution system</div>
+                        <div class="case-brief">Nine accounts across YouTube, Facebook, and LinkedIn. 108M+ views with honest tenure attribution.</div>
+                        <div class="case-tags"><span class="case-tag">YouTube</span><span class="case-tag">Distribution</span><span class="case-tag">108M+ views</span></div>
+                        <span class="case-cta">Read full case study</span>
+                    </div>
+                </a>
+                <a href="case-studies/ajmera/" class="case-card">
+                    <div class="case-media"><img src="media/logos/ajmera-logo.png" alt="Ajmera Fashion" loading="lazy" onerror="this.style.display='none'"></div>
+                    <div class="case-body">
+                        <div class="case-company">Ajmera Fashion</div>
+                        <div class="case-title">Multilingual production scale</div>
+                        <div class="case-brief">Regional content systems across about fifty accounts for a B2B textile wholesaler. Same-account growth of +20.3%.</div>
+                        <div class="case-tags"><span class="case-tag">6+ languages</span><span class="case-tag">B2B</span><span class="case-tag">+20.3%</span></div>
+                        <span class="case-cta">Read full case study</span>
+                    </div>
+                </a>
+                <a href="case-studies/swad/" class="case-card">
+                    <div class="case-media"><img src="media/logos/swad-logo.png" alt="Swad" loading="lazy" onerror="this.style.display='none'"></div>
+                    <div class="case-body">
+                        <div class="case-company">Swad</div>
+                        <div class="case-title">Retention and conversion systems</div>
+                        <div class="case-brief">Growth systems for institute and owner channels: retention architecture, content calendars, and conversion-oriented food media.</div>
+                        <div class="case-tags"><span class="case-tag">Food media</span><span class="case-tag">Retention</span><span class="case-tag">Funnels</span></div>
+                        <span class="case-cta">Read full case study</span>
+                    </div>
+                </a>
+                <a href="case-studies/jalan/" class="case-card">
+                    <div class="case-media"><img src="media/logos/jalan-logo.png" alt="Jalan Mega Mart" loading="lazy" onerror="this.style.display='none'"></div>
+                    <div class="case-body">
+                        <div class="case-company">Jalan Mega Mart</div>
+                        <div class="case-title">Retail performance from near zero</div>
+                        <div class="case-brief">Channels, creative operations, influencer coordination, and regional promotion frameworks built for a B2B textile wholesale pivot.</div>
+                        <div class="case-tags"><span class="case-tag">Retail</span><span class="case-tag">Performance</span><span class="case-tag">Systems</span></div>
+                        <span class="case-cta">Read full case study</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="section" id="journey">
+            <div class="section-header"><h2>Professional journey</h2></div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div><div class="timeline-dates">Jan 2026 to Present</div><div class="timeline-role">Sr Social Media Manager</div></div>
+                    <div>
+                        <a href="case-studies/cinekorn/" class="timeline-link-group">
+                            <img src="media/logos/cinekorn-logo.png" alt="" class="company-logo" onerror="this.style.display='none'">
+                            <h3 class="company-name">Cinekorn Entertainment</h3>
+                        </a>
+                        <p class="timeline-desc">Multi-account distribution across YouTube, Facebook, and LinkedIn. <a href="case-studies/cinekorn/" class="read-more-link">More</a></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div><div class="timeline-dates">Nov 2024 to Oct 2025</div><div class="timeline-role">Social Media Manager</div></div>
+                    <div>
+                        <a href="case-studies/swad/" class="timeline-link-group">
+                            <img src="media/logos/swad-logo.png" alt="" class="company-logo" onerror="this.style.display='none'">
+                            <h3 class="company-name">Swad</h3>
+                        </a>
+                        <p class="timeline-desc">Retention and funnel architecture for food content systems. <a href="case-studies/swad/" class="read-more-link">More</a></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div><div class="timeline-dates">Jul 2023 to Nov 2024</div><div class="timeline-role">Social Media Manager</div></div>
+                    <div>
+                        <a href="case-studies/jalan/" class="timeline-link-group">
+                            <img src="media/logos/jalan-logo.png" alt="" class="company-logo" onerror="this.style.display='none'">
+                            <h3 class="company-name">Jalan Mega Mart</h3>
+                        </a>
+                        <p class="timeline-desc">Retail and performance systems from a near-zero base. <a href="case-studies/jalan/" class="read-more-link">More</a></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div><div class="timeline-dates">Jul 2022 to Jul 2023</div><div class="timeline-role">Digital Marketing Executive</div></div>
+                    <div>
+                        <a href="case-studies/ajmera/" class="timeline-link-group">
+                            <img src="media/logos/ajmera-logo.png" alt="" class="company-logo" onerror="this.style.display='none'">
+                            <h3 class="company-name">Ajmera Fashion</h3>
+                        </a>
+                        <p class="timeline-desc">Multilingual content systems and regional audience logic across a large YouTube channel portfolio for B2B textile growth. <a href="case-studies/ajmera/" class="read-more-link">More</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact" id="contact">
+            <h2>Let us build something measurable</h2>
+            <p>Looking for a Creative Strategist or Content Systems Architect who can turn video content and digital platforms into compounded audience growth?</p>
+            <div class="btn-group" style="justify-content:center">
+                <a href="https://www.linkedin.com/in/jalakpatelstrategist" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Connect on LinkedIn</a>
+                <a href="mailto:Pateljalak019@gmail.com?subject=Strategic%20Inquiry" class="btn btn-secondary">Email Me</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Jalak Patel. Built for high-leverage content operations and creative strategy.</p>
+        <p>Designed and built by <strong>Jalak Patel</strong></p>
+    </footer>
+    <script>
+    (function(){
+      document.documentElement.classList.add('js');
+      var t=document.getElementById('navToggle'),n=document.getElementById('mainNav');
+      if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});}
+      if('IntersectionObserver' in window){
+        var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target);}});},{threshold:0.12});
+        document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+      }
+      var peach=document.getElementById('washPeach'),lav=document.getElementById('washLavender'),mist=document.getElementById('washMist');
+      function updateWashes(){
+        var h=document.documentElement.scrollHeight-window.innerHeight;
+        var p=h>0?window.scrollY/h:0;
+        if(peach)peach.style.opacity=String(Math.max(0,1-p*1.6));
+        if(lav)lav.style.opacity=String(Math.max(0,1-Math.abs(p-0.45)*3));
+        if(mist)mist.style.opacity=String(Math.max(0,(p-0.55)*2.2));
+      }
+      window.addEventListener('scroll',updateWashes,{passive:true});
+      updateWashes();
+    })();
+    </script>
+</body>
+</html>
