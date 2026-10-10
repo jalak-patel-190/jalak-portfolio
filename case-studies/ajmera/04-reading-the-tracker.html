@@ -1,1 +1,82 @@
-<PLACEHOLDER>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case 04 | Ajmera Fashion | Jalak Patel</title>
+  <meta name="description" content="Case 04: about fifty accounts compared on the same accounts at the same dates, plus an honest look at what happened after I left.">
+  <link rel="canonical" href="https://jalak-patel-190.github.io/jalak-portfolio/case-studies/ajmera/04-reading-the-tracker.html">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ajmera-case-shared.css">
+</head>
+<body>
+  <a class="skip-link" href="#context">Skip to content</a>
+  <header>
+    <div class="header-inner">
+      <a href="../../index.html" class="logo-wrapper">
+        <span class="logo">JALAK PATEL</span>
+        <span class="logo-subtitle">Creative Strategist</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">Menu</button>
+      <nav id="mainNav">
+        <a href="index.html">Ajmera Hub</a>
+        <a href="index.html#cases">All Cases</a>
+        <a href="../../index.html#contact" class="nav-cta">Get In Touch</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="wrap">
+      <p class="eyebrow">Case 04 · Reading the tracker</p>
+      <h1>About fifty accounts, same dates, honest comparison</h1>
+      <p class="lede">The same accounts compared at the same dates, plus an honest look at what happened after I left.</p>
+      <section class="section" id="context">
+        <p class="section-label">Context</p>
+        <h2>A tracker is only useful if the dates match</h2>
+        <p>I maintained a tracker across YouTube, Facebook, Instagram and other platforms. The comparison below uses the same accounts at two fixed dates so growth is attributable and not mixed with new accounts that appeared later.</p>
+      </section>
+      <section class="section">
+        <p class="section-label">Scale</p>
+        <h2>About fifty accounts, 15 December to 1 July</h2>
+        <p>Combined reach across the compared set moved from 529,763 to 637,163 — a +20.3% change on the same accounts. YouTube, Facebook and Instagram each grew; the table on the hub shows the platform split.</p>
+      </section>
+      <section class="section">
+        <p class="section-label">After I left</p>
+        <h2>What the public numbers show later</h2>
+        <p>Public channel numbers after my tenure are shown where available so the case does not stop at the day I left. Internal files such as the tracker itself are not published; the numbers are shown, the files are not.</p>
+      </section>
+      <section class="section" id="takeaway">
+        <p class="section-label">What this showed</p>
+        <h2>Same-account growth is the clean story</h2>
+        <p>Comparing the same accounts at the same dates avoids inflating growth with new properties. That is the standard this case holds to.</p>
+      </section>
+      <div class="page-nav">
+        <a class="back" href="index.html">Ajmera hub</a>
+        <a class="back" href="03-founder-and-trust-content.html">Previous case</a>
+        <a class="primary" href="05-corporate-content.html">Next case</a>
+      </div>
+    </div>
+  </main>
+  <script>
+    (function () {
+      var navToggle = document.getElementById('navToggle');
+      var mainNav = document.getElementById('mainNav');
+      if (navToggle && mainNav) {
+        navToggle.addEventListener('click', function () {
+          var open = mainNav.classList.toggle('open');
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        mainNav.querySelectorAll('a').forEach(function (a) {
+          a.addEventListener('click', function () {
+            mainNav.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
