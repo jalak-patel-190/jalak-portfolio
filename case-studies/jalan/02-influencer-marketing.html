@@ -1,1 +1,87 @@
-<PLACEHOLDER>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case 02 | Jalan Mega Mart | Jalak Patel</title>
+  <meta name="description" content="Case 02: influencer marketing on a monthly budget, with 102 bookings and 70 influencers tracked.">
+  <link rel="canonical" href="https://jalak-patel-190.github.io/jalak-portfolio/case-studies/jalan/02-influencer-marketing.html">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="jalan-case-shared.css">
+</head>
+<body>
+  <a class="skip-link" href="#context">Skip to content</a>
+  <header>
+    <div class="header-inner">
+      <a href="../../index.html" class="logo-wrapper">
+        <span class="logo">JALAK PATEL</span>
+        <span class="logo-subtitle">Creative Strategist</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">Menu</button>
+      <nav id="mainNav">
+        <a href="index.html">Jalan Hub</a>
+        <a href="index.html#cases">All Cases</a>
+        <a href="../../index.html#contact" class="nav-cta">Get In Touch</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="wrap">
+      <p class="eyebrow">Case 02 · Influencer marketing</p>
+      <h1>Influencer marketing on a monthly budget</h1>
+      <p class="lede">Finding, negotiating with and directing influencers, with bookings tracked one by one.</p>
+      <div class="meta-row">
+        <div><span class="k">Bookings</span><span class="v">102</span></div>
+        <div><span class="k">Influencers</span><span class="v">70</span></div>
+        <div><span class="k">Repeat</span><span class="v">15 booked more than once</span></div>
+      </div>
+      <section class="section" id="context">
+        <p class="section-label">Context</p>
+        <h2>A small budget, a long list of names</h2>
+        <p>Influencer work at Jalan ran on a monthly budget. The job was to find people who fit the product, agree terms, brief them, and keep a record of every booking so spend could be defended.</p>
+      </section>
+      <section class="section">
+        <p class="section-label">What the tracker holds</p>
+        <h2>One line per booking</h2>
+        <p>Each row is a dated booking: influencer, date, amount, and status. Confirmed dated bookings total ₹15.2 lakh across 17 months. Twelve rows totalling ₹4.2 lakh are excluded here because they appear twice in the sheet and are being confirmed.</p>
+      </section>
+      <section class="section" id="results">
+        <p class="section-label">Results</p>
+        <h2>What the record shows</h2>
+        <p>The tracker proves the bookings and the spend pattern. It does not yet hold the reach, enquiry or sales result for each influencer, so this case makes no claim about return on that spend.</p>
+      </section>
+      <section class="section" id="takeaway">
+        <p class="section-label">What this showed</p>
+        <h2>A booking log is the start of accountability</h2>
+        <p>Keeping one line per booking turned a list of influencers into a record of who came back. That record is what lets a small budget be defended.</p>
+      </section>
+      <div class="page-nav">
+        <a class="back" href="index.html">Jalan hub</a>
+        <a class="back" href="01-channel-network.html">Previous case</a>
+        <a class="primary" href="03-tele-calling-team.html">Next case</a>
+      </div>
+    </div>
+  </main>
+  <script>
+    (function () {
+      var navToggle = document.getElementById('navToggle');
+      var mainNav = document.getElementById('mainNav');
+      if (navToggle && mainNav) {
+        navToggle.addEventListener('click', function () {
+          var open = mainNav.classList.toggle('open');
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        mainNav.querySelectorAll('a').forEach(function (a) {
+          a.addEventListener('click', function () {
+            mainNav.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
