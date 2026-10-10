@@ -42,12 +42,32 @@
 <section class="section" id="context">
 <p class="section-label">Context</p>
 <h2>THE COMPANY PAGE NEEDED A REASON TO PUBLISH</h2>
-<p>Instead of depending only on company announcements, the page used Cinekorn’s position in entertainment to explain industry developments.</p>
+<p>Company announcements alone are not a content system. The page needed a steady reason to show up in the feed beyond internal updates.</p>
+</section>
+<section class="section">
+<p class="section-label">Problem</p>
+<h2>ANNOUNCEMENTS ALONE ARE NOT A SYSTEM</h2>
+<p>Without a broader editorial angle, publishing slowed and the page stayed quiet between official news. Frequency was about one post every 8.1 days before the operating period.</p>
+</section>
+<section class="section">
+<p class="section-label">Strategy</p>
+<h2>EXPLAIN THE BUSINESS OF ENTERTAINMENT</h2>
+<p>Instead of depending only on company announcements, the page used Cinekorn’s position inside entertainment to explain industry developments. Content was designed around information that could make someone stop and understand a business move, not only react to a logo post.</p>
+</section>
+<section class="section">
+<p class="section-label">Execution</p>
+<h2>EDITORIAL CADENCE FROM APRIL 13, 2026</h2>
+<p>Managed the company page from April 13, 2026. Raised publishing frequency to about one post every 2.4 days. Focused on industry context and business explanation rather than only internal announcements. Zero paid spend across the comparison.</p>
 </section>
 <section class="section">
 <p class="section-label">Results</p>
 <h2>IMPRESSIONS, CLICKS, REACTIONS</h2>
-<p>Impressions 6,263 → 17,289. Clicks 1,230 → 2,838. Reactions 94 → 525. Engagement rate 1.56% → 3.16%. Frequency from 1 post every 8.1 days to 1 every 2.4 days. Zero paid.</p>
+<p>Impressions 6,263 → 17,289 (+176%). Clicks 1,230 → 2,838. Reactions 94 → 525. Engagement rate 1.56% → 3.16%. Publishing frequency about 3.4×. Zero paid.</p>
+</section>
+<section class="section">
+<p class="section-label">Takeaway</p>
+<h2>WHAT THIS SHOWED</h2>
+<p>Company content does not always need to talk about the company. Sometimes the strongest way to establish presence is to demonstrate what the company understands. For Cinekorn, that meant building content around the business of entertainment rather than only publishing updates about the business.</p>
 </section>
 <section class="section cta-band">
 <h2>Next step</h2>
@@ -68,10 +88,13 @@ if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('open');
 n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');t.setAttribute('aria-expanded','false');});});}
 var nums=document.querySelectorAll('.metric-count[data-count]');
 function countUp(el){
+  if(el.dataset.counted) return;
+  el.dataset.counted='1';
   var target=parseFloat(el.getAttribute('data-count'));
+  if(isNaN(target)) return;
   var suffix=el.getAttribute('data-suffix')||'';
   var duration=900,start=null;
-  function frame(ts){ if(!start) start=ts; var p=Math.min(1,(ts-start)/duration); var e=1-Math.pow(1-p,3); el.textContent=Math.round(target*e)+suffix; if(p<1) requestAnimationFrame(frame); }
+  function frame(ts){ if(!start) start=ts; var p=Math.min(1,(ts-start)/duration); var e=1-Math.pow(1-p,3); el.textContent='+'+Math.round(target*e)+suffix; if(p<1) requestAnimationFrame(frame); }
   requestAnimationFrame(frame);
 }
 if('IntersectionObserver' in window){
