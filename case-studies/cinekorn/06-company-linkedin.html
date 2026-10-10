@@ -47,13 +47,13 @@
 <section class="section">
 <p class="section-label">Results</p>
 <h2>IMPRESSIONS, CLICKS, REACTIONS</h2>
-<p>Impressions 6,263 → 17,289 (daily-average window). Clicks 1,230 → 2,838. Reactions 94 → 525. Engagement rate 1.56% → 3.16%. Publishing frequency from 1 post every 8.1 days to 1 every 2.4 days.</p>
+<p>Impressions 6,263 → 17,289. Clicks 1,230 → 2,838. Reactions 94 → 525. Engagement rate 1.56% → 3.16%. Frequency from 1 post every 8.1 days to 1 every 2.4 days. Zero paid.</p>
 </section>
 <section class="section cta-band">
 <h2>Next step</h2>
 <div class="hero-actions">
-<a class="btn-primary" href="index.html">Cinekorn Hub</a>
-<a class="btn-secondary" href="../../index.html#contact">Get In Touch</a>
+<a class="btn-primary" href="../swad/">Next: Swad Cooking Institute</a>
+<a class="btn-secondary" href="index.html">Cinekorn Hub</a>
 </div>
 </section>
 </main>
@@ -70,9 +70,8 @@ var nums=document.querySelectorAll('.metric-count[data-count]');
 function countUp(el){
   var target=parseFloat(el.getAttribute('data-count'));
   var suffix=el.getAttribute('data-suffix')||'';
-  var decimals=el.getAttribute('data-decimals');
   var duration=900,start=null;
-  function frame(ts){ if(!start) start=ts; var p=Math.min(1,(ts-start)/duration); var e=1-Math.pow(1-p,3); var val=target*e; el.textContent=(decimals?val.toFixed(+decimals):Math.round(val))+suffix; if(p<1) requestAnimationFrame(frame); }
+  function frame(ts){ if(!start) start=ts; var p=Math.min(1,(ts-start)/duration); var e=1-Math.pow(1-p,3); el.textContent=Math.round(target*e)+suffix; if(p<1) requestAnimationFrame(frame); }
   requestAnimationFrame(frame);
 }
 if('IntersectionObserver' in window){
