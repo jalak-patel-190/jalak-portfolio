@@ -18,3 +18,87 @@
 <link rel="stylesheet" href="cinekorn-case-shared.css">
 <link rel="stylesheet" href="cinekorn-carousel.css">
 </head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="../../index.html">Jalak Patel</a>
+    <nav class="nav">
+      <a href="../../index.html">Home</a>
+      <a href="../swad/">Swad</a>
+      <a href="../jalan/">Jalan</a>
+      <a href="../ajmera/">Ajmera</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Case study hub</p>
+    <h1>Cinekorn Entertainment</h1>
+    <p class="lede">Building and operating a multi-channel content distribution system across YouTube, Facebook, and LinkedIn.</p>
+    <div class="meta-row">
+      <div><span class="meta-label">Duration</span><span class="meta-value">January 2026 to Present</span></div>
+      <div><span class="meta-label">Role</span><span class="meta-value">Senior Social Media Manager</span></div>
+      <div><span class="meta-label">Scope</span><span class="meta-value">YouTube, Facebook, LinkedIn</span></div>
+      <div><span class="meta-label">Accounts</span><span class="meta-value">9 platforms</span></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <h2>Who they are</h2>
+    <p>Cinekorn Entertainment is a Mumbai-based film distribution, production, and content syndication company founded in 2010.</p>
+    <h3>What they do</h3>
+    <p>The company handles theatrical releases, satellite distribution, and OTT syndication across Bollywood, South Indian, regional Gujarati, Marathi, and Hollywood titles.</p>
+    <h3>How the business works</h3>
+    <p>Licensed film IP is extended into digital long-form, serialised, and short-form content across multiple platforms.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <h2>Where I started</h2>
+    <p>I joined as Senior Social Media Manager responsible for digital movie content strategy, platform revenue, and LinkedIn presence for both the company and the founder.</p>
+    <h3>How scope evolved</h3>
+    <p>The role expanded into full portfolio management across six YouTube properties, Facebook recovery, and two LinkedIn pages.</p>
+    <h3>What I manage today</h3>
+    <p>Nine live accounts across YouTube, Facebook, and LinkedIn. Responsibilities include cadence planning, catalog health, format extraction, cross-platform funnels, and transparent reporting.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <h2>Case studies</h2>
+    <p>Six separate case pages. Each opens its own URL.</p>
+    <div class="case-grid">
+      <a class="case-card" href="01-data-tooling.html"><span class="case-num">01</span><h3>Data bottleneck and AI-assisted tooling</h3><p>Automating 6,000 to 8,000 rows of tier classification so strategy work was not blocked by manual sorting.</p></a>
+      <a class="case-card" href="02-telugu-kannada.html"><span class="case-num">02</span><h3>Telugu and Kannada channel systems</h3><p>Building and operating regional language channels with their own catalog logic and growth patterns.</p></a>
+      <a class="case-card" href="03-movies-catalog.html"><span class="case-num">03</span><h3>Movies catalog and distribution</h3><p>How film IP is turned into a working catalog of long-form and serialised content across accounts.</p></a>
+      <a class="case-card" href="04-gujarati-system.html"><span class="case-num">04</span><h3>Gujarati system</h3><p>Regional Gujarati content operations, titles, and audience habits inside the same portfolio.</p></a>
+      <a class="case-card" href="05-kalapi-linkedin.html"><span class="case-num">05</span><h3>Kalapi LinkedIn</h3><p>Founder-facing LinkedIn presence and how it sits next to the company page.</p></a>
+      <a class="case-card" href="06-company-linkedin.html"><span class="case-num">06</span><h3>Company LinkedIn</h3><p>Company page strategy, cadence, and how it supports distribution without competing with the founder voice.</p></a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p><a href="../../index.html">Jalak Patel</a> · Portfolio</p>
+  </div>
+</footer>
+<script>
+(function(){
+  var tracks = document.querySelectorAll('[data-carousel-track]');
+  tracks.forEach(function(track){
+    var root = track.closest('[data-carousel]');
+    if(!root) return;
+    var prev = root.querySelector('[data-carousel-prev]');
+    var next = root.querySelector('[data-carousel-next]');
+    function step(){ return Math.max(track.clientWidth * 0.8, 280); }
+    if(prev) prev.addEventListener('click', function(){ track.scrollBy({left: -step(), behavior:'smooth'}); });
+    if(next) next.addEventListener('click', function(){ track.scrollBy({left: step(), behavior:'smooth'}); });
+  });
+})();
+</script>
+</body>
+</html>
