@@ -1,6 +1,18 @@
-/*! Charts: play when scrolled into view; click/keyboard to replay */
+/*! Charts: play when scrolled into view; tap/click to replay. Mobile-safe. */
 (function () {
+  function prepLine(card) {
+    card.querySelectorAll('.line-path').forEach(function (path) {
+      try {
+        var len = path.getTotalLength();
+        if (!len || !isFinite(len)) len = 400;
+        path.style.strokeDasharray = String(len);
+        path.style.strokeDashoffset = String(len);
+      } catch (e) {}
+    });
+  }
+
   function arm(card) {
+    prepLine(card);
     card.classList.remove('is-inview');
     void card.offsetWidth;
     card.classList.add('is-inview');
@@ -11,8 +23,11 @@
     if (!cards.length) return;
 
     cards.forEach(function (card) {
+      prepLine(card);
       if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
       card.setAttribute('data-chart-interactive', '1');
+      card.setAttribute('role', 'button');
+      card.setAttribute('aria-label', 'Chart. Tap to replay animation');
       card.addEventListener('click', function () { arm(card); });
       card.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -32,7 +47,7 @@
             }
           });
         },
-        { threshold: 0.28, rootMargin: '0px 0px -10% 0px' }
+        { threshold: 0.15, rootMargin: '0px 0px -5% 0px' }
       );
       cards.forEach(function (c) { io.observe(c); });
     } else {
