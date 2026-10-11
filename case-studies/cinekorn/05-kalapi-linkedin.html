@@ -9,10 +9,7 @@
 <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="cinekorn-case-shared.css">
-<style>
-body{background:radial-gradient(1200px 600px at 10% -10%,rgba(255,214,186,.5),transparent 55%),radial-gradient(900px 500px at 95% 15%,rgba(214,200,255,.38),transparent 50%),radial-gradient(800px 480px at 50% 105%,rgba(220,235,245,.5),transparent 45%),#F7F4EF;background-attachment:fixed}
-.btn-nav,.nav-cta,.page-nav .primary{box-shadow:0 4px 16px rgba(232,90,42,.35),0 0 0 1px rgba(232,90,42,.12)}
-</style>
+<link rel="stylesheet" href="cinekorn-chart-motion.css">
 </head>
 <body>
 <a class="skip-link" href="#context">Skip to content</a>
@@ -36,9 +33,9 @@ body{background:radial-gradient(1200px 600px at 10% -10%,rgba(255,214,186,.5),tr
 <h1>Founder Presence, Not Just a Company Page</h1>
 <p class="lede">Narrative, cadence, and positioning for Kalapi Nagada on LinkedIn, run alongside the corporate channel so the founder voice stays distinct.</p>
 <div class="metric-row">
-<div class="metric-pill">Founder <span>profile</span></div>
-<div class="metric-pill">Narrative <span>system</span></div>
-<div class="metric-pill">Cadence <span>owned</span></div>
+<div class="metric-pill">Founder profile</div>
+<div class="metric-pill">Narrative system</div>
+<div class="metric-pill">Cadence owned</div>
 </div>
 </header>
 <section class="section" id="context">
@@ -62,47 +59,41 @@ body{background:radial-gradient(1200px 600px at 10% -10%,rgba(255,214,186,.5),tr
 <div class="chart-card">
 <h3>Founder feed emphasis</h3>
 <p class="chart-sub">Relative weight across content themes</p>
-<div class="ring-wrap">
-  <div class="ring"><svg viewBox="0 0 110 110"><circle class="track" cx="55" cy="55" r="45"/><circle class="val" cx="55" cy="55" r="45" style="--off:70"/></svg><div class="ring-label">High<small>Industry</small></div></div>
-  <div class="ring"><svg viewBox="0 0 110 110"><circle class="track" cx="55" cy="55" r="45"/><circle class="val" cx="55" cy="55" r="45" style="--off:140;stroke:#C45B9B"/></svg><div class="ring-label">Med<small>Business</small></div></div>
-  <div class="ring"><svg viewBox="0 0 110 110"><circle class="track" cx="55" cy="55" r="45"/><circle class="val" cx="55" cy="55" r="45" style="--off:200;stroke:#1F5C6B"/></svg><div class="ring-label">Selective<small>Company</small></div></div>
+<div class="bars">
+<div class="bar-row"><div class="bar-label"><span>Industry</span><span>High</span></div><div class="bar-track"><div class="bar-fill" style="--w:90%"></div></div></div>
+<div class="bar-row"><div class="bar-label"><span>Business</span><span>Med</span></div><div class="bar-track"><div class="bar-fill" style="--w:60%"></div></div></div>
+<div class="bar-row"><div class="bar-label"><span>Company</span><span>Selective</span></div><div class="bar-track"><div class="bar-fill" style="--w:35%"></div></div></div>
 </div>
-<p class="chart-caption">Rings show relative emphasis in the system, not a public ranking of post performance.</p>
+<p class="chart-caption">Bars show relative emphasis in the system, not a public ranking of post performance.</p>
 </div>
 <div class="chart-card">
 <h3>Operating loop</h3>
 <p class="chart-sub">How the founder page was run</p>
-<div class="funnel">
-  <div class="funnel-step">Signal from industry</div>
-  <div class="funnel-step">Draft + frame</div>
-  <div class="funnel-step">Publish cadence</div>
-  <div class="funnel-step">Engagement read</div>
+<div class="bars">
+<div class="bar-row"><div class="bar-label"><span>Signal from industry</span></div><div class="bar-track"><div class="bar-fill" style="--w:100%"></div></div></div>
+<div class="bar-row"><div class="bar-label"><span>Draft + frame</span></div><div class="bar-track"><div class="bar-fill" style="--w:80%"></div></div></div>
+<div class="bar-row"><div class="bar-label"><span>Publish cadence</span></div><div class="bar-track"><div class="bar-fill" style="--w:65%"></div></div></div>
+<div class="bar-row"><div class="bar-label"><span>Engagement read</span></div><div class="bar-track"><div class="bar-fill" style="--w:50%"></div></div></div>
 </div>
 </div>
-<p class="evidence-note">Founder profile and analytics surfaces used for cadence and positioning review.</p>
-<div class="evidence-block">
 <figure class="figure">
-<img src="../../media/cinekorn/kalapi-profile.png" alt="Kalapi Nagada LinkedIn profile" width="960" height="540" loading="lazy">
-<figcaption>Kalapi Nagada LinkedIn profile used as the founder surface.</figcaption>
+<img class="zoom-trigger" src="../../media/cinekorn/kalapi-profile.png" alt="Kalapi Nagada LinkedIn profile" width="960" height="540" loading="lazy">
+<figcaption>Kalapi Nagada LinkedIn profile used as the founder surface. Tap to enlarge.</figcaption>
 </figure>
-</div>
-<div class="evidence-block">
 <figure class="figure">
-<img src="../../media/cinekorn/kalapi-analytics.png" alt="Kalapi LinkedIn analytics" width="960" height="540" loading="lazy">
-<figcaption>Analytics snapshot supporting cadence and topic decisions.</figcaption>
+<img class="zoom-trigger" src="../../media/cinekorn/kalapi-analytics.png" alt="Kalapi LinkedIn analytics" width="960" height="540" loading="lazy">
+<figcaption>Analytics snapshot supporting cadence and topic decisions. Tap to enlarge.</figcaption>
 </figure>
-</div>
-<div class="evidence-block">
 <figure class="figure">
-<img src="../../media/cinekorn/kalapi-top-posts.png" alt="Kalapi top posts" width="960" height="540" loading="lazy">
-<figcaption>Sample of higher-signal posts under the founder narrative system.</figcaption>
+<img class="zoom-trigger" src="../../media/cinekorn/kalapi-top-posts.png" alt="Kalapi top posts" width="960" height="540" loading="lazy">
+<figcaption>Sample of higher-signal posts under the founder narrative system. Tap to enlarge.</figcaption>
 </figure>
-</div>
 </section>
 <section class="section" id="results">
 <p class="section-label">Results</p>
 <h2>A clearer founder lane</h2>
-<p>The founder feed carries industry and business framing instead of only company announcements. It sits next to the corporate page without replacing it. Live profile: <a href="https://www.linkedin.com/in/kalapi-nagada-400661381" target="_blank" rel="noopener noreferrer">Kalapi Nagada on LinkedIn</a>.</p>
+<p>The founder feed carries industry and business framing instead of only company announcements. It sits next to the corporate page without replacing it.</p>
+<p><a class="btn-secondary" href="https://www.linkedin.com/in/kalapi-nagada-400661381" target="_blank" rel="noopener noreferrer">Open Kalapi Nagada on LinkedIn</a></p>
 </section>
 <section class="section" id="takeaway">
 <p class="section-label">Takeaway</p>
@@ -132,6 +123,7 @@ body{background:radial-gradient(1200px 600px at 10% -10%,rgba(255,214,186,.5),tr
   if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});}
 })();
 </script>
+<script src="chart-animate.js" defer></script>
 <script src="lightbox.js" defer></script>
 </body>
 </html>
