@@ -69,14 +69,13 @@
 <section class="section">
   <div class="wrap">
     <h2>Case studies</h2>
-    <p>Six separate case pages. Each opens its own URL.</p>
+    <p>Five case pages. Movies catalog and Gujarati multi-format work are combined in Case 03.</p>
     <div class="case-grid">
       <a class="case-card" href="01-data-tooling.html"><span class="case-num">01</span><h3>Data bottleneck and AI-assisted tooling</h3><p>Automating 6,000 to 8,000 rows of tier classification so strategy work was not blocked by manual sorting.</p></a>
       <a class="case-card" href="02-telugu-kannada.html"><span class="case-num">02</span><h3>Telugu and Kannada channel systems</h3><p>Building and operating regional language channels with their own catalog logic and growth patterns.</p></a>
-      <a class="case-card" href="03-movies-catalog.html"><span class="case-num">03</span><h3>Movies catalog and distribution</h3><p>How film IP is turned into a working catalog of long-form and serialised content across accounts.</p></a>
-      <a class="case-card" href="04-gujarati-system.html"><span class="case-num">04</span><h3>Gujarati system</h3><p>Regional Gujarati content operations, titles, and audience habits inside the same portfolio.</p></a>
-      <a class="case-card" href="05-kalapi-linkedin.html"><span class="case-num">05</span><h3>Kalapi LinkedIn</h3><p>Founder-facing LinkedIn presence and how it sits next to the company page.</p></a>
-      <a class="case-card" href="06-company-linkedin.html"><span class="case-num">06</span><h3>Company LinkedIn</h3><p>Company page strategy, cadence, and how it supports distribution without competing with the founder voice.</p></a>
+      <a class="case-card" href="03-movies-catalog.html"><span class="case-num">03</span><h3>Movies and Gujarati distribution</h3><p>Honest catalog tenure on Movies, plus multi-format systems for Gujarati film IP across YouTube and Facebook.</p></a>
+      <a class="case-card" href="05-kalapi-linkedin.html"><span class="case-num">04</span><h3>Kalapi LinkedIn</h3><p>Founder-facing LinkedIn presence and how it sits next to the company page.</p></a>
+      <a class="case-card" href="06-company-linkedin.html"><span class="case-num">05</span><h3>Company LinkedIn</h3><p>Company page strategy, cadence, and how it supports distribution without competing with the founder voice.</p></a>
     </div>
   </div>
 </section>
@@ -86,19 +85,5 @@
     <p><a href="../../index.html">Jalak Patel</a> · Portfolio</p>
   </div>
 </footer>
-<script>
-(function(){
-  var tracks = document.querySelectorAll('[data-carousel-track]');
-  tracks.forEach(function(track){
-    var root = track.closest('[data-carousel]');
-    if(!root) return;
-    var prev = root.querySelector('[data-carousel-prev]');
-    var next = root.querySelector('[data-carousel-next]');
-    function step(){ return Math.max(track.clientWidth * 0.8, 280); }
-    if(prev) prev.addEventListener('click', function(){ track.scrollBy({left: -step(), behavior:'smooth'}); });
-    if(next) next.addEventListener('click', function(){ track.scrollBy({left: step(), behavior:'smooth'}); });
-  });
-})();
-</script>
 </body>
 </html>
