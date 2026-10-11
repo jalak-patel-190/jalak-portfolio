@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="jalan-case-shared.css">
   <link rel="stylesheet" href="jalan-carousel.css">
-<style id="output-carousel-styles">
+<style>
 .output-carousel{position:relative;margin:1.25rem 0 .5rem;padding:0 2.5rem}
 .output-carousel-track{display:flex;gap:.85rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:.35rem 0 .75rem}
 .output-carousel-track::-webkit-scrollbar{display:none}
@@ -21,6 +21,8 @@
 .carousel-btn{position:absolute;top:42%;transform:translateY(-50%);width:40px;height:40px;border-radius:999px;border:1px solid #e8e4dc;background:#fff;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;font-size:1.15rem;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .carousel-btn.prev{left:0}.carousel-btn.next{right:0}
 @media(max-width:640px){.output-carousel{padding:0 2rem}.output-card{flex-basis:min(85%,240px)}}
+body{overflow-x:hidden}
+.container,main,.wrap{max-width:100%;overflow-wrap:anywhere;word-break:break-word}
 </style>
 </head>
 <body>
@@ -42,38 +44,62 @@
   </nav>
   <section class="case-hero">
     <p class="eyebrow">Case 01 · Jalan Mega Mart</p>
-    <h1>BUILDING THE CHANNEL AND PAGE NETWORK</h1>
+    <h1>Building the channel and page network</h1>
     <p class="lede">Building 10 to 15 YouTube channels and social pages to support retail demand and local language reach.</p>
+    <div class="metric-row">
+      <span class="metric-pill"><strong>10–15</strong> channels and pages</span>
+      <span class="metric-pill"><strong>Local language</strong> reach</span>
+      <span class="metric-pill"><strong>Retail</strong> demand support</span>
+    </div>
   </section>
   <section class="section" id="context">
     <p class="section-label">Context</p>
-    <h2>A NETWORK OF CHANNELS AND PAGES</h2>
-    <p>Jalan Mega Mart needed a workable social and YouTube network. The work was to set up and operate channels and pages that could carry product and festival demand without a large media team.</p>
+    <h2>A network of channels and pages</h2>
+    <p>Jalan Mega Mart needed a workable social and YouTube network. The store sold textiles across regions. One page and one language could not carry product demand, festival offers, or local search interest.</p>
+    <p>The job was to set up and operate channels and pages that could carry product and festival demand without a large media team.</p>
+  </section>
+  <section class="section">
+    <p class="section-label">Problem</p>
+    <h2>One surface was not enough</h2>
+    <p>A single company page left gaps in language, product category, and festival timing. Buyers searching in regional terms did not land on a consistent public presence.</p>
   </section>
   <section class="section">
     <p class="section-label">Execution</p>
-    <h2>CHANNELS, PAGES, AND CADENCE</h2>
-    <p>Channel and page setup, naming, and posting cadence across the network so the store had a consistent public presence.</p>
+    <h2>Channels, pages, and cadence</h2>
+    <div class="flow">
+      <div class="flow-step">Map product and language needs</div>
+      <div class="flow-step">Set up channels and pages</div>
+      <div class="flow-step">Name and structure each property</div>
+      <div class="flow-step">Run posting cadence across the network</div>
+    </div>
+    <p>Channel and page setup, naming, and posting cadence across the network so the store had a consistent public presence for product and festival demand.</p>
+  </section>
+  <section class="section">
+    <p class="section-label">Takeaway</p>
+    <h2>Network first, then content</h2>
+    <p>Without a working network of channels and pages, festival posts and influencer work had nowhere reliable to land. The network was the base for the rest of the Jalan system.</p>
   </section>
 
 <section class="section" id="outputs">
 <p class="section-label">Work output</p>
 <h2>Selected output</h2>
-<p class="section-intro">Click any tile to open the live link.</p>
+<p class="section-intro">Example from the channel network. Tap to open.</p>
 <div class="output-carousel" data-output-carousel>
-  <button type="button" class="carousel-btn prev" aria-label="Previous">&#8592;</button>
+  <button type="button" class="carousel-btn prev" aria-label="Previous">←</button>
   <div class="output-carousel-track">
-    <a class="output-card" href="https://youtu.be/40KX-cBq3SQ" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/40KX-cBq3SQ/hqdefault.jpg" alt="Jalan channel network video" loading="lazy"></a>
+    <a class="output-card" href="https://youtu.be/40KX-cBq3SQ" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.youtube.com/vi/40KX-cBq3SQ/hqdefault.jpg" alt="Jalan channel network video" loading="lazy">
+    </a>
   </div>
-  <button type="button" class="carousel-btn next" aria-label="Next">&#8594;</button>
+  <button type="button" class="carousel-btn next" aria-label="Next">→</button>
 </div>
 </section>
 
   <section class="section cta-band">
     <h2>Next step</h2>
-    <div class="hero-actions">
-      <a class="btn-primary" href="02-influencer-marketing.html">Next case</a>
+    <div class="hero-actions nav-trio">
       <a class="btn-secondary" href="index.html">Jalan Hub</a>
+      <a class="btn-primary" href="02-influencer-marketing.html">Next case</a>
     </div>
   </section>
 </main>
