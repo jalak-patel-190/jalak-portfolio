@@ -7,10 +7,26 @@
   <meta name="description" content="Case 04: about fifty accounts compared on the same accounts at the same dates, plus an honest look at what happened after I left.">
   <link rel="canonical" href="https://jalak-patel-190.github.io/jalak-portfolio/case-studies/ajmera/04-reading-the-tracker.html">
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="ajmera-case-shared.css">
+<style>
+body{overflow-x:hidden}
+.container,main,.wrap{max-width:100%;overflow-wrap:anywhere;word-break:break-word}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1.15rem 0}
+.stat-card{background:#fff;border:1px solid #e8e2d8;border-radius:12px;padding:1.1rem;text-align:center;box-shadow:0 8px 30px rgba(20,20,20,.06)}
+.stat-card .num{font-family:'Bebas Neue',sans-serif;font-size:1.85rem;line-height:1;color:#141414}
+.stat-card .lbl{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#5a5a5a;margin-top:.4rem}
+@media(max-width:640px){.stat-grid{grid-template-columns:1fr}}
+.bars .bar-fill{width:0;transition:width .9s ease}
+.bars.is-on .bar-fill{width:var(--w,50%)}
+.bars{display:flex;flex-direction:column;gap:.75rem;margin:1.15rem 0}
+.bar-row{display:grid;grid-template-columns:120px 1fr 72px;gap:.75rem;align-items:center;font-size:.85rem}
+.bar-label{font-weight:600;color:#5a5a5a}
+.bar-track{height:10px;background:#f0ebe3;border-radius:999px;overflow:hidden}
+.bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#E85A2A,#C45B9B)}
+.bar-value{font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+@media(max-width:640px){.bar-row{grid-template-columns:1fr;gap:.35rem}}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#context">Skip to content</a>
@@ -20,7 +36,7 @@
         <span class="logo">JALAK PATEL</span>
         <span class="logo-subtitle">Creative Strategist</span>
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">Menu</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
       <nav id="mainNav">
         <a href="index.html">Ajmera Hub</a>
         <a href="index.html#cases">All Cases</a>
@@ -29,30 +45,57 @@
     </div>
   </header>
   <main>
-    <div class="wrap">
-      <p class="eyebrow">Case 04 · Reading the tracker</p>
-      <h1>About fifty accounts, same dates, honest comparison</h1>
-      <p class="lede">The same accounts compared at the same dates, plus an honest look at what happened after I left.</p>
+    <div class="container">
+      <nav class="breadcrumb"><a href="../../index.html">Home</a> · <a href="index.html">Ajmera Fashion</a> · Case 04</nav>
+      <section class="case-hero">
+        <p class="eyebrow">Case 04 · Reading the tracker</p>
+        <h1>About fifty accounts, same dates, honest comparison</h1>
+        <p class="lede">The same accounts compared at the same dates, plus an honest look at what happened after I left.</p>
+      </section>
+
+      <div class="stat-grid">
+        <div class="stat-card"><div class="num">~50</div><div class="lbl">Accounts compared</div></div>
+        <div class="stat-card"><div class="num">+20.3%</div><div class="lbl">Same-account reach</div></div>
+        <div class="stat-card"><div class="num">15 Dec–1 Jul</div><div class="lbl">Fixed date window</div></div>
+      </div>
+
       <section class="section" id="context">
         <p class="section-label">Context</p>
         <h2>A tracker is only useful if the dates match</h2>
         <p>I maintained a tracker across YouTube, Facebook, Instagram and other platforms. The comparison below uses the same accounts at two fixed dates so growth is attributable and not mixed with new accounts that appeared later.</p>
       </section>
+
       <section class="section">
         <p class="section-label">Scale</p>
         <h2>About fifty accounts, 15 December to 1 July</h2>
-        <p>Combined reach across the compared set moved from 529,763 to 637,163 — a +20.3% change on the same accounts. YouTube, Facebook and Instagram each grew; the table on the hub shows the platform split.</p>
+        <p>Combined reach across the compared set moved from 529,763 to 637,163 — a +20.3% change on the same accounts. YouTube, Facebook and Instagram each grew.</p>
+        <div class="bars" id="reachBars">
+          <div class="bar-row">
+            <span class="bar-label">Start reach</span>
+            <div class="bar-track"><div class="bar-fill" style="--w:83%"></div></div>
+            <span class="bar-value">529.8K</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">End reach</span>
+            <div class="bar-track"><div class="bar-fill" style="--w:100%"></div></div>
+            <span class="bar-value">637.2K</span>
+          </div>
+        </div>
+        <p class="fig-caption">Same accounts only. New properties created after the start date are excluded so the growth number is clean.</p>
       </section>
+
       <section class="section">
         <p class="section-label">After I left</p>
         <h2>What the public numbers show later</h2>
         <p>Public channel numbers after my tenure are shown where available so the case does not stop at the day I left. Internal files such as the tracker itself are not published; the numbers are shown, the files are not.</p>
       </section>
+
       <section class="section" id="takeaway">
         <p class="section-label">What this showed</p>
         <h2>Same-account growth is the clean story</h2>
         <p>Comparing the same accounts at the same dates avoids inflating growth with new properties. That is the standard this case holds to.</p>
       </section>
+
       <div class="page-nav">
         <a class="back" href="index.html">Ajmera hub</a>
         <a class="back" href="03-founder-and-trust-content.html">Previous case</a>
@@ -60,6 +103,10 @@
       </div>
     </div>
   </main>
+  <footer>
+    <p>&copy; 2026 Jalak Patel</p>
+    <p>Designed and built by <strong>Jalak Patel</strong></p>
+  </footer>
   <script>
     (function () {
       var navToggle = document.getElementById('navToggle');
@@ -75,6 +122,25 @@
             navToggle.setAttribute('aria-expanded', 'false');
           });
         });
+      }
+      var bars = document.querySelectorAll('.bars');
+      if (!bars.length) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        bars.forEach(function (b) { b.classList.add('is-on'); });
+        return;
+      }
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-on');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.25 });
+        bars.forEach(function (b) { io.observe(b); });
+      } else {
+        bars.forEach(function (b) { b.classList.add('is-on'); });
       }
     })();
   </script>
