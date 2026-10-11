@@ -147,6 +147,31 @@ nav a:hover { color: var(--cta1); }
   display: inline-block; background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af);
   color: #fff; font-size: 0.65rem; padding: 0.1rem 0.35rem; border-radius: 4px; margin-right: 0.25rem;
 }
+
+/* Branded platform card when hotlink thumbnails fail */
+.platform-tile {
+  aspect-ratio: 16/9;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.5rem; padding: 1.25rem; text-align: center;
+  background: linear-gradient(145deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #fff;
+}
+.platform-tile.ig {
+  background: linear-gradient(145deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+}
+.platform-tile.yt {
+  background: linear-gradient(145deg, #1a1a1a 0%, #282828 60%, #cc0000 140%);
+}
+.platform-tile .pt-icon {
+  font-size: 1.6rem; line-height: 1; opacity: 0.95;
+}
+.platform-tile .pt-label {
+  font-size: 0.85rem; font-weight: 700; letter-spacing: 0.02em;
+}
+.platform-tile .pt-sub {
+  font-size: 0.72rem; opacity: 0.85;
+}
+
 .carousel-btn {
   position: absolute; top: 42%; transform: translateY(-50%); width: 40px; height: 40px;
   border-radius: 999px; border: 1px solid var(--border); background: #fff; cursor: pointer; z-index: 2;
@@ -188,6 +213,8 @@ footer {
   border-top: 1px solid var(--border); padding: 1.5rem; text-align: center;
   font-size: 0.8rem; color: var(--text-muted);
 }
+footer strong { color: var(--text); }
+footer p + p { margin-top: 0.3rem; }
 
 @media (max-width: 800px) {
   .nav-toggle { display: block; }

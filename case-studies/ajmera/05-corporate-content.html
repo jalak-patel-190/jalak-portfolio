@@ -13,9 +13,15 @@
 .output-carousel{position:relative;margin:1.25rem 0 .5rem;padding:0 2.5rem}
 .output-carousel-track{display:flex;gap:.85rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:.35rem 0 .75rem}
 .output-carousel-track::-webkit-scrollbar{display:none}
-.output-card{flex:0 0 min(78%,260px);scroll-snap-align:start;border-radius:14px;overflow:hidden;background:#fff;border:1px solid #e8e4dc;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
+.output-card{flex:0 0 min(78%,260px);scroll-snap-align:start;border-radius:14px;overflow:hidden;background:#fff;border:1px solid #e8e4dc;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
 .output-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.08)}
-.output-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#f0ebe3}
+.output-cap{display:block;padding:.55rem .75rem;font-size:.78rem;font-weight:700;color:#5a5a5a;border-top:1px solid #e8e4dc}
+.ig-badge{display:inline-block;background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af);color:#fff;font-size:.65rem;padding:.1rem .35rem;border-radius:4px;margin-right:.25rem}
+.platform-tile{aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;padding:1.25rem;text-align:center;color:#fff}
+.platform-tile.ig{background:linear-gradient(145deg,#833ab4 0%,#fd1d1d 50%,#fcb045 100%)}
+.platform-tile .pt-icon{font-size:1.6rem;line-height:1}
+.platform-tile .pt-label{font-size:.85rem;font-weight:700}
+.platform-tile .pt-sub{font-size:.72rem;opacity:.85}
 .carousel-btn{position:absolute;top:42%;transform:translateY(-50%);width:40px;height:40px;border-radius:999px;border:1px solid #e8e4dc;background:#fff;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;font-size:1.15rem;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .carousel-btn.prev{left:0}.carousel-btn.next{right:0}
 @media(max-width:640px){.output-carousel{padding:0 2rem}.output-card{flex-basis:min(85%,240px)}}
@@ -65,7 +71,11 @@ body{overflow-x:hidden}
   <div>
     <p class="bts-label">After · Published on Instagram</p>
     <a href="https://www.instagram.com/reel/CmwVTG4Io8R/" target="_blank" rel="noopener noreferrer">
-      <img src="https://www.instagram.com/p/CmwVTG4Io8R/media/?size=l" alt="Published Instagram reel" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../../media/logos/ajmera-logo.png'">
+      <div class="platform-tile ig" style="border-radius:12px;min-height:180px">
+        <span class="pt-icon">IG</span>
+        <span class="pt-label">Published reel</span>
+        <span class="pt-sub">Open on Instagram</span>
+      </div>
     </a>
     <p style="margin-top:.6rem"><a href="https://www.instagram.com/reel/CmwVTG4Io8R/" target="_blank" rel="noopener noreferrer">View published reel on Instagram</a></p>
   </div>
@@ -74,19 +84,19 @@ body{overflow-x:hidden}
 <section class="section" id="outputs">
 <p class="section-label">Work output</p>
 <h2>Selected output</h2>
-<p class="section-intro">Click any tile to open the live link. If a thumbnail fails to load, the link still opens the post.</p>
+<p class="section-intro">Tap any tile to open the live Instagram post. Branded cards are used because Instagram blocks external image hotlinks.</p>
 <div class="output-carousel" data-output-carousel>
   <button type="button" class="carousel-btn prev" aria-label="Previous">←</button>
   <div class="output-carousel-track">
-    <a class="output-card" href="https://www.instagram.com/reel/CmwVTG4Io8R" target="_blank" rel="noopener noreferrer"><img src="https://www.instagram.com/p/CmwVTG4Io8R/media/?size=l" alt="Instagram reel" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../../media/logos/ajmera-logo.png'"></a>
-    <a class="output-card" href="https://www.instagram.com/p/CofCR2fgg-1" target="_blank" rel="noopener noreferrer"><img src="https://www.instagram.com/p/CofCR2fgg-1/media/?size=l" alt="Instagram post" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../../media/logos/ajmera-logo.png'"></a>
-    <a class="output-card" href="https://www.instagram.com/p/CoZ1QDKgyAT" target="_blank" rel="noopener noreferrer"><img src="https://www.instagram.com/p/CoZ1QDKgyAT/media/?size=l" alt="Instagram post" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../../media/logos/ajmera-logo.png'"></a>
-    <a class="output-card" href="https://www.instagram.com/p/CojSDkxAaZr" target="_blank" rel="noopener noreferrer"><img src="https://www.instagram.com/p/CojSDkxAaZr/media/?size=l" alt="Instagram post" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../../media/logos/ajmera-logo.png'"></a>
-    <a class="output-card" href="https://www.instagram.com/p/CmHJORkg4X1" target="_blank" rel="noopener noreferrer"><img src="https://www.instagram.com/p/CmHJORkg4X1/media/?size=l" alt="Instagram post" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../../media/logos/ajmera-logo.png'"></a>
-    <a class="output-card" href="https://www.instagram.com/p/ClREG1wI2sA" target="_blank" rel="noopener noreferrer"><img src="https://www.instagram.com/p/ClREG1wI2sA/media/?size=l" alt="Instagram post" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../../media/logos/ajmera-logo.png'"></a>
-    <a class="output-card" href="https://www.instagram.com/p/Ck_EDcvAvGb" target="_blank" rel="noopener noreferrer"><img src="https://www.instagram.com/p/Ck_EDcvAvGb/media/?size=l" alt="Instagram post" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../../media/logos/ajmera-logo.png'"></a>
-    <a class="output-card" href="https://www.instagram.com/p/CozXsHoAobd" target="_blank" rel="noopener noreferrer"><img src="https://www.instagram.com/p/CozXsHoAobd/media/?size=l" alt="Instagram post" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../../media/logos/ajmera-logo.png'"></a>
-    <a class="output-card" href="https://www.instagram.com/p/CpCw85ngGXS" target="_blank" rel="noopener noreferrer"><img src="https://www.instagram.com/p/CpCw85ngGXS/media/?size=l" alt="Instagram post" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../../media/logos/ajmera-logo.png'"></a>
+    <a class="output-card" href="https://www.instagram.com/reel/CmwVTG4Io8R/" target="_blank" rel="noopener noreferrer"><div class="platform-tile ig"><span class="pt-icon">IG</span><span class="pt-label">Reel</span><span class="pt-sub">Open on Instagram</span></div><span class="output-cap"><span class="ig-badge">IG</span> Corporate reel</span></a>
+    <a class="output-card" href="https://www.instagram.com/p/CofCR2fgg-1/" target="_blank" rel="noopener noreferrer"><div class="platform-tile ig"><span class="pt-icon">IG</span><span class="pt-label">Post 01</span><span class="pt-sub">Open on Instagram</span></div><span class="output-cap"><span class="ig-badge">IG</span> Corporate post</span></a>
+    <a class="output-card" href="https://www.instagram.com/p/CoZ1QDKgyAT/" target="_blank" rel="noopener noreferrer"><div class="platform-tile ig"><span class="pt-icon">IG</span><span class="pt-label">Post 02</span><span class="pt-sub">Open on Instagram</span></div><span class="output-cap"><span class="ig-badge">IG</span> Corporate post</span></a>
+    <a class="output-card" href="https://www.instagram.com/p/CojSDkxAaZr/" target="_blank" rel="noopener noreferrer"><div class="platform-tile ig"><span class="pt-icon">IG</span><span class="pt-label">Post 03</span><span class="pt-sub">Open on Instagram</span></div><span class="output-cap"><span class="ig-badge">IG</span> Corporate post</span></a>
+    <a class="output-card" href="https://www.instagram.com/p/CmHJORkg4X1/" target="_blank" rel="noopener noreferrer"><div class="platform-tile ig"><span class="pt-icon">IG</span><span class="pt-label">Post 04</span><span class="pt-sub">Open on Instagram</span></div><span class="output-cap"><span class="ig-badge">IG</span> Corporate post</span></a>
+    <a class="output-card" href="https://www.instagram.com/p/ClREG1wI2sA/" target="_blank" rel="noopener noreferrer"><div class="platform-tile ig"><span class="pt-icon">IG</span><span class="pt-label">Post 05</span><span class="pt-sub">Open on Instagram</span></div><span class="output-cap"><span class="ig-badge">IG</span> Corporate post</span></a>
+    <a class="output-card" href="https://www.instagram.com/p/Ck_EDcvAvGb/" target="_blank" rel="noopener noreferrer"><div class="platform-tile ig"><span class="pt-icon">IG</span><span class="pt-label">Post 06</span><span class="pt-sub">Open on Instagram</span></div><span class="output-cap"><span class="ig-badge">IG</span> Corporate post</span></a>
+    <a class="output-card" href="https://www.instagram.com/p/CozXsHoAobd/" target="_blank" rel="noopener noreferrer"><div class="platform-tile ig"><span class="pt-icon">IG</span><span class="pt-label">Post 07</span><span class="pt-sub">Open on Instagram</span></div><span class="output-cap"><span class="ig-badge">IG</span> Corporate post</span></a>
+    <a class="output-card" href="https://www.instagram.com/p/CpCw85ngGXS/" target="_blank" rel="noopener noreferrer"><div class="platform-tile ig"><span class="pt-icon">IG</span><span class="pt-label">Post 08</span><span class="pt-sub">Open on Instagram</span></div><span class="output-cap"><span class="ig-badge">IG</span> Corporate post</span></a>
   </div>
   <button type="button" class="carousel-btn next" aria-label="Next">→</button>
 </div>

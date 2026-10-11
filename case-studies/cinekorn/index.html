@@ -16,7 +16,22 @@
 <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="cinekorn-case-shared.css">
-<link rel="stylesheet" href="cinekorn-carousel.css">
+<style>
+.case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-top:1.25rem}
+.case-card{display:flex;flex-direction:column;background:#fff;border:1px solid #E8E2D8;border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 8px 30px rgba(20,20,20,.06);transition:transform .2s,box-shadow .2s}
+.case-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(20,20,20,.08)}
+.case-card-media{aspect-ratio:16/10;background:#f0ebe3;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.case-card-media img{width:100%;height:100%;object-fit:cover}
+.case-card-body{padding:1rem 1.1rem 1.15rem}
+.case-num{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#C2410C;margin-bottom:.25rem}
+.case-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.35rem;font-family:'Space Grotesk',system-ui,sans-serif}
+.case-card p{font-size:.88rem;color:#5A5A5A;margin:0 0 .65rem;line-height:1.45}
+.case-cta{font-size:.85rem;font-weight:700;color:#C2410C}
+.hub-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.75rem;margin:1.25rem 0}
+.hub-meta div{background:#fff;border:1px solid #E8E2D8;border-radius:12px;padding:.75rem .9rem}
+.hub-meta .ml{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:#5A5A5A;margin-bottom:.2rem}
+.hub-meta .mv{font-weight:600;font-size:1rem}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -38,11 +53,11 @@
     <p class="eyebrow">Case study hub</p>
     <h1>Cinekorn Entertainment</h1>
     <p class="lede">Building and operating a multi-channel content distribution system across YouTube, Facebook, and LinkedIn.</p>
-    <div class="meta-row">
-      <div><span class="meta-label">Duration</span><span class="meta-value">January 2026 to Present</span></div>
-      <div><span class="meta-label">Role</span><span class="meta-value">Senior Social Media Manager</span></div>
-      <div><span class="meta-label">Scope</span><span class="meta-value">YouTube, Facebook, LinkedIn</span></div>
-      <div><span class="meta-label">Accounts</span><span class="meta-value">9 platforms</span></div>
+    <div class="hub-meta">
+      <div><div class="ml">Duration</div><div class="mv">Jan 2026 to Present</div></div>
+      <div><div class="ml">Role</div><div class="mv">Sr Social Media Manager</div></div>
+      <div><div class="ml">Scope</div><div class="mv">YouTube, Facebook, LinkedIn</div></div>
+      <div><div class="ml">Accounts</div><div class="mv">9 platforms</div></div>
     </div>
   </div>
 </section>
@@ -71,11 +86,26 @@
     <h2>Case studies</h2>
     <p>Five case pages. Movies catalog and Gujarati multi-format work are combined in Case 03.</p>
     <div class="case-grid">
-      <a class="case-card" href="01-data-tooling.html"><span class="case-num">01</span><h3>Data bottleneck and AI-assisted tooling</h3><p>Automating 6,000 to 8,000 rows of tier classification so strategy work was not blocked by manual sorting.</p></a>
-      <a class="case-card" href="02-telugu-kannada.html"><span class="case-num">02</span><h3>Telugu and Kannada channel systems</h3><p>Building and operating regional language channels with their own catalog logic and growth patterns.</p></a>
-      <a class="case-card" href="03-movies-catalog.html"><span class="case-num">03</span><h3>Movies and Gujarati distribution</h3><p>Honest catalog tenure on Movies, plus multi-format systems for Gujarati film IP across YouTube and Facebook.</p></a>
-      <a class="case-card" href="05-kalapi-linkedin.html"><span class="case-num">04</span><h3>Kalapi LinkedIn</h3><p>Founder-facing LinkedIn presence and how it sits next to the company page.</p></a>
-      <a class="case-card" href="06-company-linkedin.html"><span class="case-num">05</span><h3>Company LinkedIn</h3><p>Company page strategy, cadence, and how it supports distribution without competing with the founder voice.</p></a>
+      <a class="case-card" href="01-data-tooling.html">
+        <div class="case-card-media"><img src="../../media/cinekorn/case-01-colab.png" alt="" loading="lazy" onerror="this.parentNode.style.background='#f0ebe3';this.remove()"></div>
+        <div class="case-card-body"><div class="case-num">Case 01</div><h3>Data bottleneck and AI-assisted tooling</h3><p>Automating 6,000 to 8,000 rows of tier classification so strategy work was not blocked by manual sorting.</p><span class="case-cta">Read full case study</span></div>
+      </a>
+      <a class="case-card" href="02-telugu-kannada.html">
+        <div class="case-card-media"><img src="../../media/cinekorn/rakhewal-youtube-analytics.png" alt="" loading="lazy" onerror="this.parentNode.style.background='#f0ebe3';this.remove()"></div>
+        <div class="case-card-body"><div class="case-num">Case 02</div><h3>Telugu and Kannada channel systems</h3><p>Building and operating regional language channels with their own catalog logic and growth patterns.</p><span class="case-cta">Read full case study</span></div>
+      </a>
+      <a class="case-card" href="03-movies-catalog.html">
+        <div class="case-card-media"><img src="../../media/cinekorn/yt-movies.png" alt="" loading="lazy" onerror="this.parentNode.style.background='#f0ebe3';this.remove()"></div>
+        <div class="case-card-body"><div class="case-num">Case 03</div><h3>Movies and Gujarati distribution</h3><p>Honest catalog tenure on Movies, plus multi-format systems for Gujarati film IP across YouTube and Facebook.</p><span class="case-cta">Read full case study</span></div>
+      </a>
+      <a class="case-card" href="05-kalapi-linkedin.html">
+        <div class="case-card-media"><img src="../../media/cinekorn/kalapi-analytics.png" alt="" loading="lazy" onerror="this.parentNode.style.background='#f0ebe3';this.remove()"></div>
+        <div class="case-card-body"><div class="case-num">Case 04</div><h3>Kalapi LinkedIn</h3><p>Founder-facing LinkedIn presence and how it sits next to the company page.</p><span class="case-cta">Read full case study</span></div>
+      </a>
+      <a class="case-card" href="06-company-linkedin.html">
+        <div class="case-card-media"><img src="../../media/cinekorn/cinekorn-linkedin-content-analytics.png" alt="" loading="lazy" onerror="this.parentNode.style.background='#f0ebe3';this.remove()"></div>
+        <div class="case-card-body"><div class="case-num">Case 05</div><h3>Company LinkedIn</h3><p>Company page strategy, cadence, and how it supports distribution without competing with the founder voice.</p><span class="case-cta">Read full case study</span></div>
+      </a>
     </div>
   </div>
 </section>
@@ -83,6 +113,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <p><a href="../../index.html">Jalak Patel</a> · Portfolio</p>
+    <p style="margin-top:.35rem;font-size:.8rem;opacity:.85">Designed and built by Jalak Patel</p>
   </div>
 </footer>
 </body>
