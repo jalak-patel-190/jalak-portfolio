@@ -1,0 +1,96 @@
+/* Line chart: path + dots + labels animate together */
+@keyframes lineDraw {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes ptPop {
+  from { opacity: 0; transform: scale(0.2); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes labelFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.chart-card .line-path {
+  fill: none;
+  stroke: #E85A2A;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: none !important;
+}
+.chart-card.is-inview .line-path {
+  animation: lineDraw 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards !important;
+}
+
+.chart-card .pt {
+  fill: #E85A2A;
+  stroke: #fff;
+  stroke-width: 2;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: none !important;
+}
+.chart-card.is-inview .pt:nth-of-type(1) { animation: ptPop 0.45s ease 0.15s forwards !important; }
+.chart-card.is-inview .pt:nth-of-type(2) { animation: ptPop 0.45s ease 0.4s forwards !important; }
+.chart-card.is-inview .pt:nth-of-type(3) { animation: ptPop 0.45s ease 0.65s forwards !important; }
+.chart-card.is-inview .pt:nth-of-type(4) { animation: ptPop 0.45s ease 0.9s forwards !important; }
+.chart-card.is-inview .pt:nth-of-type(5) { animation: ptPop 0.45s ease 1.05s forwards !important; }
+
+.chart-card .point-label,
+.chart-card .point-sub,
+.chart-card .axis-label {
+  fill: #6b6560;
+  font-size: 10px;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  opacity: 0;
+  animation: none !important;
+}
+.chart-card.is-inview .point-label,
+.chart-card.is-inview .point-sub,
+.chart-card.is-inview .axis-label {
+  animation: labelFade 0.5s ease 0.35s forwards !important;
+}
+.chart-card.is-inview .point-label {
+  fill: #1a1a1a;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+/* Soft outer glow on primary actions */
+.btn-primary,
+a.btn-primary,
+.btn-nav,
+.nav-cta,
+.primary {
+  box-shadow: 0 0 0 0 rgba(232, 90, 42, 0);
+  transition: box-shadow 0.25s ease, transform 0.2s ease, background 0.2s ease;
+}
+.btn-primary:hover,
+a.btn-primary:hover,
+.btn-nav:hover,
+.nav-cta:hover,
+.primary:hover,
+.btn-primary:focus-visible,
+a.btn-primary:focus-visible {
+  box-shadow: 0 0 0 4px rgba(232, 90, 42, 0.22), 0 8px 24px rgba(232, 90, 42, 0.18);
+}
+.next-card:hover,
+.next-card:focus-visible {
+  box-shadow: 0 0 0 3px rgba(232, 90, 42, 0.15), 0 10px 28px rgba(0, 0, 0, 0.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chart-card .line-path,
+  .chart-card .pt,
+  .chart-card .point-label,
+  .chart-card .point-sub,
+  .chart-card .axis-label {
+    opacity: 1 !important;
+    stroke-dashoffset: 0 !important;
+    animation: none !important;
+  }
+}
