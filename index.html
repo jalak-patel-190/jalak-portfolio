@@ -238,26 +238,13 @@ if('IntersectionObserver' in window){
   var track=root.querySelector('[data-proof-track]');
   var prev=root.querySelector('[data-proof-prev]');
   var next=root.querySelector('[data-proof-next]');
-  var timer=null;
   function step(){ return Math.max(track.clientWidth*0.85, 260); }
-  function go(dir){ track.scrollBy({left: dir*step(), behavior:'smooth'}); }
-  function start(){
-    stop();
-    timer=setInterval(function(){
-      if(track.scrollLeft+track.clientWidth>=track.scrollWidth-8){
-        track.scrollTo({left:0,behavior:'smooth'});
-      } else { go(1); }
-    }, 4500);
+  function go(dir){
+    var reduceMotion=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    track.scrollBy({left:dir*step(),behavior:reduceMotion?'auto':'smooth'});
   }
-  function stop(){ if(timer){ clearInterval(timer); timer=null; } }
-  if(prev) prev.addEventListener('click', function(){ stop(); go(-1); start(); });
-  if(next) next.addEventListener('click', function(){ stop(); go(1); start(); });
-  root.addEventListener('mouseenter', stop);
-  root.addEventListener('mouseleave', start);
-  root.addEventListener('focusin', stop);
-  root.addEventListener('focusout', function(e){ if(!root.contains(e.relatedTarget)) start(); });
-  root.addEventListener('touchstart', stop, {passive:true});
-  start();
+  if(prev) prev.addEventListener('click',function(){ go(-1); });
+  if(next) next.addEventListener('click',function(){ go(1); });
 })();
 })();
 </script>
