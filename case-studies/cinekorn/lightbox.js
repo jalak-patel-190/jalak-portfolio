@@ -142,7 +142,9 @@
 
   ready(function () {
     /* Charts */
-    var cards = document.querySelectorAll('.chart-card');
+    var cards = Array.prototype.filter.call(document.querySelectorAll('.chart-card'), function (card) {
+      return !!card.querySelector('.line-path, .pt, .donut-legacy, .donut-tenure, .donut-seg, .col-bar, .hbar-fill, .bar-fill');
+    });
     function arm(card) {
       card.classList.remove('is-inview');
       void card.offsetWidth;
