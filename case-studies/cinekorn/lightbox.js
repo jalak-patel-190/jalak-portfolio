@@ -3,7 +3,7 @@
   var s = document.createElement('style');
   s.id = 'cin-ui-fixes';
   s.textContent = `
-.chart-card{overflow:visible!important;position:relative;-webkit-tap-highlight-color:transparent}
+.chart-card.has-chart-replay{overflow:visible!important;position:relative;-webkit-tap-highlight-color:transparent}
 .chart-card.has-chart-replay{cursor:pointer}
 .chart-replay{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;margin:0!important;padding:0!important;border:0!important;border-radius:14px!important;background:transparent!important;color:transparent!important;font-size:0!important;box-shadow:none!important;opacity:0!important;cursor:pointer!important;z-index:3!important;-webkit-appearance:none!important;appearance:none!important}
 .chart-replay:focus-visible{opacity:.01!important;outline:3px solid var(--cta-start);outline-offset:3px}
