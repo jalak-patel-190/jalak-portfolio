@@ -75,6 +75,12 @@ Pull request: [#26 — SEO: correct Open Graph type for Cinekorn hub](https://gi
 
 - Changed the Cinekorn hub's Open Graph type to `website`; the six individual deep dives remain `article`.
 
+### Batch 9 — merged to `main`
+Pull request: [#27 — Copy: clean up portfolio social preview metadata](https://github.com/jalak-patel-190/jalak-portfolio/pull/27)
+
+- Removed the em dash from the Cinekorn hub social-preview title.
+- Made the homepage social-preview image alt text describe the actual Cinekorn LinkedIn analytics image more precisely.
+
 ## Prioritized issue register
 
 | ID | Priority | Finding | Evidence/status | Action |
@@ -130,5 +136,6 @@ Keep the existing dark, restrained visual direction, typography, spacing languag
 **Batch 6:** merged.  
 **Batch 7:** merged.  
 **Batch 8:** merged.  
+**Batch 9:** merged.  
 **Deployment/browser QA:** still pending.  
 **Full website audit:** not complete. Only the homepage and Cinekorn are in the current detailed scope.
