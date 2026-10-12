@@ -70,6 +70,11 @@ Pull request: [#25 — Accessibility: remove duplicate Cinekorn chart controls](
 - Removed a duplicate chart observer and delayed animation of all charts from the lightbox script.
 - Restricted pointer styling to charts that actually have replay controls.
 
+### Batch 8 — merged to `main`
+Pull request: [#26 — SEO: correct Open Graph type for Cinekorn hub](https://github.com/jalak-patel-190/jalak-portfolio/pull/26)
+
+- Changed the Cinekorn hub's Open Graph type to `website`; the six individual deep dives remain `article`.
+
 ## Prioritized issue register
 
 | ID | Priority | Finding | Evidence/status | Action |
@@ -124,5 +129,6 @@ Keep the existing dark, restrained visual direction, typography, spacing languag
 **Batch 5:** merged.  
 **Batch 6:** merged.  
 **Batch 7:** merged.  
+**Batch 8:** merged.  
 **Deployment/browser QA:** still pending.  
 **Full website audit:** not complete. Only the homepage and Cinekorn are in the current detailed scope.
