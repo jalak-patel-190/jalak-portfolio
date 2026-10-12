@@ -1,4 +1,4 @@
-/*! Charts: play when scrolled into view; tap/click to replay. Mobile-safe. */
+/*! Charts: animate when scrolled into view. Replay controls are handled by lightbox.js. */
 (function () {
   function prepLine(card) {
     card.querySelectorAll('.line-path').forEach(function (path) {
@@ -27,17 +27,6 @@
 
     cards.forEach(function (card) {
       prepLine(card);
-      if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
-      card.setAttribute('data-chart-interactive', '1');
-      card.setAttribute('role', 'button');
-      card.setAttribute('aria-label', 'Chart. Tap to replay animation');
-      card.addEventListener('click', function () { arm(card); });
-      card.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          arm(card);
-        }
-      });
     });
 
     if ('IntersectionObserver' in window) {

@@ -3,9 +3,10 @@
   var s = document.createElement('style');
   s.id = 'cin-ui-fixes';
   s.textContent = `
-.chart-card{overflow:visible!important;cursor:pointer;position:relative;-webkit-tap-highlight-color:transparent}
+.chart-card.has-chart-replay{overflow:visible!important;position:relative;-webkit-tap-highlight-color:transparent}
+.chart-card.has-chart-replay{cursor:pointer}
 .chart-replay{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;margin:0!important;padding:0!important;border:0!important;border-radius:14px!important;background:transparent!important;color:transparent!important;font-size:0!important;box-shadow:none!important;opacity:0!important;cursor:pointer!important;z-index:3!important;-webkit-appearance:none!important;appearance:none!important}
-.chart-replay:focus-visible{opacity:.01!important;outline:2px solid #E85A2A;outline-offset:2px}
+.chart-replay:focus-visible{opacity:.01!important;outline:3px solid var(--cta-start);outline-offset:3px}
 
 /* Metric pill glow synced with count-up */
 .metric-pill,.meta-card{
@@ -142,14 +143,15 @@
 
   ready(function () {
     /* Charts */
-    var cards = document.querySelectorAll('.chart-card');
+    var cards = Array.prototype.filter.call(document.querySelectorAll('.chart-card'), function (card) {
+      return !!card.querySelector('.line-path, .pt, .donut-legacy, .donut-tenure, .donut-seg, .col-bar, .hbar-fill, .bar-fill');
+    });
     function arm(card) {
       card.classList.remove('is-inview');
       void card.offsetWidth;
       card.classList.add('is-inview');
     }
     cards.forEach(function (card) {
-      if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
       var btn = card.querySelector('.chart-replay');
       if (!btn) {
         btn = document.createElement('button');
@@ -162,6 +164,7 @@
         btn.textContent = '';
         btn.setAttribute('aria-label', 'Replay chart animation');
       }
+      card.classList.add('has-chart-replay');
       btn.addEventListener('click', function (e) {
         e.preventDefault(); e.stopPropagation(); arm(card);
       });
@@ -173,31 +176,6 @@
         arm(card);
       });
     });
-    if (cards.length) {
-      if ('IntersectionObserver' in window) {
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting || entry.intersectionRatio > 0) {
-              arm(entry.target);
-              io.unobserve(entry.target);
-            }
-          });
-        }, { threshold: [0, 0.05, 0.1], rootMargin: '80px 0px 80px 0px' });
-        cards.forEach(function (c) { io.observe(c); });
-      }
-      setTimeout(function () {
-        cards.forEach(function (c) {
-          var r = c.getBoundingClientRect();
-          if (r.top < window.innerHeight && r.bottom > 0 && !c.classList.contains('is-inview')) arm(c);
-        });
-      }, 400);
-      setTimeout(function () {
-        cards.forEach(function (c) {
-          if (!c.classList.contains('is-inview')) arm(c);
-        });
-      }, 1800);
-    }
-
     /* Metric count-up + glow (portfolio-wide if data-count present) */
     var counters = document.querySelectorAll('[data-count]');
     if (counters.length) {
