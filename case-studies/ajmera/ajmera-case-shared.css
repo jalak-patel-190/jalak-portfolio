@@ -268,3 +268,15 @@ footer { text-align: center; padding: 2rem 1rem; font-size: 0.8rem; color: var(-
   .output-carousel { padding: 0 2rem; }
   .output-card { flex-basis: min(85%, 240px); }
 }
+
+/* Respect visitors who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
