@@ -79,18 +79,14 @@
       <h2>What this showed</h2>
       <p>For regional brands, the highest-leverage Facebook work is often outside the page graph: in the groups where the language community already spends time.</p>
     </section>
-    <section class="whats-next">
-      <h2>What is next</h2>
-      <div class="next-grid">
-        <a class="next-card" href="01-regional-content-system.html"><div class="n">Case 01</div><div class="t">Regional content</div></a>
-        <a class="next-card" href="03-founder-and-trust-content.html"><div class="n">Case 03</div><div class="t">Founder content</div></a>
-        <a class="next-card" href="index.html"><div class="n">Hub</div><div class="t">Overview</div></a>
+    <section class="section cta-band">
+      <h2>Next step</h2>
+      <div class="hero-actions nav-trio">
+        <a class="btn-secondary" href="01-regional-content-system.html">Previous case</a>
+        <a class="btn-secondary" href="index.html">Ajmera Hub</a>
+        <a class="btn-primary" href="03-founder-and-trust-content.html">Next case</a>
       </div>
     </section>
-    <div class="page-nav">
-      <a class="back" href="01-regional-content-system.html">Previous</a>
-      <a class="primary" href="03-founder-and-trust-content.html">Next case</a>
-    </div>
   </main>
   <footer>
     <p>&copy; 2026 Jalak Patel</p>
@@ -104,6 +100,12 @@
         navToggle.addEventListener('click', function () {
           var open = mainNav.classList.toggle('open');
           navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        mainNav.querySelectorAll('a').forEach(function (a) {
+          a.addEventListener('click', function () {
+            mainNav.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          });
         });
       }
       var bars = document.querySelectorAll('.bars');
