@@ -72,3 +72,10 @@
 .glance-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
 .glance-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem; }
 .glance-result { font-size: 0.85rem; color: var(--text-muted, #5c5c5c); }
+
+
+@media (prefers-reduced-motion: reduce) {
+  .output-carousel-track {
+    scroll-behavior: auto !important;
+  }
+}

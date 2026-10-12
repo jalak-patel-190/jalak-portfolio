@@ -29,3 +29,10 @@
   .output-carousel { padding: 0 2rem; }
   .output-card { flex-basis: min(85%, 240px); }
 }
+
+
+@media (prefers-reduced-motion: reduce) {
+  .output-carousel-track {
+    scroll-behavior: auto !important;
+  }
+}

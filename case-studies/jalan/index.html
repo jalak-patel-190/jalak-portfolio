@@ -17,7 +17,7 @@
 <header>
   <div class="header-inner">
     <a href="../../index.html" class="logo-wrapper"><span class="logo">JALAK PATEL</span><span class="logo-subtitle">Creative Strategist</span></a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-controls="mainNav" aria-expanded="false">Menu</button>
     <nav id="mainNav">
       <a href="index.html">Jalan Hub</a>
       <a href="../../index.html#work">All Cases</a>
@@ -67,7 +67,7 @@
         </div>
       </a>
       <a class="case-teaser" href="04-festival-calendar.html">
-        <div class="case-teaser-media"><div class="teaser-stat">43<span>Festival posts planned</span></div></div>
+        <div class="case-teaser-media"><div class="teaser-stat">43<span>Festival dates planned</span></div></div>
         <div class="case-teaser-body">
           <div class="case-teaser-num">Case 04</div>
           <div class="case-teaser-title">Festival calendar and offline marketing</div>
@@ -118,8 +118,8 @@
     var next = root.querySelector('.carousel-btn.next');
     if(!track) return;
     function step(){ return Math.min(track.clientWidth * 0.85, 280); }
-    if(prev) prev.addEventListener('click', function(){ track.scrollBy({left: -step(), behavior:'smooth'}); });
-    if(next) next.addEventListener('click', function(){ track.scrollBy({left: step(), behavior:'smooth'}); });
+    if(prev) prev.addEventListener('click', function(){ track.scrollBy({left: -step(), behavior:(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ? 'auto' : 'smooth'}); });
+    if(next) next.addEventListener('click', function(){ track.scrollBy({left: step(), behavior:(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ? 'auto' : 'smooth'}); });
   });
 })();
 </script>
