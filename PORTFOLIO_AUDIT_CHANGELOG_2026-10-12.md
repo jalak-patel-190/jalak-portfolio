@@ -103,5 +103,9 @@ Keep the existing dark, restrained visual direction, typography, spacing languag
 ## Completion status
 
 **Batch 1:** merged.  
-**Batch 2:** merged. **Batch 3:** merged. **Batch 4:** merged. Deployment/browser QA still pending.  
+**Batch 2:** merged.  
+**Batch 3:** merged.  
+**Batch 4:** merged.  
+**Batch 5:** merged.  
+**Deployment/browser QA:** still pending.  
 **Full website audit:** not complete. Only the homepage and Cinekorn are in the current detailed scope.
