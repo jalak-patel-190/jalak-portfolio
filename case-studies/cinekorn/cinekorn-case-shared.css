@@ -25,6 +25,13 @@
 
 html { scroll-behavior: smooth; }
 
+main[id], section[id] { scroll-margin-top: calc(var(--header-h) + 14px); }
+
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+    outline: 3px solid var(--cta-start);
+    outline-offset: 3px;
+}
+
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after {
@@ -152,7 +159,7 @@ main { padding-bottom: 3rem; }
 }
 .btn-primary:hover, .hero-actions a.btn-primary:hover,
 .btn-primary:focus-visible, .hero-actions a.btn-primary:focus-visible {
-  box-shadow: 0 0 0 3px rgba(232,90,42,0.28); outline: none;
+  box-shadow: 0 0 0 3px rgba(184,68,27,0.22); outline: 3px solid var(--cta-start); outline-offset: 3px;
 }
 .btn-secondary, .hero-actions a.btn-secondary {
   background: transparent; border: 1.5px solid var(--border); color: var(--text);
@@ -545,7 +552,7 @@ footer {
   padding: 0.35rem 0.55rem; border-radius: 999px;
   pointer-events: none; opacity: 0.92;
 }
-.zoom-trigger:focus-visible { outline: 2px solid #E85A2A; outline-offset: 3px; }
+.zoom-trigger:focus-visible { outline: 3px solid var(--cta-start); outline-offset: 3px; }
 .lightbox {
   border: none; padding: 0; max-width: min(96vw, 1100px); max-height: 92vh;
   background: transparent; overflow: visible;
