@@ -187,3 +187,27 @@ footer p+p{margin-top:.35rem}
   .mc{padding:.85rem}
   .mv{font-size:1.5rem}
 }
+
+
+/* Keep the skip link hidden until keyboard focus, without changing the page theme. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10000;
+  padding: 0.75rem 1rem;
+  border: 2px solid #C2410C;
+  border-radius: 4px;
+  background: #fff;
+  color: #141414;
+  font-weight: 700;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  outline: 3px solid #C2410C;
+  outline-offset: 2px;
+}
