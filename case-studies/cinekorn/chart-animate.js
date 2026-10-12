@@ -19,7 +19,10 @@
   }
 
   function init() {
-    var cards = document.querySelectorAll('.chart-card');
+    var allCards = document.querySelectorAll('.chart-card');
+    var cards = Array.prototype.filter.call(allCards, function (card) {
+      return !!card.querySelector('.line-path, .pt, .donut-legacy, .donut-tenure, .donut-seg, .col-bar, .hbar-fill, .bar-fill');
+    });
     if (!cards.length) return;
 
     cards.forEach(function (card) {
