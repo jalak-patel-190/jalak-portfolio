@@ -47,6 +47,14 @@ Pull request: [#22 — Content accuracy: standardize the Cinekorn role title](ht
 - Standardized the Cinekorn hub narrative to the verified title **Sr. Social Media Manager**.
 - Confirmed the homepage already uses the verified Jalan title **Social Media Manager (with Ops Oversight)**; no change was needed there.
 
+### Batch 5 — merged to `main`
+Pull request: [#23 — Accessibility: improve Cinekorn focus and anchor behavior](https://github.com/jalak-patel-190/jalak-portfolio/pull/23)
+
+- Added visible focus outlines to Cinekorn links, buttons and interactive chart cards.
+- Preserved the focus outline on primary CTA buttons.
+- Added sticky-header offsets to in-page target sections and the main landmark.
+- Used the darker accent for focus outlines so the indicator remains visible without changing the design language.
+
 ## Prioritized issue register
 
 | ID | Priority | Finding | Evidence/status | Action |
