@@ -94,12 +94,17 @@
 <h2>What this showed</h2>
 <p>Good content operations are not only about making something look better. They are also about knowing when the source material limits what the packaging should promise.</p>
 </section>
+<section class="whats-next" aria-labelledby="whats-next-title">
+<h2 id="whats-next-title">What's Next</h2>
+<div class="next-grid">
+<a class="next-card" href="03-movies-catalog.html"><img class="next-thumb" src="../../media/cinekorn/yt-movies.png" alt="Cinekorn Movies channel evidence" loading="lazy"><div class="next-copy"><div class="n">Case 03 · Attribution</div><div class="t">Separate catalogue history from tenure results</div><p>A clear split between the channel's legacy catalogue and tenure-published videos.</p></div></a>
+<a class="next-card" href="04-gujarati-system.html"><img class="next-thumb" src="../../media/cinekorn/radha-tara-original-vs-rerelease.png" alt="Gujarati film original and re-release comparison" loading="lazy"><div class="next-copy"><div class="n">Case 04 · Distribution</div><div class="t">One film, multiple release formats</div><p>How one Gujarati title was packaged across full release, serialised parts, Shorts and Facebook.</p></div></a>
+</div>
+</section>
 <section class="section cta-band">
-<h2>Next step</h2>
-<div class="hero-actions nav-trio">
-<a class="btn-secondary" href="01-data-tooling.html">Previous case</a>
-<a class="btn-secondary" href="index.html">Cinekorn Hub</a>
-<a class="btn-primary" href="03-movies-catalog.html">Next case</a>
+<h2>Explore the rest of the portfolio</h2>
+<div class="hero-actions">
+<a class="btn-primary" href="../../index.html#work">View All Work</a>
 </div>
 </section>
 </main>
@@ -111,6 +116,24 @@
 (function(){
   var t=document.getElementById('navToggle'),n=document.getElementById('mainNav');
   if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});}
+if(t&&n){
+  n.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){n.classList.remove('open');t.setAttribute('aria-expanded','false');});
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&n.classList.contains('open')){
+      n.classList.remove('open');
+      t.setAttribute('aria-expanded','false');
+      t.focus();
+    }
+  });
+  document.addEventListener('click',function(e){
+    if(n.classList.contains('open')&&!n.contains(e.target)&&!t.contains(e.target)){
+      n.classList.remove('open');
+      t.setAttribute('aria-expanded','false');
+    }
+  });
+}
 })();
 </script>
 <script src="chart-animate.js" defer></script>

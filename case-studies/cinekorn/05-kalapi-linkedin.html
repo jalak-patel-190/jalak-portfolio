@@ -101,12 +101,17 @@
 <h2>What this showed</h2>
 <p>Founder LinkedIn works best when it is treated as a distinct narrative system, not as a mirror of the company page.</p>
 </section>
+<section class="whats-next" aria-labelledby="whats-next-title">
+<h2 id="whats-next-title">What's Next</h2>
+<div class="next-grid">
+<a class="next-card" href="06-company-linkedin.html"><img class="next-thumb" src="../../media/cinekorn/cinekorn-linkedin-content-analytics.png" alt="Cinekorn company LinkedIn content analytics" loading="lazy"><div class="next-copy"><div class="n">Case 06 · Company voice</div><div class="t">Give the company page its own editorial lane</div><p>How the corporate LinkedIn page developed a publishing cadence and an industry-content voice.</p></div></a>
+<a class="next-card" href="04-gujarati-system.html"><img class="next-thumb" src="../../media/cinekorn/radha-tara-original-vs-rerelease.png" alt="Gujarati film original and re-release comparison" loading="lazy"><div class="next-copy"><div class="n">Case 04 · Distribution</div><div class="t">One film, multiple release formats</div><p>A distribution case showing how a title was adapted across several release formats.</p></div></a>
+</div>
+</section>
 <section class="section cta-band">
-<h2>Next step</h2>
-<div class="hero-actions nav-trio">
-<a class="btn-secondary" href="04-gujarati-system.html">Previous case</a>
-<a class="btn-secondary" href="index.html">Cinekorn Hub</a>
-<a class="btn-primary" href="06-company-linkedin.html">Next case</a>
+<h2>Explore the rest of the portfolio</h2>
+<div class="hero-actions">
+<a class="btn-primary" href="../../index.html#work">View All Work</a>
 </div>
 </section>
 </main>
@@ -118,6 +123,24 @@
 (function(){
   var t=document.getElementById('navToggle'),n=document.getElementById('mainNav');
   if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});}
+if(t&&n){
+  n.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){n.classList.remove('open');t.setAttribute('aria-expanded','false');});
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&n.classList.contains('open')){
+      n.classList.remove('open');
+      t.setAttribute('aria-expanded','false');
+      t.focus();
+    }
+  });
+  document.addEventListener('click',function(e){
+    if(n.classList.contains('open')&&!n.contains(e.target)&&!t.contains(e.target)){
+      n.classList.remove('open');
+      t.setAttribute('aria-expanded','false');
+    }
+  });
+}
 })();
 </script>
 <script src="chart-animate.js" defer></script>

@@ -89,11 +89,17 @@
 <h2>What this showed</h2>
 <p>When a task is repetitive, structured and large enough to become a bottleneck, AI can reduce the manual production burden. The strategic value still comes from checking the output and deciding what the information means.</p>
 </section>
+<section class="whats-next" aria-labelledby="whats-next-title">
+<h2 id="whats-next-title">What's Next</h2>
+<div class="next-grid">
+<a class="next-card" href="02-telugu-kannada.html"><img class="next-thumb" src="../../media/cinekorn/yt-kannada.png" alt="Kannada YouTube channel evidence" loading="lazy"><div class="next-copy"><div class="n">Case 02 · Regional channels</div><div class="t">Making weak source material work</div><p>A closer look at decisions made when the available catalogue limited what the content could promise.</p></div></a>
+<a class="next-card" href="03-movies-catalog.html"><img class="next-thumb" src="../../media/cinekorn/yt-movies.png" alt="Cinekorn Movies channel evidence" loading="lazy"><div class="next-copy"><div class="n">Case 03 · Attribution</div><div class="t">Separate catalogue history from tenure results</div><p>How inherited lifetime views were separated from videos published during the role.</p></div></a>
+</div>
+</section>
 <section class="section cta-band">
-<h2>Next step</h2>
-<div class="hero-actions nav-trio">
-<a class="btn-secondary" href="index.html">Cinekorn Hub</a>
-<a class="btn-primary" href="02-telugu-kannada.html">Next case</a>
+<h2>Explore the rest of the portfolio</h2>
+<div class="hero-actions">
+<a class="btn-primary" href="../../index.html#work">View All Work</a>
 </div>
 </section>
 </main>
@@ -105,6 +111,24 @@
 (function(){
   var t=document.getElementById('navToggle'),n=document.getElementById('mainNav');
   if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});}
+if(t&&n){
+  n.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){n.classList.remove('open');t.setAttribute('aria-expanded','false');});
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&n.classList.contains('open')){
+      n.classList.remove('open');
+      t.setAttribute('aria-expanded','false');
+      t.focus();
+    }
+  });
+  document.addEventListener('click',function(e){
+    if(n.classList.contains('open')&&!n.contains(e.target)&&!t.contains(e.target)){
+      n.classList.remove('open');
+      t.setAttribute('aria-expanded','false');
+    }
+  });
+}
 })();
 </script>
 <script src="chart-animate.js" defer></script>
