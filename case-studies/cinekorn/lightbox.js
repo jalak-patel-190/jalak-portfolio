@@ -5,7 +5,7 @@
   s.textContent = `
 .chart-card{overflow:visible!important;cursor:pointer;position:relative;-webkit-tap-highlight-color:transparent}
 .chart-replay{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;margin:0!important;padding:0!important;border:0!important;border-radius:14px!important;background:transparent!important;color:transparent!important;font-size:0!important;box-shadow:none!important;opacity:0!important;cursor:pointer!important;z-index:3!important;-webkit-appearance:none!important;appearance:none!important}
-.chart-replay:focus-visible{opacity:.01!important;outline:2px solid #E85A2A;outline-offset:2px}
+.chart-replay:focus-visible{opacity:.01!important;outline:3px solid var(--cta-start);outline-offset:3px}
 
 /* Metric pill glow synced with count-up */
 .metric-pill,.meta-card{
@@ -149,7 +149,6 @@
       card.classList.add('is-inview');
     }
     cards.forEach(function (card) {
-      if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
       var btn = card.querySelector('.chart-replay');
       if (!btn) {
         btn = document.createElement('button');
