@@ -1,4 +1,4 @@
-/*! Charts: play when scrolled into view; tap/click to replay. Mobile-safe. */
+/*! Charts: animate when scrolled into view. Replay controls are handled by lightbox.js. */
 (function () {
   function prepLine(card) {
     card.querySelectorAll('.line-path').forEach(function (path) {
