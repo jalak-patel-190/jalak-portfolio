@@ -217,7 +217,6 @@ main { padding-bottom: 3rem; }
     margin: 1.35rem 0;
     position: relative;
     overflow: hidden;
-    cursor: pointer;
 }
 .chart-card::before {
     content: "";
