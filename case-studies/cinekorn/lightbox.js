@@ -176,31 +176,6 @@
         arm(card);
       });
     });
-    if (cards.length) {
-      if ('IntersectionObserver' in window) {
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting || entry.intersectionRatio > 0) {
-              arm(entry.target);
-              io.unobserve(entry.target);
-            }
-          });
-        }, { threshold: [0, 0.05, 0.1], rootMargin: '80px 0px 80px 0px' });
-        cards.forEach(function (c) { io.observe(c); });
-      }
-      setTimeout(function () {
-        cards.forEach(function (c) {
-          var r = c.getBoundingClientRect();
-          if (r.top < window.innerHeight && r.bottom > 0 && !c.classList.contains('is-inview')) arm(c);
-        });
-      }, 400);
-      setTimeout(function () {
-        cards.forEach(function (c) {
-          if (!c.classList.contains('is-inview')) arm(c);
-        });
-      }, 1800);
-    }
-
     /* Metric count-up + glow (portfolio-wide if data-count present) */
     var counters = document.querySelectorAll('[data-count]');
     if (counters.length) {
