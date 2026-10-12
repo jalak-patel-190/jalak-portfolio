@@ -31,19 +31,30 @@
 .hub-meta div{background:#fff;border:1px solid #E8E2D8;border-radius:12px;padding:.75rem .9rem}
 .hub-meta .ml{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:#5A5A5A;margin-bottom:.2rem}
 .hub-meta .mv{font-weight:600;font-size:1rem}
+.wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+.section{padding:2rem 0}
+.hero{padding:2rem 0 1rem}
+.hero .eyebrow{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:#C2410C;margin-bottom:.45rem}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.85rem,4.2vw,2.65rem);line-height:1.08;margin-bottom:.75rem}
+.hero .lede{font-size:1.02rem;color:#5A5A5A;max-width:38rem}
+.site-footer{border-top:1px solid #E8E2D8;padding:1.5rem 1.25rem;text-align:center;font-size:.8rem;color:#5A5A5A;margin-top:2rem}
 </style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="logo" href="../../index.html">Jalak Patel</a>
-    <nav class="nav">
+<header>
+  <div class="header-inner">
+    <a href="../../index.html" class="logo-wrapper">
+      <span class="logo">JALAK PATEL</span>
+      <span class="logo-subtitle">Creative Strategist</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+    <nav id="mainNav">
       <a href="../../index.html">Home</a>
       <a href="../swad/">Swad</a>
       <a href="../jalan/">Jalan</a>
       <a href="../ajmera/">Ajmera</a>
-      <a href="../../index.html#contact">Contact</a>
+      <a href="../../index.html#contact" class="btn-nav">Get In Touch</a>
     </nav>
   </div>
 </header>
@@ -112,9 +123,26 @@
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    <p><a href="../../index.html">Jalak Patel</a> · Portfolio</p>
-    <p style="margin-top:.35rem;font-size:.8rem;opacity:.85">Designed and built by Jalak Patel</p>
+    <p>&copy; 2026 Jalak Patel</p>
+    <p style="margin-top:.35rem">Designed and built by <strong>Jalak Patel</strong></p>
   </div>
 </footer>
+<script>
+(function(){
+  var t=document.getElementById('navToggle'),n=document.getElementById('mainNav');
+  if(t&&n){
+    t.addEventListener('click',function(){
+      var o=n.classList.toggle('open');
+      t.setAttribute('aria-expanded',o?'true':'false');
+    });
+    n.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){
+        n.classList.remove('open');
+        t.setAttribute('aria-expanded','false');
+      });
+    });
+  }
+})();
+</script>
 </body>
 </html>
