@@ -114,8 +114,8 @@
     var next = root.querySelector('.carousel-btn.next');
     if(!track) return;
     function step(){ return Math.min(track.clientWidth * 0.85, 280); }
-    if(prev) prev.addEventListener('click', function(){ track.scrollBy({left: -step(), behavior:'smooth'}); });
-    if(next) next.addEventListener('click', function(){ track.scrollBy({left: step(), behavior:'smooth'}); });
+    if(prev) prev.addEventListener('click', function(){ track.scrollBy({left: -step(), behavior:(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ? 'auto' : 'smooth'}); });
+    if(next) next.addEventListener('click', function(){ track.scrollBy({left: step(), behavior:(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ? 'auto' : 'smooth'}); });
   });
 })();
 </script>
