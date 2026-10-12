@@ -81,7 +81,7 @@ Pull request: [#25 — Accessibility: remove duplicate Cinekorn chart controls](
 | CONTENT-001 | P2 | A Cinekorn hub image was decorative to assistive technology despite depicting useful evidence | Verified in source: the Colab screenshot had an empty alt attribute. | Batch 2 adds a descriptive alt label. |
 | CONTENT-002 | P2 | Cinekorn Case 04's hub thumbnail showed the Radha Tara comparison, while the case's primary example is the Rakhewal multi-format run | Verified in source. The existing image was relevant to a secondary example but less representative of the case-card summary. | Batch 2 switches the thumbnail to Rakhewal analytics. |
 | SEO-001 | P3 | External YouTube and LinkedIn destinations may change or become unavailable | Not individually live-tested. | Check outbound links during final QA; do not infer they are broken from source alone. |
-| PERF-001 | P3 | Lighthouse/Core Web Vitals and image transfer costs remain unmeasured | Cannot verify without a browser performance run. | Measure after the visual and content changes are merged; optimize only where measurements support it. |
+| PERF-001 | P3 | Lighthouse/Core Web Vitals and image transfer costs remain unmeasured | Cannot verify without a browser performance run. Source inspection does show large screenshots, including `fb-earnings.png` at about 1.06 MB and `yt-movies.png` at about 0.92 MB; the checked uses are lazy-loaded. | Measure after deployment; optimize the largest assets only if performance testing confirms a meaningful benefit. |
 
 ## Static source checks completed
 
