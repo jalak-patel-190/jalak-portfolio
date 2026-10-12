@@ -55,6 +55,13 @@ Pull request: [#23 — Accessibility: improve Cinekorn focus and anchor behavior
 - Added sticky-header offsets to in-page target sections and the main landmark.
 - Used the darker accent for focus outlines so the indicator remains visible without changing the design language.
 
+### Batch 6 — merged to `main`
+Pull request: [#24 — SEO: add share previews to Cinekorn case pages](https://github.com/jalak-patel-190/jalak-portfolio/pull/24)
+
+- Added page-specific Open Graph and Twitter card metadata to the Cinekorn hub and all six deep dives.
+- Reused existing evidence images, with descriptive image alt text and canonical page URLs.
+- The source metadata is present; actual LinkedIn/X preview rendering still needs a post-deployment check.
+
 ## Prioritized issue register
 
 | ID | Priority | Finding | Evidence/status | Action |
@@ -107,5 +114,6 @@ Keep the existing dark, restrained visual direction, typography, spacing languag
 **Batch 3:** merged.  
 **Batch 4:** merged.  
 **Batch 5:** merged.  
+**Batch 6:** merged.  
 **Deployment/browser QA:** still pending.  
 **Full website audit:** not complete. Only the homepage and Cinekorn are in the current detailed scope.
