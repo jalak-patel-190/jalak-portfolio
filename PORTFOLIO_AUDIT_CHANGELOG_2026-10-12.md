@@ -41,6 +41,12 @@ Pull request: [#21 — Accessibility: improve Cinekorn accent contrast](https://
 - White text contrast at the two gradient endpoints increased from 3.54:1 and 3.95:1 to 5.41:1 and 5.49:1, above the 4.5:1 normal-text target.
 - Chart-series colors were left unchanged.
 
+### Batch 4 — merged to `main`
+Pull request: [#22 — Content accuracy: standardize the Cinekorn role title](https://github.com/jalak-patel-190/jalak-portfolio/pull/22)
+
+- Standardized the Cinekorn hub narrative to the verified title **Sr. Social Media Manager**.
+- Confirmed the homepage already uses the verified Jalan title **Social Media Manager (with Ops Oversight)**; no change was needed there.
+
 ## Prioritized issue register
 
 | ID | Priority | Finding | Evidence/status | Action |
@@ -89,5 +95,5 @@ Keep the existing dark, restrained visual direction, typography, spacing languag
 ## Completion status
 
 **Batch 1:** merged.  
-**Batch 2:** merged. **Batch 3:** merged. Deployment/browser QA still pending.  
+**Batch 2:** merged. **Batch 3:** merged. **Batch 4:** merged. Deployment/browser QA still pending.  
 **Full website audit:** not complete. Only the homepage and Cinekorn are in the current detailed scope.
