@@ -24,8 +24,8 @@ Pull request: [#2 — Phase 1: Improve homepage accuracy and site accessibility]
 - Kept the existing design direction instead of rebuilding the theme.
 - Added visible skip-link styling, reduced-motion handling, manual carousel movement and navigation dismissal improvements.
 
-### Batch 2 — proposed, not yet merged
-Branch: `audit/cinekorn-navigation-20261012`
+### Batch 2 — merged to `main`
+Pull request: [#20 — Phase 2: Improve Cinekorn case navigation and evidence accuracy](https://github.com/jalak-patel-190/jalak-portfolio/pull/20)
 
 - Added two related-case cards to each Cinekorn deep dive, using existing evidence imagery and the current design system.
 - Standardized the ending of all six Cinekorn case studies with a **View All Work** CTA.
@@ -33,6 +33,13 @@ Branch: `audit/cinekorn-navigation-20261012`
 - Changed the Cinekorn hub's Case 01 thumbnail alt text from empty to a descriptive label.
 - Changed the Case 04 hub thumbnail to Rakhewal analytics, a closer match for the case's main multi-format distribution example.
 - Added Escape-key and outside-click dismissal to the homepage and Cinekorn navigation. The current dropdown design is retained.
+
+### Batch 3 — merged to `main`
+Pull request: [#21 — Accessibility: improve Cinekorn accent contrast](https://github.com/jalak-patel-190/jalak-portfolio/pull/21)
+
+- Darkened the shared Cinekorn CTA and text-accent variables slightly while preserving the orange/plum palette.
+- White text contrast at the two gradient endpoints increased from 3.54:1 and 3.95:1 to 5.41:1 and 5.49:1, above the 4.5:1 normal-text target.
+- Chart-series colors were left unchanged.
 
 ## Prioritized issue register
 
@@ -82,5 +89,5 @@ Keep the existing dark, restrained visual direction, typography, spacing languag
 ## Completion status
 
 **Batch 1:** merged.  
-**Batch 2:** source edits and static checks completed; pull request and deployment/browser QA still pending.  
+**Batch 2:** merged. **Batch 3:** merged. Deployment/browser QA still pending.  
 **Full website audit:** not complete. Only the homepage and Cinekorn are in the current detailed scope.
