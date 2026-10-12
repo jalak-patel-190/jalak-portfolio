@@ -138,6 +138,39 @@ main { padding-bottom: 3rem; }
 }
 .metric-pill span { color: var(--text-muted); font-weight: 600; margin-left: 0.2rem; }
 
+/* Bottom CTA buttons */
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+.hero-actions a {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0.55rem 1.15rem; border-radius: 999px; font-weight: 600; font-size: 0.9rem;
+  text-decoration: none; min-height: 44px;
+}
+.btn-primary, .hero-actions a.btn-primary {
+  background: linear-gradient(135deg, var(--cta-start), var(--cta-end)); color: #fff;
+  box-shadow: 0 0 0 0 rgba(232,90,42,0.35);
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+.btn-primary:hover, .hero-actions a.btn-primary:hover,
+.btn-primary:focus-visible, .hero-actions a.btn-primary:focus-visible {
+  box-shadow: 0 0 0 3px rgba(232,90,42,0.28); outline: none;
+}
+.btn-secondary, .hero-actions a.btn-secondary {
+  background: transparent; border: 1.5px solid var(--border); color: var(--text);
+}
+.btn-secondary:hover, .hero-actions a.btn-secondary:hover {
+  border-color: #d4cbbd;
+}
+.nav-trio { width: 100%; }
+@media (max-width: 560px) {
+  .nav-trio { flex-direction: column; }
+  .nav-trio a { width: 100%; text-align: center; }
+}
+.cta-band { border-top: 1px solid var(--border); margin-top: 2rem; padding-top: 2rem; }
+.cta-band h2 {
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.45rem;
+  letter-spacing: 0.4px; margin-bottom: 1rem;
+}
+
 .section {
     margin: 2.35rem 0;
     scroll-margin-top: calc(var(--header-h) + 14px);
