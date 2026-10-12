@@ -208,6 +208,8 @@ function countUp(el){
   var target=parseFloat(el.getAttribute('data-count'));
   if(isNaN(target)) return;
   var suffix=el.getAttribute('data-suffix')||'';
+  var reduceMotion=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduceMotion){el.textContent=target+suffix;return;}
   var duration=900,start=null;
   function frame(ts){
     if(!start) start=ts;
