@@ -111,6 +111,24 @@
 (function(){
   var t=document.getElementById('navToggle'),n=document.getElementById('mainNav');
   if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});}
+if(t&&n){
+  n.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){n.classList.remove('open');t.setAttribute('aria-expanded','false');});
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&n.classList.contains('open')){
+      n.classList.remove('open');
+      t.setAttribute('aria-expanded','false');
+      t.focus();
+    }
+  });
+  document.addEventListener('click',function(e){
+    if(n.classList.contains('open')&&!n.contains(e.target)&&!t.contains(e.target)){
+      n.classList.remove('open');
+      t.setAttribute('aria-expanded','false');
+    }
+  });
+}
 })();
 </script>
 <script src="chart-animate.js" defer></script>
