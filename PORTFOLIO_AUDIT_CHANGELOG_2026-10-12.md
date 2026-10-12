@@ -62,6 +62,14 @@ Pull request: [#24 — SEO: add share previews to Cinekorn case pages](https://g
 - Reused existing evidence images, with descriptive image alt text and canonical page URLs.
 - The source metadata is present; actual LinkedIn/X preview rendering still needs a post-deployment check.
 
+### Batch 7 — merged to `main`
+Pull request: [#25 — Accessibility: remove duplicate Cinekorn chart controls](https://github.com/jalak-patel-190/jalak-portfolio/pull/25)
+
+- Removed redundant `role="button"`, generic chart labels and extra keyboard tab stops from chart containers.
+- Kept one labelled replay button only on charts with animated elements.
+- Removed a duplicate chart observer and delayed animation of all charts from the lightbox script.
+- Restricted pointer styling to charts that actually have replay controls.
+
 ## Prioritized issue register
 
 | ID | Priority | Finding | Evidence/status | Action |
@@ -115,5 +123,6 @@ Keep the existing dark, restrained visual direction, typography, spacing languag
 **Batch 4:** merged.  
 **Batch 5:** merged.  
 **Batch 6:** merged.  
+**Batch 7:** merged.  
 **Deployment/browser QA:** still pending.  
 **Full website audit:** not complete. Only the homepage and Cinekorn are in the current detailed scope.
