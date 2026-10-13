@@ -90,3 +90,9 @@ Merged to `main` through pull request [#45 — Add page-specific social previews
 - GitHub Pages workflow [38368792539](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38368792539) completed successfully for `main` commit `e39436d54e03b89ca42903adcaa8b06467ebba43`.
 - Static verification checked the homepage, Cinekorn hub and six Cinekorn cases, plus the Ajmera, Jalan and Swad hubs and their case pages: 27 canonical pages total. All checked pages have Open Graph and Twitter title/URL metadata; canonical URLs match `og:url`, share titles match, and image tags are paired consistently.
 - A stale web snapshot still exposed older homepage content, and fresh cache-busted page fetches were inaccessible in this review environment. The deployment workflow is green, but live rendered/browser QA remains open rather than being marked as passed.
+
+
+## Content accuracy follow-up
+- Removed the unsupported “several days” estimate from the Cinekorn data-tooling case; the source verifies 6,000–8,000 rows and a two-day completion, but does not establish how long the manual alternative would have taken.
+- Replaced “biggest revenue course” with “highest-ticket course” in the Swad diploma case. Ticket size and total revenue are different measures; the revised wording follows the source record.
+- No visual styling or layout changed. Real browser QA remains open.
