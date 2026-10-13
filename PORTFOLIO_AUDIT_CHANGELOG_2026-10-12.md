@@ -140,13 +140,12 @@ Keep the existing dark, restrained visual direction, typography, spacing languag
 **Deployment/browser QA:** still pending.  
 **Full website audit:** not complete. Only the homepage and Cinekorn are in the current detailed scope.
 
-### Batch 10 — merged in pull request #33
+### Batch 10 — merged in pull request #33, then rechecked
 
-- Source-level contrast calculations found the Cinekorn gold chart series `#D4A017` at 2.38:1 against white, below the 3:1 non-text graphical target.
-- Updated the shared chart-series token to `#9B7200`, which reaches 4.37:1 against white and 3.99:1 against the paper background.
-- No layout, typography, spacing, chart structure, or company color direction was changed; this is a targeted darkening of one chart accent.
-- Updated the detailed audit report with the evidence and remaining QA limitation.
-- Merged to `main` in pull request [#33](https://github.com/jalak-patel-190/jalak-portfolio/pull/33).
+- A source-color calculation flagged `#D4A017` as low contrast on white, but a follow-up source search found the corresponding `--series-4` token was declared and not referenced anywhere in the current CSS or case-page markup.
+- The change to `#9B7200` therefore had no visible effect and is not counted as a completed accessibility fix.
+- A corrective branch restores the original unused token so the source does not imply an improvement that users would not see.
+- Actual rendered chart contrast still needs visual inspection; no theme redesign is proposed.
 
 ### Batch 11 — merged in pull request #35
 
