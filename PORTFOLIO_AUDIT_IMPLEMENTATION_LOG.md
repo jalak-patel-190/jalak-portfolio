@@ -87,7 +87,7 @@ Merged to `main` through pull request [#45 — Add page-specific social previews
 
 
 ### Latest deployment and social metadata verification - 13 October 2026
-- GitHub Pages workflow [38368792539](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38368792539) completed successfully for `main` commit `e39436d54e03b89ca42903adcaa8b06467ebba43`.
+- GitHub Pages workflow [38369532939](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38369532939) completed successfully for `main` commit `6094c85c730a90f68a919bcb7ffffe3b66e1d14a`; build and deploy jobs both reported success.
 - Static verification checked the homepage, Cinekorn hub and six Cinekorn cases, plus the Ajmera, Jalan and Swad hubs and their case pages: 27 canonical pages total. All checked pages have Open Graph and Twitter title/URL metadata; canonical URLs match `og:url`, share titles match, and image tags are paired consistently.
 - A stale web snapshot still exposed older homepage content, and fresh cache-busted page fetches were inaccessible in this review environment. The deployment workflow is green, but live rendered/browser QA remains open rather than being marked as passed.
 
