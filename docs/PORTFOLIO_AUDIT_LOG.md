@@ -9,9 +9,9 @@ Scope: source-level review of the homepage, company hubs, case pages, legacy rou
 - Phase 1, source of truth: complete.
 - Phase 2, source-level technical and content audit: complete for the reviewed source. Real-browser visual and interaction QA remain open.
 - Phase 3, information architecture: complete. Homepage proof cards now open the relevant case directly; merged in PR #57.
-- Phase 4, content accuracy: core pass complete. Visual polish that requires image selection is deferred until the correct asset can be confirmed. No theme redesign planned.
-- Phase 5, implementation: two controlled batches merged into main through PR #2 and PR #57.
-- Phase 6, regression and final sign-off: source-level checks and GitHub Actions build/deploy jobs succeeded for commit 8213eff673ba8f11d8f993c4706245f4b7761ade. Real-browser QA and rendered-page confirmation remain open.
+- Phase 4, content accuracy: core pass complete, including matching homepage card labels to their destinations. Visual polish that requires image selection is deferred until the correct asset can be confirmed. No theme redesign planned.
+- Phase 5, implementation: three controlled batches merged into main through PR #2, PR #57 and PR #59.
+- Phase 6, regression and final sign-off: source-level checks and GitHub Actions build/deploy jobs succeeded for commit 66313785eaf8796e7fcbf73d485d379b5aea6c3d. Real-browser QA and rendered-page confirmation remain open.
 
 ## Evidence and method
 
@@ -24,7 +24,7 @@ These are source-level checks only. They do not prove the rendered page works at
 | ID | Priority | Finding | Action / status |
 |---|---|---|---|
 | UX-001 | P2 | Homepage proof cards described specific pieces of work but linked only to company hubs, adding a navigation step and weakening the promise of the card. | **Fixed and merged in PR #57:** each proof card links to its related case page. |
-| UX-003 | P2 | Homepage company cards said “Read full case study” but opened a company hub containing multiple cases. | **Fix in this branch:** label these actions “Explore company hub” to match the destination. |
+| UX-003 | P2 | Homepage company cards said “Read full case study” but opened a company hub containing multiple cases. | **Fixed and merged in PR #59:** label these actions “Explore company hub” to match the destination. |
 | FACT-001 | P1 | Cinekorn's 108M+ views could be mistaken for views generated solely during the user's tenure. | **Addressed in merged batch:** label as lifetime YouTube views and explain that the total includes pre-tenure catalogue performance. Individual case pages separate inherited catalogue from tenure work. |
 | FACT-002 | P1 | Ajmera's +20.3% same-account result was not verified by the available tracker evidence. | **Removed from the homepage headline.** Do not restore until the account list, matched dates and metric definition can be reproduced. |
 | FACT-003 | P2 | A single “6+ languages” headline was not consistent with the language names across source descriptions. | **Removed from the homepage headline.** Use named languages only after the inventory is reconciled. |
@@ -52,6 +52,7 @@ The case-study ideas remain in place. Proof can be added later; nothing below sh
 Useful proof:
 - A channel/page list or screenshots showing the properties operated.
 - A few public channel/page URLs and, if available, creation or takeover dates.
+- If retaining the “from near zero” framing, provide the starting baseline, date range and a matched follow-up metric.
 - Redact any private account or customer information.
 
 ### Jalan Case 02: Influencer marketing
