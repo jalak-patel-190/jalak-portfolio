@@ -286,7 +286,7 @@ footer { text-align: center; padding: 2rem 1rem; font-size: 0.8rem; color: var(-
 .company-explore-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .company-explore-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
