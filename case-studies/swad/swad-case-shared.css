@@ -266,7 +266,7 @@ footer p + p { margin-top: 0.3rem; }
 .company-explore-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .company-explore-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
