@@ -11,7 +11,7 @@ Scope: source-level review of the homepage, company hubs, case pages, legacy rou
 - Phase 3, information architecture: complete. Homepage proof cards link directly to relevant cases; company hubs have “Continue Exploring” navigation; deep cases have related “What's Next” cards and a final “View All Work” action.
 - Phase 4, content accuracy: core pass complete. Unsupported Ajmera claims and unverified Jalan counts have been removed; Cinekorn lifetime views, legacy catalogue results, tenure results and Facebook comparison periods are labelled more carefully. Jalan proof gaps remain open for user-supplied evidence.
 - Phase 5, implementation: implementation batches are merged into main, including accuracy, navigation, social metadata, responsive card rules, reduced-motion handling, visible keyboard focus and the custom 404 skip link. Existing theme, typography, colour palettes and page structure have been preserved.
-- Phase 6, regression and final sign-off: source-level checks and the GitHub Pages build/deployment workflow succeeded for latest main commit `0589bd99ff73a6e090092b14a56490c67c1b4d17` on 13 October 2026. Real-browser/device QA and fresh rendered-page confirmation remain open; do not treat the site as fully signed off.
+- Phase 6, regression and final sign-off: source-level checks and GitHub Pages deployment workflows succeeded for website code commit `bbefefdfae098b29219ff4115331bc71ab7719db` and documentation commit `c7de73c4f37ce6f48558603ec3d0705a0a4f888c` on 13 October 2026. Real-browser/device QA and fresh rendered-page confirmation remain open; do not treat the site as fully signed off.
 
 ## Evidence and method
 
@@ -47,7 +47,7 @@ No confirmed P0 issue was established by the source-level audit.
 ## Latest implementation and deployment checkpoint — 13 October 2026
 
 - The first controlled implementation PR (#2) and subsequent follow-up batches are merged into `main`.
-- GitHub Pages build/deployment workflow `38391547510` completed successfully for commit `0589bd99ff73a6e090092b14a56490c67c1b4d17`.
+- Website code deployment [38406532537](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38406532537) succeeded for commit `bbefefdfae098b29219ff4115331bc71ab7719db`; documentation deployment [38406683217](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38406683217) succeeded for latest `main` commit `c7de73c4f37ce6f48558603ec3d0705a0a4f888c`.
 - Recent merged work includes related-case cards, “View All Work” endings, company-to-company navigation, tighter comparison labels, improved social metadata, visible keyboard focus indicators and a skip link on the custom 404 page.
 - The source audit is not the same as a browser test. A public-page crawler returned an older homepage snapshot; a cache-busted fresh fetch was not available in this review environment. This is inconclusive about what a human visitor currently sees, so live deployment/rendering remains unverified here.
 - Remaining sign-off: desktop/mobile rendering, menu and keyboard interactions, external links and image loading, page-level contrast, and Lighthouse/Core Web Vitals. Preserve the existing theme. Do not invent Jalan proof; collect it from the user when available.
