@@ -25,13 +25,15 @@
     .links{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
     .links a{display:inline-flex;align-items:center;min-height:44px;padding:.75rem 1rem;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);font-weight:700;text-decoration:none}
     .links a.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .skip-link{position:absolute;left:-9999px;top:1rem;z-index:10000;padding:.65rem .9rem;background:#fff;color:var(--ink);border:2px solid var(--accent);font-weight:700;text-decoration:none}.skip-link:focus{left:1rem;outline:3px solid var(--accent);outline-offset:3px}
     a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
     footer{padding:1.25rem;text-align:center;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line)}
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header><div class="nav"><a class="brand" href="/jalak-portfolio/">JALAK PATEL<span>Creative Strategist</span></a><a href="/jalak-portfolio/#contact">Get In Touch</a></div></header>
-  <main>
+  <main id="main">
     <p class="eyebrow">404 · Page not found</p>
     <h1>THIS PAGE ISN'T HERE.</h1>
     <p>The link may be old or the page may have moved. Use one of the current case-study hubs, or return to the homepage.</p>
