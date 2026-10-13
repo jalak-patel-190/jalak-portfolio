@@ -39,7 +39,7 @@ Static checks were run across the repository's 27 HTML pages for:
 ## Open issue register
 
 ### P1: Complete visual and functional QA
-- **QA-001 — Live rendered output:** the GitHub Pages workflow completed successfully for current `main` commit `558272336eed9c2a9eb4b6c94713c545eb731e45` (run [38355758236](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38355758236), 13 October 2026). A web index still showed an older homepage snapshot and direct fetch returned a cache miss, so fresh rendered HTML and actual browser behavior remain unverified.
+- **QA-001 — Live rendered output:** the GitHub Pages workflow completed successfully for current `main` commit `6d87d717a74b46cf21acc4b15dd573528f94f4fb` (run [38356734906](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38356734906), 13 October 2026). A web index still showed an older homepage snapshot and direct fetch returned a cache miss, so fresh rendered HTML and actual browser behavior remain unverified.
 - **QA-002 — Desktop and mobile layout:** test at narrow phone, large phone, tablet, laptop, and wide desktop widths. Check clipping, overflow, line breaks, sticky/navigation behaviour, card alignment, and chart readability.
 - **QA-003 — Keyboard and assistive technology:** test focus order, visible focus, skip-link behaviour, mobile menu open/close state, carousel buttons, and screen-reader names/state in a real browser.
 - **QA-004 — Contrast:** measure text, muted labels, links, focus indicators, and chart labels against their backgrounds. Do not judge contrast by appearance alone.
