@@ -1008,3 +1008,16 @@ footer strong { color: var(--text); }
 .case-teaser:focus-visible,
 .channel-card:focus-visible,
 .link-chip:focus-visible { outline: 3px solid var(--link, #1F5C6B); outline-offset: 3px; }
+
+
+/* Small factual metadata line used on company hubs. */
+.hub-meta-line {
+  margin: 0.75rem 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.hub-meta-line strong {
+  color: var(--text);
+  font-weight: 700;
+}
