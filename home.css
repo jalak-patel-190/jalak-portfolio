@@ -212,3 +212,8 @@ footer p+p{margin-top:.35rem}
   outline: 3px solid #C2410C;
   outline-offset: 2px;
 }
+
+/* Strong, brand-consistent keyboard focus. Hover styling remains unchanged. */
+.nav-cta:focus-visible,
+.bp:focus-visible { outline: 3px solid var(--cta1); outline-offset: 3px; }
+.proof-arrow:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }

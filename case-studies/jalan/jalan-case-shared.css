@@ -1002,3 +1002,9 @@ footer strong { color: var(--text); }
 .next-card:focus-visible { outline: 2px solid var(--cta-start, #B8441B); outline-offset: 3px; }
 @media (max-width: 620px) { .next-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .next-card { transition: none; } }
+
+/* Keep keyboard focus visible while preserving the existing hover treatment. */
+.nav-cta:focus-visible,
+.case-teaser:focus-visible,
+.channel-card:focus-visible,
+.link-chip:focus-visible { outline: 3px solid var(--link, #1F5C6B); outline-offset: 3px; }
