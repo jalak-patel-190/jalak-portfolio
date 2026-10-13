@@ -161,3 +161,4 @@ Keep the existing dark, restrained visual direction, typography, spacing languag
 - The scope now distinguishes the founder's LinkedIn profile from the company LinkedIn page.
 - This is a factual wording correction only; the page's visual theme and layout are unchanged.
 - Added issue FACT-012 to the audit report so the scope correction is traceable.
+- Merged in pull request [#40](https://github.com/jalak-patel-190/jalak-portfolio/pull/40).
