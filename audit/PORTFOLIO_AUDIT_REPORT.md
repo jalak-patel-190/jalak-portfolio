@@ -186,3 +186,18 @@ These checks confirm source-level consistency only. They do not confirm that the
 ## Sign-off status
 
 **Not complete.** Multiple controlled accuracy, navigation, accessibility and routing batches are merged into `main`, including the follow-up removal of the unsupported Jalan calendar count. A chart-token change was reverted after source review showed the token was unused. The latest Pages build completed successfully, but live rendered output could not be independently verified here. Real browser/device QA remains open. No full redesign is proposed; the objective is a more accurate, accessible and credible version of the existing site.
+
+
+### Batch 15 - related case cards and final source-level regression check
+- Replaced the plain “Next step” navigation area on the Ajmera, Jalan and Swad deep case pages with two relevant “What's Next” case cards per page. The Cinekorn cases already use the same pattern.
+- Kept the existing “View All Work” action on each deep case page; the cards add context and a shorter path to related work rather than replacing the all-work route.
+- Source-level review of all 16 Ajmera, Jalan and Swad cases plus the six Cinekorn cases confirmed one H1 per page, no duplicate IDs, no missing in-page anchor targets, no images missing alt attributes, two related cards per case, and a “View All Work” action. Each reviewed page retains its skip-link target.
+- Checked Jalan case copy for the previously unsupported 70 influencers, 43 planned dates, 10–15 channel count, four-agent count and disputed ₹93.67 crore / 5166% claims; those claims are not present in the four current Jalan case pages reviewed.
+- Confirmed the new card layouts have a mobile single-column rule in the shared company stylesheets. This is source-level confirmation, not a browser-rendered responsive test.
+- Pull request [#60](https://github.com/jalak-patel-190/jalak-portfolio/pull/60) merged on 13 October 2026. GitHub Pages deployment [38385996781](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38385996781) succeeded.
+- A live rendered browser check remains unavailable in this review environment. No claim is made that mobile rendering, external media, real keyboard interaction, contrast across every component, or Lighthouse/Core Web Vitals has passed.
+
+### Remaining sign-off phase
+- Source implementation batches are complete for the currently approved scope. The remaining phase is real-browser regression QA and evidence follow-up, not a visual redesign.
+- Keep the current theme, content ideas and case structure. Do not invent Jalan results to close evidence gaps; the Jalan evidence checklist remains open for the user to supply proof later.
+- Final sign-off requires desktop/mobile browser checks, keyboard and menu interaction, external link/image checks, contrast and performance measurements. Until then, status remains **implementation complete; browser QA pending**.
