@@ -46,7 +46,7 @@ The first controlled accuracy and accessibility batch was merged into `main` in 
 | QA-002 | P1 | No real browser/device run has been completed in this audit. | Open. Desktop and mobile visual QA, keyboard-only testing, focus visibility, carousel interaction, and menu behaviour still need hands-on verification. |
 | QA-003 | P2 | External YouTube thumbnails, Instagram embeds/links and LinkedIn links have not all been checked live. | Open. Test external destinations and image loading; do not treat source-level link checks as proof that external services are available. |
 | PERF-001 | P2 | Lighthouse, Core Web Vitals, image-weight and network performance have not been measured. | Open. Run Lighthouse on the deployed site after deployment is confirmed. |
-| CONTRAST-001 | P2 | Full-page contrast testing is still outstanding. Common body/muted/link text pairs and CTA gradient endpoints were checked from source colors; component-by-component and focus-state testing remains open. | CTA gradient endpoints provide 5.18:1 to 5.49:1 contrast with white text. The Cinekorn gold chart series was darkened from `#D4A017` (2.38:1 on white, below the 3:1 non-text graphical target) to `#9B7200` (4.37:1 on white and 3.99:1 on paper). Layout, typography, spacing and card structure were not changed. Full rendered-page contrast checks remain open. |
+| CONTRAST-001 | P2 | Full-page contrast testing is still outstanding. Common body, muted-text, link and CTA token pairs were checked from source colors; rendered chart labels, all focus states and component-specific combinations remain unverified. | CTA gradient endpoints provide 5.18:1 to 5.49:1 with white text. A follow-up check found the apparent low-contrast Cinekorn `--series-4` color was declared but not referenced by current CSS or case-page markup, so changing it did not affect rendered charts. The attempted token change is being reverted rather than counted as a fix. Full rendered-page contrast checks remain open. |
 | ALT-001 | P2 | Presence of alt attributes was checked, but semantic match between each description and its image has not been manually reviewed. | Open. Visually inspect images and confirm alt text describes the actual image, not an assumed purpose. |
 | A11Y-002 | P2 | Two Ajmera output carousels used smooth scrolling regardless of the visitor's reduced-motion setting. | Updated both carousels to use immediate scrolling when `prefers-reduced-motion: reduce` is active. Merged in pull request #32. |
 
@@ -113,10 +113,10 @@ These checks confirm source-level consistency only. They do not confirm that the
 - Layout, typography, spacing and card structure were not changed.
 - Full-page contrast and focus-state testing remains open.
 
-### Batch 7 - merged in pull request #33
-- Darkened the Cinekorn gold chart-series token from `#D4A017` to `#9B7200` because the original color reached only 2.38:1 contrast against white.
-- The new gold reaches 4.37:1 on white and 3.99:1 on the site paper background, above the 3:1 non-text graphical target.
-- Only the chart-series color changes; the existing page layout, typography and visual system are retained.
+### Batch 7 - correction prepared for review
+- Post-merge validation found that the Cinekorn `--series-4` token changed in PR #33 is declared but never referenced by current CSS or case-page markup.
+- That token change therefore had no visible effect and should not be counted as an accessibility fix.
+- The original token is restored in the current review branch. No rendered chart, layout, typography, spacing or theme change is intended.
 - Full rendered-page contrast and focus-state testing remains open.
 
 ### Final QA - still required
