@@ -132,3 +132,16 @@ Merged to `main` through pull request [#45 — Add page-specific social previews
 - Changed the Cinekorn Case 04 hero label to “6.7× posts in the compared Facebook periods.”
 - The evidence paragraph continues to show the source-reported 2025 and 2026 windows and explicitly states that the comparison does not prove causation.
 - No number or visual styling changed. Browser QA remains open.
+
+
+## Phase 8: related-case navigation and source-level regression check
+Merged in [PR #60](https://github.com/jalak-patel-190/jalak-portfolio/pull/60); GitHub Pages workflow [38385996781](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38385996781) succeeded.
+
+- Added two related “What's Next” cards to each Ajmera, Jalan and Swad deep case, matching the existing Cinekorn pattern.
+- Kept the final “View All Work” CTA on each deep case; related cards supplement rather than replace it.
+- Source-checked all 16 Ajmera/Jalan/Swad deep cases and all six Cinekorn deep cases: one H1 each, no duplicate IDs, no broken in-page anchor targets, no missing image alt attributes, two related cards per case, and a retained View All Work link.
+- Confirmed the shared CSS contains mobile single-column rules for related cards. This does not substitute for checking actual rendered breakpoints in a browser.
+- Reviewed the current Jalan deep cases for previously unsupported counts and disputed commercial claims; no such claims were found in the four case pages checked.
+
+### Remaining: real-browser sign-off
+The current implementation scope is complete. Final browser QA is not. The deployed site could not be retrieved in a usable rendered form by the available review tools, although the latest GitHub Pages workflow succeeded. Do not mark mobile layout, keyboard behavior, external media loading, full-page contrast, or Lighthouse/Core Web Vitals as passed until tested in a real browser. Jalan proof gaps remain intentionally open; preserve the case ideas and add evidence only when supplied.
