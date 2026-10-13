@@ -41,6 +41,7 @@ The first controlled accuracy and accessibility batch was merged into `main` in 
 | FACT-009 | P2 | Ajmera's tracker case could read as if a like-for-like aggregate comparison had already been verified, despite the unresolved combined percentage. | Reframed it as a method for comparing account lists, date windows and metric definitions; the account count is now labelled as tracked, not compared. Batch 4. |
 | FACT-010 | P2 | Ajmera hub combined nine public videos across the business-education/trust case and the separate CEO personal-brand case, making the case-specific evidence count ambiguous. | Changed the Case 03 result label to four public examples across two content tracks. Batch 4. |
 | FACT-013 | P2 | Two case narratives used an unsupported time estimate for manual data classification and described Swad's highest-ticket diploma as the “biggest revenue course,” which is not the same claim. | Removed the unverified “several days” estimate and replaced “biggest revenue course” with the archive-supported “highest-ticket course.” Updated in the current content-accuracy batch. |
+| UX-003 | P2 | Ajmera, Jalan and Swad deep cases ended with previous/hub/next navigation but lacked the agreed final “View All Work” action used by Cinekorn. | Added a consistent “View All Work” link to all 16 Ajmera, Jalan and Swad deep cases, pointing to the homepage work section. Existing case navigation and company styling are retained. Current batch. |
 | A11Y-001 | P2 | Skip links, navigation toggles and motion preferences need explicit support. | Batch 1 added navigation toggle relationships, reduced-motion handling and manual control of the homepage proof carousel. Existing shared styles already include visible-on-focus skip links. |
 | SEO-001 | P2 | Social preview copy should match the revised positioning and not repeat outdated claims. | Homepage Open Graph and Twitter metadata updated in merged batch 1. |
 | SEO-002 | P2 | Ajmera, Jalan and Swad hubs and deep cases lacked page-specific social-sharing metadata. | Added page-specific Open Graph and Twitter card metadata to all 19 pages in merged pull request [#45](https://github.com/jalak-patel-190/jalak-portfolio/pull/45). Existing title, description and canonical URL are reused; images are used only where the page already has an evidence image. Pages without one use a text-only summary card. Actual social-platform rendering remains unverified. |
@@ -142,6 +143,12 @@ These checks confirm source-level consistency only. They do not confirm that the
 - Synchronized each page's Open Graph and Twitter title with its HTML title.
 - Kept canonical URLs, descriptions, case content, CSS, layout and theme unchanged.
 - Static title checks are complete; search-engine indexing and live share-preview rendering remain outside this source-only verification.
+
+### Batch 11 - consistent end-of-case navigation
+- Added a visible “View All Work” action to all six Ajmera cases, four Jalan cases and six Swad cases.
+- The new action points to the homepage work section; existing previous/next case and company-hub navigation remains in place.
+- Reused each company's existing button styles. No new CSS, colours, typography, layout system or card design was introduced.
+- Static validation checked all 16 pages: exactly one View All Work link per page, expected local destination, and matching opening/closing section and div counts.
 
 ### Final QA update - 13 October 2026
 - Static social-metadata consistency was checked across all 27 canonical HTML pages after PR #45. No mismatch was found between canonical URL and `og:url`, or between Open Graph and Twitter titles; image metadata is paired consistently.
