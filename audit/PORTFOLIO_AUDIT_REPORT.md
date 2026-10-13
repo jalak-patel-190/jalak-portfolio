@@ -45,7 +45,7 @@ The first controlled accuracy and accessibility batch was merged into `main` in 
 | QA-002 | P1 | No real browser/device run has been completed in this audit. | Open. Desktop and mobile visual QA, keyboard-only testing, focus visibility, carousel interaction, and menu behaviour still need hands-on verification. |
 | QA-003 | P2 | External YouTube thumbnails, Instagram embeds/links and LinkedIn links have not all been checked live. | Open. Test external destinations and image loading; do not treat source-level link checks as proof that external services are available. |
 | PERF-001 | P2 | Lighthouse, Core Web Vitals, image-weight and network performance have not been measured. | Open. Run Lighthouse on the deployed site after deployment is confirmed. |
-| CONTRAST-001 | P2 | Full-page contrast testing is still outstanding. The primary CTA gradient endpoints in Ajmera and Jalan were checked after the latest CSS update. | Updated the existing orange and orange-rose CTA shades without changing layout or typography. White-text contrast at the checked gradient endpoints is now 5.18:1 to 5.49:1, meeting WCAG AA for normal text. Remaining body, muted text, focus, and chart-label combinations still need a full-page check. |
+| CONTRAST-001 | P2 | Full-page contrast testing is still outstanding. Common body/muted/link text pairs and CTA gradient endpoints were checked from source colors; component-by-component and focus-state testing remains open. | CTA gradient endpoints provide 5.18:1 to 5.49:1 contrast with white text. The Cinekorn gold chart series was darkened from `#D4A017` (2.38:1 on white, below the 3:1 non-text graphical target) to `#9B7200` (4.37:1 on white and 3.99:1 on paper). Layout, typography, spacing and card structure were not changed. Full rendered-page contrast checks remain open. |
 | ALT-001 | P2 | Presence of alt attributes was checked, but semantic match between each description and its image has not been manually reviewed. | Open. Visually inspect images and confirm alt text describes the actual image, not an assumed purpose. |
 | A11Y-002 | P2 | Two Ajmera output carousels used smooth scrolling regardless of the visitor's reduced-motion setting. | Updated both carousels to use immediate scrolling when `prefers-reduced-motion: reduce` is active. Merged in pull request #32. |
 
@@ -111,6 +111,12 @@ These checks confirm source-level consistency only. They do not confirm that the
 - Checked the gradient endpoints: Ajmera 5.18:1 to 5.41:1; Jalan 5.41:1 to 5.49:1.
 - Layout, typography, spacing and card structure were not changed.
 - Full-page contrast and focus-state testing remains open.
+
+### Batch 7 - prepared for review
+- Darkened the Cinekorn gold chart-series token from `#D4A017` to `#9B7200` because the original color reached only 2.38:1 contrast against white.
+- The new gold reaches 4.37:1 on white and 3.99:1 on the site paper background, above the 3:1 non-text graphical target.
+- Only the chart-series color changes; the existing page layout, typography and visual system are retained.
+- Full rendered-page contrast and focus-state testing remains open.
 
 ### Final QA - still required
 1. Confirm the latest successful GitHub Pages workflow's output is visible at the public URL in a real browser. The workflow is successful; rendered-page verification remains open.
