@@ -201,3 +201,12 @@ These checks confirm source-level consistency only. They do not confirm that the
 - Source implementation batches are complete for the currently approved scope. The remaining phase is real-browser regression QA and evidence follow-up, not a visual redesign.
 - Keep the current theme, content ideas and case structure. Do not invent Jalan results to close evidence gaps; the Jalan evidence checklist remains open for the user to supply proof later.
 - Final sign-off requires desktop/mobile browser checks, keyboard and menu interaction, external link/image checks, contrast and performance measurements. Until then, status remains **implementation complete; browser QA pending**.
+
+
+### Batch 16 - stronger keyboard focus indicators
+- Merged in [PR #62](https://github.com/jalak-patel-190/jalak-portfolio/pull/62).
+- Added solid `:focus-visible` outlines to homepage CTAs/proof controls and interactive controls/cards across Cinekorn, Ajmera, Jalan and Swad shared stylesheets.
+- Existing hover styling, typography, palette, spacing, page structure and responsive rules were preserved. The outlines use existing theme colors rather than introducing a new color system.
+- Calculated the outline-token contrast against white: Cinekorn/Ajmera `#B8441B` = 5.41:1; homepage/Swad `#C2410C` = 5.18:1; Jalan `#1F5C6B` = 7.50:1. These calculations apply to the token against white only; they are not a full contrast audit of every component/background.
+- Source checks confirmed the five stylesheets retain their reduced-motion rules and existing responsive media queries.
+- Browser keyboard traversal and rendered focus visibility remain unverified. Do not mark this issue fully passed until real-browser testing is completed.
