@@ -144,7 +144,14 @@ Merged in [PR #60](https://github.com/jalak-patel-190/jalak-portfolio/pull/60); 
 - Reviewed the current Jalan deep cases for previously unsupported counts and disputed commercial claims; no such claims were found in the four case pages checked.
 
 ### Remaining: real-browser sign-off
-The current implementation scope is complete. Final browser QA is not. The deployed site could not be retrieved in a usable rendered form by the available review tools, although the latest GitHub Pages workflow succeeded. Do not mark mobile layout, keyboard behavior, external media loading, full-page contrast, or Lighthouse/Core Web Vitals as passed until tested in a real browser. Jalan proof gaps remain intentionally open; preserve the case ideas and add evidence only when supplied.
+The current implementation scope is complete. Final browser QA is not. The deployed site could not be retrieved in a usable rendered form by the available review tools, although the latest completed GitHub Pages workflow succeeded. Do not mark mobile layout, keyboard behavior, external media loading, full-page contrast, or Lighthouse/Core Web Vitals as passed until tested in a real browser. Jalan proof gaps remain intentionally open; preserve the case ideas and add evidence only when supplied.
+
+## Phase 6 follow-up: semantic image/alt-text review
+
+- **Merged:** [PR #65 — Accessibility: match Telugu evidence image to its channel](https://github.com/jalak-patel-190/jalak-portfolio/pull/65).
+- In Cinekorn Case 02, the evidence figure's alt text and caption identified Telugu analytics, but the image source was the Movies analytics screenshot. Replaced the source with the existing `yt-telugu.png` asset and clarified the alt text.
+- Preserved dimensions, lazy loading, layout, colour, typography and page structure.
+- This targeted correction is not a full semantic audit of every image. Remaining alt-text/image matching and actual external thumbnail loading remain open for browser QA.
 
 
 ## Phase 9: keyboard focus visibility

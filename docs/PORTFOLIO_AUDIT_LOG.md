@@ -144,3 +144,10 @@ Useful proof:
 - Contrast ratios against white for the focus-token colors are 5.41:1 (`#B8441B`), 5.18:1 (`#C2410C`) and 7.50:1 (`#1F5C6B`). This is not a full-page contrast audit.
 - Existing reduced-motion and responsive CSS rules remain in place.
 - **Open:** test actual keyboard traversal, visible focus on the deployed pages, and all text/control/background combinations in a real browser. Do not mark full accessibility QA complete yet.
+
+## Accessibility follow-up: semantic image match
+
+- **Merged:** [PR #65](https://github.com/jalak-patel-190/jalak-portfolio/pull/65).
+- Corrected Cinekorn Case 02, where the evidence figure described Telugu analytics but loaded the Movies analytics screenshot. The page now uses the existing `yt-telugu.png` asset and aligned alt text.
+- No layout or theme changes.
+- This was a targeted fix, not completion of the full image/alt review. External media loading and browser-rendered verification remain open.
