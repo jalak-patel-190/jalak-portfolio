@@ -41,6 +41,7 @@ The first controlled accuracy and accessibility batch was merged into `main` in 
 | FACT-009 | P2 | Ajmera's tracker case could read as if a like-for-like aggregate comparison had already been verified, despite the unresolved combined percentage. | Reframed it as a method for comparing account lists, date windows and metric definitions; the account count is now labelled as tracked, not compared. Batch 4. |
 | FACT-010 | P2 | Ajmera hub combined nine public videos across the business-education/trust case and the separate CEO personal-brand case, making the case-specific evidence count ambiguous. | Changed the Case 03 result label to four public examples across two content tracks. Batch 4. |
 | FACT-013 | P2 | Two case narratives used an unsupported time estimate for manual data classification and described Swad's highest-ticket diploma as the “biggest revenue course,” which is not the same claim. | Removed the unverified “several days” estimate and replaced “biggest revenue course” with the archive-supported “highest-ticket course.” Updated in the current content-accuracy batch. |
+| FACT-014 | P2 | Ajmera regional strategy case referred to “the seven phrases I owned,” but the master archive supports regional keyword and product-positioning decisions without verifying a seven-phrase count. | Removed the unsupported count and retained the evidence-aligned description of regional product preferences, title formulas and search terms. Merged in the current content-accuracy batch. |
 | UX-003 | P2 | Ajmera, Jalan and Swad deep cases ended with previous/hub/next navigation but lacked the agreed final “View All Work” action used by Cinekorn. | Added a consistent “View All Work” link to all 16 Ajmera, Jalan and Swad deep cases, pointing to the homepage work section. Existing case navigation and company styling are retained. Merged in pull request [#51](https://github.com/jalak-patel-190/jalak-portfolio/pull/51). |
 | A11Y-001 | P2 | Skip links, navigation toggles and motion preferences need explicit support. | Batch 1 added navigation toggle relationships, reduced-motion handling and manual control of the homepage proof carousel. Existing shared styles already include visible-on-focus skip links. |
 | SEO-001 | P2 | Social preview copy should match the revised positioning and not repeat outdated claims. | Homepage Open Graph and Twitter metadata updated in merged batch 1. |
@@ -149,6 +150,18 @@ These checks confirm source-level consistency only. They do not confirm that the
 - The new action points to the homepage work section; existing previous/next case and company-hub navigation remains in place.
 - Reused each company's existing button styles. No new CSS, colours, typography, layout system or card design was introduced.
 - Static validation checked all 16 pages: exactly one View All Work link per page, expected local destination, and matching opening/closing section and div counts.
+
+### Batch 12 - related-company navigation (merged in pull request #53)
+- Added a “Continue Exploring” section to the Ajmera, Jalan and Swad company hubs, matching the existing Cinekorn hub pattern.
+- Each section links to the other three company hubs and reuses existing logo assets and case-teaser card styles.
+- Added a responsive three-column desktop grid, two-column tablet grid, and single-column narrow-mobile grid in the existing company stylesheets.
+- Static checks confirmed all 9 hub links and 9 logo image paths resolve, each section has three cards and a unique ID, markup is balanced, and the existing contact CTA remains after the section.
+- The change preserves each company's colour palette, typography and card style. Browser-rendered layout is still pending.
+
+### Batch 13 - remove an unsupported Ajmera case count
+- Removed “the seven phrases I owned” from the regional strategy case because the master archive does not verify a seven-phrase count.
+- Retained the supported point: regional product preferences shaped title formulas and search terms.
+- No metrics, role title, date, layout, colours or visual components were changed.
 
 ### Final QA update - 13 October 2026
 - Static social-metadata consistency was checked across all 27 canonical HTML pages after PR #45. No mismatch was found between canonical URL and `og:url`, or between Open Graph and Twitter titles; image metadata is paired consistently.
