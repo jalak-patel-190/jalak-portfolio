@@ -114,3 +114,16 @@ Useful proof:
 - [ ] Run Lighthouse or equivalent performance/accessibility checks.
 - [ ] Confirm GitHub Pages has deployed the latest merged commit.
 - [ ] Review the final evidence backlog with the user before adding any new Jalan claims.
+
+
+## Latest loop: related case cards and source regression
+
+- **Merged:** [PR #60](https://github.com/jalak-patel-190/jalak-portfolio/pull/60), 13 October 2026.
+- **Deployment:** [GitHub Pages workflow 38385996781](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38385996781) succeeded.
+- Ajmera, Jalan and Swad deep cases now use two related “What's Next” cards, matching the Cinekorn pattern. The final “View All Work” action remains in place.
+- Static source checks on all 22 deep case pages (6 Cinekorn, 6 Ajmera, 4 Jalan, 6 Swad) found one H1 per page, no duplicate IDs, no missing in-page anchor targets, no images missing alt attributes, two related cards per page, and the expected View All Work CTA.
+- The four Jalan case pages reviewed no longer contain the previously unsupported 70-influencer, 43-date, 10–15-channel, four-agent, ₹93.67 crore or 5166% claims. Keep these evidence gaps open until the user provides supporting material.
+- Responsive CSS includes single-column card rules at narrow widths, but actual browser-rendered mobile behavior has not been verified.
+
+### Sign-off status
+**Implementation batches complete; final browser QA pending.** The review environment could not retrieve the live GitHub Pages site as a usable rendered page. The latest Pages workflow is green, which verifies the deployment workflow, not the rendered experience. Remaining checks: desktop/mobile browser layout, keyboard and mobile-menu interaction, external media loading, full contrast review, and Lighthouse/Core Web Vitals. Do not claim these have passed without real test results.
