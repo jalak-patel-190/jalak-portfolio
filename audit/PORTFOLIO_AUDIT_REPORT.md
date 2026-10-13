@@ -40,6 +40,7 @@ The first controlled accuracy and accessibility batch was merged into `main` in 
 | ATTR-002 | P2 | Rakhewal's 163-piece total is made up of one full YouTube release, 14 re-cut parts and 148 Shorts. The adjacent Facebook work is a separate distribution surface. | Clarified the 163-piece labels as YouTube-only in batch 2. |
 | FACT-009 | P2 | Ajmera's tracker case could read as if a like-for-like aggregate comparison had already been verified, despite the unresolved combined percentage. | Reframed it as a method for comparing account lists, date windows and metric definitions; the account count is now labelled as tracked, not compared. Batch 4. |
 | FACT-010 | P2 | Ajmera hub combined nine public videos across the business-education/trust case and the separate CEO personal-brand case, making the case-specific evidence count ambiguous. | Changed the Case 03 result label to four public examples across two content tracks. Batch 4. |
+| FACT-013 | P2 | Two case narratives used an unsupported time estimate for manual data classification and described Swad's highest-ticket diploma as the “biggest revenue course,” which is not the same claim. | Removed the unverified “several days” estimate and replaced “biggest revenue course” with the archive-supported “highest-ticket course.” Updated in the current content-accuracy batch. |
 | A11Y-001 | P2 | Skip links, navigation toggles and motion preferences need explicit support. | Batch 1 added navigation toggle relationships, reduced-motion handling and manual control of the homepage proof carousel. Existing shared styles already include visible-on-focus skip links. |
 | SEO-001 | P2 | Social preview copy should match the revised positioning and not repeat outdated claims. | Homepage Open Graph and Twitter metadata updated in merged batch 1. |
 | SEO-002 | P2 | Ajmera, Jalan and Swad hubs and deep cases lacked page-specific social-sharing metadata. | Added page-specific Open Graph and Twitter card metadata to all 19 pages in merged pull request [#45](https://github.com/jalak-patel-190/jalak-portfolio/pull/45). Existing title, description and canonical URL are reused; images are used only where the page already has an evidence image. Pages without one use a text-only summary card. Actual social-platform rendering remains unverified. |
@@ -129,6 +130,11 @@ These checks confirm source-level consistency only. They do not confirm that the
 - No CSS, JavaScript, colours, typography, spacing or layout changed.
 - Static patch review confirmed 19 files changed, each with Open Graph and Twitter title/description/URL metadata. Cinekorn and the homepage already had page-specific metadata and were left unchanged.
 - Actual LinkedIn/X card rendering and live image retrieval still require browser/platform verification.
+
+### Batch 9 - content claim precision
+- Removed an unsupported estimate that manual classification of 6,000–8,000 rows would have taken “several days.” The Cinekorn data-tooling case now states the supported workflow problem without guessing a time saved.
+- Changed the Swad diploma description from “biggest revenue course” to “highest-ticket course,” matching the source record and avoiding an unsupported inference about total revenue.
+- No metrics, design, layout, or theme were added or changed in this batch.
 
 ### Final QA update - 13 October 2026
 - Static social-metadata consistency was checked across all 27 canonical HTML pages after PR #45. No mismatch was found between canonical URL and `og:url`, or between Open Graph and Twitter titles; image metadata is paired consistently.
