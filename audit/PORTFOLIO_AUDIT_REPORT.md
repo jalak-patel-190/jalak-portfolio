@@ -9,7 +9,7 @@
 
 The portfolio has a coherent multi-page structure: a homepage, four company hubs and individual case-study pages. The current design direction is usable as a foundation. The main risks found in this pass are not reasons for a visual redesign. They are unsupported numerical claims, unclear attribution, a few case descriptions that overstate what the available archive verifies, and the absence of browser-based QA.
 
-The first controlled accuracy and accessibility batch was merged into `main` in pull request #2. The second evidence-accuracy batch was merged in pull request #29. Legacy route redirects and the themed 404 page were merged in pull request #30. Ajmera evidence-framing corrections were merged in pull request #31.
+The initial accuracy and accessibility batch was merged in pull request #2, followed by controlled source, navigation, evidence and accessibility batches. Later updates include direct homepage proof-card destinations (PR #57), company-hub navigation (PR #53), related-case cards and View All Work endings (PR #60), and stronger keyboard focus indicators (PR #62). The custom 404 page also now has descriptive metadata and a keyboard skip link. The latest main commit and Pages workflow status are tracked in `docs/PORTFOLIO_AUDIT_LOG.md`.
 
 **Design constraint:** preserve the current typography, palette, spacing, cards, page structure and company-specific styling. Prefer precise copy, clear evidence labels and small accessibility improvements over a redesign.
 
@@ -210,3 +210,13 @@ These checks confirm source-level consistency only. They do not confirm that the
 - Calculated the outline-token contrast against white: Cinekorn/Ajmera `#B8441B` = 5.41:1; homepage/Swad `#C2410C` = 5.18:1; Jalan `#1F5C6B` = 7.50:1. These calculations apply to the token against white only; they are not a full contrast audit of every component/background.
 - Source checks confirmed the five stylesheets retain their reduced-motion rules and existing responsive media queries.
 - Browser keyboard traversal and rendered focus visibility remain unverified. Do not mark this issue fully passed until real-browser testing is completed.
+
+
+## Latest status checkpoint — 13 October 2026
+
+- Implementation batches are merged into `main`; the original dark, restrained visual direction, typography, spacing, card styling and company-specific palettes were preserved.
+- The homepage now uses “Creative Strategist for Media & Entertainment,” a contact-first primary CTA, scoped lifetime YouTube views, and no unsupported +20.3% or six-language headline.
+- All four company hubs have cross-company navigation; deep cases have related-work cards and a final “View All Work” route.
+- Source-level checks cover the primary portfolio pages and legacy routes. The GitHub Pages deployment workflow succeeded for commit `0589bd99ff73a6e090092b14a56490c67c1b4d17`; a docs-only follow-up commit is being deployed separately.
+- **Final sign-off is still pending.** A public-page crawler returned an older cached homepage snapshot, and a fresh cache-busted fetch was not available. This does not prove the site is broken, but it prevents independent confirmation of current rendered output in this environment.
+- Remaining QA: desktop/mobile layout, keyboard and touch behavior, external links and images, full component contrast, and Lighthouse/Core Web Vitals. Do not claim these checks passed until tested in a real browser.
