@@ -7,7 +7,7 @@
   --text: #1a1a1a;
   --text-muted: #5c5c5c;
   --border: #e8e4dc;
-  --cta-start: #E85A2A;
+  --cta-start: #B8441B;
   --card: #ffffff;
   --surface: #ffffff;
 }
@@ -45,7 +45,7 @@ nav { display: flex; align-items: center; gap: 1.25rem; }
 nav a { text-decoration: none; font-size: 0.9rem; font-weight: 500; }
 nav a:hover { color: var(--cta-start); }
 .btn-nav {
-  background: linear-gradient(135deg, var(--cta-start), #f0784a);
+  background: linear-gradient(135deg, var(--cta-start), #C2410C);
   color: #fff !important; padding: 0.45rem 1rem; border-radius: 999px; font-weight: 600;
 }
 .nav-toggle {
@@ -76,7 +76,7 @@ nav a:hover { color: var(--cta-start); }
   min-height: 44px;
 }
 .btn-primary, .hero-actions a.btn-primary {
-  background: linear-gradient(135deg, var(--cta-start), #f0784a); color: #fff;
+  background: linear-gradient(135deg, var(--cta-start), #C2410C); color: #fff;
   box-shadow: 0 0 0 0 rgba(232,90,42,0.35);
   transition: box-shadow 0.2s ease, transform 0.15s ease;
 }
@@ -172,7 +172,7 @@ nav a:hover { color: var(--cta-start); }
 .bar-fill {
   height: 100%; width: 0;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--cta-start), #f0784a);
+  background: linear-gradient(90deg, var(--cta-start), #C2410C);
   transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .bars.is-on .bar-fill { width: var(--w, 50%); }
@@ -212,7 +212,7 @@ nav a:hover { color: var(--cta-start); }
   color: var(--text); background: var(--surface); border: 1.5px solid var(--border);
 }
 .page-nav .primary {
-  color: #fff; background: linear-gradient(135deg, var(--cta-start), #f0784a);
+  color: #fff; background: linear-gradient(135deg, var(--cta-start), #C2410C);
   box-shadow: 0 0 0 0 rgba(232,90,42,0.35);
 }
 .page-nav .primary:hover, .page-nav .primary:focus-visible {
