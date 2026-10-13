@@ -111,3 +111,18 @@ Merged to `main` through pull request [#45 — Add page-specific social previews
 - Preserved each company's existing navigation and button styles; no CSS or visual redesign was needed.
 - Static checks confirmed one CTA per page, the expected relative URL, and balanced section/div counts in all sixteen updated pages.
 - Related-case visual cards remain a separate UX improvement to assess after real browser QA; the new CTA is not presented as a replacement for that future review.
+
+
+## Latest follow-up: cross-company navigation and evidence precision
+
+### Related company navigation
+- Added a “Continue Exploring” section to Ajmera, Jalan and Swad hubs, matching the existing Cinekorn pattern.
+- Used existing logos and case-teaser styling, with responsive desktop/tablet/mobile grid rules in each company's stylesheet.
+- Static checks confirmed all new hub links and image paths resolve, the existing contact CTA remains after the section, and the markup is balanced.
+- Merged in pull request [#53](https://github.com/jalak-patel-190/jalak-portfolio/pull/53).
+
+### Ajmera regional strategy copy
+- Removed the unsupported “seven phrases I owned” count. The master archive supports regional product positioning and search-term decisions, but not a seven-phrase count.
+- The replacement sentence describes regional product preferences shaping title formulas and search terms.
+- No design or layout changes.
+- Real browser/mobile QA remains open.
