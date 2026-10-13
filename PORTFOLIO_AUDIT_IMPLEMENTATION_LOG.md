@@ -103,3 +103,10 @@ Merged to `main` through pull request [#45 — Add page-specific social previews
 - Updated matching Open Graph and Twitter titles so search and share metadata remain consistent with the visible page topic.
 - Kept canonical URLs, meta descriptions, page content, CSS, layout, colours and typography unchanged.
 - Search-engine indexing and real share-preview rendering are not verified by source checks.
+
+
+## UX consistency follow-up: View All Work
+- Added a final “View All Work” action to all sixteen Ajmera, Jalan and Swad deep case studies, linking to the homepage work section.
+- Preserved each company's existing navigation and button styles; no CSS or visual redesign was needed.
+- Static checks confirmed one CTA per page, the expected relative URL, and balanced section/div counts in all sixteen updated pages.
+- Related-case visual cards remain a separate UX improvement to assess after real browser QA; the new CTA is not presented as a replacement for that future review.
