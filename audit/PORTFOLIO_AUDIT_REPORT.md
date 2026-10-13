@@ -41,7 +41,7 @@ The first controlled accuracy and accessibility batch was merged into `main` in 
 | A11Y-001 | P2 | Skip links, navigation toggles and motion preferences need explicit support. | Batch 1 added navigation toggle relationships, reduced-motion handling and manual control of the homepage proof carousel. Existing shared styles already include visible-on-focus skip links. |
 | SEO-001 | P2 | Social preview copy should match the revised positioning and not repeat outdated claims. | Homepage Open Graph and Twitter metadata updated in merged batch 1. |
 | ROUTE-001 | P2 | Previous portfolio URLs such as `case-studies/ajmera.html`, `swad.html`, `jalan-megamart.html` and `cinekorn.html` are not present in the current tree. Older links may still point to them. | Merged in pull request #30: added lightweight redirect pages to the current company hubs and a themed 404 fallback. |
-| QA-001 | P1 | The currently published GitHub Pages deployment has not been independently confirmed after the merge. The web reader returned an older indexed snapshot, which is not proof of current deployment state. | Open. Confirm the deployed HTML in a real browser or via a fresh deployment check before sign-off. |
+| QA-001 | P1 | The latest GitHub Pages build/deployment workflow succeeded for current `main` commit `324c460eb3a634ef88a8894a2701b541fa4685a7` on 13 October 2026. A direct page fetch in this review environment returned a cache miss, so the rendered page has not been independently inspected. | Deployment workflow: success. Live rendered HTML and visual behavior: still unverified. Confirm in a real browser before sign-off. |
 | QA-002 | P1 | No real browser/device run has been completed in this audit. | Open. Desktop and mobile visual QA, keyboard-only testing, focus visibility, carousel interaction, and menu behaviour still need hands-on verification. |
 | QA-003 | P2 | External YouTube thumbnails, Instagram embeds/links and LinkedIn links have not all been checked live. | Open. Test external destinations and image loading; do not treat source-level link checks as proof that external services are available. |
 | PERF-001 | P2 | Lighthouse, Core Web Vitals, image-weight and network performance have not been measured. | Open. Run Lighthouse on the deployed site after deployment is confirmed. |
@@ -96,10 +96,10 @@ These checks confirm source-level consistency only. They do not confirm that the
 - Verified that each redirect target exists and the sitemap still contains 27 canonical page URLs, excluding redirects.
 - These additions do not change the homepage or case-study visual system.
 
-### Batch 4 - awaiting review/merge
-- Reframe Ajmera tracker case as a comparison method, not a verified like-for-like aggregate result.
-- Label the approximately fifty accounts as tracked, not confirmed as a matched comparison set.
-- Keep Ajmera Case 03's four public examples separate from the five CEO personal-brand examples in Case 06.
+### Batch 4 - merged in pull request #31
+- Reframed Ajmera tracker case as a comparison method, not a verified like-for-like aggregate result.
+- Labelled the approximately fifty accounts as tracked, not confirmed as a matched comparison set.
+- Kept Ajmera Case 03's four public examples separate from the five CEO personal-brand examples in Case 06.
 
 ### Batch 5 - merged in pull request #32
 - Updated the Ajmera corporate-content and CEO personal-brand carousels to respect `prefers-reduced-motion`.
@@ -107,9 +107,9 @@ These checks confirm source-level consistency only. They do not confirm that the
 - No visual styling changes.
 
 ### Final QA - still required
-1. Confirm the latest commit is deployed to GitHub Pages.
+1. Confirm the latest successful GitHub Pages workflow's output is visible at the public URL in a real browser. The workflow is successful; rendered-page verification remains open.
 2. Test the homepage and every company hub at desktop and mobile widths.
-3. Test all internal links, previous/next links, breadcrumbs and the back-to-portfolio path.
+3. Test all internal links, previous/next links, breadcrumbs, legacy redirects and the back-to-portfolio path.
 4. Test keyboard navigation, visible focus, skip links, mobile menu and horizontal carousels.
 5. Check external media links and image loading.
 6. Run Lighthouse and contrast checks on the deployed site.
