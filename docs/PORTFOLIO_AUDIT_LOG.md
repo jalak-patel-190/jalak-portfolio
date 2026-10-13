@@ -7,11 +7,11 @@ Scope: source-level review of the homepage, company hubs, case pages, legacy rou
 ## Status
 
 - Phase 1, source of truth: complete.
-- Phase 2, source-level technical and content audit: complete for the reviewed source. Real-browser visual and interaction QA remain open.
-- Phase 3, information architecture: complete. Homepage proof cards now open the relevant case directly; merged in PR #57.
-- Phase 4, content accuracy: core pass complete, including matching homepage card labels to their destinations. Visual polish that requires image selection is deferred until the correct asset can be confirmed. No theme redesign planned.
-- Phase 5, implementation: three controlled batches merged into main through PR #2, PR #57 and PR #59.
-- Phase 6, regression and final sign-off: source-level checks and GitHub Actions build/deploy jobs succeeded for commit 66313785eaf8796e7fcbf73d485d379b5aea6c3d. Real-browser QA and rendered-page confirmation remain open.
+- Phase 2, source-level technical and content audit: substantially complete across the 27 primary portfolio pages, four legacy routes and custom 404 page. Source checks have been repeated after major batches; real-browser checks remain open.
+- Phase 3, information architecture: complete. Homepage proof cards link directly to relevant cases; company hubs have “Continue Exploring” navigation; deep cases have related “What's Next” cards and a final “View All Work” action.
+- Phase 4, content accuracy: core pass complete. Unsupported Ajmera claims and unverified Jalan counts have been removed; Cinekorn lifetime views, legacy catalogue results, tenure results and Facebook comparison periods are labelled more carefully. Jalan proof gaps remain open for user-supplied evidence.
+- Phase 5, implementation: implementation batches are merged into main, including accuracy, navigation, social metadata, responsive card rules, reduced-motion handling, visible keyboard focus and the custom 404 skip link. Existing theme, typography, colour palettes and page structure have been preserved.
+- Phase 6, regression and final sign-off: source-level checks and the GitHub Pages build/deployment workflow succeeded for latest main commit `0589bd99ff73a6e090092b14a56490c67c1b4d17` on 13 October 2026. Real-browser/device QA and fresh rendered-page confirmation remain open; do not treat the site as fully signed off.
 
 ## Evidence and method
 
@@ -43,6 +43,14 @@ These are source-level checks only. They do not prove the rendered page works at
 - **P3:** low-impact refinement.
 
 No confirmed P0 issue was established by the source-level audit.
+
+## Latest implementation and deployment checkpoint — 13 October 2026
+
+- The first controlled implementation PR (#2) and subsequent follow-up batches are merged into `main`.
+- GitHub Pages build/deployment workflow `38391547510` completed successfully for commit `0589bd99ff73a6e090092b14a56490c67c1b4d17`.
+- Recent merged work includes related-case cards, “View All Work” endings, company-to-company navigation, tighter comparison labels, improved social metadata, visible keyboard focus indicators and a skip link on the custom 404 page.
+- The source audit is not the same as a browser test. A public-page crawler returned an older homepage snapshot; a cache-busted fresh fetch was not available in this review environment. This is inconclusive about what a human visitor currently sees, so live deployment/rendering remains unverified here.
+- Remaining sign-off: desktop/mobile rendering, menu and keyboard interactions, external links and image loading, page-level contrast, and Lighthouse/Core Web Vitals. Preserve the existing theme. Do not invent Jalan proof; collect it from the user when available.
 
 ## Jalan evidence backlog
 
