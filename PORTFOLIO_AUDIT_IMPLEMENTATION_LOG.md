@@ -39,7 +39,7 @@ Static checks were run across the repository's 27 HTML pages for:
 ## Open issue register
 
 ### P1: Complete visual and functional QA
-- **QA-001 — Live deployment confirmation:** verify that GitHub Pages is serving the merged `main` commit. A web index result still showed an older homepage snapshot; that may be cached, so the currently deployed state must be confirmed directly rather than assumed.
+- **QA-001 — Live rendered output:** the GitHub Pages workflow completed successfully for current `main` commit `558272336eed9c2a9eb4b6c94713c545eb731e45` (run [38355758236](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38355758236), 13 October 2026). A web index still showed an older homepage snapshot and direct fetch returned a cache miss, so fresh rendered HTML and actual browser behavior remain unverified.
 - **QA-002 — Desktop and mobile layout:** test at narrow phone, large phone, tablet, laptop, and wide desktop widths. Check clipping, overflow, line breaks, sticky/navigation behaviour, card alignment, and chart readability.
 - **QA-003 — Keyboard and assistive technology:** test focus order, visible focus, skip-link behaviour, mobile menu open/close state, carousel buttons, and screen-reader names/state in a real browser.
 - **QA-004 — Contrast:** measure text, muted labels, links, focus indicators, and chart labels against their backgrounds. Do not judge contrast by appearance alone.
@@ -63,7 +63,7 @@ Static checks were run across the repository's 27 HTML pages for:
 - **UX-002:** verify that every case-study card clearly communicates the problem, decision, execution, evidence, and learning without repetitive filler.
 
 ## Next loop
-1. Confirm GitHub Pages deployment and test the live homepage plus representative deep case pages.
+1. Confirm the live rendered homepage and representative deep case pages in a real browser. The latest Pages workflow is successful, but fresh rendered HTML was not available from this review environment.
 2. Run responsive, keyboard, reduced-motion, and contrast checks.
 3. Complete the evidence review across Cinekorn, Swad, Jalan, and Ajmera.
 4. Fix confirmed issues in small, reviewable batches while preserving the existing visual theme.
