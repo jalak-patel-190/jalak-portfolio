@@ -45,6 +45,7 @@ The first controlled accuracy and accessibility batch was merged into `main` in 
 | SEO-001 | P2 | Social preview copy should match the revised positioning and not repeat outdated claims. | Homepage Open Graph and Twitter metadata updated in merged batch 1. |
 | SEO-002 | P2 | Ajmera, Jalan and Swad hubs and deep cases lacked page-specific social-sharing metadata. | Added page-specific Open Graph and Twitter card metadata to all 19 pages in merged pull request [#45](https://github.com/jalak-patel-190/jalak-portfolio/pull/45). Existing title, description and canonical URL are reused; images are used only where the page already has an evidence image. Pages without one use a text-only summary card. Actual social-platform rendering remains unverified. |
 | SEO-003 | P2 | Social metadata needed a full canonical-page consistency check after rollout. | Static validation checked all 27 canonical pages: every page has Open Graph and Twitter title/URL metadata; each `og:url` matches the canonical URL; Open Graph and Twitter titles match; image tags are paired consistently. Pages without a suitable image correctly use `summary` cards. Live card rendering is still unverified. |
+| SEO-004 | P2 | Some Ajmera and Jalan case pages used generic page titles such as “Case 01,” reducing search and share-preview clarity. | Replaced generic titles with descriptive, evidence-aligned page titles and synchronized Open Graph/Twitter titles in merged pull request #50. No page body or visual styling changed. |
 | ROUTE-001 | P2 | Previous portfolio URLs such as `case-studies/ajmera.html`, `swad.html`, `jalan-megamart.html` and `cinekorn.html` are not present in the current tree. Older links may still point to them. | Merged in pull request #30: added lightweight redirect pages to the current company hubs and a themed 404 fallback. |
 | QA-001 | P1 | GitHub Pages deployment workflow completed successfully for current `main` commit `6094c85c730a90f68a919bcb7ffffe3b66e1d14a` (build and deploy jobs succeeded in run [38369532939](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38369532939), 13 October 2026). A browser/search snapshot still showed older homepage content and cache-busted deep-page fetches were inaccessible in this review environment, so the live rendered HTML and browser behavior have not been independently verified. | Latest source commit build/deployment workflow is green. Real-browser confirmation remains open; do not infer live rendering from the build alone. |
 | QA-002 | P1 | No real browser/device run has been completed in this audit. | Open. Desktop and mobile visual QA, keyboard-only testing, focus visibility, carousel interaction, and menu behaviour still need hands-on verification. |
@@ -135,6 +136,12 @@ These checks confirm source-level consistency only. They do not confirm that the
 - Removed an unsupported estimate that manual classification of 6,000–8,000 rows would have taken “several days.” The Cinekorn data-tooling case now states the supported workflow problem without guessing a time saved.
 - Changed the Swad diploma description from “biggest revenue course” to “highest-ticket course,” matching the source record and avoiding an unsupported inference about total revenue.
 - No metrics, design, layout, or theme were added or changed in this batch.
+
+### Batch 10 - descriptive case-page titles
+- Replaced generic “Case 01/02/…” title tags on four Ajmera and four Jalan case pages with descriptive titles based on their existing case headings.
+- Synchronized each page's Open Graph and Twitter title with its HTML title.
+- Kept canonical URLs, descriptions, case content, CSS, layout and theme unchanged.
+- Static title checks are complete; search-engine indexing and live share-preview rendering remain outside this source-only verification.
 
 ### Final QA update - 13 October 2026
 - Static social-metadata consistency was checked across all 27 canonical HTML pages after PR #45. No mismatch was found between canonical URL and `og:url`, or between Open Graph and Twitter titles; image metadata is paired consistently.
