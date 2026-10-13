@@ -120,7 +120,7 @@ These checks confirm source-level consistency only. They do not confirm that the
 - Full rendered-page contrast and focus-state testing remains open.
 
 ### Final QA - still required
-1. Confirm the latest successful GitHub Pages workflow's output is visible at the public URL in a real browser. The workflow is successful; rendered-page verification remains open.
+1. Confirm the latest GitHub Pages workflow after the most recent source and documentation commits has completed, then inspect the rendered output at the public URL in a real browser. Earlier builds succeeded, but the newest run is not yet confirmed complete; rendered-page verification remains open.
 2. Test the homepage and every company hub at desktop and mobile widths.
 3. Test all internal links, previous/next links, breadcrumbs, legacy redirects and the back-to-portfolio path.
 4. Test keyboard navigation, visible focus, skip links, mobile menu and horizontal carousels.
@@ -130,4 +130,4 @@ These checks confirm source-level consistency only. They do not confirm that the
 
 ## Sign-off status
 
-**Not complete.** Six controlled implementation batches are merged into `main`. Deployment verification and real browser QA remain open. No full redesign is proposed; the objective is a more accurate, accessible and credible version of the existing site.
+**Not complete.** Multiple controlled accuracy, navigation, accessibility and routing batches are merged into `main`, including the follow-up removal of the unsupported Jalan calendar count. A chart-token change was reverted after source review showed the token was unused. The latest Pages build and live rendered output still need confirmation, and real browser/device QA remains open. No full redesign is proposed; the objective is a more accurate, accessible and credible version of the existing site.
