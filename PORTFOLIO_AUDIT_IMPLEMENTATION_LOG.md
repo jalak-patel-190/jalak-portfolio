@@ -26,13 +26,14 @@ Merged to `main` through pull request [#2](https://github.com/jalak-patel-190/ja
 - Kept the existing typography, colour direction, card styling, spacing, and overall visual language. This was not a visual redesign.
 
 ## Source-level verification completed
-Static checks were run across the repository's 27 HTML pages for:
+Static checks were run across the repository's 27 canonical HTML pages for:
 - Local file references in `href` and `src`.
 - In-page anchor targets.
 - Duplicate HTML IDs.
 - Missing image `alt` attributes.
 - Presence of page title, meta description, canonical link, and one H1.
 - Local CSS and JavaScript references.
+- Open Graph and Twitter metadata consistency across all 27 canonical pages after PR #45.
 
 **Result of those checks:** no broken local file references, missing local anchor targets, duplicate IDs, missing image alt attributes, or missing linked CSS/JS resources were found in the checked pages. All 27 checked pages had a title, meta description, canonical link, and one H1. This is static source verification, not proof that every resource loads successfully in a real browser.
 
@@ -83,3 +84,9 @@ Merged to `main` through pull request [#45 — Add page-specific social previews
 - Did not change CSS, JavaScript, layout, colours, typography or spacing.
 - Static patch review confirmed metadata was added to 19 pages; homepage and Cinekorn pages already had page-specific social metadata.
 - Still unverified: the actual rendered share card on LinkedIn/X and whether each external thumbnail is currently retrievable.
+
+
+### Latest deployment and social metadata verification - 13 October 2026
+- GitHub Pages workflow [38368792539](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38368792539) completed successfully for `main` commit `e39436d54e03b89ca42903adcaa8b06467ebba43`.
+- Static verification checked the homepage, Cinekorn hub and six Cinekorn cases, plus the Ajmera, Jalan and Swad hubs and their case pages: 27 canonical pages total. All checked pages have Open Graph and Twitter title/URL metadata; canonical URLs match `og:url`, share titles match, and image tags are paired consistently.
+- A stale web snapshot still exposed older homepage content, and fresh cache-busted page fetches were inaccessible in this review environment. The deployment workflow is green, but live rendered/browser QA remains open rather than being marked as passed.
