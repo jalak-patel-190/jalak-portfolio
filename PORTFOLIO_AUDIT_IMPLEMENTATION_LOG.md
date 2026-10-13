@@ -96,3 +96,10 @@ Merged to `main` through pull request [#45 — Add page-specific social previews
 - Removed the unsupported “several days” estimate from the Cinekorn data-tooling case; the source verifies 6,000–8,000 rows and a two-day completion, but does not establish how long the manual alternative would have taken.
 - Replaced “biggest revenue course” with “highest-ticket course” in the Swad diploma case. Ticket size and total revenue are different measures; the revised wording follows the source record.
 - No visual styling or layout changed. Real browser QA remains open.
+
+
+## SEO title polish
+- Replaced generic “Case 01/02/…” titles on four Ajmera and four Jalan case pages with descriptive titles derived from the existing case headings.
+- Updated matching Open Graph and Twitter titles so search and share metadata remain consistent with the visible page topic.
+- Kept canonical URLs, meta descriptions, page content, CSS, layout, colours and typography unchanged.
+- Search-engine indexing and real share-preview rendering are not verified by source checks.
