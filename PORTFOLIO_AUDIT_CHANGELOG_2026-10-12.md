@@ -154,3 +154,10 @@ Keep the existing dark, restrained visual direction, typography, spacing languag
 - Updated the audit issue register so the missed page-level claim is not lost in the earlier hub-level correction.
 - No visual, layout, typography, or navigation changes.
 - Merged to `main` in pull request [#35](https://github.com/jalak-patel-190/jalak-portfolio/pull/35).
+
+### Batch 12 — Cinekorn account-type wording
+
+- Corrected the Cinekorn hub's “two LinkedIn pages” wording.
+- The scope now distinguishes the founder's LinkedIn profile from the company LinkedIn page.
+- This is a factual wording correction only; the page's visual theme and layout are unchanged.
+- Added issue FACT-012 to the audit report so the scope correction is traceable.
