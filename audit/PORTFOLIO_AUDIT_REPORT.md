@@ -112,7 +112,7 @@ These checks confirm source-level consistency only. They do not confirm that the
 - Layout, typography, spacing and card structure were not changed.
 - Full-page contrast and focus-state testing remains open.
 
-### Batch 7 - prepared for review
+### Batch 7 - merged in pull request #33
 - Darkened the Cinekorn gold chart-series token from `#D4A017` to `#9B7200` because the original color reached only 2.38:1 contrast against white.
 - The new gold reaches 4.37:1 on white and 3.99:1 on the site paper background, above the 3:1 non-text graphical target.
 - Only the chart-series color changes; the existing page layout, typography and visual system are retained.
