@@ -87,10 +87,10 @@ Merged to `main` through pull request [#45 — Add page-specific social previews
 
 
 ### Latest deployment and social metadata verification - 13 October 2026
-- Latest GitHub Pages build and deploy workflow [38370869756](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38370869756) completed successfully for current `main` commit `7103d2344cc5269382d2e6cdd8e7cdbbca239689` on 13 October 2026.
+- Website code commit `bbefefdfae098b29219ff4115331bc71ab7719db` (including the Case 02 Telugu image correction) deployed successfully in workflow [38406532537](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38406532537). The latest `main` commit `c7de73c4f37ce6f48558603ec3d0705a0a4f888c` is the audit-documentation follow-up; its Pages workflow [38406683217](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38406683217) also succeeded.
 - The preceding successful deployment [38370653831](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38370653831) included the View All Work links. The latest run confirms the current main branch was built and deployed again after the audit documentation update.
 - Static verification checked the homepage, Cinekorn hub and six Cinekorn cases, plus the Ajmera, Jalan and Swad hubs and their case pages: 27 canonical pages total. All checked pages have Open Graph and Twitter title/URL metadata; canonical URLs match `og:url`, share titles match, and image tags are paired consistently.
-- A stale web snapshot still exposed older homepage content, and fresh cache-busted page fetches were inaccessible in this review environment. The deployment workflow is green, but live rendered/browser QA remains open rather than being marked as passed.
+- The web review tool still exposed an older cached homepage snapshot, and fresh cache-busted page fetches were inaccessible in this review environment. The website-code deployment and the subsequent documentation deployment both succeeded, but live rendered/browser QA remains open rather than being marked as passed.
 
 
 ## Content accuracy follow-up
