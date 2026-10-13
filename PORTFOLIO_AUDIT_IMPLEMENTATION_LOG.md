@@ -1,7 +1,7 @@
 # Portfolio Audit and Implementation Log
 **Repository:** `jalak-patel-190/jalak-portfolio`  
 **Audit date:** 13 October 2026  
-**Status:** Phase 1 implementation merged; full audit and browser QA are still in progress.
+**Status:** Multiple accuracy, accessibility, routing and SEO batches are merged; the source-level audit is substantially advanced, but full browser/device QA and live performance checks remain open.
 
 ## What this audit is and is not
 This document records source-level findings and completed edits. It does not claim a complete browser-based UX, accessibility, responsive, performance, or live-deployment audit. No Lighthouse/Core Web Vitals run, contrast measurement, or real keyboard/mobile browser session has been completed yet.
@@ -72,3 +72,14 @@ Static checks were run across the repository's 27 HTML pages for:
 
 ## Definition of done
 The work is complete only when the open P1 issues are verified or explicitly documented as blocked, the content claims are source-checked, the full set of local routes works, and the deployed desktop/mobile experience passes a regression review.
+
+
+## Completed: Phase 6, page-specific social previews
+Merged to `main` through pull request [#45 — Add page-specific social previews across company hubs and cases](https://github.com/jalak-patel-190/jalak-portfolio/pull/45), merge commit `b4a5c8cdbc15fd45f3a96080ea886b1133253f9a`.
+
+- Added Open Graph and Twitter card metadata to the Ajmera, Jalan and Swad company hubs and all sixteen of their individual case-study pages.
+- Reused each page's existing title, meta description and canonical URL, keeping social metadata aligned with on-page content.
+- Reused an existing page image only when one was present in the page source. Pages without a suitable image use a text-only summary card.
+- Did not change CSS, JavaScript, layout, colours, typography or spacing.
+- Static patch review confirmed metadata was added to 19 pages; homepage and Cinekorn pages already had page-specific social metadata.
+- Still unverified: the actual rendered share card on LinkedIn/X and whether each external thumbnail is currently retrievable.
