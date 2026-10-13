@@ -277,3 +277,17 @@ footer p + p { margin-top: 0.3rem; }
   }
 }
 
+
+
+/* Related case cards: reuse the Swad light palette and CTA accent. */
+.whats-next { margin: 2.75rem 0 1.5rem; padding-top: 1.75rem; border-top: 1px solid var(--border); }
+.whats-next h2 { font-family: 'Bebas Neue', sans-serif; font-size: 1.45rem; letter-spacing: .4px; margin-bottom: 1rem; }
+.next-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.next-card { display: block; min-width: 0; text-decoration: none; color: inherit; background: var(--card, #fff); border: 1px solid var(--border); border-radius: 10px; padding: .95rem 1rem; box-shadow: var(--shadow); transition: border-color .15s ease, transform .15s ease; }
+.next-card .n { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--cta1, #C2410C); margin-bottom: .25rem; }
+.next-card .t { font-size: .92rem; font-weight: 700; margin-bottom: .2rem; }
+.next-card p { margin: .3rem 0 0; font-size: .82rem; line-height: 1.45; color: var(--text-muted); }
+.next-card:hover { border-color: #d4cbbd; transform: translateY(-2px); }
+.next-card:focus-visible { outline: 2px solid var(--cta1, #C2410C); outline-offset: 3px; }
+@media (max-width: 620px) { .next-grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .next-card { transition: none; } }
