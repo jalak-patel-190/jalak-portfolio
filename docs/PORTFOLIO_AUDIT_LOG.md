@@ -127,3 +127,12 @@ Useful proof:
 
 ### Sign-off status
 **Implementation batches complete; final browser QA pending.** The review environment could not retrieve the live GitHub Pages site as a usable rendered page. The latest Pages workflow is green, which verifies the deployment workflow, not the rendered experience. Remaining checks: desktop/mobile browser layout, keyboard and mobile-menu interaction, external media loading, full contrast review, and Lighthouse/Core Web Vitals. Do not claim these have passed without real test results.
+
+
+## Accessibility follow-up: focus indicators
+
+- **Merged:** [PR #62](https://github.com/jalak-patel-190/jalak-portfolio/pull/62).
+- Added explicit keyboard-focus outlines to key homepage and case-study controls across the four company stylesheets, using existing theme accents.
+- Contrast ratios against white for the focus-token colors are 5.41:1 (`#B8441B`), 5.18:1 (`#C2410C`) and 7.50:1 (`#1F5C6B`). This is not a full-page contrast audit.
+- Existing reduced-motion and responsive CSS rules remain in place.
+- **Open:** test actual keyboard traversal, visible focus on the deployed pages, and all text/control/background combinations in a real browser. Do not mark full accessibility QA complete yet.

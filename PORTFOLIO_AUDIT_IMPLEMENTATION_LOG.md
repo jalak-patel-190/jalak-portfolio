@@ -145,3 +145,13 @@ Merged in [PR #60](https://github.com/jalak-patel-190/jalak-portfolio/pull/60); 
 
 ### Remaining: real-browser sign-off
 The current implementation scope is complete. Final browser QA is not. The deployed site could not be retrieved in a usable rendered form by the available review tools, although the latest GitHub Pages workflow succeeded. Do not mark mobile layout, keyboard behavior, external media loading, full-page contrast, or Lighthouse/Core Web Vitals as passed until tested in a real browser. Jalan proof gaps remain intentionally open; preserve the case ideas and add evidence only when supplied.
+
+
+## Phase 9: keyboard focus visibility
+Merged in [PR #62](https://github.com/jalak-patel-190/jalak-portfolio/pull/62).
+
+- Added explicit `:focus-visible` outlines to homepage CTAs and proof controls, and interactive controls/cards in the Cinekorn, Ajmera, Jalan and Swad shared stylesheets.
+- Reused existing theme tokens and changed focus-only styling; hover behavior, layout, typography, spacing and responsive rules were not redesigned.
+- Token contrast against white: `#B8441B` 5.41:1, `#C2410C` 5.18:1, `#1F5C6B` 7.50:1. These are token calculations, not a complete page-level contrast result.
+- Source checks confirm reduced-motion rules and responsive media queries remain present.
+- Remaining verification: keyboard traversal and visible focus in a real browser; complete component/background contrast review remains open.
