@@ -581,3 +581,12 @@ footer {
   .lightbox-inner { border-radius: 0; max-height: 100vh; }
   .lightbox-inner img { max-height: 100vh; }
 }
+
+/* Keep keyboard focus visible without changing hover styling. */
+.nav-cta:focus-visible,
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.case-teaser:focus-visible,
+.output-card:focus-visible,
+.link-chip:focus-visible,
+.carousel-btn:focus-visible { outline: 3px solid var(--cta-start, #B8441B); outline-offset: 3px; }
