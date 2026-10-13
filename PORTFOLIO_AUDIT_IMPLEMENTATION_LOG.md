@@ -49,7 +49,7 @@ Static checks were run across the repository's 27 HTML pages for:
 
 ### P1: Content and evidence review
 - **CONTENT-001 — Case-by-case evidence audit:** review every case claim against the available source archive, distinguishing lifetime totals, pre-tenure catalogue performance, tenure output, and directly attributable results.
-- **CONTENT-002 — Cinekorn account scope:** verify the published account count and exact platform list are consistent everywhere, particularly the distinction between YouTube channels and social/professional accounts.
+- **CONTENT-002 — Cinekorn account scope:** the hub now distinguishes six YouTube channels from the founder's LinkedIn profile and the company LinkedIn page. Verify the full platform/account inventory against the original tracker before publishing a total account count.
 - **CONTENT-003 — Swad metrics:** keep the 6.38M and 16M+ figures labelled to their separate channels and periods. Do not combine them into a total unless the source period and calculation are reconciled.
 - **CONTENT-004 — Ajmera evidence:** retain the removal of the unverified +20.3% claim. Use the narrower Telugu +32.4% and Tamil +31.6% subscriber growth only with the Dec 2022–Jun 2023 period and appropriate channel labels. Do not reintroduce the unsupported 40% content-output claim, false Odisha +527% spike, or old 59-account figure.
 - **CONTENT-005 — Jalan commercial claims:** do not publish the disputed ₹93.67 crore / 5166% claim without a defensible source, timeframe, and attribution method.
