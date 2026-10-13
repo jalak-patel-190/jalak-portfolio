@@ -302,3 +302,11 @@ footer { text-align: center; padding: 2rem 1rem; font-size: 0.8rem; color: var(-
 .next-card p { margin: .3rem 0 0; font-size: .82rem; line-height: 1.45; color: var(--text-muted); }
 .next-card:focus-visible { outline: 2px solid var(--cta-start, #B8441B); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) { .next-card { transition: none; } }
+
+/* Override hover-group outline resets only for keyboard focus. */
+.btn-primary:focus-visible,
+.hero-actions a.btn-primary:focus-visible,
+.page-nav .primary:focus-visible,
+.case-teaser:focus-visible,
+.output-card:focus-visible,
+.carousel-btn:focus-visible { outline: 3px solid var(--cta-start, #B8441B); outline-offset: 3px; }
