@@ -310,3 +310,16 @@ footer { text-align: center; padding: 2rem 1rem; font-size: 0.8rem; color: var(-
 .case-teaser:focus-visible,
 .output-card:focus-visible,
 .carousel-btn:focus-visible { outline: 3px solid var(--cta-start, #B8441B); outline-offset: 3px; }
+
+
+/* Small factual metadata line used on company hubs. */
+.hub-meta-line {
+  margin: 0.75rem 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.hub-meta-line strong {
+  color: var(--text);
+  font-weight: 700;
+}
