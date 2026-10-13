@@ -1,8 +1,8 @@
 # Portfolio Audit and Change Log
-**Review date:** 12 October 2026  
+**Review date:** 13 October 2026  
 **Repository:** `jalak-patel-190/jalak-portfolio`  
-**Scope:** Homepage (`index.html`) and Cinekorn hub plus six Cinekorn case studies.  
-**Out of scope:** Full content audit of Ajmera, Jalan and Swad case studies. Their backend work is still in progress.
+**Scope:** Source-level review of the homepage, four company hubs, 23 canonical case-study pages, legacy route redirects, and the 404 page. The detailed issue register covers accuracy, attribution, navigation, accessibility, SEO, and deployment.  
+**Not yet complete:** Real-browser desktop/mobile QA, external-link and image-load checks, rendered contrast measurement, and Lighthouse/Core Web Vitals. These cannot be marked passed from source inspection alone.
 
 ## Executive verdict
 
@@ -137,8 +137,9 @@ Keep the existing dark, restrained visual direction, typography, spacing languag
 **Batch 7:** merged.  
 **Batch 8:** merged.  
 **Batch 9:** merged.  
-**Deployment/browser QA:** still pending.  
-**Full website audit:** not complete. Only the homepage and Cinekorn are in the current detailed scope.
+**Source-level audit:** substantially complete across the 27 canonical pages, plus legacy redirects and the 404 page.  
+**Deployment pipeline:** latest GitHub Pages workflow is successful for the code branch; current docs-only deployment is pending.  
+**Browser/device QA and final sign-off:** still pending. The live page could not be freshly verified in this review environment, so the full website audit is not yet complete.
 
 ### Batch 10 — merged in pull request #33, then rechecked
 
