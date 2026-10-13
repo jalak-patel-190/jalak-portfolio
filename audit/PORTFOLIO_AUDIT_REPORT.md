@@ -42,6 +42,7 @@ The first controlled accuracy and accessibility batch was merged into `main` in 
 | FACT-010 | P2 | Ajmera hub combined nine public videos across the business-education/trust case and the separate CEO personal-brand case, making the case-specific evidence count ambiguous. | Changed the Case 03 result label to four public examples across two content tracks. Batch 4. |
 | A11Y-001 | P2 | Skip links, navigation toggles and motion preferences need explicit support. | Batch 1 added navigation toggle relationships, reduced-motion handling and manual control of the homepage proof carousel. Existing shared styles already include visible-on-focus skip links. |
 | SEO-001 | P2 | Social preview copy should match the revised positioning and not repeat outdated claims. | Homepage Open Graph and Twitter metadata updated in merged batch 1. |
+| SEO-002 | P2 | Ajmera, Jalan and Swad hubs and deep cases lacked page-specific social-sharing metadata. | Added page-specific Open Graph and Twitter card metadata to all 19 pages in merged pull request [#45](https://github.com/jalak-patel-190/jalak-portfolio/pull/45). Existing title, description and canonical URL are reused; images are used only where the page already has an evidence image. Pages without one use a text-only summary card. Actual social-platform rendering remains unverified. |
 | ROUTE-001 | P2 | Previous portfolio URLs such as `case-studies/ajmera.html`, `swad.html`, `jalan-megamart.html` and `cinekorn.html` are not present in the current tree. Older links may still point to them. | Merged in pull request #30: added lightweight redirect pages to the current company hubs and a themed 404 fallback. |
 | QA-001 | P1 | GitHub Pages deployment workflow completed successfully for the current `main` commit `6d87d717a74b46cf21acc4b15dd573528f94f4fb` (run [38356734906](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38356734906), 13 October 2026). This confirms the build/deployment workflow succeeded for the latest content correction. A direct page fetch in this review environment returned a cache miss and a search index still exposed an older snapshot, so the live rendered HTML and browser behavior have not been independently verified. | Recheck the latest Pages workflow after edits settle, then confirm the live HTML in a real browser. Do not treat an earlier successful build as proof that the latest commit is deployed. |
 | QA-002 | P1 | No real browser/device run has been completed in this audit. | Open. Desktop and mobile visual QA, keyboard-only testing, focus visibility, carousel interaction, and menu behaviour still need hands-on verification. |
@@ -119,6 +120,14 @@ These checks confirm source-level consistency only. They do not confirm that the
 - That token change therefore had no visible effect and should not be counted as an accessibility fix.
 - The original token was restored in merged pull request [#36](https://github.com/jalak-patel-190/jalak-portfolio/pull/36). No rendered chart, layout, typography, spacing or theme change is intended.
 - Full rendered-page contrast and focus-state testing remains open.
+
+### Batch 8 - merged in pull request #45
+- Added page-specific Open Graph and Twitter metadata to the Ajmera, Jalan and Swad company hubs and all 16 of their deep case studies.
+- Each page uses its existing title, meta description and canonical URL; metadata is not a replacement for the source content.
+- Used an existing page image only when one was already present. Pages without a suitable image use a text-only summary card rather than a fabricated or unrelated image.
+- No CSS, JavaScript, colours, typography, spacing or layout changed.
+- Static patch review confirmed 19 files changed, each with Open Graph and Twitter title/description/URL metadata. Cinekorn and the homepage already had page-specific metadata and were left unchanged.
+- Actual LinkedIn/X card rendering and live image retrieval still require browser/platform verification.
 
 ### Final QA - still required
 1. GitHub Pages workflow success is confirmed for the current `main` commit; independently inspect the live homepage and representative deep case pages in a real browser because this environment did not return fresh rendered HTML.
