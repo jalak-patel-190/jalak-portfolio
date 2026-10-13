@@ -291,3 +291,13 @@ footer p + p { margin-top: 0.3rem; }
 .next-card:focus-visible { outline: 2px solid var(--cta1, #C2410C); outline-offset: 3px; }
 @media (max-width: 620px) { .next-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .next-card { transition: none; } }
+
+/* Override hover-group outline resets only for keyboard focus. */
+.btn-nav:focus-visible,
+.btn-primary:focus-visible,
+a.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.link-chip:focus-visible,
+.output-card:focus-visible,
+.carousel-btn:focus-visible,
+.case-teaser:focus-visible { outline: 3px solid var(--cta1, #C2410C); outline-offset: 3px; }
