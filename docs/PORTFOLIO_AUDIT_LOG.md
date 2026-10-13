@@ -24,6 +24,7 @@ These are source-level checks only. They do not prove the rendered page works at
 | ID | Priority | Finding | Action / status |
 |---|---|---|---|
 | UX-001 | P2 | Homepage proof cards described specific pieces of work but linked only to company hubs, adding a navigation step and weakening the promise of the card. | **Fixed and merged in PR #57:** each proof card links to its related case page. |
+| UX-003 | P2 | Homepage company cards said “Read full case study” but opened a company hub containing multiple cases. | **Fix in this branch:** label these actions “Explore company hub” to match the destination. |
 | FACT-001 | P1 | Cinekorn's 108M+ views could be mistaken for views generated solely during the user's tenure. | **Addressed in merged batch:** label as lifetime YouTube views and explain that the total includes pre-tenure catalogue performance. Individual case pages separate inherited catalogue from tenure work. |
 | FACT-002 | P1 | Ajmera's +20.3% same-account result was not verified by the available tracker evidence. | **Removed from the homepage headline.** Do not restore until the account list, matched dates and metric definition can be reproduced. |
 | FACT-003 | P2 | A single “6+ languages” headline was not consistent with the language names across source descriptions. | **Removed from the homepage headline.** Use named languages only after the inventory is reconciled. |
