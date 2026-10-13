@@ -42,6 +42,7 @@ The first controlled accuracy and accessibility batch was merged into `main` in 
 | FACT-010 | P2 | Ajmera hub combined nine public videos across the business-education/trust case and the separate CEO personal-brand case, making the case-specific evidence count ambiguous. | Changed the Case 03 result label to four public examples across two content tracks. Batch 4. |
 | FACT-013 | P2 | Two case narratives used an unsupported time estimate for manual data classification and described Swad's highest-ticket diploma as the “biggest revenue course,” which is not the same claim. | Removed the unverified “several days” estimate and replaced “biggest revenue course” with the archive-supported “highest-ticket course.” Updated in the current content-accuracy batch. |
 | FACT-014 | P2 | Ajmera regional strategy case referred to “the seven phrases I owned,” but the master archive supports regional keyword and product-positioning decisions without verifying a seven-phrase count. | Removed the unsupported count and retained the evidence-aligned description of regional product preferences, title formulas and search terms. Merged in the current content-accuracy batch. |
+| ATTR-003 | P2 | Cinekorn Case 04's `6.7× Facebook post volume` hero metric did not state that it compares two different reporting windows. | Relabelled it as posts in the compared Facebook periods. The explanatory paragraph still gives the 2025 and 2026 counts and warns that the comparison does not prove causation. |
 | UX-003 | P2 | Ajmera, Jalan and Swad deep cases ended with previous/hub/next navigation but lacked the agreed final “View All Work” action used by Cinekorn. | Added a consistent “View All Work” link to all 16 Ajmera, Jalan and Swad deep cases, pointing to the homepage work section. Existing case navigation and company styling are retained. Merged in pull request [#51](https://github.com/jalak-patel-190/jalak-portfolio/pull/51). |
 | A11Y-001 | P2 | Skip links, navigation toggles and motion preferences need explicit support. | Batch 1 added navigation toggle relationships, reduced-motion handling and manual control of the homepage proof carousel. Existing shared styles already include visible-on-focus skip links. |
 | SEO-001 | P2 | Social preview copy should match the revised positioning and not repeat outdated claims. | Homepage Open Graph and Twitter metadata updated in merged batch 1. |
@@ -162,6 +163,11 @@ These checks confirm source-level consistency only. They do not confirm that the
 - Removed “the seven phrases I owned” from the regional strategy case because the master archive does not verify a seven-phrase count.
 - Retained the supported point: regional product preferences shaped title formulas and search terms.
 - No metrics, role title, date, layout, colours or visual components were changed.
+
+### Batch 14 - scope the Facebook publishing comparison
+- Changed the Cinekorn Case 04 hero label from “6.7× Facebook post volume” to “6.7× posts in the compared Facebook periods.”
+- The nearby evidence paragraph already provides the 2025 and 2026 post/view counts and explicitly avoids claiming that posting volume caused the view change.
+- No number or visual styling changed; the label now makes the comparison's limited scope clearer.
 
 ### Final QA update - 13 October 2026
 - Static social-metadata consistency was checked across all 27 canonical HTML pages after PR #45. No mismatch was found between canonical URL and `og:url`, or between Open Graph and Twitter titles; image metadata is paired consistently.
