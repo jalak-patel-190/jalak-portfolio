@@ -126,3 +126,9 @@ Merged to `main` through pull request [#45 — Add page-specific social previews
 - The replacement sentence describes regional product preferences shaping title formulas and search terms.
 - No design or layout changes.
 - Real browser/mobile QA remains open.
+
+
+## Facebook comparison scope correction
+- Changed the Cinekorn Case 04 hero label to “6.7× posts in the compared Facebook periods.”
+- The evidence paragraph continues to show the source-reported 2025 and 2026 windows and explicitly states that the comparison does not prove causation.
+- No number or visual styling changed. Browser QA remains open.
