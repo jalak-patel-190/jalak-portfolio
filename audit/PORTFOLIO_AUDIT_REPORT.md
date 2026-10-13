@@ -38,7 +38,7 @@ The first controlled accuracy and accessibility batch was merged into `main` in 
 | ATTR-002 | P2 | Rakhewal's 163-piece total is made up of one full YouTube release, 14 re-cut parts and 148 Shorts. The adjacent Facebook work is a separate distribution surface. | Clarified the 163-piece labels as YouTube-only in batch 2. |
 | A11Y-001 | P2 | Skip links, navigation toggles and motion preferences need explicit support. | Batch 1 added navigation toggle relationships, reduced-motion handling and manual control of the homepage proof carousel. Existing shared styles already include visible-on-focus skip links. |
 | SEO-001 | P2 | Social preview copy should match the revised positioning and not repeat outdated claims. | Homepage Open Graph and Twitter metadata updated in merged batch 1. |
-| ROUTE-001 | P2 | Previous portfolio URLs such as `case-studies/ajmera.html`, `swad.html`, `jalan-megamart.html` and `cinekorn.html` are not present in the current tree. Older links may still point to them. | Batch 3: add lightweight redirect pages to the current company hubs and a themed 404 fallback. |\n| QA-001 | P1 | The currently published GitHub Pages deployment has not been independently confirmed after the merge. The web reader returned an older indexed snapshot, which is not proof of current deployment state. | Open. Confirm the deployed HTML in a real browser or via a fresh deployment check before sign-off. |
+| ROUTE-001 | P2 | Previous portfolio URLs such as `case-studies/ajmera.html`, `swad.html`, `jalan-megamart.html` and `cinekorn.html` are not present in the current tree. Older links may still point to them. | Implemented on batch 3 branch: add lightweight redirect pages to the current company hubs and a themed 404 fallback. Pending review/merge. |\n| QA-001 | P1 | The currently published GitHub Pages deployment has not been independently confirmed after the merge. The web reader returned an older indexed snapshot, which is not proof of current deployment state. | Open. Confirm the deployed HTML in a real browser or via a fresh deployment check before sign-off. |
 | QA-002 | P1 | No real browser/device run has been completed in this audit. | Open. Desktop and mobile visual QA, keyboard-only testing, focus visibility, carousel interaction, and menu behaviour still need hands-on verification. |
 | QA-003 | P2 | External YouTube thumbnails, Instagram embeds/links and LinkedIn links have not all been checked live. | Open. Test external destinations and image loading; do not treat source-level link checks as proof that external services are available. |
 | PERF-001 | P2 | Lighthouse, Core Web Vitals, image-weight and network performance have not been measured. | Open. Run Lighthouse on the deployed site after deployment is confirmed. |
@@ -84,6 +84,11 @@ These checks confirm source-level consistency only. They do not confirm that the
 - Removed the unsupported Ajmera 10.9% comparison.
 - Aligned Swad livestream participant wording and removed the implication of an unverified growth result.
 - Clarified that the Rakhewal 163-piece count is YouTube-only.
+
+### Batch 3 - awaiting review/merge
+- Added legacy URL redirects for the previous Ajmera, Swad, Jalan and Cinekorn hub paths.
+- Added a themed `404.html` page with links to the homepage and all four company hubs.
+- These additions do not change the homepage or case-study visual system.
 
 ### Final QA - still required
 1. Confirm the latest commit is deployed to GitHub Pages.
