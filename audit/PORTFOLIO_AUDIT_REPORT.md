@@ -9,7 +9,7 @@
 
 The portfolio has a coherent multi-page structure: a homepage, four company hubs and individual case-study pages. The current design direction is usable as a foundation. The main risks found in this pass are not reasons for a visual redesign. They are unsupported numerical claims, unclear attribution, a few case descriptions that overstate what the available archive verifies, and the absence of browser-based QA.
 
-The first controlled accuracy and accessibility batch was merged into `main` in pull request #2. The second evidence-accuracy batch was merged in pull request #29. A third pass is checking legacy URL handling and final source-level QA.
+The first controlled accuracy and accessibility batch was merged into `main` in pull request #2. The second evidence-accuracy batch was merged in pull request #29. Legacy route redirects and the themed 404 page were merged in pull request #30. Ajmera evidence-framing corrections were merged in pull request #31.
 
 **Design constraint:** preserve the current typography, palette, spacing, cards, page structure and company-specific styling. Prefer precise copy, clear evidence labels and small accessibility improvements over a redesign.
 
@@ -40,15 +40,17 @@ The first controlled accuracy and accessibility batch was merged into `main` in 
 | FACT-010 | P2 | Ajmera hub combined nine public videos across the business-education/trust case and the separate CEO personal-brand case, making the case-specific evidence count ambiguous. | Changed the Case 03 result label to four public examples across two content tracks. Batch 4. |
 | A11Y-001 | P2 | Skip links, navigation toggles and motion preferences need explicit support. | Batch 1 added navigation toggle relationships, reduced-motion handling and manual control of the homepage proof carousel. Existing shared styles already include visible-on-focus skip links. |
 | SEO-001 | P2 | Social preview copy should match the revised positioning and not repeat outdated claims. | Homepage Open Graph and Twitter metadata updated in merged batch 1. |
-| ROUTE-001 | P2 | Previous portfolio URLs such as `case-studies/ajmera.html`, `swad.html`, `jalan-megamart.html` and `cinekorn.html` are not present in the current tree. Older links may still point to them. | Merged in pull request #30: added lightweight redirect pages to the current company hubs and a themed 404 fallback. |\n| QA-001 | P1 | The currently published GitHub Pages deployment has not been independently confirmed after the merge. The web reader returned an older indexed snapshot, which is not proof of current deployment state. | Open. Confirm the deployed HTML in a real browser or via a fresh deployment check before sign-off. |
+| ROUTE-001 | P2 | Previous portfolio URLs such as `case-studies/ajmera.html`, `swad.html`, `jalan-megamart.html` and `cinekorn.html` are not present in the current tree. Older links may still point to them. | Merged in pull request #30: added lightweight redirect pages to the current company hubs and a themed 404 fallback. |
+| QA-001 | P1 | The currently published GitHub Pages deployment has not been independently confirmed after the merge. The web reader returned an older indexed snapshot, which is not proof of current deployment state. | Open. Confirm the deployed HTML in a real browser or via a fresh deployment check before sign-off. |
 | QA-002 | P1 | No real browser/device run has been completed in this audit. | Open. Desktop and mobile visual QA, keyboard-only testing, focus visibility, carousel interaction, and menu behaviour still need hands-on verification. |
 | QA-003 | P2 | External YouTube thumbnails, Instagram embeds/links and LinkedIn links have not all been checked live. | Open. Test external destinations and image loading; do not treat source-level link checks as proof that external services are available. |
 | PERF-001 | P2 | Lighthouse, Core Web Vitals, image-weight and network performance have not been measured. | Open. Run Lighthouse on the deployed site after deployment is confirmed. |
 | CONTRAST-001 | P2 | Automated or manual contrast testing has not been completed. | Open. Check body text, muted text, buttons, focus states and chart labels against WCAG contrast targets. |
+| ALT-001 | P2 | Presence of alt attributes was checked, but semantic match between each description and its image has not been manually reviewed. | Open. Visually inspect images and confirm alt text describes the actual image, not an assumed purpose. |
 
 ## Source-level checks completed
 
-A static source audit covered 27 HTML pages. The checked pages had:
+A static source audit covered the 27 core HTML pages. The four legacy redirect pages and root 404 page were checked separately. The core pages had:
 
 - A page title, meta description and canonical URL.
 - Exactly one H1 heading.
@@ -82,7 +84,7 @@ These checks confirm source-level consistency only. They do not confirm that the
 
 ### Batch 2 - merged in pull request #29
 - Removed unverified Jalan hub and case-page counts.
-- Replace unsupported Jalan influencer/spend/bill claims with an evidence boundary.
+- Replaced unsupported Jalan influencer/spend/bill claims with an evidence boundary.
 - Removed the unsupported Ajmera 10.9% comparison.
 - Aligned Swad livestream participant wording and removed the implication of an unverified growth result.
 - Clarified that the Rakhewal 163-piece count is YouTube-only.
@@ -109,4 +111,4 @@ These checks confirm source-level consistency only. They do not confirm that the
 
 ## Sign-off status
 
-**Not complete.** The first implementation batch is merged, and batch 2 contains evidence-based corrections in a separate branch. Deployment verification and real browser QA remain open. No full redesign is proposed; the objective is a more accurate, accessible and credible version of the existing site.
+**Not complete.** Four controlled implementation batches are merged into `main`. Deployment verification and real browser QA remain open. No full redesign is proposed; the objective is a more accurate, accessible and credible version of the existing site.
