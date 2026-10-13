@@ -139,3 +139,11 @@ Keep the existing dark, restrained visual direction, typography, spacing languag
 **Batch 9:** merged.  
 **Deployment/browser QA:** still pending.  
 **Full website audit:** not complete. Only the homepage and Cinekorn are in the current detailed scope.
+
+### Batch 10 — prepared for review
+
+- Source-level contrast calculations found the Cinekorn gold chart series `#D4A017` at 2.38:1 against white, below the 3:1 non-text graphical target.
+- Updated the shared chart-series token to `#9B7200`, which reaches 4.37:1 against white and 3.99:1 against the paper background.
+- No layout, typography, spacing, chart structure, or company color direction was changed; this is a targeted darkening of one chart accent.
+- Updated the detailed audit report with the evidence and remaining QA limitation.
+- This batch is on a review branch and is not yet part of `main`.
