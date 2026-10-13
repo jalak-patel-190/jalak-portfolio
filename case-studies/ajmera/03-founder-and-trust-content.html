@@ -96,5 +96,14 @@ if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('open');
 })();
 (function(){document.querySelectorAll('[data-output-carousel]').forEach(function(root){var track=root.querySelector('.output-carousel-track');var prev=root.querySelector('.carousel-btn.prev');var next=root.querySelector('.carousel-btn.next');if(!track)return;function step(){return Math.min(track.clientWidth*0.85,280);}if(prev)prev.addEventListener('click',function(){track.scrollBy({left:-step(),behavior:(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ? 'auto' : 'smooth'});});if(next)next.addEventListener('click',function(){track.scrollBy({left:step(),behavior:(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ? 'auto' : 'smooth'});});});})();
 </script>
+
+<script>
+(function(){
+  var t=document.getElementById('navToggle'),n=document.getElementById('mainNav');
+  if(!t||!n)return;
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){n.classList.remove('open');t.setAttribute('aria-expanded','false');t.focus();}});
+  document.addEventListener('click',function(e){if(n.classList.contains('open')&&!n.contains(e.target)&&!t.contains(e.target)){n.classList.remove('open');t.setAttribute('aria-expanded','false');}});
+})();
+</script>
 </body>
 </html>
