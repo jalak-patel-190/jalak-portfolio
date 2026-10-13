@@ -47,7 +47,7 @@ The first controlled accuracy and accessibility batch was merged into `main` in 
 | PERF-001 | P2 | Lighthouse, Core Web Vitals, image-weight and network performance have not been measured. | Open. Run Lighthouse on the deployed site after deployment is confirmed. |
 | CONTRAST-001 | P2 | Automated or manual contrast testing has not been completed. | Open. Check body text, muted text, buttons, focus states and chart labels against WCAG contrast targets. |
 | ALT-001 | P2 | Presence of alt attributes was checked, but semantic match between each description and its image has not been manually reviewed. | Open. Visually inspect images and confirm alt text describes the actual image, not an assumed purpose. |
-| A11Y-002 | P2 | Two Ajmera output carousels used smooth scrolling regardless of the visitor's reduced-motion setting. | Updated both carousels to use immediate scrolling when `prefers-reduced-motion: reduce` is active. Batch 5, pending merge. |
+| A11Y-002 | P2 | Two Ajmera output carousels used smooth scrolling regardless of the visitor's reduced-motion setting. | Updated both carousels to use immediate scrolling when `prefers-reduced-motion: reduce` is active. Merged in pull request #32. |
 
 ## Source-level checks completed
 
@@ -101,7 +101,7 @@ These checks confirm source-level consistency only. They do not confirm that the
 - Label the approximately fifty accounts as tracked, not confirmed as a matched comparison set.
 - Keep Ajmera Case 03's four public examples separate from the five CEO personal-brand examples in Case 06.
 
-### Batch 5 - awaiting review/merge
+### Batch 5 - merged in pull request #32
 - Updated the Ajmera corporate-content and CEO personal-brand carousels to respect `prefers-reduced-motion`.
 - Checked the other case-page carousel scripts; those reviewed already used reduced-motion-aware scrolling or did not use smooth scrolling.
 - No visual styling changes.
@@ -117,4 +117,4 @@ These checks confirm source-level consistency only. They do not confirm that the
 
 ## Sign-off status
 
-**Not complete.** Four controlled implementation batches are merged into `main`. Deployment verification and real browser QA remain open. No full redesign is proposed; the objective is a more accurate, accessible and credible version of the existing site.
+**Not complete.** Five controlled implementation batches are merged into `main`. Deployment verification and real browser QA remain open. No full redesign is proposed; the objective is a more accurate, accessible and credible version of the existing site.
