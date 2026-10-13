@@ -7,11 +7,11 @@ Scope: source-level review of the homepage, company hubs, case pages, legacy rou
 ## Status
 
 - Phase 1, source of truth: complete.
-- Phase 2, source-level technical and content audit: source review complete; real-browser and live deployment QA remain open.
-- Phase 3, information architecture: reviewed and retained; homepage proof cards are being changed to open the relevant case directly.
-- Phase 4, content and visual accuracy: in progress. No theme redesign planned.
-- Phase 5, implementation: first batch merged; this branch contains the next controlled UX fix.
-- Phase 6, regression and final sign-off: not complete.
+- Phase 2, source-level technical and content audit: complete for the reviewed source. Real-browser visual and interaction QA remain open.
+- Phase 3, information architecture: complete. Homepage proof cards now open the relevant case directly; merged in PR #57.
+- Phase 4, content accuracy: core pass complete. Visual polish that requires image selection is deferred until the correct asset can be confirmed. No theme redesign planned.
+- Phase 5, implementation: two controlled batches merged into main through PR #2 and PR #57.
+- Phase 6, regression and final sign-off: source-level checks and GitHub Actions build/deploy jobs succeeded for commit 8213eff673ba8f11d8f993c4706245f4b7761ade. Real-browser QA and rendered-page confirmation remain open.
 
 ## Evidence and method
 
@@ -23,7 +23,7 @@ These are source-level checks only. They do not prove the rendered page works at
 
 | ID | Priority | Finding | Action / status |
 |---|---|---|---|
-| UX-001 | P2 | Homepage proof cards described specific pieces of work but linked only to company hubs, adding a navigation step and weakening the promise of the card. | **Fix in this branch:** each proof card links to its related case page. |
+| UX-001 | P2 | Homepage proof cards described specific pieces of work but linked only to company hubs, adding a navigation step and weakening the promise of the card. | **Fixed and merged in PR #57:** each proof card links to its related case page. |
 | FACT-001 | P1 | Cinekorn's 108M+ views could be mistaken for views generated solely during the user's tenure. | **Addressed in merged batch:** label as lifetime YouTube views and explain that the total includes pre-tenure catalogue performance. Individual case pages separate inherited catalogue from tenure work. |
 | FACT-002 | P1 | Ajmera's +20.3% same-account result was not verified by the available tracker evidence. | **Removed from the homepage headline.** Do not restore until the account list, matched dates and metric definition can be reproduced. |
 | FACT-003 | P2 | A single “6+ languages” headline was not consistent with the language names across source descriptions. | **Removed from the homepage headline.** Use named languages only after the inventory is reconciled. |
@@ -31,7 +31,7 @@ These are source-level checks only. They do not prove the rendered page works at
 | FACT-005 | P2 | Jalan evidence for influencer results, tele-calling outcomes, festival campaign performance and channel setup is incomplete. | Preserve the case-study ideas and process descriptions. Do not publish invented booking totals, sales, ROI or campaign lift. Evidence checklist below. |
 | UX-002 | P2 | Swad's hub reuses a small number of images across several case cards. | Improvement opportunity only. Existing theme is retained; choose more specific imagery only after confirming what each available image actually depicts. |
 | SEO-001 | P2 | Homepage social preview currently uses an analytics screenshot rather than a dedicated portfolio preview image. | Improvement opportunity. Do not change the site's visual theme; create or select a preview asset that fits the existing palette before replacing it. |
-| QA-001 | P1 | Browser-rendered desktop/mobile layout, keyboard flow, contrast, Lighthouse/Core Web Vitals, third-party image loading and live Pages deployment have not been independently verified in a real browser during this audit. | **Open.** Do not claim full QA or final sign-off until these checks are performed. |
+| QA-001 | P1 | Browser-rendered desktop/mobile layout, keyboard flow, contrast, Lighthouse/Core Web Vitals and third-party image loading have not been independently verified in a real browser. GitHub Actions build and deployment jobs succeeded, but rendered-page behaviour remains unverified. | **Open.** Do not claim full QA or final sign-off until these checks are performed. |
 | QA-002 | P2 | Static link checks cannot prove that external YouTube, LinkedIn or thumbnail URLs still work. | **Open.** Verify the visible links and media in browser QA. |
 
 ### Priority definitions
