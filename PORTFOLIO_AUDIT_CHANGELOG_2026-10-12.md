@@ -144,7 +144,7 @@ Keep the existing dark, restrained visual direction, typography, spacing languag
 
 - A source-color calculation flagged `#D4A017` as low contrast on white, but a follow-up source search found the corresponding `--series-4` token was declared and not referenced anywhere in the current CSS or case-page markup.
 - The change to `#9B7200` therefore had no visible effect and is not counted as a completed accessibility fix.
-- A corrective branch restores the original unused token so the source does not imply an improvement that users would not see.
+- The original unused token was restored in merged pull request [#36](https://github.com/jalak-patel-190/jalak-portfolio/pull/36), so the source does not imply an improvement that users would not see.
 - Actual rendered chart contrast still needs visual inspection; no theme redesign is proposed.
 
 ### Batch 11 — merged in pull request #35
