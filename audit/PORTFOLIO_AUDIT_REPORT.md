@@ -113,10 +113,10 @@ These checks confirm source-level consistency only. They do not confirm that the
 - Layout, typography, spacing and card structure were not changed.
 - Full-page contrast and focus-state testing remains open.
 
-### Batch 7 - correction prepared for review
+### Batch 7 - correction merged in pull request #36
 - Post-merge validation found that the Cinekorn `--series-4` token changed in PR #33 is declared but never referenced by current CSS or case-page markup.
 - That token change therefore had no visible effect and should not be counted as an accessibility fix.
-- The original token is restored in the current review branch. No rendered chart, layout, typography, spacing or theme change is intended.
+- The original token was restored in merged pull request [#36](https://github.com/jalak-patel-190/jalak-portfolio/pull/36). No rendered chart, layout, typography, spacing or theme change is intended.
 - Full rendered-page contrast and focus-state testing remains open.
 
 ### Final QA - still required
