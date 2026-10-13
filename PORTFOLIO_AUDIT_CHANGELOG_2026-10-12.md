@@ -148,9 +148,10 @@ Keep the existing dark, restrained visual direction, typography, spacing languag
 - Updated the detailed audit report with the evidence and remaining QA limitation.
 - Merged to `main` in pull request [#33](https://github.com/jalak-patel-190/jalak-portfolio/pull/33).
 
-### Batch 11 — prepared for review
+### Batch 11 — merged in pull request #35
 
 - Follow-up checking of the post-cleanup Jalan pages found one remaining unsupported count: `43 planned dates` on Case 04.
 - Removed the number and retained the supported qualitative description of festival and campaign calendar work.
 - Updated the audit issue register so the missed page-level claim is not lost in the earlier hub-level correction.
 - No visual, layout, typography, or navigation changes.
+- Merged to `main` in pull request [#35](https://github.com/jalak-patel-190/jalak-portfolio/pull/35).
