@@ -286,3 +286,18 @@ Source checks now cover all 22 deep case pages, the homepage, four hubs and the 
 ### Phase-6 status after this loop
 
 **Improved but not signed off.** Source-level checks and repeatable desktop/mobile browser tests now pass. Live homepage/hub smoke checks and selected WCAG scans also pass. Keep final sign-off open until deep-page live coverage, external media/destination checks, broader manual accessibility review, and performance testing are complete.
+
+
+## Expanded live-page regression checkpoint — 14 October 2026
+
+- **Merged:** [PR #74](https://github.com/jalak-patel-190/jalak-portfolio/pull/74).
+- Successful browser run: [38516101853](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38516101853).
+- Result: **68 passed, 2 desktop-only skips by design**.
+- Expanded the mobile document-overflow test from five entry pages to all 27 primary pages. All passed.
+- Expanded the live GitHub Pages smoke test from the homepage and four company hubs to all 27 primary pages. Every route returned HTTP 200, contained exactly one H1 and a skip link, and the crawl recorded no uncaught JavaScript errors.
+- The five-page axe-core WCAG 2.1 A/AA scan still passed on desktop and mobile; the five company/hub mobile navigation checks still passed.
+- The test covers the 27 primary pages, not the four legacy routes or custom 404 route. Legacy-route/404 behavior remains in the source audit but has not yet received the same live browser crawl.
+
+### Updated Phase-6 status
+
+Automated source and live browser coverage now includes all 27 primary pages, mobile page-level overflow checks, navigation behavior on five entry pages, and axe-core scans on five entry pages. Final sign-off remains open for legacy routes/404 live behavior, external destination/media reachability, manual screen-reader/keyboard/touch review, and Lighthouse/Core Web Vitals.
