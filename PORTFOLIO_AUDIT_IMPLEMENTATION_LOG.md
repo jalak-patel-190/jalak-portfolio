@@ -1,10 +1,10 @@
 # Portfolio Audit and Implementation Log
 **Repository:** `jalak-patel-190/jalak-portfolio`  
 **Audit date:** 14 October 2026  
-**Status:** Multiple accuracy, accessibility, routing and SEO batches are merged; the source-level audit is substantially advanced, but full browser/device QA and live performance checks remain open.
+**Status:** Multiple accuracy, accessibility, routing and SEO batches are merged. Automated desktop/mobile regression and a Lighthouse lab baseline have now passed on the deployed site; manual accessibility, external media, image optimization and evidence-dependent factual checks remain open. See `docs/PORTFOLIO_AUDIT_LOG.md` for the latest checkpoint.
 
 ## What this audit is and is not
-This document records source-level findings and completed edits. It does not claim a complete browser-based UX, accessibility, responsive, performance, or live-deployment audit. No Lighthouse/Core Web Vitals run, contrast measurement, or real keyboard/mobile browser session has been completed yet.
+This document records implementation history and earlier source-level findings. It does not claim a complete browser-based UX or accessibility certification. A Lighthouse lab run and automated desktop/mobile browser suite have since completed successfully; field Core Web Vitals, manual keyboard/touch/screen-reader review, external media reachability and exhaustive rendered contrast checks remain open.
 
 ## Completed: Phase 1, accuracy and accessibility
 Merged to `main` through pull request [#2](https://github.com/jalak-patel-190/jalak-portfolio/pull/2), merge commit `56288102d8b4702742d90e6514b6402453b09681`.
@@ -179,7 +179,7 @@ Merged in [PR #62](https://github.com/jalak-patel-190/jalak-portfolio/pull/62).
 
 **Source-verified:** core local routes and anchor targets were checked in prior regression passes; page metadata and heading structure are present on the 27 primary pages; relevant content/navigation and accessibility fixes are merged; no redesign was made.
 
-**Still not verified:** real browser rendering, desktop/mobile overflow and clipping, touch and keyboard interaction, external YouTube/LinkedIn links and thumbnail retrieval, complete contrast checks, and Lighthouse/Core Web Vitals. A fresh rendered GitHub Pages response was not available from this review environment, so these items must remain open rather than being marked passed.
+**At this earlier checkpoint, before the later automated run, these items were not verified:** real browser rendering, desktop/mobile overflow and clipping, touch and keyboard interaction, external YouTube/LinkedIn links and thumbnail retrieval, complete contrast checks, and Lighthouse/Core Web Vitals. The later 14 October checkpoint below supersedes this status for automated browser QA and Lighthouse lab measurements; manual and external-media checks remain open.
 
 ### User evidence dependency
 
@@ -187,4 +187,16 @@ Keep all four Jalan case-study ideas. Do not add unverified counts, ROI, booking
 
 ### Final state
 
-**Five of six phases are complete at source/implementation level. Phase 6 is partially complete: static regression and deployment workflow checks passed, while real-browser QA remains blocked by lack of a usable browser/rendered-page check in this environment.** Do not label the whole website fully audited or accessibility-certified until those tests are actually performed.
+**Historical status at this checkpoint:** five of six phases were complete at source/implementation level. Phase 6 remained partially complete because browser-rendered checks were not yet available. The later 14 October automated browser/Lighthouse checkpoint below supersedes the browser-access limitation, while manual accessibility, external media, performance optimization and evidence follow-up remain open. Do not label the website fully audited or accessibility-certified.
+
+
+## Updated regression checkpoint — 14 October 2026
+
+The latest deployed commit `f727b308d82a066c1fa81102dec764e84a262d7e` passed GitHub Pages workflow [38519206459](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38519206459) and browser/Lighthouse workflow [38519206514](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38519206514).
+
+- Browser QA: 120 passed, 2 desktop-context skips by design.
+- All 27 primary pages passed live desktop/mobile smoke checks and mobile overflow checks.
+- Local image/video references served by the local test server returned HTTP 200; the live deployment crawl did not exhaustively fetch every media URL from the published host. Four legacy routes redirected; custom 404 returned HTTP 404; internal audit/QA paths tested by the suite returned HTTP 404.
+- axe-core WCAG 2.1 A/AA scans passed across all 27 primary pages on desktop and mobile Chromium. This is automated coverage, not manual accessibility certification.
+- Lighthouse one-run Performance scores: homepage 92, Ajmera 97, Cinekorn 99, Jalan 96, Swad 99. Accessibility, Best Practices and SEO each scored 100 on all five tested pages. FCP 1.6–2.6 s, LCP 1.6–2.7 s, TBT 0 ms, CLS 0–0.03. These are lab measurements, not field Core Web Vitals.
+- Remaining work: third-party YouTube/LinkedIn/media checks, manual keyboard/touch/screen-reader and contrast review, responsive image derivatives/font-loading evaluation, and Jalan evidence follow-up. Do not add unsupported numbers to close evidence gaps.

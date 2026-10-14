@@ -7,7 +7,7 @@
 
 ## Executive summary
 
-The portfolio has a coherent multi-page structure: a homepage, four company hubs and individual case-study pages. The current design direction is usable as a foundation. The main risks found in this pass are not reasons for a visual redesign. They are unsupported numerical claims, unclear attribution, a few case descriptions that overstate what the available archive verifies, and the remaining manual/device QA and performance measurement. Automated Chromium regression checks have since been added and passed; see the latest checkpoint below.
+The portfolio has a coherent multi-page structure: a homepage, four company hubs and individual case-study pages. The current design direction is usable as a foundation. The main risks are unsupported numerical claims and unclear attribution where evidence is incomplete, plus remaining manual accessibility/external-media checks and image/font performance opportunities. Automated desktop/mobile regression and a one-run Lighthouse lab baseline are now available; neither proves full WCAG conformance or field Core Web Vitals. Automated Chromium regression checks have since been added and passed; see the latest checkpoint below.
 
 The initial accuracy and accessibility batch was merged in pull request #2, followed by controlled source, navigation, evidence and accessibility batches. Later updates include direct homepage proof-card destinations (PR #57), company-hub navigation (PR #53), related-case cards and View All Work endings (PR #60), and stronger keyboard focus indicators (PR #62). The custom 404 page also now has descriptive metadata and a keyboard skip link. The latest main commit and Pages workflow status are tracked in `docs/PORTFOLIO_AUDIT_LOG.md`.
 
@@ -50,11 +50,12 @@ The initial accuracy and accessibility batch was merged in pull request #2, foll
 | SEO-003 | P2 | Social metadata needed a full canonical-page consistency check after rollout. | Static validation checked all 27 canonical pages: every page has Open Graph and Twitter title/URL metadata; each `og:url` matches the canonical URL; Open Graph and Twitter titles match; image tags are paired consistently. Pages without a suitable image correctly use `summary` cards. Live card rendering is still unverified. |
 | SEO-004 | P2 | Some Ajmera and Jalan case pages used generic page titles such as “Case 01,” reducing search and share-preview clarity. | Replaced generic titles with descriptive, evidence-aligned page titles and synchronized Open Graph/Twitter titles in merged pull request #50. No page body or visual styling changed. |
 | ROUTE-001 | P2 | Previous portfolio URLs such as `case-studies/ajmera.html`, `swad.html`, `jalan-megamart.html` and `cinekorn.html` are not present in the current tree. Older links may still point to them. | Merged in pull request #30: added lightweight redirect pages to the current company hubs and a themed 404 fallback. |
-| QA-001 | P1 | GitHub Pages build and deploy jobs succeeded for current `main` commit `7103d2344cc5269382d2e6cdd8e7cdbbca239689` (run [38370869756](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38370869756), 13 October 2026). The review environment still serves a stale indexed homepage snapshot and cannot retrieve fresh cache-busted page HTML, so live browser behavior is not independently verified. | Website code commit `bbefefdfae098b29219ff4115331bc71ab7719db` deployed successfully in workflow [38406532537](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38406532537). The subsequent audit-documentation commit `c7de73c4f37ce6f48558603ec3d0705a0a4f888c` also completed Pages workflow [38406683217](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38406683217) successfully. Real browser/device QA remains open; the stale crawler snapshot is not treated as proof of a failed deployment. |
-| QA-002 | P1 | No real browser/device run has been completed in this audit. | Open. Desktop and mobile visual QA, keyboard-only testing, focus visibility, carousel interaction, and menu behaviour still need hands-on verification. |
+| QA-001 | P1 | Confirm the published site matches current `main` and its primary routes work after deployment. | **Verified by live Chromium CI on 14 Oct 2026:** Pages deployment succeeded for commit `f727b308d82a066c1fa81102dec764e84a262d7e`; all 27 primary pages returned HTTP 200 and passed structural smoke checks, local test-server image/video URLs resolved, four legacy routes redirected, custom 404 returned HTTP 404, and audit/QA source paths returned HTTP 404. This verifies automated checks for that deployed commit, not every manual/browser condition. |
+| QA-002 | P1 | Automated accessibility and responsive checks do not replace complete manual keyboard, touch and screen-reader review. | **Automated checks passed:** axe-core WCAG 2.1 A/AA scans across all 27 primary pages on desktop and mobile Chromium; mobile overflow checks across all 27 pages; mobile menu open/Escape/focus-return checks on homepage and four company hubs. Manual screen-reader/touch review and exhaustive rendered contrast review remain open. |
 | QA-003 | P2 | External YouTube thumbnails, Instagram embeds/links and LinkedIn links have not all been checked live. | Open. Test external destinations and image loading; do not treat source-level link checks as proof that external services are available. |
-| PERF-001 | P2 | Lighthouse, Core Web Vitals, image-weight and network performance have not been measured. | Open. Run Lighthouse on the deployed site after deployment is confirmed. |
-| CONTRAST-001 | P2 | Full-page contrast testing is still outstanding. Common body, muted-text, link and CTA token pairs were checked from source colors; rendered chart labels, all focus states and component-specific combinations remain unverified. | CTA gradient endpoints provide 5.18:1 to 5.49:1 with white text. A follow-up check found the apparent low-contrast Cinekorn `--series-4` color was declared but not referenced by current CSS or case-page markup, so changing it did not affect rendered charts. The attempted token change is being reverted rather than counted as a fix. Full rendered-page contrast checks remain open. |
+| PERF-001 | P2 | Lab performance and field Core Web Vitals require measurement. | **Lighthouse lab baseline recorded** in run [38519206514](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38519206514): Performance scores were homepage 92, Ajmera 97, Cinekorn 99, Jalan 96 and Swad 99; Accessibility, Best Practices and SEO each scored 100 on all five pages in this one-run sample. FCP was 1.6–2.6 s, LCP 1.6–2.7 s, TBT 0 ms and CLS 0–0.03. These are lab results, not field Core Web Vitals or a repeated-run benchmark. |
+| PERF-002 | P2 | Large evidence images are used in smaller card slots without responsive preview derivatives. | Lighthouse estimated responsive-image savings around 2.3 MiB on the homepage, 3.3 MiB on Cinekorn hub and 3.4 MiB on Swad hub; estimates overlap across pages. Create appropriately sized card previews while preserving full-resolution evidence on deep case pages. |
+| CONTRAST-001 | P2 | Every chart label, focus state and component/background combination still needs human review even though automated accessibility scans pass. | axe-core reported no WCAG 2.1 A/AA violations on the 27 primary pages in desktop/mobile Chromium scans. CTA/focus-token contrast calculations remain documented above; exhaustive manual contrast review, screen-reader and touch testing remain open. |
 | ALT-001 | P2 | Presence of alt attributes does not by itself prove that the description matches the image. | Targeted review found one definite mismatch in Cinekorn Case 02: a Movies analytics screenshot was labelled Telugu. Fixed in merged PR #65 by using the existing Telugu analytics asset and matching alt text. Continue reviewing remaining image/alt pairs; full semantic review is open. |
 | A11Y-002 | P2 | Two Ajmera output carousels used smooth scrolling regardless of the visitor's reduced-motion setting. | Updated both carousels to use immediate scrolling when `prefers-reduced-motion: reduce` is active. Merged in pull request #32. |
 
@@ -319,3 +320,45 @@ This is the next completed QA batch after the expanded live-page crawl.
 4. Reconcile evidence-dependent claims, especially Jalan, before final factual sign-off.
 
 **Status:** implementation and automated browser regression are now strong across all primary pages, local media, legacy redirects and the custom 404 route. Final sign-off remains open until the external, manual-accessibility, performance and evidence checks are complete.
+
+
+## Latest verified regression and performance checkpoint — 14 October 2026
+
+### Deployment and browser QA
+
+- **Current website commit:** `f727b308d82a066c1fa81102dec764e84a262d7e`.
+- **GitHub Pages deployment:** [workflow 38519206459](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38519206459) succeeded.
+- **Post-deployment browser and Lighthouse workflow:** [run 38519206514](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38519206514) succeeded.
+- **Browser result:** 120 passed, 2 intentionally skipped in desktop context because they are mobile-only checks.
+- All 27 primary pages passed live desktop/mobile structural smoke checks; local image/video references served by the local test server returned HTTP 200; the live deployment crawl verified page routes but did not exhaustively fetch every media URL from the published host; page-level mobile overflow checks passed; the four legacy routes redirected to the intended hubs; the custom 404 returned HTTP 404; and the internal audit/QA paths tested by the suite returned HTTP 404 rather than being published.
+- axe-core WCAG 2.1 A/AA scans passed across all 27 primary pages in desktop and mobile Chromium. The test excludes third-party YouTube player internals from the accessibility scan; this is automated coverage, not certification or a substitute for manual screen-reader/touch review.
+- The post-deployment wait checks confirmed that the updated homepage markup was live and audit/QA files were excluded before browser/Lighthouse tests proceeded.
+
+### Lighthouse lab results
+
+One Lighthouse run per page produced these scores on the deployed site:
+
+| Page | Performance | Accessibility | Best Practices | SEO |
+|---|---:|---:|---:|---:|
+| Homepage | 92 | 100 | 100 | 100 |
+| Ajmera hub | 97 | 100 | 100 | 100 |
+| Cinekorn hub | 99 | 100 | 100 | 100 |
+| Jalan hub | 96 | 100 | 100 | 100 |
+| Swad hub | 99 | 100 | 100 | 100 |
+
+FCP ranged from 1.6–2.6 s, LCP from 1.6–2.7 s, TBT was 0 ms and CLS ranged from 0–0.03 in this lab run. Results vary by run; these values do not establish field Core Web Vitals.
+
+### Performance work still open
+
+- Lighthouse flagged the Google Fonts stylesheet as render-blocking, with estimated savings varying by page/run.
+- It estimated responsive-image savings of roughly 2.3 MiB on the homepage, 3.3 MiB on the Cinekorn hub and 3.4 MiB on the Swad hub. These page-level estimates overlap because the same assets appear on multiple pages and must not be added as a site-wide total.
+- Confirmed large source assets include `media/swad/DSC02610.JPG` (3,145,728 bytes), `media/cinekorn/yt-movies.png` (922,363 bytes), `media/cinekorn/yt-kannada.png` (979,444 bytes), and `media/cinekorn/cinekorn-logo.png` (192,880 bytes). The safe next optimization is to create appropriately sized preview derivatives for cards while preserving original full-resolution analytics evidence on deep case pages; do not replace evidence screenshots with blurry compressed copies.
+
+### Remaining before full sign-off
+
+1. Check external YouTube/LinkedIn destinations and third-party thumbnail/video reachability; current local-media checks do not prove third-party availability.
+2. Complete manual keyboard, touch and screen-reader review, plus a human review of contrast in charts and component states.
+3. Plan image derivatives and font-loading improvements, then re-run Lighthouse to confirm actual changes rather than assuming savings.
+4. Keep Jalan evidence-dependent metrics blocked until supporting tracker/report evidence is supplied. The qualitative case narratives remain intact.
+
+**Status:** Phases 1–5 are complete for the approved source scope. Phase 6 is substantially advanced and automated regression is passing on the deployed commit, but final sign-off remains open for external media, manual accessibility, performance optimization and evidence-dependent factual review.
