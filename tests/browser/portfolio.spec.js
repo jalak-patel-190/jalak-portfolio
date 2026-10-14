@@ -142,3 +142,57 @@ for (const route of accessibilityEntryPages) {
     expect(violations, 'axe-core found WCAG 2.1 A/AA violations').toEqual([]);
   });
 }
+
+
+test('local image and video asset URLs resolve across all 27 primary pages', async ({ page, request, baseURL }) => {
+  const localAssets = new Set();
+  const localOrigin = new URL(baseURL).origin;
+
+  for (const route of primaryPages) {
+    await page.goto(route, { waitUntil: 'domcontentloaded' });
+    const sources = await page.locator('img[src], video source[src]').evaluateAll(elements =>
+      elements.map(element => element.getAttribute('src')).filter(Boolean)
+    );
+    for (const source of sources) {
+      if (/^(?:https?:|data:|blob:|\/\/)/i.test(source)) continue;
+      const url = new URL(source, page.url());
+      if (url.origin === localOrigin) localAssets.add(url.toString());
+    }
+  }
+
+  const failures = [];
+  for (const url of localAssets) {
+    const response = await request.get(url, { timeout: 10000 });
+    if (response.status() !== 200) failures.push(`${response.status()} ${url}`);
+  }
+  expect(failures, 'all local image/video sources should return HTTP 200').toEqual([]);
+});
+
+test('live legacy routes redirect to the canonical company hubs', async ({ page }) => {
+  test.skip(!process.env.PORTFOLIO_LIVE_URL, 'live deployment smoke test is not configured');
+  const liveBaseURL = process.env.PORTFOLIO_LIVE_URL;
+  const routes = [
+    { legacy: 'case-studies/ajmera.html', canonical: 'case-studies/ajmera/' },
+    { legacy: 'case-studies/cinekorn.html', canonical: 'case-studies/cinekorn/' },
+    { legacy: 'case-studies/jalan-megamart.html', canonical: 'case-studies/jalan/' },
+    { legacy: 'case-studies/swad.html', canonical: 'case-studies/swad/' }
+  ];
+
+  for (const route of routes) {
+    await page.goto(new URL(route.legacy, liveBaseURL).toString(), { waitUntil: 'domcontentloaded' });
+    const expectedPath = new URL(route.canonical, liveBaseURL).pathname;
+    await expect.poll(() => new URL(page.url()).pathname).toBe(expectedPath);
+    await expect(page.locator('h1')).toHaveCount(1);
+  }
+});
+
+test('live custom 404 page returns 404 and offers a route back to the portfolio', async ({ page }) => {
+  test.skip(!process.env.PORTFOLIO_LIVE_URL, 'live deployment smoke test is not configured');
+  const missingURL = new URL('__portfolio-audit-not-found-check__', process.env.PORTFOLIO_LIVE_URL).toString();
+  const response = await page.goto(missingURL, { waitUntil: 'domcontentloaded' });
+  expect(response).not.toBeNull();
+  expect(response.status()).toBe(404);
+  await expect(page).toHaveTitle(/Page Not Found/i);
+  await expect(page.locator('h1')).toContainText("THIS PAGE ISN'T HERE.");
+  await expect(page.locator('.skip-link')).toHaveCount(1);
+});
