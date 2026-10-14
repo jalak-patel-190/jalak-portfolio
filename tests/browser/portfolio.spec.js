@@ -123,3 +123,32 @@ test('live GitHub Pages deployment serves the homepage and four company hubs', a
   }
   expect(pageErrors, 'live entry pages should not throw uncaught JavaScript errors').toEqual([]);
 });
+
+
+const AxeBuilder = require('@axe-core/playwright').default;
+const accessibilityEntryPages = [
+  'index.html',
+  'case-studies/ajmera/index.html',
+  'case-studies/cinekorn/index.html',
+  'case-studies/jalan/index.html',
+  'case-studies/swad/index.html'
+];
+
+for (const route of accessibilityEntryPages) {
+  test(`WCAG 2.1 A/AA accessibility scan: ${route}`, async ({ page }) => {
+    await page.goto(route, { waitUntil: 'domcontentloaded' });
+    const results = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+      .analyze();
+    const violations = results.violations.map(violation => ({
+      id: violation.id,
+      impact: violation.impact,
+      description: violation.description,
+      nodes: violation.nodes.map(node => ({
+        target: node.target,
+        failureSummary: node.failureSummary
+      }))
+    }));
+    expect(violations, 'axe-core found WCAG 2.1 A/AA violations').toEqual([]);
+  });
+}
