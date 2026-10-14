@@ -226,6 +226,7 @@ test('audit documents and QA source files are not published after Pages deployme
 
 
 test('external YouTube thumbnail URLs referenced by primary pages respond with images', async ({ request }) => {
+  test.setTimeout(240000);
   test.skip(process.env.CHECK_EXTERNAL_MEDIA !== 'true', 'runs against published pages after a successful main-branch deployment');
   const liveBaseURL = process.env.PORTFOLIO_LIVE_URL;
   const thumbnailURLs = new Set();
