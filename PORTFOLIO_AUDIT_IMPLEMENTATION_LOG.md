@@ -187,7 +187,7 @@ Keep all four Jalan case-study ideas. Do not add unverified counts, ROI, booking
 
 ### Final state
 
-**Five of six phases are complete at source/implementation level. Phase 6 is partially complete: static regression and deployment workflow checks passed, while real-browser QA remains blocked by lack of a usable browser/rendered-page check in this environment.** Do not label the whole website fully audited or accessibility-certified until those tests are actually performed.
+**Historical status at this checkpoint:** five of six phases were complete at source/implementation level. Phase 6 remained partially complete because browser-rendered checks were not yet available. The later 14 October automated browser/Lighthouse checkpoint below supersedes the browser-access limitation, while manual accessibility, external media, performance optimization and evidence follow-up remain open. Do not label the website fully audited or accessibility-certified.
 
 
 ## Updated regression checkpoint — 14 October 2026
