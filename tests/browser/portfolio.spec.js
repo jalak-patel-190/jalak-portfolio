@@ -136,6 +136,8 @@ const accessibilityEntryPages = [
 
 for (const route of accessibilityEntryPages) {
   test(`WCAG 2.1 A/AA accessibility scan: ${route}`, async ({ page }) => {
+    // Evaluate the stable end state instead of a transient mid-transition opacity.
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto(route, { waitUntil: 'domcontentloaded' });
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
