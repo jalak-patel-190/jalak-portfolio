@@ -295,3 +295,45 @@ test('keyboard can focus and reveal the skip link on all primary pages', async (
     await expect(skipLink, `skip link should become visible in the viewport on ${route}`).toBeInViewport();
   }
 });
+
+
+test('mobile menu toggle has a visible keyboard focus indicator on entry pages', async ({ page }, testInfo) => {
+  test.skip(!testInfo.project.name.includes('mobile'), 'mobile menu focus check');
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+
+  for (const route of [
+    'index.html',
+    'case-studies/ajmera/index.html',
+    'case-studies/cinekorn/index.html',
+    'case-studies/jalan/index.html',
+    'case-studies/swad/index.html'
+  ]) {
+    await page.goto(route, { waitUntil: 'domcontentloaded' });
+    const toggle = page.locator('#navToggle');
+    await expect(toggle).toBeVisible();
+
+    let focused = false;
+    for (let tab = 0; tab < 12; tab++) {
+      if (await toggle.evaluate(element => element === document.activeElement)) {
+        focused = true;
+        break;
+      }
+      await page.keyboard.press('Tab');
+    }
+    expect(focused, `keyboard should reach the menu toggle on ${route}`).toBe(true);
+    await expect(toggle).toBeFocused();
+
+    const focusStyle = await toggle.evaluate(element => {
+      const style = getComputedStyle(element);
+      return {
+        outlineStyle: style.outlineStyle,
+        outlineWidth: Number.parseFloat(style.outlineWidth) || 0,
+        boxShadow: style.boxShadow
+      };
+    });
+    const hasVisibleIndicator =
+      (focusStyle.outlineStyle !== 'none' && focusStyle.outlineWidth > 0) ||
+      focusStyle.boxShadow !== 'none';
+    expect(hasVisibleIndicator, `menu toggle needs a visible focus indicator on ${route}: ${JSON.stringify(focusStyle)}`).toBe(true);
+  }
+});
