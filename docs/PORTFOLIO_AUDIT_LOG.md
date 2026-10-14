@@ -301,3 +301,19 @@ Source checks now cover all 22 deep case pages, the homepage, four hubs and the 
 ### Updated Phase-6 status
 
 Automated source and live browser coverage now includes all 27 primary pages, mobile page-level overflow checks, navigation behavior on five entry pages, and axe-core scans on five entry pages. Final sign-off remains open for legacy routes/404 live behavior, external destination/media reachability, manual screen-reader/keyboard/touch review, and Lighthouse/Core Web Vitals.
+
+
+## Legacy-route, custom-404 and local-media regression — 14 October 2026
+
+- **Merged:** [PR #75](https://github.com/jalak-patel-190/jalak-portfolio/pull/75).
+- **Successful browser run:** [38516344601](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38516344601).
+- **Result:** 74 passed, 2 desktop-only skips by design.
+- All 27 primary pages passed the live deployment smoke test and mobile document-overflow check.
+- All local image and video source URLs referenced by the 27 primary pages returned HTTP 200.
+- All four legacy routes redirected to their intended canonical company hubs.
+- The live custom 404 page returned HTTP 404, displayed the expected page-not-found heading, and retained a skip link.
+- The five-page axe-core WCAG 2.1 A/AA scans and five-entry-page mobile navigation tests remained passing.
+
+### Remaining Phase-6 work
+
+The automated suite now covers primary-page live availability, local media, legacy redirects, custom 404 behavior, mobile overflow and selected accessibility rules. Still outstanding: external YouTube/LinkedIn destination and third-party thumbnail/video reachability, broader manual keyboard/touch/screen-reader checks, Lighthouse/Core Web Vitals, and a final human review of evidence-dependent claims (especially Jalan).
