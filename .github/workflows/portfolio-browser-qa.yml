@@ -18,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PORTFOLIO_LIVE_URL: https://jalak-patel-190.github.io/jalak-portfolio/
+      CHECK_PUBLISHED_INTERNAL_PATHS: ${{ github.event_name == 'workflow_run' && 'true' || 'false' }}
     timeout-minutes: 15
     steps:
       - name: Check out repository
