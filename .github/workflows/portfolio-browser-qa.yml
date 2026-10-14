@@ -4,12 +4,17 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: read
 
 jobs:
   browser-qa:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     env:
       PORTFOLIO_LIVE_URL: https://jalak-patel-190.github.io/jalak-portfolio/
@@ -39,6 +44,7 @@ jobs:
           retention-days: 14
 
   lighthouse:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
