@@ -177,3 +177,32 @@ Keep all four Jalan case-study ideas. Do not add unverified counts, ROI, booking
 ### Final state
 
 **Five of six phases are complete at source/implementation level. Phase 6 is partially complete: static regression and deployment workflow checks passed, while real-browser QA remains blocked by lack of a usable browser/rendered-page check in this environment.** Do not label the whole website fully audited or accessibility-certified until those tests are actually performed.
+
+
+## Audit continuation checkpoint — 14 October 2026
+
+### Source and deployment re-established
+
+- Current `main` head checked: `edaf7c899d96c038e5cfd1ef96d59c15fbad056c` — “Retain video metadata preload until dimensions are verified.”
+- GitHub Pages workflow [38511950324](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38511950324) completed successfully for that exact commit on 14 October 2026. This verifies that the Pages build/deploy workflow completed; it is not a substitute for checking the live rendered page.
+- Latest commit changes video preload behavior on the Ajmera corporate-content and Swad owner-channel case pages. No unrelated theme or content changes were made in this checkpoint.
+
+### Static regression checks completed in this loop
+
+Checked homepage, all four company hubs, and the custom 404 page directly from current `main`:
+
+- Each of the six pages has exactly one H1.
+- No duplicate IDs or missing in-page anchor targets were detected on these six pages.
+- All image elements on these six pages have an `alt` attribute (18 homepage images, 16 Ajmera hub images, 9 Cinekorn hub images, 5 Jalan hub images, 9 Swad hub images; the 404 page has no images).
+- Homepage and all four hubs have canonical URLs, Open Graph title metadata and skip links. The custom 404 page has a skip link; it intentionally has no canonical URL or Open Graph title in this check.
+- Checked relative local references on the homepage and four hubs against the repository tree: 138 references across these five pages, with zero unresolved local file paths detected by this static check. This does not verify runtime loading, browser navigation, or third-party destinations.
+
+### Still open
+
+- Live browser rendering at desktop and mobile sizes, overflow/clipping, touch and keyboard navigation, visible focus in context, menu/Escape behavior, external media and links, full rendered contrast, and Lighthouse/Core Web Vitals.
+- The current review environment still has not provided a usable rendered response from the live GitHub Pages URL. Do not mark browser QA as passed based on a green deployment workflow or static source checks.
+- Jalan evidence backlog remains unchanged. Preserve qualitative case narratives and do not restore unverified figures.
+
+### Next action
+
+Continue source regression checks on deep case pages, including evidence-image/alt-text matching, related-case navigation, video behavior, and relative asset paths. Then complete real-browser QA when a usable browser/rendered-page check is available. Keep the existing visual theme intact.
