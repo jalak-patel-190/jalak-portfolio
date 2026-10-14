@@ -200,7 +200,7 @@ Checked homepage, all four company hubs, and the custom 404 page directly from c
 ### Still open
 
 - Live browser rendering at desktop and mobile sizes, overflow/clipping, touch and keyboard navigation, visible focus in context, menu/Escape behavior, external media and links, full rendered contrast, and Lighthouse/Core Web Vitals.
-- The current review environment still has not provided a usable rendered response from the live GitHub Pages URL. Do not mark browser QA as passed based on a green deployment workflow or static source checks.
+- The local review environment cannot fetch the public host directly. However, the new GitHub Actions browser suite can reach the live homepage and all four company hubs; see the 14 October browser-QA checkpoint below. Do not treat the five-page live smoke test as a full live-site review.
 - Jalan evidence backlog remains unchanged. Preserve qualitative case narratives and do not restore unverified figures.
 
 ### Next action
@@ -249,4 +249,40 @@ No confirmed source-level defect in this batch justified a code change. The exis
 
 ### Remaining phase-6 requirements
 
-Source checks now cover all 22 deep case pages, the homepage, four hubs and the custom 404 page. They still cannot verify real layout, overflow, interaction behavior, network-loaded images/videos, external destination responses, computed contrast or performance metrics. Live GitHub Pages access attempts remain blocked by the review environment's external-host/network access, so do not mark these items as passed.
+Source checks now cover all 22 deep case pages, the homepage, four hubs and the custom 404 page. They still cannot verify real layout, overflow, interaction behavior, network-loaded images/videos, external destination responses, computed contrast or performance metrics. The local review environment cannot fetch the public host directly, but GitHub Actions now provides a live smoke test for the homepage and four company hubs. Full live-site coverage of all deep pages remains outstanding.
+
+
+## Automated browser regression and accessibility checkpoint — 14 October 2026
+
+### Test harness merged
+
+- **Merged:** [PR #73](https://github.com/jalak-patel-190/jalak-portfolio/pull/73).
+- Added a Playwright + Chromium GitHub Actions workflow for desktop and Pixel-sized mobile browser contexts.
+- Added smoke checks for all 27 primary pages: HTTP 200 response, one H1, skip-link presence, image alt attributes, local resource HTTP errors and uncaught JavaScript exceptions.
+- Added mobile document-overflow checks on the homepage and four company hubs.
+- Added mobile navigation checks on the homepage and four hubs: open state, Escape-to-close, and focus return.
+- Added live deployment smoke checks for the homepage and four company hubs.
+- Added axe-core WCAG 2.1 A/AA scans for the homepage and four hubs on desktop and mobile viewports.
+- No website design, content or CSS was changed in this PR; the changes are automated QA tooling.
+
+### Verified result
+
+- Latest successful browser run: [38515851748](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38515851748).
+- **68 tests passed, 2 desktop-only skips** (the mobile-only checks are intentionally skipped on desktop).
+- All 27 primary pages passed the structural smoke checks in both desktop and mobile Chromium contexts.
+- The mobile overflow check passed on the homepage and four company hubs.
+- The mobile menu open/Escape/focus-return checks passed on the homepage and all four company hubs.
+- The live smoke test successfully reached the published homepage and four company hubs and verified HTTP 200, one H1 and skip-link presence.
+- axe-core reported no WCAG 2.1 A/AA violations on the homepage and four company hubs across both tested viewport contexts after the test was adjusted to emulate reduced motion and inspect the stable final state. The earlier reported contrast issue was a transient mid-animation measurement, not a confirmed static colour-token defect.
+
+### What this does not prove
+
+- The live smoke test covers the homepage and four company hubs, not all 22 deep case pages on the public deployment.
+- Automated axe scans are not a full manual accessibility certification; keyboard, screen-reader, and touch testing still needs broader review.
+- Third-party YouTube/LinkedIn destinations and every external image/video were not exhaustively tested.
+- Lighthouse/Core Web Vitals and performance profiling remain open.
+- Content-source validation for evidence-dependent claims, especially Jalan, remains separate from browser QA.
+
+### Phase-6 status after this loop
+
+**Improved but not signed off.** Source-level checks and repeatable desktop/mobile browser tests now pass. Live homepage/hub smoke checks and selected WCAG scans also pass. Keep final sign-off open until deep-page live coverage, external media/destination checks, broader manual accessibility review, and performance testing are complete.
