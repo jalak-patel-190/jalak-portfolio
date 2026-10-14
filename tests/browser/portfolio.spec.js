@@ -114,13 +114,7 @@ test('live GitHub Pages deployment serves all 27 primary pages', async ({ page }
 
 
 const AxeBuilder = require('@axe-core/playwright').default;
-const accessibilityEntryPages = [
-  'index.html',
-  'case-studies/ajmera/index.html',
-  'case-studies/cinekorn/index.html',
-  'case-studies/jalan/index.html',
-  'case-studies/swad/index.html'
-];
+const accessibilityEntryPages = primaryPages;
 
 for (const route of accessibilityEntryPages) {
   test(`WCAG 2.1 A/AA accessibility scan: ${route}`, async ({ page }) => {
