@@ -33,7 +33,7 @@ These are source-level checks only. They do not prove the rendered page works at
 | UX-002 | P2 | Swad's hub reuses a small number of images across several case cards. | Improvement opportunity only. Existing theme is retained; choose more specific imagery only after confirming what each available image actually depicts. |
 | SEO-001 | P2 | Homepage social preview currently uses an analytics screenshot rather than a dedicated portfolio preview image. | Improvement opportunity. Do not change the site's visual theme; create or select a preview asset that fits the existing palette before replacing it. |
 | QA-001 | P1 | Confirm the latest published commit and primary-route behavior after deployment. | **Automated checks passed** for deployed commit `f727b308d82a066c1fa81102dec764e84a262d7e`: all 27 primary pages passed live desktop/mobile smoke tests; local test-server image/video URLs resolved; four legacy routes redirected; custom 404 returned 404; internal audit/QA paths tested by CI returned 404. Manual and third-party checks remain separate. |
-| QA-002 | P2 | External YouTube/LinkedIn destinations and third-party thumbnail/video availability are not exhaustively checked. | **Open.** The suite verifies local media, not every third-party destination or player. Check external links and thumbnails without treating source URLs as proof of availability. |
+| QA-002 | P2 | Third-party destinations and media playback need separate checks. | **Partially verified:** post-deployment run [38520451454](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38520451454) checked 31 unique YouTube thumbnail URLs referenced by the 27 primary pages; all 31 returned image responses, with zero failures or inconclusive results. Still open: LinkedIn/Instagram destinations, actual video playback, and matching each thumbnail to its intended video. |
 | PERF-001 | P2 | Lab performance is measured, but field Core Web Vitals are not. | Lighthouse one-run scores on 14 Oct 2026: Performance 92 homepage, 97 Ajmera, 99 Cinekorn, 96 Jalan, 99 Swad; Accessibility/Best Practices/SEO each 100 on all five. FCP 1.6–2.6 s, LCP 1.6–2.7 s, TBT 0 ms, CLS 0–0.03. Field Core Web Vitals remain unmeasured. |
 | PERF-002 | P2 | Large images are sent to smaller card slots without responsive derivatives. | Lighthouse estimated responsive-image savings around 2.3 MiB on the homepage, 3.3 MiB on Cinekorn hub and 3.4 MiB on Swad hub (overlapping per-page estimates, not additive). Create small preview derivatives for cards and preserve original full-resolution evidence screenshots on detailed case pages. |
 
@@ -351,9 +351,18 @@ Lighthouse flagged render-blocking Google Fonts CSS and large images. Specific r
 
 ### Remaining before final sign-off
 
-1. Test external YouTube/LinkedIn destinations and third-party thumbnail/video loading.
+1. YouTube thumbnail reachability passed for 31 unique URLs in run [38520451454](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38520451454). Still test LinkedIn/Instagram destinations, actual video playback, and thumbnail-to-video matching.
 2. Complete manual keyboard, touch and screen-reader review, plus a human contrast review of chart labels and component states.
 3. Evaluate responsive image derivatives and non-blocking font loading, then rerun Lighthouse to verify any improvement.
 4. Keep Jalan evidence-dependent metrics blocked until the source tracker/report is supplied. Do not invent counts, ROI, sales attribution or team productivity.
 
 **Status:** Phases 1–5 are complete for the approved scope. Phase 6 is substantially advanced and automated regression is passing on the deployed commit, but final sign-off remains open for external media, manual accessibility, performance optimization and factual evidence follow-up.
+
+
+## Third-party thumbnail reachability checkpoint — 14 October 2026
+
+- **Run:** [38520451454](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38520451454), post-deployment browser QA.
+- The suite collected thumbnail URLs from the published HTML of all 27 primary pages and checked 31 unique YouTube thumbnail URLs.
+- **Result:** 31 confirmed image responses; zero confirmed failures; zero inconclusive responses.
+- This establishes endpoint response and image content for those URLs at test time. It does not confirm the thumbnail matches the intended video, video playback, or LinkedIn/Instagram destination reachability.
+- Those remaining checks stay open; no visual or case-study content changes were made.
