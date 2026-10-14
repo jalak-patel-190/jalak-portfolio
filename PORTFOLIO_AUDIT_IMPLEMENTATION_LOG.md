@@ -205,3 +205,12 @@ The latest deployed commit `f727b308d82a066c1fa81102dec764e84a262d7e` passed Git
 ## Third-party thumbnail reachability — 14 October 2026
 
 Post-deployment run [38520451454](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38520451454) collected 31 unique YouTube thumbnail URLs from the published HTML of all 27 primary pages. All 31 returned image responses; there were zero confirmed failures and zero inconclusive responses. This does not verify thumbnail/video identity, playback, or LinkedIn/Instagram destination reachability. Those items remain open.
+
+
+## Latest deployed QA checkpoint — 14 October 2026
+
+Run [38521538328](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38521538328) passed on main commit `b579c729c5738ba6fc541c529b2dee5e0ff252ff`. Browser QA reported 125 passed and 3 skipped by configuration. The keyboard skip-link test passed across all 27 primary pages; the mobile menu focus-indicator test passed in mobile Chromium. The published-page thumbnail check returned image responses for all 31 unique YouTube thumbnail URLs, with no confirmed failures or inconclusive results.
+
+Latest one-run Lighthouse scores: homepage 92/100/100/100; Ajmera 96/100/100/100; Cinekorn 99/100/100/100; Jalan 96/100/100/100; Swad 99/100/100/100 (Performance/Accessibility/Best Practices/SEO). LCP ranged 1.7–2.7 s, TBT was 0 ms, and CLS ranged 0–0.031. These are lab snapshots, not field Core Web Vitals.
+
+Next implementation batch: inspect render-blocking font CSS and large images, then make safe, targeted optimization changes without degrading the full-resolution evidence assets. Still open: manual accessibility/contrast review, LinkedIn/Instagram destination reachability, actual video playback and thumbnail identity, and Jalan evidence.
