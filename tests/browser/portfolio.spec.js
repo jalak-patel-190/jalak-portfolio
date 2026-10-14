@@ -235,9 +235,9 @@ test('external YouTube thumbnail URLs referenced by primary pages respond with i
     const response = await request.get(new URL(route, liveBaseURL).toString(), { timeout: 15000 });
     expect(response.status(), `live page should respond while collecting thumbnails: ${route}`).toBe(200);
     const html = await response.text();
-    for (const match of html.matchAll(/<img\\b[^>]*\\bsrc=["']([^"']+)["'][^>]*>/gi)) {
+    for (const match of html.matchAll(/<img\b[^>]*\bsrc=["']([^"']+)["'][^>]*>/gi)) {
       const src = match[1];
-      if (/^https?:\\/\\/(?:img\\.youtube\\.com|i\\.ytimg\\.com)\\//i.test(src)) {
+      if (/^https?:\/\/(?:img\.youtube\.com|i\.ytimg\.com)\//i.test(src)) {
         thumbnailURLs.add(src);
       }
     }
@@ -259,7 +259,7 @@ test('external YouTube thumbnail URLs referenced by primary pages respond with i
           const response = await request.get(url, { timeout: 15000 });
           lastStatus = response.status();
           lastContentType = response.headers()['content-type'] || '';
-          if (lastStatus === 200 && /^image\\//i.test(lastContentType)) {
+          if (lastStatus === 200 && /^image\//i.test(lastContentType)) {
             return { url, result: 'ok' };
           }
           if (lastStatus === 403 || lastStatus === 429 || lastStatus >= 500) continue;
