@@ -50,10 +50,10 @@ The initial accuracy and accessibility batch was merged in pull request #2, foll
 | SEO-003 | P2 | Social metadata needed a full canonical-page consistency check after rollout. | Static validation checked all 27 canonical pages: every page has Open Graph and Twitter title/URL metadata; each `og:url` matches the canonical URL; Open Graph and Twitter titles match; image tags are paired consistently. Pages without a suitable image correctly use `summary` cards. Live card rendering is still unverified. |
 | SEO-004 | P2 | Some Ajmera and Jalan case pages used generic page titles such as “Case 01,” reducing search and share-preview clarity. | Replaced generic titles with descriptive, evidence-aligned page titles and synchronized Open Graph/Twitter titles in merged pull request #50. No page body or visual styling changed. |
 | ROUTE-001 | P2 | Previous portfolio URLs such as `case-studies/ajmera.html`, `swad.html`, `jalan-megamart.html` and `cinekorn.html` are not present in the current tree. Older links may still point to them. | Merged in pull request #30: added lightweight redirect pages to the current company hubs and a themed 404 fallback. |
-| QA-001 | P1 | Confirm the published site matches current `main` and its primary routes work after deployment. | **Verified by live Chromium CI on 14 Oct 2026:** Pages deployment succeeded for commit `f727b308d82a066c1fa81102dec764e84a262d7e`; all 27 primary pages returned HTTP 200 and passed structural smoke checks, local test-server image/video URLs resolved, four legacy routes redirected, custom 404 returned HTTP 404, and audit/QA source paths returned HTTP 404. This verifies automated checks for that deployed commit, not every manual/browser condition. |
-| QA-002 | P1 | Automated accessibility and responsive checks do not replace complete manual keyboard, touch and screen-reader review. | **Automated checks passed:** axe-core WCAG 2.1 A/AA scans across all 27 primary pages on desktop and mobile Chromium; mobile overflow checks across all 27 pages; mobile menu open/Escape/focus-return checks on homepage and four company hubs. Manual screen-reader/touch review and exhaustive rendered contrast review remain open. |
-| QA-003 | P2 | Third-party media and social destinations need separate reachability checks; thumbnail availability does not prove video identity or playback. | **Partially verified:** post-deployment run [38520451454](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38520451454) checked 31 unique YouTube thumbnail URLs referenced by the 27 primary pages; all 31 returned image responses, with zero confirmed failures and zero inconclusive results. Still open: LinkedIn/Instagram destinations, actual YouTube playback, and verifying each thumbnail matches the intended video. |
-| PERF-001 | P2 | Lab performance and field Core Web Vitals require measurement. | **Lighthouse lab baseline recorded** in run [38519206514](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38519206514): Performance scores were homepage 92, Ajmera 97, Cinekorn 99, Jalan 96 and Swad 99; Accessibility, Best Practices and SEO each scored 100 on all five pages in this one-run sample. FCP was 1.6–2.6 s, LCP 1.6–2.7 s, TBT 0 ms and CLS 0–0.03. These are lab results, not field Core Web Vitals or a repeated-run benchmark. |
+| QA-001 | P1 | Confirm the published site matches current `main` and its primary routes work after deployment. | **Verified by live Chromium CI on 14 Oct 2026:** Pages deployment succeeded for commit `b579c729c5738ba6fc541c529b2dee5e0ff252ff`; all 27 primary pages returned HTTP 200 and passed structural smoke checks, local test-server image/video URLs resolved, four legacy routes redirected, custom 404 returned HTTP 404, and the internal audit/QA paths tested by CI returned HTTP 404. Keyboard skip-link focus and mobile menu focus-indicator checks also passed. This verifies automated checks for that deployed commit, not every manual/browser condition. |
+| QA-002 | P1 | Automated accessibility and responsive checks do not replace complete manual keyboard, touch and screen-reader review. | **Automated checks passed:** axe-core WCAG 2.1 A/AA scans across all 27 primary pages on desktop and mobile Chromium; mobile overflow and keyboard skip-link visibility checks across all 27 pages; mobile menu open/Escape/focus-return and visible focus-indicator checks on homepage and four company hubs. Manual screen-reader/touch review and exhaustive rendered contrast review remain open. |
+| QA-003 | P2 | Third-party media and social destinations need separate reachability checks; thumbnail availability does not prove video identity or playback. | **Partially verified:** latest post-deployment run [38521538328](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38521538328) checked 31 unique YouTube thumbnail URLs referenced by the 27 primary pages; all 31 returned image responses, with zero confirmed failures and zero inconclusive results. Still open: LinkedIn/Instagram destinations, actual YouTube playback, and verifying each thumbnail matches the intended video. |
+| PERF-001 | P2 | Lab performance and field Core Web Vitals require measurement. | **Latest Lighthouse lab run** [38521538328](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38521538328): Performance scores were homepage 92, Ajmera 96, Cinekorn 99, Jalan 96 and Swad 99; Accessibility, Best Practices and SEO each scored 100 on all five pages. FCP was 1.6–2.6 s, LCP 1.7–2.7 s, TBT 0 ms and CLS 0–0.031. These are single-run lab results, not field Core Web Vitals or a repeated-run benchmark. |
 | PERF-002 | P2 | Large evidence images are used in smaller card slots without responsive preview derivatives. | Lighthouse estimated responsive-image savings around 2.3 MiB on the homepage, 3.3 MiB on Cinekorn hub and 3.4 MiB on Swad hub; estimates overlap across pages. Create appropriately sized card previews while preserving full-resolution evidence on deep case pages. |
 | CONTRAST-001 | P2 | Every chart label, focus state and component/background combination still needs human review even though automated accessibility scans pass. | axe-core reported no WCAG 2.1 A/AA violations on the 27 primary pages in desktop/mobile Chromium scans. CTA/focus-token contrast calculations remain documented above; exhaustive manual contrast review, screen-reader and touch testing remain open. |
 | ALT-001 | P2 | Presence of alt attributes does not by itself prove that the description matches the image. | Targeted review found one definite mismatch in Cinekorn Case 02: a Movies analytics screenshot was labelled Telugu. Fixed in merged PR #65 by using the existing Telugu analytics asset and matching alt text. Continue reviewing remaining image/alt pairs; full semantic review is open. |
@@ -326,12 +326,12 @@ This is the next completed QA batch after the expanded live-page crawl.
 
 ### Deployment and browser QA
 
-- **Current website commit:** `f727b308d82a066c1fa81102dec764e84a262d7e`.
-- **GitHub Pages deployment:** [workflow 38519206459](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38519206459) succeeded.
-- **Post-deployment browser and Lighthouse workflow:** [run 38519206514](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38519206514) succeeded.
-- **Browser result:** 120 passed, 2 intentionally skipped in desktop context because they are mobile-only checks.
+- **Current website commit:** `b579c729c5738ba6fc541c529b2dee5e0ff252ff`.
+- **GitHub Pages deployment:** [workflow 38521537827](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38521537827) succeeded.
+- **Post-deployment browser and Lighthouse workflow:** [run 38521538328](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38521538328) succeeded.
+- **Browser result:** 125 passed, 3 intentionally skipped in desktop context because they are mobile-only checks.
 - All 27 primary pages passed live desktop/mobile structural smoke checks; local image/video references served by the local test server returned HTTP 200; the live deployment crawl verified page routes but did not exhaustively fetch every media URL from the published host; page-level mobile overflow checks passed; the four legacy routes redirected to the intended hubs; the custom 404 returned HTTP 404; and the internal audit/QA paths tested by the suite returned HTTP 404 rather than being published.
-- axe-core WCAG 2.1 A/AA scans passed across all 27 primary pages in desktop and mobile Chromium. The test excludes third-party YouTube player internals from the accessibility scan; this is automated coverage, not certification or a substitute for manual screen-reader/touch review.
+- axe-core WCAG 2.1 A/AA scans passed across all 27 primary pages in desktop and mobile Chromium. Keyboard Tab revealed the skip link on all 27 primary pages; mobile menu toggle focus indicators passed on the homepage and four company hubs. The scan excludes third-party YouTube player internals; this is automated coverage, not certification or a substitute for manual screen-reader/touch review.
 - The post-deployment wait checks confirmed that the updated homepage markup was live and audit/QA files were excluded before browser/Lighthouse tests proceeded.
 
 ### Lighthouse lab results
@@ -341,12 +341,12 @@ One Lighthouse run per page produced these scores on the deployed site:
 | Page | Performance | Accessibility | Best Practices | SEO |
 |---|---:|---:|---:|---:|
 | Homepage | 92 | 100 | 100 | 100 |
-| Ajmera hub | 97 | 100 | 100 | 100 |
+| Ajmera hub | 96 | 100 | 100 | 100 |
 | Cinekorn hub | 99 | 100 | 100 | 100 |
 | Jalan hub | 96 | 100 | 100 | 100 |
 | Swad hub | 99 | 100 | 100 | 100 |
 
-FCP ranged from 1.6–2.6 s, LCP from 1.6–2.7 s, TBT was 0 ms and CLS ranged from 0–0.03 in this lab run. Results vary by run; these values do not establish field Core Web Vitals.
+FCP ranged from 1.6–2.6 s, LCP from 1.7–2.7 s, TBT was 0 ms and CLS ranged from 0–0.031 in this lab run. Results vary by run; these values do not establish field Core Web Vitals.
 
 ### Performance work still open
 
@@ -356,7 +356,7 @@ FCP ranged from 1.6–2.6 s, LCP from 1.6–2.7 s, TBT was 0 ms and CLS ranged f
 
 ### Remaining before full sign-off
 
-1. YouTube thumbnail reachability is now checked: 31 unique URLs returned image responses in run [38520451454](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38520451454). Still check LinkedIn/Instagram destinations, actual video playback, and whether each thumbnail matches the intended video.
+1. Latest run [38521538328](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38521538328) confirmed that 31 unique YouTube thumbnail URLs returned image responses, with zero failures or inconclusive results. Still check LinkedIn/Instagram destinations, actual video playback, and whether each thumbnail matches the intended video.
 2. Complete manual keyboard, touch and screen-reader review, plus a human review of contrast in charts and component states.
 3. Plan image derivatives and font-loading improvements, then re-run Lighthouse to confirm actual changes rather than assuming savings.
 4. Keep Jalan evidence-dependent metrics blocked until supporting tracker/report evidence is supplied. The qualitative case narratives remain intact.
