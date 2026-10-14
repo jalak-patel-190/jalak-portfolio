@@ -162,7 +162,7 @@ Useful proof:
 3. **Information architecture:** implemented. Homepage proof cards point to relevant cases; company hubs link to other companies; deep cases have related-work cards and a View All Work action.
 4. **Content accuracy:** core corrections implemented. Unverified Ajmera and Jalan headline claims have been removed or narrowed; lifetime, legacy, tenure and channel-specific figures are labelled more carefully.
 5. **Implementation:** merged into main in controlled batches. Existing typography, palette, card style, spacing and company-specific visual language have been preserved.
-6. **Regression and final sign-off:** **open**. The latest GitHub Pages workflow succeeded for main commit `cefc38a98bddf809cfb6226ffdafabf9afb81dc2` (workflow [38415532993](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38415532993)). This confirms the deployment workflow completed; it does not independently prove the live rendered page is correct.
+6. **Regression and final sign-off:** **open**. The latest website-code deployment succeeded for commit `cefc38a98bddf809cfb6226ffdafabf9afb81dc2` (workflow [38415532993](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38415532993)). The audit-documentation merge `d32f69b339d4e12161d8beaae3246097964cec16` also passed Pages workflow [38510972833](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38510972833). These workflow results confirm the deployment jobs completed; they do not independently prove the live rendered page is correct.
 
 ### Verified in source versus still blocked
 
