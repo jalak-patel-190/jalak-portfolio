@@ -277,6 +277,7 @@ test('external YouTube thumbnail URLs referenced by primary pages respond with i
     }
   }
 
+  console.log(`External thumbnail audit: ${urls.length} unique URLs; ${urls.length - confirmedFailures.length - inconclusive.length} confirmed image responses; ${confirmedFailures.length} confirmed failures; ${inconclusive.length} inconclusive.`);
   if (inconclusive.length) {
     console.warn('External thumbnail checks inconclusive due to access/rate-limit/network responses:', JSON.stringify(inconclusive));
   }
