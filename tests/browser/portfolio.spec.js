@@ -223,3 +223,62 @@ test('audit documents and QA source files are not published after Pages deployme
     expect(response.status(), `${path} should not be published`).toBe(404);
   }
 });
+
+
+test('external YouTube thumbnail URLs referenced by primary pages respond with images', async ({ request }) => {
+  test.skip(process.env.CHECK_EXTERNAL_MEDIA !== 'true', 'runs against published pages after a successful main-branch deployment');
+  const liveBaseURL = process.env.PORTFOLIO_LIVE_URL;
+  const thumbnailURLs = new Set();
+
+  // Read the deployed page markup so this checks the published HTML, not only the local checkout.
+  for (const route of primaryPages) {
+    const response = await request.get(new URL(route, liveBaseURL).toString(), { timeout: 15000 });
+    expect(response.status(), `live page should respond while collecting thumbnails: ${route}`).toBe(200);
+    const html = await response.text();
+    for (const match of html.matchAll(/<img\\b[^>]*\\bsrc=["']([^"']+)["'][^>]*>/gi)) {
+      const src = match[1];
+      if (/^https?:\\/\\/(?:img\\.youtube\\.com|i\\.ytimg\\.com)\\//i.test(src)) {
+        thumbnailURLs.add(src);
+      }
+    }
+  }
+
+  expect(thumbnailURLs.size, 'the published primary pages should contain YouTube thumbnail URLs').toBeGreaterThan(0);
+
+  const confirmedFailures = [];
+  const inconclusive = [];
+  const urls = [...thumbnailURLs];
+
+  // Limit concurrency to reduce the chance of triggering third-party rate limits.
+  for (let offset = 0; offset < urls.length; offset += 5) {
+    const batch = await Promise.all(urls.slice(offset, offset + 5).map(async url => {
+      let lastStatus = 0;
+      let lastContentType = '';
+      for (let attempt = 0; attempt < 2; attempt++) {
+        try {
+          const response = await request.get(url, { timeout: 15000 });
+          lastStatus = response.status();
+          lastContentType = response.headers()['content-type'] || '';
+          if (lastStatus === 200 && /^image\\//i.test(lastContentType)) {
+            return { url, result: 'ok' };
+          }
+          if (lastStatus === 403 || lastStatus === 429 || lastStatus >= 500) continue;
+          return { url, result: 'failure', status: lastStatus, contentType: lastContentType };
+        } catch (error) {
+          if (attempt === 1) return { url, result: 'inconclusive', error: String(error) };
+        }
+      }
+      return { url, result: 'inconclusive', status: lastStatus, contentType: lastContentType };
+    }));
+
+    for (const result of batch) {
+      if (result.result === 'failure') confirmedFailures.push(result);
+      if (result.result === 'inconclusive') inconclusive.push(result);
+    }
+  }
+
+  if (inconclusive.length) {
+    console.warn('External thumbnail checks inconclusive due to access/rate-limit/network responses:', JSON.stringify(inconclusive));
+  }
+  expect(confirmedFailures, 'confirmed missing or non-image YouTube thumbnails').toEqual([]);
+});
