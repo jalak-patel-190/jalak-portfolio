@@ -206,3 +206,33 @@ Checked homepage, all four company hubs, and the custom 404 page directly from c
 ### Next action
 
 Continue source regression checks on deep case pages, including evidence-image/alt-text matching, related-case navigation, video behavior, and relative asset paths. Then complete real-browser QA when a usable browser/rendered-page check is available. Keep the existing visual theme intact.
+
+
+## Deep-case regression loop — 14 October 2026
+
+### Coverage completed
+
+Continued static regression review across all 22 deep case-study pages (6 Ajmera, 6 Cinekorn, 4 Jalan, 6 Swad). The checks covered H1 count, duplicate IDs, in-page anchor targets, image alt attributes, relative local file references, and the presence of related-case / View All Work navigation. Selected video and evidence-image cases received extra inspection.
+
+### Results in this loop
+
+- All 22 pages reviewed have exactly one H1.
+- No duplicate IDs or missing in-page anchor targets were detected in the checked pages.
+- No checked image element lacked an `alt` attribute.
+- No unresolved relative local asset/page paths were detected by the source-path check on the reviewed pages.
+- Related-case navigation / View All Work endings were present across the reviewed pages.
+- The Cinekorn Telugu/Kannada case points to `yt-telugu.png` for Telugu analytics, matching its alt text; the prior wrong-image pairing is not present in current source.
+- The Ajmera corporate-content and Swad owner-channel video elements use `preload="metadata"` and include controls. This is a source inspection only; video loading and layout stability still require browser testing.
+- Jalan case pages retain qualitative narratives without restoring the previously rejected unsupported headline figures. Their proof backlog remains open.
+
+### Deployment checkpoint
+
+The audit-log update from the previous loop was deployed successfully by Pages workflow [38514625906](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38514625906), for commit `55d9988bf7b62aea7a4bddafdfd748870878d21a`.
+
+### Live-browser access attempt
+
+A direct request to the live homepage and Swad hub could not be completed because the execution environment could not resolve the external host (DNS/network failure). This is an environment limitation, not evidence that the site is down. Browser rendering, mobile layout, interaction behavior, external link reachability, media retrieval, full contrast and Lighthouse/Core Web Vitals remain unverified.
+
+### Loop decision
+
+No confirmed source-level defect in this batch justified a code change. The existing theme and page content were left unchanged. Continue with a second pass focused on navigation scripts, responsive CSS, accessibility semantics and claim/source consistency. Keep Phase 6 open until real-browser QA is possible.
