@@ -272,3 +272,27 @@ This section supersedes the earlier status statements above that described brows
 5. Keep the evidence-dependent claim review open, especially the Jalan cases; do not restore figures without source proof.
 
 **Updated status:** source audit and implementation batches are complete for the current scope; automated desktop/mobile regression is passing. Phase 6 is now **partially complete**, not blocked entirely. Final sign-off remains open pending the additional checks above and the Jalan evidence backlog.
+
+
+## Expanded live-page regression update — 14 October 2026
+
+This update supersedes the earlier limitation in the Browser QA update that live smoke coverage included only the homepage and four company hubs.
+
+- **Merged:** [PR #74](https://github.com/jalak-patel-190/jalak-portfolio/pull/74).
+- **Successful run:** [38516101853](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38516101853).
+- **Result:** 68 passed, 2 desktop-only skips by design.
+- All 27 primary pages passed the local Chromium smoke checks on desktop and mobile.
+- All 27 primary pages passed the live GitHub Pages smoke crawl: HTTP 200, one H1, skip-link presence, and no uncaught JavaScript exceptions.
+- All 27 primary pages passed the mobile document-level horizontal overflow check.
+- The homepage and four company hubs passed axe-core WCAG 2.1 A/AA scans on desktop and mobile. Mobile navigation behavior remains passing on those five entry pages.
+- No portfolio content or visual styling was changed in this QA batch.
+
+### Remaining before final sign-off
+
+1. Live-browser checks for the four legacy routes and custom 404 behavior.
+2. Reachability and loading checks for external YouTube/LinkedIn links, image thumbnails and video assets.
+3. Manual keyboard, touch and screen-reader review beyond the automated navigation checks.
+4. Lighthouse/Core Web Vitals and performance review.
+5. Evidence-dependent content follow-up, particularly Jalan; automated browser checks do not validate the truth of case-study metrics.
+
+**Current status:** the six-phase audit is implementation-complete for the approved source scope, with Phase 6 substantially advanced by automated desktop/mobile and live-site coverage. Do not call the entire audit signed off until the remaining items above are tested and documented.
