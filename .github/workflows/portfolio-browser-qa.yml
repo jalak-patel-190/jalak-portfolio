@@ -16,6 +16,7 @@ jobs:
     env:
       PORTFOLIO_LIVE_URL: https://jalak-patel-190.github.io/jalak-portfolio/
       CHECK_PUBLISHED_INTERNAL_PATHS: ${{ github.event_name == 'push' && 'true' || 'false' }}
+      CHECK_EXTERNAL_MEDIA: ${{ github.event_name == 'push' && 'true' || 'false' }}
     timeout-minutes: 15
     steps:
       - name: Check out repository
