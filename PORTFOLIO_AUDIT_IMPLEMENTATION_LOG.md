@@ -196,7 +196,7 @@ The latest deployed commit `f727b308d82a066c1fa81102dec764e84a262d7e` passed Git
 
 - Browser QA: 120 passed, 2 desktop-context skips by design.
 - All 27 primary pages passed live desktop/mobile smoke checks and mobile overflow checks.
-- Local image/video references returned HTTP 200; four legacy routes redirected; custom 404 returned HTTP 404; internal audit/QA paths tested by the suite returned HTTP 404.
+- Local image/video references served by the local test server returned HTTP 200; the live deployment crawl did not exhaustively fetch every media URL from the published host. Four legacy routes redirected; custom 404 returned HTTP 404; internal audit/QA paths tested by the suite returned HTTP 404.
 - axe-core WCAG 2.1 A/AA scans passed across all 27 primary pages on desktop and mobile Chromium. This is automated coverage, not manual accessibility certification.
 - Lighthouse one-run Performance scores: homepage 92, Ajmera 97, Cinekorn 99, Jalan 96, Swad 99. Accessibility, Best Practices and SEO each scored 100 on all five tested pages. FCP 1.6–2.6 s, LCP 1.6–2.7 s, TBT 0 ms, CLS 0–0.03. These are lab measurements, not field Core Web Vitals.
 - Remaining work: third-party YouTube/LinkedIn/media checks, manual keyboard/touch/screen-reader and contrast review, responsive image derivatives/font-loading evaluation, and Jalan evidence follow-up. Do not add unsupported numbers to close evidence gaps.
