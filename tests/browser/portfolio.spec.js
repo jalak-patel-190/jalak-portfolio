@@ -283,3 +283,15 @@ test('external YouTube thumbnail URLs referenced by primary pages respond with i
   }
   expect(confirmedFailures, 'confirmed missing or non-image YouTube thumbnails').toEqual([]);
 });
+
+
+test('keyboard can focus and reveal the skip link on all primary pages', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  for (const route of primaryPages) {
+    await page.goto(route, { waitUntil: 'domcontentloaded' });
+    await page.keyboard.press('Tab');
+    const skipLink = page.locator('.skip-link').first();
+    await expect(skipLink, `first keyboard stop should be the skip link on ${route}`).toBeFocused();
+    await expect(skipLink, `skip link should become visible in the viewport on ${route}`).toBeInViewport();
+  }
+});
