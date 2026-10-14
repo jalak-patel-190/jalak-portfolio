@@ -127,6 +127,8 @@ for (const route of accessibilityEntryPages) {
   test(`WCAG 2.1 A/AA accessibility scan: ${route}`, async ({ page }) => {
     // Evaluate the stable end state instead of a transient mid-transition opacity.
     await page.emulateMedia({ reducedMotion: 'reduce' });
+    // Do not audit third-party YouTube player internals as if they were portfolio markup.
+    await page.route(/youtube(-nocookie)?\\.com/, routeRequest => routeRequest.abort());
     await page.goto(route, { waitUntil: 'domcontentloaded' });
     const results = await new AxeBuilder({ page })
       // Third-party YouTube iframe internals are outside portfolio markup/control.
