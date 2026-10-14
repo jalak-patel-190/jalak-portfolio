@@ -296,3 +296,26 @@ This update supersedes the earlier limitation in the Browser QA update that live
 5. Evidence-dependent content follow-up, particularly Jalan; automated browser checks do not validate the truth of case-study metrics.
 
 **Current status:** the six-phase audit is implementation-complete for the approved source scope, with Phase 6 substantially advanced by automated desktop/mobile and live-site coverage. Do not call the entire audit signed off until the remaining items above are tested and documented.
+
+
+## Legacy routes, custom 404 and local-media checks — 14 October 2026
+
+This is the next completed QA batch after the expanded live-page crawl.
+
+- **Merged:** [PR #75](https://github.com/jalak-patel-190/jalak-portfolio/pull/75).
+- **Successful run:** [38516344601](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38516344601).
+- **Result:** 74 passed, 2 desktop-only skips by design.
+- All local image and video source URLs used by the 27 primary pages returned HTTP 200.
+- All four legacy URLs redirected to the intended company hubs.
+- An unknown live URL returned HTTP 404 and displayed the custom not-found page with a skip link.
+- All 27 primary pages continued to pass the live deployment crawl and mobile overflow test.
+- WCAG 2.1 A/AA automated scans continued to pass on the homepage and four company hubs in desktop and mobile Chromium.
+
+### Remaining work
+
+1. Verify external YouTube/LinkedIn destinations and third-party image/video retrieval.
+2. Complete broader manual keyboard, touch and screen-reader checks.
+3. Run Lighthouse/Core Web Vitals and review the actual results.
+4. Reconcile evidence-dependent claims, especially Jalan, before final factual sign-off.
+
+**Status:** implementation and automated browser regression are now strong across all primary pages, local media, legacy redirects and the custom 404 route. Final sign-off remains open until the external, manual-accessibility, performance and evidence checks are complete.
