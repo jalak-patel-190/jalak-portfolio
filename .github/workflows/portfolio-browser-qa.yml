@@ -37,3 +37,20 @@ jobs:
             test-results/
           if-no-files-found: ignore
           retention-days: 14
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Run Lighthouse on the live homepage and company hubs
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            https://jalak-patel-190.github.io/jalak-portfolio/
+            https://jalak-patel-190.github.io/jalak-portfolio/case-studies/ajmera/
+            https://jalak-patel-190.github.io/jalak-portfolio/case-studies/cinekorn/
+            https://jalak-patel-190.github.io/jalak-portfolio/case-studies/jalan/
+            https://jalak-patel-190.github.io/jalak-portfolio/case-studies/swad/
+          runs: 1
+          uploadArtifacts: true
+          temporaryPublicStorage: false
