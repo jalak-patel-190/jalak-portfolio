@@ -99,3 +99,27 @@ test('mobile navigation opens, closes with Escape and restores focus', async ({ 
     await expect(toggle).toBeFocused();
   }
 });
+
+
+test('live GitHub Pages deployment serves the homepage and four company hubs', async ({ page }, testInfo) => {
+  test.skip(!process.env.PORTFOLIO_LIVE_URL, 'live deployment smoke test is not configured');
+  const liveBaseURL = process.env.PORTFOLIO_LIVE_URL;
+  const livePages = [
+    'index.html',
+    'case-studies/ajmera/',
+    'case-studies/cinekorn/',
+    'case-studies/jalan/',
+    'case-studies/swad/'
+  ];
+  const pageErrors = [];
+  page.on('pageerror', error => pageErrors.push(error.message));
+
+  for (const route of livePages) {
+    const response = await page.goto(new URL(route, liveBaseURL).toString(), { waitUntil: 'domcontentloaded' });
+    expect(response, `live page should respond: ${route}`).not.toBeNull();
+    expect(response.status(), `live page should return HTTP 200: ${route}`).toBe(200);
+    await expect(page.locator('h1')).toHaveCount(1);
+    await expect(page.locator('.skip-link').first()).toHaveCount(1);
+  }
+  expect(pageErrors, 'live entry pages should not throw uncaught JavaScript errors').toEqual([]);
+});
