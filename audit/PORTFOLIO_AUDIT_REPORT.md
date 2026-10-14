@@ -7,7 +7,7 @@
 
 ## Executive summary
 
-The portfolio has a coherent multi-page structure: a homepage, four company hubs and individual case-study pages. The current design direction is usable as a foundation. The main risks found in this pass are not reasons for a visual redesign. They are unsupported numerical claims, unclear attribution, a few case descriptions that overstate what the available archive verifies, and the absence of browser-based QA.
+The portfolio has a coherent multi-page structure: a homepage, four company hubs and individual case-study pages. The current design direction is usable as a foundation. The main risks found in this pass are not reasons for a visual redesign. They are unsupported numerical claims, unclear attribution, a few case descriptions that overstate what the available archive verifies, and the remaining manual/device QA and performance measurement. Automated Chromium regression checks have since been added and passed; see the latest checkpoint below.
 
 The initial accuracy and accessibility batch was merged in pull request #2, followed by controlled source, navigation, evidence and accessibility batches. Later updates include direct homepage proof-card destinations (PR #57), company-hub navigation (PR #53), related-case cards and View All Work endings (PR #60), and stronger keyboard focus indicators (PR #62). The custom 404 page also now has descriptive metadata and a keyboard skip link. The latest main commit and Pages workflow status are tracked in `docs/PORTFOLIO_AUDIT_LOG.md`.
 
@@ -246,3 +246,29 @@ Keep all four Jalan case-study ideas. Do not add unverified counts, ROI, booking
 ### Final state
 
 **Five of six phases are complete at source/implementation level. Phase 6 is partially complete: static regression and deployment workflow checks passed, while real-browser QA remains blocked by lack of a usable browser/rendered-page check in this environment.** Do not label the whole website fully audited or accessibility-certified until those tests are actually performed.
+
+
+## Browser QA update — 14 October 2026
+
+This section supersedes the earlier status statements above that described browser testing as entirely unavailable. Those notes record the state at the time; the automated checks below have now run successfully.
+
+### Automated browser checks added and passed
+
+- **PR #73 merged:** [QA: add automated portfolio browser checks](https://github.com/jalak-patel-190/jalak-portfolio/pull/73).
+- Successful run: [38515851748](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38515851748).
+- Result: **68 passed, 2 skipped by design**.
+- All 27 primary pages passed Chromium desktop and mobile smoke checks for HTTP 200, one H1, skip-link presence, image alt attributes, local resource errors and uncaught JavaScript exceptions.
+- Mobile document-overflow checks passed on the homepage and all four company hubs.
+- Mobile menu tests passed for opening, Escape-to-close, `aria-expanded` state and focus return on the homepage and all four company hubs.
+- The live GitHub Pages homepage and all four company hubs returned HTTP 200 and passed basic heading/skip-link checks in the CI browser.
+- axe-core WCAG 2.1 A/AA scans passed for the homepage and four company hubs on desktop and mobile, with reduced motion emulated to avoid measuring a transient fade-in state.
+
+### Remaining work before final sign-off
+
+1. Extend live-deployment smoke coverage from the homepage and four hubs to all 22 deep case pages.
+2. Check third-party YouTube/LinkedIn destinations and all external thumbnail/video behavior.
+3. Complete manual keyboard, touch and screen-reader review; automated axe scans are not a certification.
+4. Run Lighthouse or equivalent performance/Core Web Vitals checks on the deployed site.
+5. Keep the evidence-dependent claim review open, especially the Jalan cases; do not restore figures without source proof.
+
+**Updated status:** source audit and implementation batches are complete for the current scope; automated desktop/mobile regression is passing. Phase 6 is now **partially complete**, not blocked entirely. Final sign-off remains open pending the additional checks above and the Jalan evidence backlog.
