@@ -45,7 +45,7 @@ for (const route of primaryPages) {
       }
     });
 
-    const response = await page.goto(route);
+    const response = await page.goto(route, { waitUntil: 'domcontentloaded' });
     expect(response, 'navigation should return a response').not.toBeNull();
     expect(response.status(), 'page should return HTTP 200').toBe(200);
     await expect(page.locator('h1')).toHaveCount(1);
