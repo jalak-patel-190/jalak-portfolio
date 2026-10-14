@@ -201,3 +201,25 @@ test('live custom 404 page returns 404 and offers a route back to the portfolio'
   await expect(page.locator('h1')).toContainText("THIS PAGE ISN'T HERE.");
   await expect(page.locator('.skip-link')).toHaveCount(1);
 });
+
+
+test('audit documents and QA source files are not published after Pages deployment', async ({ request }) => {
+  test.skip(process.env.CHECK_PUBLISHED_INTERNAL_PATHS !== 'true', 'runs after a successful GitHub Pages deployment');
+  const liveBaseURL = process.env.PORTFOLIO_LIVE_URL;
+  const unpublishedPaths = [
+    'audit/PORTFOLIO_AUDIT_REPORT.md',
+    'audit/PORTFOLIO_AUDIT_REPORT.html',
+    'docs/PORTFOLIO_AUDIT_LOG.md',
+    'docs/PORTFOLIO_AUDIT_LOG.html',
+    'PORTFOLIO_AUDIT_CHANGELOG_2026-10-12.md',
+    'PORTFOLIO_AUDIT_IMPLEMENTATION_LOG.md',
+    'package.json',
+    'playwright.config.js',
+    'tests/browser/portfolio.spec.js'
+  ];
+
+  for (const path of unpublishedPaths) {
+    const response = await request.get(new URL(path, liveBaseURL).toString());
+    expect(response.status(), `${path} should not be published`).toBe(404);
+  }
+});

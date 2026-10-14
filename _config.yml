@@ -1,0 +1,20 @@
+# Keep portfolio source, audit notes and test tooling out of the published site.
+exclude:
+  - .github
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - audit
+  - docs
+  - tests
+  - node_modules
+  - playwright-report
+  - test-results
+  - package.json
+  - package-lock.json
+  - playwright.config.js
+  - PORTFOLIO_AUDIT_CHANGELOG_2026-10-12.md
+  - PORTFOLIO_AUDIT_IMPLEMENTATION_LOG.md
