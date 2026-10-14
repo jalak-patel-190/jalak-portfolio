@@ -61,6 +61,8 @@ jobs:
   lighthouse:
     if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
+    env:
+      PORTFOLIO_LIVE_URL: https://jalak-patel-190.github.io/jalak-portfolio/
     timeout-minutes: 15
     steps:
       - name: Wait for updated Pages output after a main-branch push
