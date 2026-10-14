@@ -18,6 +18,17 @@ body{overflow-x:hidden}
 .stat-card .lbl{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#5a5a5a;margin-top:.4rem}
 @media(max-width:640px){.stat-grid{grid-template-columns:1fr}}
 .bars.is-on .bar-fill{width:var(--w,50%)}
+.output-carousel{position:relative;margin:1.25rem 0 .5rem;padding:0 2.5rem}
+.output-carousel-track{display:flex;gap:.85rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:.35rem 0 .75rem}
+.output-carousel-track::-webkit-scrollbar{display:none}
+.output-card{flex:0 0 min(78%,260px);scroll-snap-align:start;border-radius:14px;overflow:hidden;background:#fff;border:1px solid #e8e4dc;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.output-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.08)}
+.output-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#f0ebe3}
+.output-cap{display:block;padding:.55rem .75rem;font-size:.78rem;font-weight:700;color:#5a5a5a;border-top:1px solid #e8e4dc}
+.yt-badge{display:inline-block;background:#ff0000;color:#fff;font-size:.65rem;padding:.1rem .35rem;border-radius:4px;margin-right:.25rem}
+.carousel-btn{position:absolute;top:42%;transform:translateY(-50%);width:40px;height:40px;border-radius:999px;border:1px solid #e8e4dc;background:#fff;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;font-size:1.15rem;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.carousel-btn.prev{left:0}.carousel-btn.next{right:0}
+@media(max-width:640px){.output-carousel{padding:0 2rem}.output-card{flex-basis:min(85%,240px)}}
 </style>
   <meta property="og:type" content="article">
   <meta property="og:title" content="Influencer Marketing on a Monthly Budget | Jalan Mega Mart | Jalak Patel">
@@ -69,10 +80,124 @@ body{overflow-x:hidden}
         <p>The available portfolio archive supports the scope of influencer coordination, but it does not contain a source export that verifies booking totals or spend. No booking count, spend total, or return-on-investment figure is published here.</p>
         <p>Reach, enquiries, and sales per influencer also remain unverified, so this case focuses on the operating process rather than claiming campaign performance.</p>
       </section>
+
+      <section class="section" id="collabs">
+        <p class="section-label">Work output</p>
+        <h2>Influencer collabs and creator work</h2>
+        <p class="section-intro">Glimpses of influencer coordination and creator content. Tap any tile to open on YouTube.</p>
+        <div class="output-carousel" data-output-carousel>
+          <button type="button" class="carousel-btn prev" aria-label="Previous">←</button>
+          <div class="output-carousel-track">
+            <a class="output-card" href="https://youtu.be/Q9tie-mZWMs" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/Q9tie-mZWMs/hqdefault.jpg" alt="Influencer collab" loading="lazy">
+              <span class="output-cap"><span class="yt-badge">YT</span> Influencer collab</span>
+            </a>
+            <a class="output-card" href="https://youtu.be/7DMGjJGZWWY" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/7DMGjJGZWWY/hqdefault.jpg" alt="Influencer collab" loading="lazy">
+              <span class="output-cap"><span class="yt-badge">YT</span> Influencer collab</span>
+            </a>
+            <a class="output-card" href="https://youtu.be/15q0nVIu0es" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/15q0nVIu0es/hqdefault.jpg" alt="Tejas vlog" loading="lazy">
+              <span class="output-cap"><span class="yt-badge">YT</span> Tejas vlog</span>
+            </a>
+            <a class="output-card" href="https://youtu.be/3gTQZ2oPXmI" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/3gTQZ2oPXmI/hqdefault.jpg" alt="Influencer collab" loading="lazy">
+              <span class="output-cap"><span class="yt-badge">YT</span> Influencer collab</span>
+            </a>
+          </div>
+          <button type="button" class="carousel-btn next" aria-label="Next">→</button>
+        </div>
+      </section>
+
+      <section class="section" id="ayodhya">
+        <p class="section-label">Times of Ayodhya</p>
+        <h2>Coverage and collaboration</h2>
+        <div class="output-carousel" data-output-carousel>
+          <button type="button" class="carousel-btn prev" aria-label="Previous">←</button>
+          <div class="output-carousel-track">
+            <a class="output-card" href="https://youtu.be/uAsu3HXMuOM" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/uAsu3HXMuOM/hqdefault.jpg" alt="Times of Ayodhya" loading="lazy">
+              <span class="output-cap"><span class="yt-badge">YT</span> Times of Ayodhya</span>
+            </a>
+            <a class="output-card" href="https://youtu.be/8_nVfdMt_Lc" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/8_nVfdMt_Lc/hqdefault.jpg" alt="Times of Ayodhya" loading="lazy">
+              <span class="output-cap"><span class="yt-badge">YT</span> Times of Ayodhya</span>
+            </a>
+            <a class="output-card" href="https://youtu.be/XpxGp1rJNdM" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/XpxGp1rJNdM/hqdefault.jpg" alt="Times of Ayodhya" loading="lazy">
+              <span class="output-cap"><span class="yt-badge">YT</span> Times of Ayodhya</span>
+            </a>
+          </div>
+          <button type="button" class="carousel-btn next" aria-label="Next">→</button>
+        </div>
+      </section>
+
+      <section class="section" id="rn-news">
+        <p class="section-label">RN News</p>
+        <h2>News channel collaborations</h2>
+        <div class="output-carousel" data-output-carousel>
+          <button type="button" class="carousel-btn prev" aria-label="Previous">←</button>
+          <div class="output-carousel-track">
+            <a class="output-card" href="https://youtu.be/1KfX5hh5Vhw" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/1KfX5hh5Vhw/hqdefault.jpg" alt="RN News" loading="lazy">
+              <span class="output-cap"><span class="yt-badge">YT</span> RN News</span>
+            </a>
+            <a class="output-card" href="https://youtu.be/CIqvILD2NeU" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/CIqvILD2NeU/hqdefault.jpg" alt="RN News" loading="lazy">
+              <span class="output-cap"><span class="yt-badge">YT</span> RN News</span>
+            </a>
+            <a class="output-card" href="https://youtu.be/0O4CJiaT_Wc" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/0O4CJiaT_Wc/hqdefault.jpg" alt="RN News" loading="lazy">
+              <span class="output-cap"><span class="yt-badge">YT</span> RN News</span>
+            </a>
+            <a class="output-card" href="https://youtu.be/357rr6EKxic" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/357rr6EKxic/hqdefault.jpg" alt="RN News" loading="lazy">
+              <span class="output-cap"><span class="yt-badge">YT</span> RN News</span>
+            </a>
+          </div>
+          <button type="button" class="carousel-btn next" aria-label="Next">→</button>
+        </div>
+      </section>
+
+      <section class="section" id="regional">
+        <p class="section-label">Regional promotions</p>
+        <h2>Telugu and Marathi promotion work</h2>
+        <div class="output-carousel" data-output-carousel>
+          <button type="button" class="carousel-btn prev" aria-label="Previous">←</button>
+          <div class="output-carousel-track">
+            <a class="output-card" href="https://youtu.be/3eryvkKmRos" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/3eryvkKmRos/hqdefault.jpg" alt="Telugu promotion" loading="lazy">
+              <span class="output-cap"><span class="yt-badge">YT</span> Telugu promotion</span>
+            </a>
+            <a class="output-card" href="https://youtu.be/WtWFCdzIMlM" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/WtWFCdzIMlM/hqdefault.jpg" alt="Telugu promotion" loading="lazy">
+              <span class="output-cap"><span class="yt-badge">YT</span> Telugu promotion</span>
+            </a>
+            <a class="output-card" href="https://youtu.be/coP-bMXUsxA" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/coP-bMXUsxA/hqdefault.jpg" alt="Marathi promotion" loading="lazy">
+              <span class="output-cap"><span class="yt-badge">YT</span> Marathi promotion</span>
+            </a>
+            <a class="output-card" href="https://youtu.be/IE99go8Jf1k" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/IE99go8Jf1k/hqdefault.jpg" alt="Marathi promotion" loading="lazy">
+              <span class="output-cap"><span class="yt-badge">YT</span> Marathi promotion</span>
+            </a>
+            <a class="output-card" href="https://youtu.be/8f64fHI1gcw" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/8f64fHI1gcw/hqdefault.jpg" alt="Marathi promotion" loading="lazy">
+              <span class="output-cap"><span class="yt-badge">YT</span> Marathi promotion</span>
+            </a>
+            <a class="output-card" href="https://youtu.be/ntJ6r3Dc6y4" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/ntJ6r3Dc6y4/hqdefault.jpg" alt="Marathi promotion" loading="lazy">
+              <span class="output-cap"><span class="yt-badge">YT</span> Marathi promotion</span>
+            </a>
+          </div>
+          <button type="button" class="carousel-btn next" aria-label="Next">→</button>
+        </div>
+      </section>
+
       <section class="section" id="results">
         <p class="section-label">Results</p>
         <h2>What can be stated responsibly</h2>
-        <p>The work involved sourcing, negotiating with, briefing, and coordinating influencers on a monthly budget. Without a verified booking log and campaign-level outcome data, a numerical result or ROI claim would overstate the available evidence.</p>
+        <p>The work involved sourcing, negotiating with, briefing, and coordinating influencers and regional creators on a monthly budget. Without a verified booking log and campaign-level outcome data, a numerical result or ROI claim would overstate the available evidence.</p>
       </section>
       <section class="section" id="takeaway">
         <p class="section-label">What this showed</p>
@@ -80,17 +205,17 @@ body{overflow-x:hidden}
         <p>Influencer activity requires selection, negotiation, briefing, and follow-through. The next step for a stronger case is to connect verified bookings with reach, enquiries, and sales outcomes.</p>
       </section>
       <section class="whats-next" aria-labelledby="whats-next-title">
-<h2 id="whats-next-title">What's Next</h2>
-<div class="next-grid">
-<a class="next-card" href="01-channel-network.html"><div class="n">Case 01 · Channel setup</div><div class="t">Build the channel and page network</div><p>The network of channels and pages created the base for regional product and festival demand.</p></a>
-<a class="next-card" href="03-tele-calling-team.html"><div class="n">Case 03 · Sales support</div><div class="t">Lead a tele-calling team</div><p>Daily activity, catalogue sharing and buyer follow-up, with results kept separate from unverified sales totals.</p></a>
-</div>
-</section>
-<section class="section cta-band">
-<h2>Explore the rest of the portfolio</h2>
-<div class="hero-actions"><a class="btn-primary" href="../../index.html#work">View All Work</a></div>
-</section>
-</div>
+        <h2 id="whats-next-title">What's Next</h2>
+        <div class="next-grid">
+          <a class="next-card" href="01-channel-network.html"><div class="n">Case 01 · Channel setup</div><div class="t">Build the channel and page network</div><p>The network of channels and pages created the base for regional product and festival demand.</p></a>
+          <a class="next-card" href="03-tele-calling-team.html"><div class="n">Case 03 · Sales support</div><div class="t">Lead a tele-calling team</div><p>Daily activity, catalogue sharing and buyer follow-up, with results kept separate from unverified sales totals.</p></a>
+        </div>
+      </section>
+      <section class="section cta-band">
+        <h2>Explore the rest of the portfolio</h2>
+        <div class="hero-actions"><a class="btn-primary" href="../../index.html#work">View All Work</a></div>
+      </section>
+    </div>
   </main>
   <footer>
     <p>&copy; 2026 Jalak Patel</p>
@@ -112,35 +237,26 @@ body{overflow-x:hidden}
           });
         });
       }
-      var bars = document.querySelectorAll('.bars');
-      if (!bars.length) return;
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        bars.forEach(function (b) { b.classList.add('is-on'); });
-        return;
-      }
-      if ('IntersectionObserver' in window) {
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) {
-            if (e.isIntersecting) {
-              e.target.classList.add('is-on');
-              io.unobserve(e.target);
-            }
-          });
-        }, { threshold: 0.25 });
-        bars.forEach(function (b) { io.observe(b); });
-      } else {
-        bars.forEach(function (b) { b.classList.add('is-on'); });
-      }
+    })();
+    (function(){
+      document.querySelectorAll('[data-output-carousel]').forEach(function(root){
+        var track = root.querySelector('.output-carousel-track');
+        var prev = root.querySelector('.carousel-btn.prev');
+        var next = root.querySelector('.carousel-btn.next');
+        if(!track) return;
+        function step(){ return Math.min(track.clientWidth * 0.85, 280); }
+        if(prev) prev.addEventListener('click', function(){ track.scrollBy({left: -step(), behavior:(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ? 'auto' : 'smooth'}); });
+        if(next) next.addEventListener('click', function(){ track.scrollBy({left: step(), behavior:(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ? 'auto' : 'smooth'}); });
+      });
     })();
   </script>
-
-<script>
-(function(){
-  var t=document.getElementById('navToggle'),n=document.getElementById('mainNav');
-  if(!t||!n)return;
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){n.classList.remove('open');t.setAttribute('aria-expanded','false');t.focus();}});
-  document.addEventListener('click',function(e){if(n.classList.contains('open')&&!n.contains(e.target)&&!t.contains(e.target)){n.classList.remove('open');t.setAttribute('aria-expanded','false');}});
-})();
-</script>
+  <script>
+  (function(){
+    var t=document.getElementById('navToggle'),n=document.getElementById('mainNav');
+    if(!t||!n)return;
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){n.classList.remove('open');t.setAttribute('aria-expanded','false');t.focus();}});
+    document.addEventListener('click',function(e){if(n.classList.contains('open')&&!n.contains(e.target)&&!t.contains(e.target)){n.classList.remove('open');t.setAttribute('aria-expanded','false');}});
+  })();
+  </script>
 </body>
 </html>
