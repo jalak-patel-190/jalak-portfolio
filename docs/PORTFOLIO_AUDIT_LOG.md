@@ -236,3 +236,17 @@ A direct request to the live homepage and Swad hub could not be completed becaus
 ### Loop decision
 
 No confirmed source-level defect in this batch justified a code change. The existing theme and page content were left unchanged. Continue with a second pass focused on navigation scripts, responsive CSS, accessibility semantics and claim/source consistency. Keep Phase 6 open until real-browser QA is possible.
+
+
+## Navigation, responsive-style and accessibility source pass — 14 October 2026
+
+### Additional checks
+
+- Inspected the homepage and all four company-hub navigation scripts. Each hub's mobile menu source includes an `aria-expanded` update, Escape-to-close behavior, focus return to the menu trigger, link-click close behavior and outside-click close behavior.
+- Inspected shared CSS for the homepage and four company case systems. Responsive media queries, `:focus-visible` styles and reduced-motion rules are present across the checked stylesheets.
+- Inspected Ajmera, Cinekorn and Swad lightbox scripts. Cinekorn's image viewer uses a native `dialog` with `showModal()` where supported and a labelled close button. No source-level issue was confirmed in this pass; actual keyboard and touch behavior still requires browser testing.
+- No portfolio code changes were justified by these static checks. The visual theme remains unchanged.
+
+### Remaining phase-6 requirements
+
+Source checks now cover all 22 deep case pages, the homepage, four hubs and the custom 404 page. They still cannot verify real layout, overflow, interaction behavior, network-loaded images/videos, external destination responses, computed contrast or performance metrics. Live GitHub Pages access attempts remain blocked by the review environment's external-host/network access, so do not mark these items as passed.
