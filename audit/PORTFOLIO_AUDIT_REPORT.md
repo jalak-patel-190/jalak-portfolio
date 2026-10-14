@@ -371,3 +371,29 @@ FCP ranged from 1.6–2.6 s, LCP from 1.6–2.7 s, TBT was 0 ms and CLS ranged f
 - **Result:** 31 confirmed image responses; zero confirmed failures; zero inconclusive responses.
 - This checks that those thumbnail endpoints responded with image content at the time of the run. It does not establish that each thumbnail depicts the intended video, prove video playback, or verify LinkedIn/Instagram destination reachability.
 - Keep those remaining checks open. No portfolio design, copy or metrics changed in this QA batch.
+
+
+## Latest deployed regression and Lighthouse checkpoint — 14 October 2026
+
+The current main commit `b579c729c5738ba6fc541c529b2dee5e0ff252ff` passed [post-deployment browser QA and Lighthouse run 38521538328](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38521538328).
+
+- Browser suite: **125 passed, 3 skipped by configuration**. The skip-link focus/visibility test passes on all 27 primary pages. The mobile menu focus-indicator test passes in mobile Chromium and is intentionally skipped in desktop Chromium.
+- External YouTube thumbnails: **31 unique URLs checked; 31 image responses; zero confirmed failures; zero inconclusive**. This is reachability evidence, not proof that each image matches its intended video or that playback works.
+
+| Page | Performance | Accessibility | Best Practices | SEO | FCP | LCP | TBT | CLS |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Homepage | 92 | 100 | 100 | 100 | 2.6 s | 2.7 s | 0 ms | 0.000 |
+| Ajmera hub | 96 | 100 | 100 | 100 | 1.7 s | 2.6 s | 0 ms | 0.002 |
+| Cinekorn hub | 99 | 100 | 100 | 100 | 1.7 s | 1.7 s | 0 ms | 0.004 |
+| Jalan hub | 96 | 100 | 100 | 100 | 1.6 s | 2.7 s | 0 ms | 0.002 |
+| Swad hub | 99 | 100 | 100 | 100 | 1.7 s | 1.7 s | 0 ms | 0.031 |
+
+These are one-run lab measurements and may vary between runs; they do not represent field Core Web Vitals. Earlier checkpoints have different single-run scores, so use this table as the latest measured snapshot, not as proof of a regression or improvement by itself.
+
+### Next performance batch
+
+Lighthouse continues to flag render-blocking Google Fonts CSS and oversized/non-responsive images on some hubs. Inspect exact image use before changing assets. Prefer small derivatives for hub/card previews and keep original evidence screenshots intact on detailed case-study pages. Retest on the published site after any changes.
+
+### Remaining sign-off blockers
+
+Manual keyboard/touch/screen-reader and human contrast review; LinkedIn/Instagram destination checks; actual video playback and thumbnail-to-video matching; and source evidence for Jalan metrics. Automated axe scans and passing browser tests are useful checks, not a substitute for those remaining reviews.

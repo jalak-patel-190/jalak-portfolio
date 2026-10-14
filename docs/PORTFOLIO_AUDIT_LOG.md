@@ -366,3 +366,24 @@ Lighthouse flagged render-blocking Google Fonts CSS and large images. Specific r
 - **Result:** 31 confirmed image responses; zero confirmed failures; zero inconclusive responses.
 - This establishes endpoint response and image content for those URLs at test time. It does not confirm the thumbnail matches the intended video, video playback, or LinkedIn/Instagram destination reachability.
 - Those remaining checks stay open; no visual or case-study content changes were made.
+
+
+## Latest deployed regression and Lighthouse checkpoint — 14 October 2026
+
+- **Main commit:** `b579c729c5738ba6fc541c529b2dee5e0ff252ff` — mobile menu keyboard-focus QA test.
+- **Post-deployment run:** [38521538328](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38521538328) succeeded for the current main commit.
+- **Browser suite:** 125 passed, 3 skipped by test configuration; the mobile-only menu-focus check is intentionally skipped in desktop context and passes in mobile context. The keyboard skip-link visibility test passes across all 27 primary pages.
+- **External thumbnail check:** 31 unique YouTube thumbnail URLs; 31 image responses, zero confirmed failures, zero inconclusive results. This confirms endpoint responses only, not thumbnail identity or playback.
+- **Latest single-run Lighthouse scores:**
+
+| Page | Performance | Accessibility | Best Practices | SEO | FCP | LCP | TBT | CLS |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Homepage | 92 | 100 | 100 | 100 | 2.6 s | 2.7 s | 0 ms | 0.000 |
+| Ajmera hub | 96 | 100 | 100 | 100 | 1.7 s | 2.6 s | 0 ms | 0.002 |
+| Cinekorn hub | 99 | 100 | 100 | 100 | 1.7 s | 1.7 s | 0 ms | 0.004 |
+| Jalan hub | 96 | 100 | 100 | 100 | 1.6 s | 2.7 s | 0 ms | 0.002 |
+| Swad hub | 99 | 100 | 100 | 100 | 1.7 s | 1.7 s | 0 ms | 0.031 |
+
+- Lighthouse is a single lab run per URL; scores and timing vary between runs. These results do not establish field Core Web Vitals.
+- **Next batch:** examine oversized images and render-blocking Google Fonts, then make targeted, reversible changes only where source inspection confirms they are safe. Preserve original analytics/evidence images on deep case pages.
+- **Still open:** manual keyboard/touch/screen-reader and human contrast review; LinkedIn/Instagram destination checks; actual video playback and thumbnail identity; Jalan evidence-dependent claims.
