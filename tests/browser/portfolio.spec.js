@@ -62,16 +62,10 @@ for (const route of primaryPages) {
   });
 }
 
-test('mobile layouts do not create document-level horizontal overflow on key entry pages', async ({ page }, testInfo) => {
+test('mobile layouts do not create document-level horizontal overflow on all primary pages', async ({ page }, testInfo) => {
   test.skip(!testInfo.project.name.includes('mobile'), 'mobile viewport check');
-  for (const route of [
-    'index.html',
-    'case-studies/ajmera/index.html',
-    'case-studies/cinekorn/index.html',
-    'case-studies/jalan/index.html',
-    'case-studies/swad/index.html'
-  ]) {
-    await page.goto(route);
+  for (const route of primaryPages) {
+    await page.goto(route, { waitUntil: 'domcontentloaded' });
     const sizes = await page.evaluate(() => ({
       viewport: document.documentElement.clientWidth,
       document: document.documentElement.scrollWidth
@@ -101,16 +95,10 @@ test('mobile navigation opens, closes with Escape and restores focus', async ({ 
 });
 
 
-test('live GitHub Pages deployment serves the homepage and four company hubs', async ({ page }, testInfo) => {
+test('live GitHub Pages deployment serves all 27 primary pages', async ({ page }) => {
   test.skip(!process.env.PORTFOLIO_LIVE_URL, 'live deployment smoke test is not configured');
   const liveBaseURL = process.env.PORTFOLIO_LIVE_URL;
-  const livePages = [
-    'index.html',
-    'case-studies/ajmera/',
-    'case-studies/cinekorn/',
-    'case-studies/jalan/',
-    'case-studies/swad/'
-  ];
+  const livePages = primaryPages;
   const pageErrors = [];
   page.on('pageerror', error => pageErrors.push(error.message));
 
@@ -121,7 +109,7 @@ test('live GitHub Pages deployment serves the homepage and four company hubs', a
     await expect(page.locator('h1')).toHaveCount(1);
     await expect(page.locator('.skip-link').first()).toHaveCount(1);
   }
-  expect(pageErrors, 'live entry pages should not throw uncaught JavaScript errors').toEqual([]);
+  expect(pageErrors, 'live primary pages should not throw uncaught JavaScript errors').toEqual([]);
 });
 
 
