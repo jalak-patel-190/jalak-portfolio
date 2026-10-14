@@ -337,3 +337,58 @@ test('mobile menu toggle has a visible keyboard focus indicator on entry pages',
     expect(hasVisibleIndicator, `menu toggle needs a visible focus indicator on ${route}: ${JSON.stringify(focusStyle)}`).toBe(true);
   }
 });
+
+
+test('YouTube output-card thumbnails link to the same video ID they preview', async ({ page }) => {
+  const mismatches = [];
+  let checked = 0;
+
+  const targetVideoId = value => {
+    let url;
+    try {
+      url = new URL(value);
+    } catch {
+      return null;
+    }
+    const host = url.hostname.toLowerCase();
+    if (host === 'youtu.be') return url.pathname.split('/').filter(Boolean)[0] || null;
+    if (host === 'youtube.com' || host.endsWith('.youtube.com')) {
+      return url.searchParams.get('v') ||
+        url.pathname.match(/^\/(?:embed|shorts)\/([^/]+)/)?.[1] ||
+        null;
+    }
+    return null;
+  };
+
+  const thumbnailVideoId = value => {
+    let url;
+    try {
+      url = new URL(value);
+    } catch {
+      return null;
+    }
+    if (!/(^|\.)youtube\.com$|(^|\.)ytimg\.com$/i.test(url.hostname)) return null;
+    return url.pathname.match(/\/(?:vi|vi_webp)\/([^/]+)\//)?.[1] || null;
+  };
+
+  for (const route of primaryPages) {
+    await page.goto(route, { waitUntil: 'domcontentloaded' });
+    const pairs = await page.locator('a.output-card[href] img[src]').evaluateAll(images =>
+      images.map(image => ({
+        href: image.closest('a').href,
+        src: image.currentSrc || image.src
+      }))
+    );
+
+    for (const pair of pairs) {
+      const targetId = targetVideoId(pair.href);
+      const imageId = thumbnailVideoId(pair.src);
+      if (!targetId || !imageId) continue;
+      checked++;
+      if (targetId !== imageId) mismatches.push({ route, href: pair.href, src: pair.src, targetId, imageId });
+    }
+  }
+
+  expect(checked, 'at least one linked YouTube thumbnail should be checked').toBeGreaterThan(0);
+  expect(mismatches, 'each linked YouTube thumbnail should match its target video ID').toEqual([]);
+});
