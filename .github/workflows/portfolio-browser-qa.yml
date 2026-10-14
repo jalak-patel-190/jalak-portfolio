@@ -11,6 +11,8 @@ permissions:
 jobs:
   browser-qa:
     runs-on: ubuntu-latest
+    env:
+      PORTFOLIO_LIVE_URL: https://jalak-patel-190.github.io/jalak-portfolio/
     timeout-minutes: 15
     steps:
       - name: Check out repository
