@@ -51,6 +51,13 @@ for (const route of primaryPages) {
     await expect(page.locator('h1')).toHaveCount(1);
     await expect(page.locator('.skip-link').first()).toHaveCount(1);
 
+    const navToggle = page.locator('#navToggle');
+    if (await navToggle.count()) {
+      const visibleLabel = (await navToggle.innerText()).trim().toLowerCase();
+      const accessibleLabel = ((await navToggle.getAttribute('aria-label')) || visibleLabel).trim().toLowerCase();
+      expect(accessibleLabel, 'navigation accessible name should include its visible label').toContain(visibleLabel);
+    }
+
     const missingAlt = await page.locator('img').evaluateAll(images =>
       images.filter(image => !image.hasAttribute('alt')).map(image => image.outerHTML)
     );
@@ -114,20 +121,18 @@ test('live GitHub Pages deployment serves all 27 primary pages', async ({ page }
 
 
 const AxeBuilder = require('@axe-core/playwright').default;
-const accessibilityEntryPages = [
-  'index.html',
-  'case-studies/ajmera/index.html',
-  'case-studies/cinekorn/index.html',
-  'case-studies/jalan/index.html',
-  'case-studies/swad/index.html'
-];
+const accessibilityEntryPages = primaryPages;
 
 for (const route of accessibilityEntryPages) {
   test(`WCAG 2.1 A/AA accessibility scan: ${route}`, async ({ page }) => {
     // Evaluate the stable end state instead of a transient mid-transition opacity.
     await page.emulateMedia({ reducedMotion: 'reduce' });
+    // Do not audit third-party YouTube player internals as if they were portfolio markup.
+    await page.route(/youtube(-nocookie)?\.com/, routeRequest => routeRequest.abort());
     await page.goto(route, { waitUntil: 'domcontentloaded' });
     const results = await new AxeBuilder({ page })
+      // Third-party YouTube iframe internals are outside portfolio markup/control.
+      .exclude('iframe')
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
       .analyze();
     const violations = results.violations.map(violation => ({
