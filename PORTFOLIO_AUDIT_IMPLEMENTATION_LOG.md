@@ -179,7 +179,7 @@ Merged in [PR #62](https://github.com/jalak-patel-190/jalak-portfolio/pull/62).
 
 **Source-verified:** core local routes and anchor targets were checked in prior regression passes; page metadata and heading structure are present on the 27 primary pages; relevant content/navigation and accessibility fixes are merged; no redesign was made.
 
-**Still not verified:** real browser rendering, desktop/mobile overflow and clipping, touch and keyboard interaction, external YouTube/LinkedIn links and thumbnail retrieval, complete contrast checks, and Lighthouse/Core Web Vitals. A fresh rendered GitHub Pages response was not available from this review environment, so these items must remain open rather than being marked passed.
+**At this earlier checkpoint, before the later automated run, these items were not verified:** real browser rendering, desktop/mobile overflow and clipping, touch and keyboard interaction, external YouTube/LinkedIn links and thumbnail retrieval, complete contrast checks, and Lighthouse/Core Web Vitals. The later 14 October checkpoint below supersedes this status for automated browser QA and Lighthouse lab measurements; manual and external-media checks remain open.
 
 ### User evidence dependency
 
