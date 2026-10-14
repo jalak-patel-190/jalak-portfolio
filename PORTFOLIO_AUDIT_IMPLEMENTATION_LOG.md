@@ -214,3 +214,8 @@ Run [38521538328](https://github.com/jalak-patel-190/jalak-portfolio/actions/run
 Latest one-run Lighthouse scores: homepage 92/100/100/100; Ajmera 96/100/100/100; Cinekorn 99/100/100/100; Jalan 96/100/100/100; Swad 99/100/100/100 (Performance/Accessibility/Best Practices/SEO). LCP ranged 1.7–2.7 s, TBT was 0 ms, and CLS ranged 0–0.031. These are lab snapshots, not field Core Web Vitals.
 
 Next implementation batch: inspect render-blocking font CSS and large images, then make safe, targeted optimization changes without degrading the full-resolution evidence assets. Still open: manual accessibility/contrast review, LinkedIn/Instagram destination reachability, actual video playback and thumbnail identity, and Jalan evidence.
+
+
+## YouTube thumbnail-to-target consistency — 14 October 2026
+
+Merged [PR #86](https://github.com/jalak-patel-190/jalak-portfolio/pull/86) adds a browser regression test across the 27 primary pages. Run [38524093421](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38524093421) passed with 123 passed and 7 skipped by configuration. No video-ID mismatches were found for linked YouTube output-card thumbnails where both the image and target exposed a parseable video ID. Actual intended-video identity, playback, and LinkedIn/Instagram destination checks remain open.
