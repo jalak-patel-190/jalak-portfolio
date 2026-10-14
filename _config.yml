@@ -1,6 +1,12 @@
 # Keep portfolio source, audit notes and test tooling out of the published site.
 exclude:
   - .github
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - Gemfile
+  - Gemfile.lock
+  - vendor
   - audit
   - docs
   - tests
