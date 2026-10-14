@@ -51,6 +51,13 @@ for (const route of primaryPages) {
     await expect(page.locator('h1')).toHaveCount(1);
     await expect(page.locator('.skip-link').first()).toHaveCount(1);
 
+    const navToggle = page.locator('#navToggle');
+    if (await navToggle.count()) {
+      const visibleLabel = (await navToggle.innerText()).trim().toLowerCase();
+      const accessibleLabel = ((await navToggle.getAttribute('aria-label')) || visibleLabel).trim().toLowerCase();
+      expect(accessibleLabel, 'navigation accessible name should include its visible label').toContain(visibleLabel);
+    }
+
     const missingAlt = await page.locator('img').evaluateAll(images =>
       images.filter(image => !image.hasAttribute('alt')).map(image => image.outerHTML)
     );
