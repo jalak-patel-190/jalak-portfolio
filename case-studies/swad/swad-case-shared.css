@@ -38,6 +38,7 @@ header {
 .header-inner {
   max-width: 1100px; margin: 0 auto; padding: 0.85rem 1.25rem;
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  position: relative;
 }
 .logo-wrapper { text-decoration: none; display: flex; flex-direction: column; }
 .logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.35rem; letter-spacing: 0.5px; }
@@ -77,7 +78,29 @@ nav a:hover { color: var(--cta1); }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 0.5rem; }
 .nav-trio { justify-content: space-between; align-items: center; width: 100%; }
-.nav-trio .btn-ghost { visibility: hidden; min-width: 7rem; }
+
+.page-nav {
+  display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: space-between; align-items: center;
+  margin: 2rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+}
+.page-nav a {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0.65rem 1.2rem; border-radius: 999px;
+  font-size: 0.85rem; font-weight: 700; text-decoration: none;
+}
+.page-nav .back {
+  color: var(--text); background: var(--card); border: 1.5px solid var(--border);
+}
+.page-nav .primary {
+  color: #fff; background: linear-gradient(135deg, var(--cta1), var(--cta2));
+}
+.page-nav .primary:hover, .page-nav .primary:focus-visible {
+  box-shadow: 0 0 0 3px rgba(194,65,12,.28); outline: none;
+}
+@media (max-width: 560px) {
+  .page-nav.nav-trio { flex-direction: column; }
+  .page-nav a { width: 100%; text-align: center; }
+}
 
 .btn-primary, a.btn-primary {
   display: inline-flex; align-items: center; justify-content: center;
@@ -121,7 +144,6 @@ nav a:hover { color: var(--cta1); }
 }
 .figure figcaption { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.45rem; }
 
-/* Link chips (community posts, channel links) */
 .chip-row {
   display: flex; flex-wrap: wrap; gap: 0.5rem;
   margin: 0.85rem 0 0.35rem;
@@ -165,7 +187,6 @@ nav a:hover { color: var(--cta1); }
   color: #fff; font-size: 0.65rem; padding: 0.1rem 0.35rem; border-radius: 4px; margin-right: 0.25rem;
 }
 
-/* Branded platform card when hotlink thumbnails fail */
 .platform-tile {
   aspect-ratio: 16/9;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -179,15 +200,9 @@ nav a:hover { color: var(--cta1); }
 .platform-tile.yt {
   background: linear-gradient(145deg, #1a1a1a 0%, #282828 60%, #cc0000 140%);
 }
-.platform-tile .pt-icon {
-  font-size: 1.6rem; line-height: 1; opacity: 0.95;
-}
-.platform-tile .pt-label {
-  font-size: 0.85rem; font-weight: 700; letter-spacing: 0.02em;
-}
-.platform-tile .pt-sub {
-  font-size: 0.72rem; opacity: 0.85;
-}
+.platform-tile .pt-icon { font-size: 1.6rem; line-height: 1; opacity: 0.95; }
+.platform-tile .pt-label { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.02em; }
+.platform-tile .pt-sub { font-size: 0.72rem; opacity: 0.85; }
 
 .carousel-btn {
   position: absolute; top: 42%; transform: translateY(-50%); width: 40px; height: 40px;
@@ -248,9 +263,7 @@ footer p + p { margin-top: 0.3rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto !important;
-  }
+  html { scroll-behavior: auto !important; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
@@ -261,25 +274,17 @@ footer p + p { margin-top: 0.3rem; }
     transform: none !important;
   }
 }
- 
-/* Related-company navigation uses the existing case-card styling. */
+
 .company-explore-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 @media (max-width: 900px) {
-  .company-explore-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  .company-explore-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 520px) {
-  .company-explore-grid {
-    grid-template-columns: 1fr;
-  }
+  .company-explore-grid { grid-template-columns: 1fr; }
 }
 
-
-
-/* Related case cards: reuse the Swad light palette and CTA accent. */
 .whats-next { margin: 2.75rem 0 1.5rem; padding-top: 1.75rem; border-top: 1px solid var(--border); }
 .whats-next h2 { font-family: 'Bebas Neue', sans-serif; font-size: 1.45rem; letter-spacing: .4px; margin-bottom: 1rem; }
 .next-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
@@ -292,7 +297,6 @@ footer p + p { margin-top: 0.3rem; }
 @media (max-width: 620px) { .next-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .next-card { transition: none; } }
 
-/* Override hover-group outline resets only for keyboard focus. */
 .btn-nav:focus-visible,
 .btn-primary:focus-visible,
 a.btn-primary:focus-visible,
