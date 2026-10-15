@@ -400,3 +400,13 @@ PR [#86](https://github.com/jalak-patel-190/jalak-portfolio/pull/86) added a tes
 - Post-merge run [38685901558](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38685901558): browser QA passed, 127 passed and 3 skipped. Desktop/mobile automated WCAG scans passed across the 27 primary pages. Lighthouse passed. Pages deployment [38685900996](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38685900996) succeeded.
 - Still open: external social-link reachability and manual destination confirmation; intended video identity/playback; manual keyboard, touch and screen-reader review; human contrast review; image/font optimization decision and retest; factual evidence boundaries for Jalan claims.
 - Automated checks are not certification. Lighthouse is a lab snapshot, not field Core Web Vitals.
+
+
+## YouTube target availability regression — 15 October 2026
+
+- **Merged:** [PR #91](https://github.com/jalak-patel-190/jalak-portfolio/pull/91), squash merge commit `9e04adfb10a9b9ecd29ceb6aa8ca32dee781df2a`.
+- Added a post-deployment check that collects unique linked YouTube video targets from the 27 primary pages and queries public oEmbed metadata.
+- Confirmed unavailable/private targets (HTTP 400, 401 or 404) fail the test. Rate limits, other response statuses and network errors are logged as inconclusive rather than incorrectly treated as broken videos.
+- PR validation passed: [workflow run 38696178810](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38696178810). Browser QA and Lighthouse jobs both succeeded.
+- **Not yet verified:** the post-merge Pages deployment and the first live run of the new external-media check. PR validation intentionally skips the live-only check; the result must be read from a successful post-deployment run before claiming the YouTube targets were audited.
+- Remaining Phase-6 items are unchanged: confirm live external-media results; manually verify intended video identity/playback and LinkedIn/Instagram destinations; complete broader keyboard, touch, screen-reader and human contrast review; decide on responsive image/font optimization and retest; preserve evidence limits on Jalan claims.
