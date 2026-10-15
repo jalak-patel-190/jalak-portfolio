@@ -26,9 +26,21 @@
 .rjd-popup p{font-size:.92rem;line-height:1.5;color:#4a4a4a;margin:0 0 1.35rem}
 .rjd-popup .popup-actions{display:flex;flex-direction:column;gap:.55rem}
 .rjd-popup .btn-check{display:block;padding:.7rem 1.2rem;background:#141414;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;font-size:.92rem}
-.rjd-popup .btn-check:hover{background:#2a2a2a}
 .rjd-popup .btn-later{display:block;padding:.65rem 1.2rem;background:transparent;border:1px solid #e0dcd4;color:#5a5a5a;border-radius:8px;font-size:.88rem;cursor:pointer;font-family:inherit}
-.rjd-popup .btn-later:hover{background:#f7f3ec}
+/* Resume preview modal — shows before download */
+.resume-modal{position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;padding:1rem;background:rgba(20,20,20,.55);backdrop-filter:blur(6px)}
+.resume-modal.is-open{display:flex}
+.resume-modal-card{background:#F7F4EF;border-radius:16px;max-width:min(920px,96vw);width:100%;max-height:min(92vh,900px);display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(0,0,0,.35);overflow:hidden;border:1px solid #e8e2d8}
+.resume-modal-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.25rem;border-bottom:1px solid #e8e2d8;background:#fff}
+.resume-modal-head h2{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:.4px;margin:0;color:#141414}
+.resume-modal-close{min-width:40px;min-height:40px;border:1.5px solid #e8e2d8;border-radius:999px;background:#fff;cursor:pointer;font-size:1.1rem;font-weight:700;color:#141414}
+.resume-modal-body{flex:1;min-height:0;background:#1a1a1a}
+.resume-modal-body iframe{width:100%;height:min(70vh,640px);border:0;background:#fff}
+.resume-modal-actions{display:flex;flex-wrap:wrap;gap:.65rem;padding:1rem 1.25rem;border-top:1px solid #e8e2d8;background:#fff;justify-content:flex-end;align-items:center}
+.resume-modal-actions .btn-dl{display:inline-flex;align-items:center;padding:.7rem 1.35rem;border-radius:999px;font-weight:700;font-size:.9rem;text-decoration:none;color:#fff!important;background:linear-gradient(135deg,#C2410C,#9D3A72)}
+.resume-modal-actions .btn-cancel{display:inline-flex;align-items:center;padding:.65rem 1.2rem;border-radius:999px;font-weight:700;font-size:.9rem;background:#fff;border:1.5px solid #e8e2d8;color:#141414;cursor:pointer;font-family:inherit}
+.resume-modal-note{font-size:.8rem;color:#5A5A5A;margin:0;margin-right:auto}
+@media(max-width:640px){.resume-modal-body iframe{height:55vh}.resume-modal-note{width:100%}.resume-modal-actions .btn-dl,.resume-modal-actions .btn-cancel{flex:1;justify-content:center}}
 </style>
 </head>
 <body>
@@ -41,7 +53,7 @@
 <a href="#journey">Journey</a>
 <a href="#work">Case Studies</a>
 <a href="resume-jd-system.html">Resume & JD</a>
-<a href="media/Jalak%20Patel%20(Creative%20Resume).pdf" download="Jalak-Patel-Resume.pdf">Download Resume</a>
+<a class="js-resume-preview" href="media/Jalak%20Patel%20(Creative%20Resume).pdf" data-resume-src="media/Jalak%20Patel%20(Creative%20Resume).pdf">Download Resume</a>
 <a href="#contact" class="nav-cta">Get In Touch</a>
 </nav>
 </div>
@@ -56,7 +68,7 @@
 <div class="btns">
 <a href="#contact" class="btn bp">Get In Touch</a>
 <a href="#work" class="btn bs">View Case Studies</a>
-<a href="media/Jalak%20Patel%20(Creative%20Resume).pdf" class="btn bs" download="Jalak-Patel-Resume.pdf">Download Resume</a>
+<a href="media/Jalak%20Patel%20(Creative%20Resume).pdf" class="js-resume-preview btn bs" data-resume-src="media/Jalak%20Patel%20(Creative%20Resume).pdf">Download Resume</a>
 </div>
 <div class="metrics">
 <div class="mc"><div class="mv metric-count" data-count="108" data-suffix="M+">108M+</div><div class="ml">Lifetime YouTube views</div></div>
@@ -78,7 +90,7 @@
   <div class="proof-track" data-proof-track>
     <a class="proof-slide" href="case-studies/cinekorn/03-movies-catalog.html"><img src="media/cinekorn/yt-movies.png" alt="Cinekorn Movies YouTube analytics" loading="lazy"><span class="proof-cap">Cinekorn · Movies catalog</span></a>
     <a class="proof-slide" href="case-studies/ajmera/06-ceo-personal-brand.html"><img src="media/ajmera/linkedin-ajay-ajmera-breakfast.jpg" alt="Ajmera founder LinkedIn content" loading="lazy"><span class="proof-cap">Ajmera · Founder content</span></a>
-    <a class="proof-slide" href="case-studies/swad/04-sneha-channel-growth.html"><img src="media/swad/sneha-thakkar-recipes.png" alt="Sneha channel analytics" loading="lazy"><span class="proof-cap">Swad · Sneha channel</span></a>
+    <a class="proof-slide" href="case-studies/swad/04-sneha-channel-growth.html"><img src="media/swad/sneha-channel-analytics.png" alt="Sneha channel analytics" loading="lazy"><span class="proof-cap">Swad · Sneha channel</span></a>
     <a class="proof-slide" href="case-studies/cinekorn/04-gujarati-system.html"><img src="media/cinekorn/rakhewal-youtube-analytics.png" alt="Rakhewal YouTube analytics" loading="lazy"><span class="proof-cap">Cinekorn · Rakhewal tenure</span></a>
     <a class="proof-slide" href="case-studies/swad/01-diploma-and-student-livestreams.html"><img src="media/swad/swad-cooking.png" alt="Swad Cooking Institute analytics" loading="lazy"><span class="proof-cap">Swad · Institute growth</span></a>
     <a class="proof-slide" href="case-studies/cinekorn/06-company-linkedin.html"><img src="media/cinekorn/cinekorn-linkedin-content-analytics.png" alt="Cinekorn LinkedIn content analytics" loading="lazy"><span class="proof-cap">Cinekorn · Company LinkedIn</span></a>
@@ -94,49 +106,29 @@
 <p class="sec-intro">Four company systems. Roles as titled, scope as delivered. Tap a card to open that hub.</p>
 <div class="journey-grid">
   <a class="journey-card fade-up" href="case-studies/cinekorn/">
-    <div class="journey-top">
-      <div>
-        <div class="journey-date">Jan 2026 to Present</div>
-        <div class="journey-role">Sr. Social Media Manager</div>
-      </div>
-      <img class="journey-logo" src="media/logos/cinekorn-logo.png" alt="" width="56" height="56" loading="lazy">
-    </div>
+    <div class="journey-top"><div><div class="journey-date">Jan 2026 to Present</div><div class="journey-role">Sr. Social Media Manager</div></div>
+      <img class="journey-logo" src="media/logos/cinekorn-logo.png" alt="" width="56" height="56" loading="lazy"></div>
     <div class="journey-company">Cinekorn Entertainment</div>
     <p class="journey-blurb">Multi-account distribution across YouTube, Facebook, and LinkedIn.</p>
     <span class="journey-cta">Explore Cinekorn →</span>
   </a>
   <a class="journey-card fade-up" href="case-studies/swad/">
-    <div class="journey-top">
-      <div>
-        <div class="journey-date">Nov 2024 to Oct 2025</div>
-        <div class="journey-role">Social Media Manager & Content Lead</div>
-      </div>
-      <img class="journey-logo" src="media/logos/swad-logo.png" alt="" width="56" height="56" loading="lazy">
-    </div>
+    <div class="journey-top"><div><div class="journey-date">Nov 2024 to Oct 2025</div><div class="journey-role">Social Media Manager & Content Lead</div></div>
+      <img class="journey-logo" src="media/logos/swad-logo.png" alt="" width="56" height="56" loading="lazy"></div>
     <div class="journey-company">Swad Cooking Institute</div>
     <p class="journey-blurb">Creator and institute channels shaped by audience response and each channel’s purpose.</p>
     <span class="journey-cta">Explore Swad →</span>
   </a>
   <a class="journey-card fade-up" href="case-studies/jalan/">
-    <div class="journey-top">
-      <div>
-        <div class="journey-date">Jul 2023 to Nov 2024</div>
-        <div class="journey-role">Social Media Manager (with Ops Oversight)</div>
-      </div>
-      <img class="journey-logo" src="media/logos/jalan-logo.png" alt="" width="56" height="56" loading="lazy">
-    </div>
+    <div class="journey-top"><div><div class="journey-date">Jul 2023 to Nov 2024</div><div class="journey-role">Social Media Manager (with Ops Oversight)</div></div>
+      <img class="journey-logo" src="media/logos/jalan-logo.png" alt="" width="56" height="56" loading="lazy"></div>
     <div class="journey-company">Jalan Mega Mart</div>
     <p class="journey-blurb">Marketing operations, content planning, and promotion for a B2B textile business.</p>
     <span class="journey-cta">Explore Jalan →</span>
   </a>
   <a class="journey-card fade-up" href="case-studies/ajmera/">
-    <div class="journey-top">
-      <div>
-        <div class="journey-date">Jul 2022 to Jul 2023</div>
-        <div class="journey-role">Digital Marketing Executive</div>
-      </div>
-      <img class="journey-logo" src="media/logos/ajmera-logo.png" alt="" width="56" height="56" loading="lazy">
-    </div>
+    <div class="journey-top"><div><div class="journey-date">Jul 2022 to Jul 2023</div><div class="journey-role">Digital Marketing Executive</div></div>
+      <img class="journey-logo" src="media/logos/ajmera-logo.png" alt="" width="56" height="56" loading="lazy"></div>
     <div class="journey-company">Ajmera Fashion</div>
     <p class="journey-blurb">Multilingual content systems and regional audience logic for B2B textile growth.</p>
     <span class="journey-cta">Explore Ajmera →</span>
@@ -148,21 +140,9 @@
 <h2 class="sec-title">How I work</h2>
 <p class="sec-intro">A simple operating loop used across media, retail, and food systems.</p>
 <div class="how-flow">
-  <div class="how-step">
-    <div class="how-num">01</div>
-    <h3>Diagnose</h3>
-    <p>Map the channel, audience, and what is already working. Find the constraint before adding more content.</p>
-  </div>
-  <div class="how-step">
-    <div class="how-num">02</div>
-    <h3>Build</h3>
-    <p>Set cadence, formats, and ownership so the system can run without constant reinvention.</p>
-  </div>
-  <div class="how-step">
-    <div class="how-num">03</div>
-    <h3>Measure</h3>
-    <p>Track the same accounts on fixed dates. Defend spend and growth with records, not claims.</p>
-  </div>
+  <div class="how-step"><div class="how-num">01</div><h3>Diagnose</h3><p>Map the channel, audience, and what is already working. Find the constraint before adding more content.</p></div>
+  <div class="how-step"><div class="how-num">02</div><h3>Build</h3><p>Set cadence, formats, and ownership so the system can run without constant reinvention.</p></div>
+  <div class="how-step"><div class="how-num">03</div><h3>Measure</h3><p>Track the same accounts on fixed dates. Defend spend and growth with records, not claims.</p></div>
 </div>
 </section>
 
@@ -170,46 +150,10 @@
 <h2 class="sec-title">Selected case studies</h2>
 <p class="sec-intro">Examples of the decisions behind the work, from film distribution and founder-led content to regional audiences and B2B marketing.</p>
 <div class="cg">
-<a href="case-studies/cinekorn/" class="cc">
-  <div class="cm"><img src="media/logos/cinekorn-logo.png" alt="Cinekorn Entertainment logo" loading="lazy"></div>
-  <div class="cb">
-    <div class="cco">Cinekorn Entertainment</div>
-    <div class="ct">Multi-channel film distribution</div>
-    <div class="cbr">Work across YouTube, Facebook, and LinkedIn. Case studies distinguish existing catalogue performance from tenure work.</div>
-    <div class="tags"><span class="tag">YouTube</span><span class="tag">Distribution</span><span class="tag">108M+ lifetime views</span></div>
-    <span class="ccta">Explore company hub</span>
-  </div>
-</a>
-<a href="case-studies/ajmera/" class="cc">
-  <div class="cm"><img src="media/logos/ajmera-logo.png" alt="Ajmera Fashion logo" loading="lazy"></div>
-  <div class="cb">
-    <div class="cco">Ajmera Fashion</div>
-    <div class="ct">Regional content for a B2B textile business</div>
-    <div class="cbr">Regional content strategy for a B2B textile wholesaler, with tracker comparisons across about fifty accounts.</div>
-    <div class="tags"><span class="tag">Regional strategy</span><span class="tag">B2B</span><span class="tag">Tracker review</span></div>
-    <span class="ccta">Explore company hub</span>
-  </div>
-</a>
-<a href="case-studies/swad/" class="cc">
-  <div class="cm"><img src="media/logos/swad-logo.png" alt="Swad Cooking Institute logo" loading="lazy"></div>
-  <div class="cb">
-    <div class="cco">Swad Cooking Institute</div>
-    <div class="ct">Audience-led food content</div>
-    <div class="cbr">Work across creator and institute channels, using audience response and channel purpose to guide editorial decisions.</div>
-    <div class="tags"><span class="tag">Food media</span><span class="tag">Retention</span><span class="tag">Funnels</span></div>
-    <span class="ccta">Explore company hub</span>
-  </div>
-</a>
-<a href="case-studies/jalan/" class="cc">
-  <div class="cm"><img src="media/logos/jalan-logo.png" alt="Jalan Mega Mart logo" loading="lazy"></div>
-  <div class="cb">
-    <div class="cco">Jalan Mega Mart</div>
-    <div class="ct">Marketing operations for a B2B textile business</div>
-    <div class="cbr">Channel setup, content planning, influencer coordination, and offline promotion for retailers and business owners.</div>
-    <div class="tags"><span class="tag">Retail</span><span class="tag">Performance</span><span class="tag">Systems</span></div>
-    <span class="ccta">Explore company hub</span>
-  </div>
-</a>
+<a href="case-studies/cinekorn/" class="cc"><div class="cm"><img src="media/logos/cinekorn-logo.png" alt="Cinekorn Entertainment logo" loading="lazy"></div><div class="cb"><div class="cco">Cinekorn Entertainment</div><div class="ct">Multi-channel film distribution</div><div class="cbr">Work across YouTube, Facebook, and LinkedIn. Case studies distinguish existing catalogue performance from tenure work.</div><div class="tags"><span class="tag">YouTube</span><span class="tag">Distribution</span><span class="tag">108M+ lifetime views</span></div><span class="ccta">Explore company hub</span></div></a>
+<a href="case-studies/ajmera/" class="cc"><div class="cm"><img src="media/logos/ajmera-logo.png" alt="Ajmera Fashion logo" loading="lazy"></div><div class="cb"><div class="cco">Ajmera Fashion</div><div class="ct">Regional content for a B2B textile business</div><div class="cbr">Regional content strategy for a B2B textile wholesaler, with tracker comparisons across about fifty accounts.</div><div class="tags"><span class="tag">Regional strategy</span><span class="tag">B2B</span><span class="tag">Tracker review</span></div><span class="ccta">Explore company hub</span></div></a>
+<a href="case-studies/swad/" class="cc"><div class="cm"><img src="media/logos/swad-logo.png" alt="Swad Cooking Institute logo" loading="lazy"></div><div class="cb"><div class="cco">Swad Cooking Institute</div><div class="ct">Audience-led food content</div><div class="cbr">Work across creator and institute channels, using audience response and channel purpose to guide editorial decisions.</div><div class="tags"><span class="tag">Food media</span><span class="tag">Retention</span><span class="tag">Funnels</span></div><span class="ccta">Explore company hub</span></div></a>
+<a href="case-studies/jalan/" class="cc"><div class="cm"><img src="media/logos/jalan-logo.png" alt="Jalan Mega Mart logo" loading="lazy"></div><div class="cb"><div class="cco">Jalan Mega Mart</div><div class="ct">Marketing operations for a B2B textile business</div><div class="cbr">Channel setup, content planning, influencer coordination, and offline promotion for retailers and business owners.</div><div class="tags"><span class="tag">Retail</span><span class="tag">Performance</span><span class="tag">Systems</span></div><span class="ccta">Explore company hub</span></div></a>
 </div>
 </section>
 
@@ -219,7 +163,7 @@
 <div class="btns" style="justify-content:center">
 <a href="https://www.linkedin.com/in/jalakpatelstrategist" target="_blank" rel="noopener noreferrer" class="btn bp">Connect on LinkedIn</a>
 <a href="mailto:Pateljalak019@gmail.com?subject=Strategic%20Inquiry" class="btn bs">Email Me</a>
-<a href="media/Jalak%20Patel%20(Creative%20Resume).pdf" class="btn bs" download="Jalak-Patel-Resume.pdf">Download Resume</a>
+<a href="media/Jalak%20Patel%20(Creative%20Resume).pdf" class="js-resume-preview btn bs" data-resume-src="media/Jalak%20Patel%20(Creative%20Resume).pdf">Download Resume</a>
 </div>
 <div class="hire-note">
 <p>I built this portfolio so you don’t have to guess. If even one part of this site helped you understand my work better, the simplest next step is a short conversation. You can also use the <a href="resume-jd-system.html">Resume & JD System</a> to share a specific role and receive an honest fit assessment.</p>
@@ -232,14 +176,19 @@
 <p>Designed and built by <strong>Jalak Patel</strong></p>
 </footer>
 
-<!-- Resume & JD popup kept in source but hidden — re-enable later if needed -->
-<div class="rjd-popup-overlay" id="rjdPopup" role="dialog" aria-modal="true" aria-labelledby="rjdPopupTitle" hidden>
-  <div class="rjd-popup">
-    <h2 id="rjdPopupTitle">Want a clear answer?</h2>
-    <p>I built a simple system so you can quickly check if I’m a good fit for a role.</p>
-    <div class="popup-actions">
-      <a class="btn-check" href="resume-jd-system.html">Check Fit →</a>
-      <button type="button" class="btn-later" id="rjdPopupClose">Maybe later</button>
+<div class="resume-modal" id="resumeModal" role="dialog" aria-modal="true" aria-labelledby="resumeModalTitle" hidden>
+  <div class="resume-modal-card">
+    <div class="resume-modal-head">
+      <h2 id="resumeModalTitle">Resume preview</h2>
+      <button type="button" class="resume-modal-close" id="resumeModalClose" aria-label="Close">✕</button>
+    </div>
+    <div class="resume-modal-body">
+      <iframe id="resumePreviewFrame" title="Resume PDF preview"></iframe>
+    </div>
+    <div class="resume-modal-actions">
+      <p class="resume-modal-note">Preview first — download when you are ready.</p>
+      <button type="button" class="btn-cancel" id="resumeModalCancel">Close</button>
+      <a class="btn-dl" id="resumeModalDownload" href="media/Jalak%20Patel%20(Creative%20Resume).pdf" download="Jalak-Patel-Resume.pdf">Download PDF</a>
     </div>
   </div>
 </div>
@@ -291,7 +240,40 @@ if('IntersectionObserver' in window){
   if(prev) prev.addEventListener('click', function(){ track.scrollBy({left: -step(), behavior: 'smooth'}); });
   if(next) next.addEventListener('click', function(){ track.scrollBy({left: step(), behavior: 'smooth'}); });
 })();
-/* Resume & JD popup disabled for now — resume-jd-system.html still available from nav */
+})();
+(function () {
+  var modal = document.getElementById('resumeModal');
+  var frame = document.getElementById('resumePreviewFrame');
+  var dl = document.getElementById('resumeModalDownload');
+  var resumeSrc = 'media/Jalak%20Patel%20(Creative%20Resume).pdf';
+  if (!modal) return;
+  function openModal(src) {
+    src = src || resumeSrc;
+    if (frame) frame.src = src;
+    if (dl) { dl.href = src; dl.setAttribute('download', 'Jalak-Patel-Resume.pdf'); }
+    modal.hidden = false;
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.js-resume-preview').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      openModal(el.getAttribute('data-resume-src') || el.getAttribute('href') || resumeSrc);
+    });
+  });
+  var closeBtn = document.getElementById('resumeModalClose');
+  var cancelBtn = document.getElementById('resumeModalCancel');
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+  });
 })();
 </script>
 </body>
