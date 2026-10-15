@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="swad-case-shared.css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Workshop Operations and Revenue Insight | Swad | Jalak Patel">
+<meta property="og:image" content="https://jalak-patel-190.github.io/jalak-portfolio/media/swad/swad-cooking.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -31,7 +32,7 @@
 <section class="case-hero">
 <p class="eyebrow">Workshop operations · Swad Cooking Institute</p>
 <h1>Workshop operations, and the watch hours versus revenue gap</h1>
-<p class="lede">I ran the workshop back end each month, and diagnosed why daily livestreams were not turning into revenue.</p>
+<p class="lede">I ran the workshop back end each month, and diagnosed why daily livestreams were not turning into revenue. Edited uploads were the fix, but leadership reversed course too early.</p>
 </section>
 <section class="section" id="context">
 <p class="section-label">Context</p>
@@ -39,28 +40,90 @@
 <p>Each new month began with the workshop schedule. I managed the live workshop calendar and the operations behind every free and paid YouTube workshop.</p>
 </section>
 <section class="section">
+<p class="section-label">Execution</p>
+<h2>Monthly workshop operations</h2>
+<div class="flow">
+<div class="flow-step">Plan the month’s workshops</div>
+<div class="flow-step">Schedule each session</div>
+<div class="flow-step">Run the back end on the day</div>
+<div class="flow-step">Close the month and plan the next</div>
+</div>
+</section>
+<section class="section">
 <p class="section-label">Diagnosis</p>
 <h2>Watch hours were high, but revenue was not following</h2>
-<p>Watch hours were strong, but estimated revenue did not scale with them. Daily livestreams drew strong views on the day, then went largely dead as recordings.</p>
+<p>After months of work, one problem stayed open. Watch hours were strong, but estimated revenue did not scale with them. A YouTube membership was launched as a new revenue lever, and the gap between watch hours and revenue remained.</p>
+<h2>The livestream was alive on the day, then dead</h2>
+<p>Daily livestreams drew strong views and engagement on the day. Afterwards they became largely dead, because few people rewatch a fifty-minute live recording full of chat and off-topic discussion.</p>
 </section>
 <section class="section">
 <p class="section-label">Recommendation</p>
 <h2>Fewer lives, edited uploads</h2>
-<p>Reduce raw livestream output and upload tightly edited recipe videos. Edited uploads attract new viewers and repeat views.</p>
+<p>Reduce raw livestream output and upload tightly edited recipe videos. Edited uploads attract new viewers and repeat views. Fewer lives also make the remaining lives feel more like an appointment.</p>
+</section>
+<section class="section" id="outputs">
+<p class="section-label">Work output</p>
+<h2>Selected output</h2>
+<p class="section-intro">Workshop and recipe samples.</p>
+<div class="output-carousel" data-output-carousel>
+<button type="button" class="carousel-btn prev" aria-label="Previous">&#8592;</button>
+<div class="output-carousel-track">
+<a class="output-card" href="https://youtu.be/dsKzY5CL4HY" target="_blank" rel="noopener noreferrer">
+<img src="https://img.youtube.com/vi/dsKzY5CL4HY/hqdefault.jpg" alt="Workshop sample" loading="lazy">
+<span class="output-cap">Workshop sample</span>
+</a>
+<a class="output-card" href="https://youtu.be/TSZFW12DaaY" target="_blank" rel="noopener noreferrer">
+<img src="https://img.youtube.com/vi/TSZFW12DaaY/hqdefault.jpg" alt="Edited recipe upload" loading="lazy">
+<span class="output-cap">Edited recipe upload</span>
+</a>
+<a class="output-card" href="index.html">
+<img class="zoom-trigger" src="../../media/swad/swad-cooking.png" alt="Swad Cooking analytics" loading="lazy">
+<span class="output-cap">Institute analytics surface</span>
+</a>
+</div>
+<button type="button" class="carousel-btn next" aria-label="Next">&#8594;</button>
+</div>
 </section>
 <nav class="page-nav nav-trio" aria-label="Case navigation">
 <a class="back" href="05-short-form-and-recovery.html">← Prev</a>
 <a class="back" href="index.html">Hub</a>
 <a class="primary" href="../cinekorn/01-data-tooling.html">Cinekorn →</a>
 </nav>
+<section class="whats-next" aria-labelledby="whats-next-title">
+<h2 id="whats-next-title">Related cases</h2>
+<div class="next-grid">
+<a class="next-card" href="01-diploma-and-student-livestreams.html"><div class="n">Case 01 · Course marketing</div><div class="t">Students as marketing assets</div><p>Student-led content used as course proof and a source of shareable distribution.</p></a>
+<a class="next-card" href="03-farewell-diwali-livestream.html"><div class="n">Case 03 · Live content</div><div class="t">Farewell and Diwali livestreams</div><p>Event-led livestream content and institute community moments.</p></a>
+</div>
+</section>
+<section class="section cta-band">
+<h2>Continue to Cinekorn</h2>
+<div class="hero-actions"><a class="btn-primary" href="../cinekorn/">Cinekorn hub</a><a class="btn-secondary" href="../../index.html#work">All work</a></div>
+</section>
 </main>
-<footer><p>&copy; 2026 Jalak Patel</p></footer>
+<footer>
+<p>&copy; 2026 Jalak Patel</p>
+<p>Designed and built by <strong>Jalak Patel</strong></p>
+</footer>
 <script>
 (function(){
 var t=document.getElementById('navToggle'),n=document.getElementById('mainNav');
-if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});}
+if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');t.setAttribute('aria-expanded','false');});});}
+})();
+(function(){
+document.querySelectorAll('[data-output-carousel]').forEach(function(root){
+var track=root.querySelector('.output-carousel-track');
+var prev=root.querySelector('.carousel-btn.prev');
+var next=root.querySelector('.carousel-btn.next');
+if(!track)return;
+function step(){return Math.min(track.clientWidth*0.85,280);}
+if(prev)prev.addEventListener('click',function(){track.scrollBy({left:-step(),behavior:'smooth'});});
+if(next)next.addEventListener('click',function(){track.scrollBy({left:step(),behavior:'smooth'});});
+});
 })();
 </script>
+<script src="lightbox.js" defer></script>
 <script src="../../media/portfolio-animate.js" defer></script>
 </body>
 </html>
