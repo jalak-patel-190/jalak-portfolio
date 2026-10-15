@@ -19,7 +19,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYV1QY6VCQ"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RYV1QY6VCQ');</script>
 <style>
-.rjd-popup-overlay{position:fixed;inset:0;background:rgba(20,20,20,.45);z-index:9998;display:flex;align-items:center;justify-content:center;padding:1.25rem;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.rjd-popup-overlay{display:none!important;position:fixed;inset:0;background:rgba(20,20,20,.45);z-index:9998;align-items:center;justify-content:center;padding:1.25rem;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
 .rjd-popup-overlay.is-open{opacity:1;visibility:visible}
 .rjd-popup{background:#fff;border-radius:16px;padding:1.75rem 1.6rem;max-width:380px;width:100%;box-shadow:0 20px 50px rgba(0,0,0,.18);text-align:center}
 .rjd-popup h2{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.02em;margin:0 0 .5rem;color:#141414}
@@ -94,29 +94,49 @@
 <p class="sec-intro">Four company systems. Roles as titled, scope as delivered. Tap a card to open that hub.</p>
 <div class="journey-grid">
   <a class="journey-card fade-up" href="case-studies/cinekorn/">
-    <div class="journey-date">Jan 2026 to Present</div>
-    <div class="journey-role">Sr. Social Media Manager</div>
+    <div class="journey-top">
+      <div>
+        <div class="journey-date">Jan 2026 to Present</div>
+        <div class="journey-role">Sr. Social Media Manager</div>
+      </div>
+      <img class="journey-logo" src="media/logos/cinekorn-logo.png" alt="" width="56" height="56" loading="lazy">
+    </div>
     <div class="journey-company">Cinekorn Entertainment</div>
     <p class="journey-blurb">Multi-account distribution across YouTube, Facebook, and LinkedIn.</p>
     <span class="journey-cta">Explore Cinekorn →</span>
   </a>
   <a class="journey-card fade-up" href="case-studies/swad/">
-    <div class="journey-date">Nov 2024 to Oct 2025</div>
-    <div class="journey-role">Social Media Manager & Content Lead</div>
+    <div class="journey-top">
+      <div>
+        <div class="journey-date">Nov 2024 to Oct 2025</div>
+        <div class="journey-role">Social Media Manager & Content Lead</div>
+      </div>
+      <img class="journey-logo" src="media/logos/swad-logo.png" alt="" width="56" height="56" loading="lazy">
+    </div>
     <div class="journey-company">Swad Cooking Institute</div>
     <p class="journey-blurb">Creator and institute channels shaped by audience response and each channel’s purpose.</p>
     <span class="journey-cta">Explore Swad →</span>
   </a>
   <a class="journey-card fade-up" href="case-studies/jalan/">
-    <div class="journey-date">Jul 2023 to Nov 2024</div>
-    <div class="journey-role">Social Media Manager (with Ops Oversight)</div>
+    <div class="journey-top">
+      <div>
+        <div class="journey-date">Jul 2023 to Nov 2024</div>
+        <div class="journey-role">Social Media Manager (with Ops Oversight)</div>
+      </div>
+      <img class="journey-logo" src="media/logos/jalan-logo.png" alt="" width="56" height="56" loading="lazy">
+    </div>
     <div class="journey-company">Jalan Mega Mart</div>
     <p class="journey-blurb">Marketing operations, content planning, and promotion for a B2B textile business.</p>
     <span class="journey-cta">Explore Jalan →</span>
   </a>
   <a class="journey-card fade-up" href="case-studies/ajmera/">
-    <div class="journey-date">Jul 2022 to Jul 2023</div>
-    <div class="journey-role">Digital Marketing Executive</div>
+    <div class="journey-top">
+      <div>
+        <div class="journey-date">Jul 2022 to Jul 2023</div>
+        <div class="journey-role">Digital Marketing Executive</div>
+      </div>
+      <img class="journey-logo" src="media/logos/ajmera-logo.png" alt="" width="56" height="56" loading="lazy">
+    </div>
     <div class="journey-company">Ajmera Fashion</div>
     <p class="journey-blurb">Multilingual content systems and regional audience logic for B2B textile growth.</p>
     <span class="journey-cta">Explore Ajmera →</span>
@@ -212,7 +232,8 @@
 <p>Designed and built by <strong>Jalak Patel</strong></p>
 </footer>
 
-<div class="rjd-popup-overlay" id="rjdPopup" role="dialog" aria-modal="true" aria-labelledby="rjdPopupTitle">
+<!-- Resume & JD popup kept in source but hidden — re-enable later if needed -->
+<div class="rjd-popup-overlay" id="rjdPopup" role="dialog" aria-modal="true" aria-labelledby="rjdPopupTitle" hidden>
   <div class="rjd-popup">
     <h2 id="rjdPopupTitle">Want a clear answer?</h2>
     <p>I built a simple system so you can quickly check if I’m a good fit for a role.</p>
@@ -270,21 +291,7 @@ if('IntersectionObserver' in window){
   if(prev) prev.addEventListener('click', function(){ track.scrollBy({left: -step(), behavior: 'smooth'}); });
   if(next) next.addEventListener('click', function(){ track.scrollBy({left: step(), behavior: 'smooth'}); });
 })();
-(function(){
-  var key='rjd_popup_seen_v1';
-  var overlay=document.getElementById('rjdPopup');
-  var closeBtn=document.getElementById('rjdPopupClose');
-  if(!overlay) return;
-  try { if(localStorage.getItem(key)) return; } catch(e) {}
-  setTimeout(function(){ overlay.classList.add('is-open'); }, 1200);
-  function dismiss(){
-    overlay.classList.remove('is-open');
-    try { localStorage.setItem(key,'1'); } catch(e) {}
-  }
-  if(closeBtn) closeBtn.addEventListener('click', dismiss);
-  overlay.addEventListener('click', function(e){ if(e.target===overlay) dismiss(); });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape'&&overlay.classList.contains('is-open')) dismiss(); });
-})();
+/* Resume & JD popup disabled for now — resume-jd-system.html still available from nav */
 })();
 </script>
 </body>
