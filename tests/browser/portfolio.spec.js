@@ -394,7 +394,7 @@ test('YouTube output-card thumbnails link to the same video ID they preview', as
 });
 
 
-test('live YouTube targets expose public video metadata', async ({ request }) => {
+test('live YouTube targets expose oEmbed metadata', async ({ request }) => {
   test.skip(process.env.CHECK_EXTERNAL_MEDIA !== 'true', 'runs against live pages after a successful main-branch deployment');
   const liveBaseURL = process.env.PORTFOLIO_LIVE_URL;
   const videoURLs = new Set();
@@ -447,5 +447,5 @@ test('live YouTube targets expose public video metadata', async ({ request }) =>
 
   console.log(`YouTube target audit: ${urls.length} unique targets; ${urls.length - failures.length - inconclusive.length} metadata responses; ${failures.length} confirmed failures; ${inconclusive.length} inconclusive.`);
   if (inconclusive.length) console.warn('YouTube target checks inconclusive due to rate limits or network access:', JSON.stringify(inconclusive));
-  expect(failures, 'confirmed unavailable or non-public YouTube targets').toEqual([]);
+  expect(failures, 'confirmed unavailable or access-restricted YouTube targets').toEqual([]);
 });
