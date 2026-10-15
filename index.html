@@ -11,26 +11,14 @@
 <meta property="og:title" content="Jalak Patel | Creative Strategist for Media & Entertainment">
 <meta property="og:description" content="Evidence-led case studies across media, entertainment, digital distribution, and regional content.">
 <meta property="og:image" content="https://jalak-patel-190.github.io/jalak-portfolio/media/cinekorn/cinekorn-linkedin-content-analytics.png">
-<meta property="og:image:width" content="2260">
-<meta property="og:image:height" content="1868">
-<meta property="og:image:alt" content="Cinekorn LinkedIn content analytics used as evidence in Jalak Patel portfolio">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Jalak Patel | Creative Strategist for Media & Entertainment">
-<meta name="twitter:description" content="Evidence-led case studies across media, entertainment, digital distribution, and regional content.">
-<meta name="twitter:image" content="https://jalak-patel-190.github.io/jalak-portfolio/media/cinekorn/cinekorn-linkedin-content-analytics.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="home.css">
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYV1QY6VCQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RYV1QY6VCQ');
-</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RYV1QY6VCQ');</script>
 <style>
 .rjd-popup-overlay{position:fixed;inset:0;background:rgba(20,20,20,.45);z-index:9998;display:flex;align-items:center;justify-content:center;padding:1.25rem;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
 .rjd-popup-overlay.is-open{opacity:1;visibility:visible}
@@ -57,6 +45,7 @@
 <a href="#journey">Journey</a>
 <a href="#work">Case Studies</a>
 <a href="resume-jd-system.html">Resume & JD</a>
+<a href="media/Jalak-Patel-Resume.pdf" download="Jalak-Patel-Resume.pdf">Download Resume</a>
 <a href="#contact" class="nav-cta">Get In Touch</a>
 </nav>
 </div>
@@ -71,6 +60,7 @@
 <div class="btns">
 <a href="#contact" class="btn bp">Get In Touch</a>
 <a href="#work" class="btn bs">View Case Studies</a>
+<a href="media/Jalak-Patel-Resume.pdf" class="btn bs" download="Jalak-Patel-Resume.pdf">Download Resume</a>
 </div>
 <div class="metrics">
 <div class="mc"><div class="mv metric-count" data-count="108" data-suffix="M+">108M+</div><div class="ml">Lifetime YouTube views</div></div>
@@ -213,6 +203,7 @@
 <div class="btns" style="justify-content:center">
 <a href="https://www.linkedin.com/in/jalakpatelstrategist" target="_blank" rel="noopener noreferrer" class="btn bp">Connect on LinkedIn</a>
 <a href="mailto:Pateljalak019@gmail.com?subject=Strategic%20Inquiry" class="btn bs">Email Me</a>
+<a href="media/Jalak-Patel-Resume.pdf" class="btn bs" download="Jalak-Patel-Resume.pdf">Download Resume</a>
 </div>
 
 <div class="hire-note">
@@ -226,7 +217,6 @@
 <p>Designed and built by <strong>Jalak Patel</strong></p>
 </footer>
 
-<!-- Resume & JD Popup -->
 <div class="rjd-popup-overlay" id="rjdPopup" role="dialog" aria-modal="true" aria-labelledby="rjdPopupTitle">
   <div class="rjd-popup">
     <h2 id="rjdPopupTitle">Want a clear answer?</h2>
@@ -269,62 +259,32 @@ if('IntersectionObserver' in window){
     entries.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); io.unobserve(e.target);} });
   },{threshold:0.3});
   nums.forEach(function(el){ io.observe(el); });
-  document.querySelectorAll('.sec, .hero, .how-step, .cc, .ti').forEach(function(el){ el.classList.add('fade-up'); });
-  var fo=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-in'); fo.unobserve(e.target);} });
-  },{threshold:0.12});
-  document.querySelectorAll('.fade-up').forEach(function(el){ fo.observe(el); });
-} else {
-  nums.forEach(countUp);
-}
+} else { nums.forEach(countUp); }
 (function(){
   var root=document.querySelector('[data-proof-carousel]');
   if(!root) return;
   var track=root.querySelector('[data-proof-track]');
   var prev=root.querySelector('[data-proof-prev]');
   var next=root.querySelector('[data-proof-next]');
-  function step(){ return Math.max(track.clientWidth*0.85, 260); }
-  function go(dir){
-    var reduceMotion=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    track.scrollBy({left:dir*step(),behavior:reduceMotion?'auto':'smooth'});
-  }
-  if(prev) prev.addEventListener('click',function(){ go(-1); });
-  if(next) next.addEventListener('click',function(){ go(1); });
+  if(!track) return;
+  function step(){ return Math.min(track.clientWidth * 0.85, 320); }
+  if(prev) prev.addEventListener('click', function(){ track.scrollBy({left: -step(), behavior: 'smooth'}); });
+  if(next) next.addEventListener('click', function(){ track.scrollBy({left: step(), behavior: 'smooth'}); });
 })();
-if(t&&n){
-  document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'&&n.classList.contains('open')){
-      n.classList.remove('open');
-      t.setAttribute('aria-expanded','false');
-      t.focus();
-    }
-  });
-  document.addEventListener('click',function(e){
-    if(n.classList.contains('open')&&!n.contains(e.target)&&!t.contains(e.target)){
-      n.classList.remove('open');
-      t.setAttribute('aria-expanded','false');
-    }
-  });
-}
-
-/* Popup: show only once ever (localStorage) */
 (function(){
+  var key='rjd_popup_seen_v1';
   var overlay=document.getElementById('rjdPopup');
   var closeBtn=document.getElementById('rjdPopupClose');
   if(!overlay) return;
-  try{
-    if(localStorage.getItem('rjdPopupSeen')) return;
-  }catch(e){}
-  setTimeout(function(){
-    overlay.classList.add('is-open');
-  },1800);
-  function close(){
+  try { if(localStorage.getItem(key)) return; } catch(e) {}
+  setTimeout(function(){ overlay.classList.add('is-open'); }, 1200);
+  function dismiss(){
     overlay.classList.remove('is-open');
-    try{ localStorage.setItem('rjdPopupSeen','1'); }catch(e){}
+    try { localStorage.setItem(key,'1'); } catch(e) {}
   }
-  if(closeBtn) closeBtn.addEventListener('click',close);
-  overlay.addEventListener('click',function(e){ if(e.target===overlay) close(); });
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&overlay.classList.contains('is-open')) close(); });
+  if(closeBtn) closeBtn.addEventListener('click', dismiss);
+  overlay.addEventListener('click', function(e){ if(e.target===overlay) dismiss(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'&&overlay.classList.contains('is-open')) dismiss(); });
 })();
 })();
 </script>
