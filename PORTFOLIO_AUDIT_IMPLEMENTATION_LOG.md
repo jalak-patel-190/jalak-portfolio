@@ -219,3 +219,11 @@ Next implementation batch: inspect render-blocking font CSS and large images, th
 ## YouTube thumbnail-to-target consistency — 14 October 2026
 
 Merged [PR #86](https://github.com/jalak-patel-190/jalak-portfolio/pull/86) adds a browser regression test across the 27 primary pages. Run [38524093421](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38524093421) passed with 123 passed and 7 skipped by configuration. No video-ID mismatches were found for linked YouTube output-card thumbnails where both the image and target exposed a parseable video ID. Actual intended-video identity, playback, and LinkedIn/Instagram destination checks remain open.
+
+
+## Final-closure work checkpoint — 15 October 2026
+
+- PR [#90](https://github.com/jalak-patel-190/jalak-portfolio/pull/90) merged as `688bbcc2a9e4b02b36995c6eada0ef23a708ba65`; the unsupported “43 dates planned across seven months” claim is removed from the festival case.
+- Post-merge browser QA [run 38685901558](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38685901558) passed: **127 passed, 3 skipped**. Both desktop/mobile WCAG 2.1 A/AA automated scans passed for the Jalan festival page and the other primary pages. Lighthouse job passed.
+- Remaining final checks only: verify live external LinkedIn/Instagram links and intended-video playback/identity; perform manual keyboard/touch/screen-reader review; inspect oversized image/font opportunities; update final report and close evidence-dependent Jalan claims only when source data supports them.
+- Automated accessibility is not a substitute for manual review. Do not claim full WCAG certification or field Core Web Vitals.
