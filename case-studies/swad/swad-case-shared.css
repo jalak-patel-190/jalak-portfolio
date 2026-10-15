@@ -63,7 +63,7 @@ footer{border-top:1px solid var(--border);padding:1.75rem 1.5rem;text-align:cent
 .page-nav .primary{background:linear-gradient(135deg,var(--cta1),var(--cta2));color:#fff}
 .nav-trio .back:nth-child(2){margin-left:auto;margin-right:auto}
 
-/* Output carousel */
+/* Output carousel — default landscape for YT */
 .output-carousel { position: relative; margin: 1.25rem 0 0.5rem; padding: 0 2.5rem; }
 .output-carousel-track {
   display: flex; gap: 0.85rem; overflow-x: auto; scroll-snap-type: x mandatory;
@@ -71,7 +71,7 @@ footer{border-top:1px solid var(--border);padding:1.75rem 1.5rem;text-align:cent
 }
 .output-carousel-track::-webkit-scrollbar { display: none; }
 .output-card {
-  flex: 0 0 min(42%, 160px); scroll-snap-align: start; border-radius: var(--radius);
+  flex: 0 0 min(70%, 260px); scroll-snap-align: start; border-radius: var(--radius);
   overflow: hidden; border: 1px solid var(--border); background: var(--surface);
   text-decoration: none; color: inherit; box-shadow: var(--shadow);
   transition: transform .2s, box-shadow .2s;
@@ -80,7 +80,7 @@ footer{border-top:1px solid var(--border);padding:1.75rem 1.5rem;text-align:cent
   transform: translateY(-3px); box-shadow: 0 12px 28px rgba(20,20,20,.1);
 }
 .output-card img {
-  width: 100%; aspect-ratio: 9/16; object-fit: cover; display: block; background: #f0ebe3;
+  width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #f0ebe3;
 }
 .output-cap {
   display: block; padding: 0.55rem 0.7rem; font-size: 0.75rem; font-weight: 700;
@@ -92,10 +92,10 @@ footer{border-top:1px solid var(--border);padding:1.75rem 1.5rem;text-align:cent
   color: #fff; margin-right: 0.25rem; vertical-align: middle;
 }
 .platform-tile {
-  aspect-ratio: 9/16; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  aspect-ratio: 16/9; display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 0.35rem; color: #fff; text-align: center; padding: 1rem;
 }
-.platform-tile.ig { background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af); }
+.platform-tile.ig { background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af); aspect-ratio: 9/16; }
 .platform-tile.yt { background: #c00; aspect-ratio: 16/9; }
 .platform-tile .pt-icon { font-size: 1.6rem; line-height: 1; opacity: 0.95; }
 .platform-tile .pt-label { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.02em; }
@@ -115,19 +115,17 @@ footer{border-top:1px solid var(--border);padding:1.75rem 1.5rem;text-align:cent
   nav.open { display: flex; }
   .next-grid { grid-template-columns: 1fr; }
   .output-carousel { padding: 0 2rem; }
-  .output-card { flex-basis: min(48%, 150px); }
+  .output-card { flex-basis: min(85%, 240px); }
   .carousel-btn { width: 36px; height: 36px; }
 }
 
-/* Instagram Reel cover ratio (9:16) for output carousels */
-.output-card { flex: 0 0 min(42%, 160px); scroll-snap-align: start; }
-.output-card img,
-.output-card .platform-tile,
-.platform-tile.ig {
-  aspect-ratio: 9 / 16 !important;
-  object-fit: cover;
-  width: 100%;
-}
+/* YT = 16:9 landscape | IG reels = 9:16 portrait */
+.output-card:has(.ig-badge),
+.output-card:has(.platform-tile.ig) { flex: 0 0 min(42%, 160px); }
+.output-card:has(.ig-badge) img,
+.platform-tile.ig { aspect-ratio: 9 / 16 !important; object-fit: cover; width: 100%; }
+.platform-tile.yt { aspect-ratio: 16 / 9 !important; }
 @media (max-width: 640px) {
-  .output-card { flex-basis: min(48%, 150px); }
+  .output-card:has(.ig-badge),
+  .output-card:has(.platform-tile.ig) { flex-basis: min(48%, 150px); }
 }
