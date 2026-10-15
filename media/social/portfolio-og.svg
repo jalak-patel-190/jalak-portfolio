@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">Jalak Patel — Creative Strategist</title>
+<desc id="desc">Evidence-led creative strategy across media, entertainment, digital distribution and regional audiences.</desc>
+<defs>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#C2410C"/>
+    <stop offset="1" stop-color="#9D3A72"/>
+  </linearGradient>
+  <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+    <path d="M36 0H0V36" fill="none" stroke="#E8E2D8" stroke-width="1"/>
+  </pattern>
+</defs>
+<rect width="1200" height="630" fill="#F7F4EF"/>
+<rect width="1200" height="630" fill="url(#grid)" opacity=".45"/>
+<rect x="64" y="64" width="10" height="502" rx="5" fill="url(#accent)"/>
+<text x="106" y="126" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" letter-spacing="4" fill="#5A5A5A">PORTFOLIO · STRATEGY · DISTRIBUTION</text>
+<text x="102" y="250" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="800" letter-spacing="-2" fill="#141414">JALAK PATEL</text>
+<text x="106" y="312" font-family="Arial, Helvetica, sans-serif" font-size="37" font-weight="700" fill="#1F5C6B">Creative Strategist</text>
+<line x1="106" y1="354" x2="590" y2="354" stroke="#C2410C" stroke-width="4"/>
+<text x="106" y="408" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#141414">Audience insight → content decisions → distribution</text>
+<text x="106" y="453" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#5A5A5A">Evidence-led work across media, entertainment,</text>
+<text x="106" y="484" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#5A5A5A">and regional audiences.</text>
+<g transform="translate(790 155)">
+  <rect x="0" y="0" width="320" height="320" rx="16" fill="#FFFFFF" stroke="#E8E2D8" stroke-width="2"/>
+  <rect x="26" y="26" width="268" height="54" rx="8" fill="#F3EFE8"/>
+  <rect x="26" y="100" width="268" height="64" rx="8" fill="#F7F4EF" stroke="#E8E2D8"/>
+  <rect x="26" y="184" width="268" height="44" rx="8" fill="#F7F4EF" stroke="#E8E2D8"/>
+  <rect x="26" y="248" width="172" height="44" rx="8" fill="url(#accent)"/>
+  <path d="M43 59l16-14 18 7 20-23" fill="none" stroke="#1F5C6B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="97" cy="29" r="5" fill="#1F5C6B"/>
+  <rect x="122" y="44" width="139" height="7" rx="3" fill="#D4CEC3"/>
+  <rect x="122" y="58" width="100" height="6" rx="3" fill="#D4CEC3"/>
+  <rect x="44" y="119" width="74" height="25" rx="5" fill="#C2410C" opacity=".9"/>
+  <rect x="132" y="119" width="74" height="25" rx="5" fill="#1F5C6B" opacity=".9"/>
+  <rect x="220" y="119" width="52" height="25" rx="5" fill="#9D3A72" opacity=".9"/>
+  <path d="M45 210h14m9 0h14m9 0h14m9 0h14" stroke="#5A5A5A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M45 270h126" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+  <path d="M45 282h86" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity=".75"/>
+</g>
+<text x="106" y="558" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#5A5A5A">jalak-patel-190.github.io/jalak-portfolio</text>
+</svg>
