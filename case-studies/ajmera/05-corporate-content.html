@@ -41,6 +41,13 @@ body{overflow-x:hidden}
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Corporate Content from Office Activities | Ajmera Fashion | Jalak Patel">
   <meta name="twitter:description" content="From office activities to company content at Ajmera Fashion.">
+
+<style id="instagram-reel-ratio-fix">
+/* Instagram Reels use portrait cards; regular Instagram posts and YouTube thumbnails keep their own framing. */
+.output-card.instagram-card{flex:0 0 180px}
+.output-card.instagram-card img{aspect-ratio:9/16;object-fit:cover}
+@media(max-width:640px){.output-card.instagram-card{flex-basis:155px}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#context">Skip to content</a>
@@ -96,7 +103,7 @@ body{overflow-x:hidden}
 <div class="output-carousel" data-output-carousel>
   <button type="button" class="carousel-btn prev" aria-label="Previous">←</button>
   <div class="output-carousel-track">
-    <a class="output-card" href="https://www.instagram.com/reel/CmwVTG4Io8R/" target="_blank" rel="noopener noreferrer"><img src="../../media/ajmera/Ig01.jpg.jpeg" alt="Corporate reel" loading="lazy"><span class="output-cap"><span class="ig-badge">IG</span> Corporate reel</span></a>
+    <a class="output-card instagram-card" href="https://www.instagram.com/reel/CmwVTG4Io8R/" target="_blank" rel="noopener noreferrer" aria-label="Open Instagram Reel 1 in a new tab"><img src="../../media/ajmera/Ig01.jpg.jpeg" alt="" loading="lazy" decoding="async"><span class="output-cap"><span class="ig-badge">IG</span> Corporate reel</span></a>
     <a class="output-card" href="https://www.instagram.com/p/CofCR2fgg-1/" target="_blank" rel="noopener noreferrer"><img src="../../media/ajmera/Ig02.jpg.jpeg" alt="Corporate post" loading="lazy"><span class="output-cap"><span class="ig-badge">IG</span> Corporate post</span></a>
     <a class="output-card" href="https://www.instagram.com/p/CoZ1QDKgyAT/" target="_blank" rel="noopener noreferrer"><img src="../../media/ajmera/Ig03.jpg.jpeg" alt="Corporate post" loading="lazy"><span class="output-cap"><span class="ig-badge">IG</span> Corporate post</span></a>
     <a class="output-card" href="https://www.instagram.com/p/CojSDkxAaZr/" target="_blank" rel="noopener noreferrer"><img src="../../media/ajmera/Ig04.jpg.jpeg" alt="Corporate post" loading="lazy"><span class="output-cap"><span class="ig-badge">IG</span> Corporate post</span></a>
