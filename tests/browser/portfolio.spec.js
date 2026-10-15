@@ -392,3 +392,60 @@ test('YouTube output-card thumbnails link to the same video ID they preview', as
   expect(checked, 'at least one linked YouTube thumbnail should be checked').toBeGreaterThan(0);
   expect(mismatches, 'each linked YouTube thumbnail should match its target video ID').toEqual([]);
 });
+
+
+test('live YouTube targets expose public video metadata', async ({ request }) => {
+  test.skip(process.env.CHECK_EXTERNAL_MEDIA !== 'true', 'runs against live pages after a successful main-branch deployment');
+  const liveBaseURL = process.env.PORTFOLIO_LIVE_URL;
+  const videoURLs = new Set();
+
+  for (const route of primaryPages) {
+    const response = await request.get(new URL(route, liveBaseURL).toString(), { timeout: 15000 });
+    expect(response.status(), `live page should respond while collecting video targets: ${route}`).toBe(200);
+    const html = await response.text();
+    for (const match of html.matchAll(/<a\\b[^>]*\\bhref=["'](https?:\\/\\/(?:www\\.)?(?:youtube\\.com\\/watch\\?v=|youtu\\.be\\/)[^"'\\s]+)["'][^>]*>/gi)) {
+      const rawURL = match[1].replace(/&amp;/g, '&');
+      try {
+        const parsed = new URL(rawURL);
+        const videoId = parsed.hostname.endsWith('youtu.be')
+          ? parsed.pathname.slice(1).split('/')[0]
+          : parsed.searchParams.get('v');
+        if (videoId) videoURLs.add(`https://www.youtube.com/watch?v=${videoId}`);
+      } catch (_) {
+        // Ignore malformed external hrefs; other link checks cover local navigation.
+      }
+    }
+  }
+
+  expect(videoURLs.size, 'published primary pages should link to YouTube videos').toBeGreaterThan(0);
+  const failures = [];
+  const inconclusive = [];
+  const urls = [...videoURLs];
+
+  for (let offset = 0; offset < urls.length; offset += 4) {
+    const batch = await Promise.all(urls.slice(offset, offset + 4).map(async url => {
+      const endpoint = `https://www.youtube.com/oembed?format=json&url=${encodeURIComponent(url)}`;
+      try {
+        const response = await request.get(endpoint, { timeout: 12000 });
+        if (response.status() === 200) {
+          const payload = await response.json();
+          return payload && payload.title ? { url, result: 'ok', title: payload.title } : { url, result: 'failure', status: 200, reason: 'missing title' };
+        }
+        if (response.status() === 400 || response.status() === 401 || response.status() === 404) {
+          return { url, result: 'failure', status: response.status() };
+        }
+        return { url, result: 'inconclusive', status: response.status() };
+      } catch (error) {
+        return { url, result: 'inconclusive', error: String(error) };
+      }
+    }));
+    for (const item of batch) {
+      if (item.result === 'failure') failures.push(item);
+      if (item.result === 'inconclusive') inconclusive.push(item);
+    }
+  }
+
+  console.log(`YouTube target audit: ${urls.length} unique targets; ${urls.length - failures.length - inconclusive.length} metadata responses; ${failures.length} confirmed failures; ${inconclusive.length} inconclusive.`);
+  if (inconclusive.length) console.warn('YouTube target checks inconclusive due to rate limits or network access:', JSON.stringify(inconclusive));
+  expect(failures, 'confirmed unavailable or non-public YouTube targets').toEqual([]);
+});
