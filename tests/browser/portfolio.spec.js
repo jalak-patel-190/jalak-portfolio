@@ -403,7 +403,7 @@ test('live YouTube targets expose public video metadata', async ({ request }) =>
     const response = await request.get(new URL(route, liveBaseURL).toString(), { timeout: 15000 });
     expect(response.status(), `live page should respond while collecting video targets: ${route}`).toBe(200);
     const html = await response.text();
-    for (const match of html.matchAll(/<a\\b[^>]*\\bhref=["'](https?:\\/\\/(?:www\\.)?(?:youtube\\.com\\/watch\\?v=|youtu\\.be\\/)[^"'\\s]+)["'][^>]*>/gi)) {
+    for (const match of html.matchAll(/<a\b[^>]*\bhref=["'](https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)[^"'\s]+)["'][^>]*>/gi)) {
       const rawURL = match[1].replace(/&amp;/g, '&');
       try {
         const parsed = new URL(rawURL);
