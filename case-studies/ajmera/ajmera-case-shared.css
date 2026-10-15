@@ -1,5 +1,5 @@
 /* =========================================================
-   Ajmera Fashion — shared case styles + hub + carousel
+   Ajmera Fashion — shared case styles + hub + carousel + animations
    ========================================================= */
 :root{
   --bg:#F7F4EF;--surface:#fff;--text:#141414;--muted:#5A5A5A;--border:#E8E2D8;
@@ -76,7 +76,7 @@ footer{border-top:1px solid var(--border);padding:1.75rem 1.5rem;text-align:cent
 .case-teaser-result{font-size:.82rem;font-weight:600;color:var(--text);margin-bottom:.5rem}
 .case-teaser-cta{font-size:.82rem;font-weight:700;color:var(--cta1)}
 
-/* Hub CTAs = buttons */
+/* Hub CTAs */
 .hero-actions{display:flex!important;flex-wrap:wrap;gap:.75rem;align-items:center;margin-top:1.15rem}
 a.btn-primary,.btn-primary{display:inline-flex!important;align-items:center;justify-content:center;padding:.7rem 1.35rem!important;border-radius:999px!important;font-weight:700!important;font-size:.9rem!important;text-decoration:none!important;color:#fff!important;background:linear-gradient(135deg,var(--cta1),var(--cta2))!important;box-shadow:0 4px 16px rgba(194,65,12,.22);border:none!important}
 a.btn-secondary,.btn-secondary{display:inline-flex!important;align-items:center;justify-content:center;padding:.65rem 1.25rem!important;border-radius:999px!important;font-weight:700!important;font-size:.9rem!important;text-decoration:none!important;color:#141414!important;background:#fff!important;border:1.5px solid var(--border)!important}
@@ -98,9 +98,18 @@ a.btn-secondary,.btn-secondary{display:inline-flex!important;align-items:center;
   .next-grid{grid-template-columns:1fr}
   .case-grid{grid-template-columns:1fr}
 }
-
-/* Mobile: Prev|Hub|Next one row */
 @media(max-width:560px){
   .page-nav.nav-trio,.nav-trio{flex-direction:row!important;flex-wrap:nowrap!important;gap:.4rem}
   .page-nav.nav-trio a,.nav-trio a{width:auto!important;flex:1 1 0;text-align:center;justify-content:center;padding:.5rem .45rem;font-size:.75rem}
+}
+
+/* Scroll animations */
+.fade-up{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.fade-up.is-in{opacity:1;transform:none}
+.bar-track{height:12px;background:#f0ebe3;border-radius:999px;overflow:hidden;margin:.35rem 0}
+.bar-fill{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--cta1),var(--cta2));transition:width 1s cubic-bezier(.22,1,.36,1)}
+.chart-card.is-inview .bar-fill,.bars.is-inview .bar-fill,.bars.is-in .bar-fill,.is-inview .bar-fill{width:var(--w,50%)}
+@media(prefers-reduced-motion:reduce){
+  .fade-up{opacity:1!important;transform:none!important;transition:none!important}
+  .bar-fill{transition:none!important;width:var(--w,50%)!important}
 }
