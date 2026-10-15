@@ -307,20 +307,20 @@ if(t&&n){
   });
 }
 
-/* Popup: show once per session */
+/* Popup: show only once ever (localStorage) */
 (function(){
   var overlay=document.getElementById('rjdPopup');
   var closeBtn=document.getElementById('rjdPopupClose');
   if(!overlay) return;
   try{
-    if(sessionStorage.getItem('rjdPopupSeen')) return;
+    if(localStorage.getItem('rjdPopupSeen')) return;
   }catch(e){}
   setTimeout(function(){
     overlay.classList.add('is-open');
   },1800);
   function close(){
     overlay.classList.remove('is-open');
-    try{ sessionStorage.setItem('rjdPopupSeen','1'); }catch(e){}
+    try{ localStorage.setItem('rjdPopupSeen','1'); }catch(e){}
   }
   if(closeBtn) closeBtn.addEventListener('click',close);
   overlay.addEventListener('click',function(e){ if(e.target===overlay) close(); });
