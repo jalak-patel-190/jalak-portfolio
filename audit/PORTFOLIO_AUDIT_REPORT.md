@@ -421,6 +421,11 @@ The raw workbook "yt data jmm.xlsx" was found in the Library and inspected direc
 
 - The workbook has one sheet with repeated headers and mixed table layouts. The 12-row block at rows 130–141 is duplicated verbatim at rows 142–153. The repeated block includes a ₹240,000 subtotal, so it must not be counted twice.
 - The current workbook's repeated subtotal is ₹2.4 lakh, not ₹4.2 lakh as stated in an older issue-register note. This is a source discrepancy to resolve, not a basis for choosing either number as final spend.
-- A preliminary row-level pass found 89 dated creator-booking rows and 65 unique normalized creator names among those dated rows after removing the duplicate block and the travel-expense line. This is a diagnostic count, not a publishable total: the workbook also contains undated creator entries, link-only rows, repeated headers, a malformed date and a free/uncosted entry.
+- A preliminary row-level pass found 89 dated rows with a creator-like name and 65 unique normalized creator names among those dated rows after removing the duplicate block and the travel-expense line. This is a diagnostic count, not a publishable total: the workbook also contains undated creator entries, link-only rows, repeated headers, a malformed date and a free/uncosted entry.
 - The summary archive's candidate totals of 102 bookings, 70 influencers and 15 repeats are therefore not yet reproducible from a clean, documented counting rule. Do not publish them until the sheet is normalized, repeat bookings are defined, duplicate rows are removed, and the final count is reproducible.
 - The public site remains conservative: influencer booking totals, spend, ROI and sales attribution stay unpublished. The qualitative influencer-marketing case can remain. Calling reports can evidence recorded calling/billing activity, but not automatically prove marketing attribution, conversion lift or team productivity.
+
+
+## Jalan budget-period wording — 15 October 2026
+
+- Corrected Jalan Case 02's title, description, social metadata and related-case labels to “Influencer marketing coordination”. The page no longer states that the budget was monthly, because the source archive contains unresolved budget-period wording (₹2 lakh versus ₹24 lakh annually). The case remains process-led and does not publish unverified booking, spend, ROI or sales-attribution totals.

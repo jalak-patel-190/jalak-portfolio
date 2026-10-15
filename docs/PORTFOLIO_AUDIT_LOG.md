@@ -431,3 +431,8 @@ The raw workbook "yt data jmm.xlsx" was found in the Library and inspected direc
 - The summary archive lists 102 bookings, 70 influencers and 15 repeats, but the raw workbook does not yet reproduce those counts under a clean, documented rule. Keep all three numbers unpublished until rows are normalized, duplicates removed, and "booking", "unique influencer" and "repeat" are explicitly defined.
 - Calling-report PDFs are also available in the Library. They may support activity and bill records, but do not automatically establish sales caused by marketing or a before/after productivity improvement.
 - **Action:** retain the qualitative Jalan case narratives. Keep influencer counts, spend, ROI, sales attribution, tele-calling headcount and productivity lift out of public claims until the relevant source rows and definitions are reconciled.
+
+
+## Jalan budget-period wording — 15 October 2026
+
+- Corrected Jalan Case 02's title, description, social metadata and related-case labels to “Influencer marketing coordination”. The page no longer states that the budget was monthly, because the source archive contains unresolved budget-period wording (₹2 lakh versus ₹24 lakh annually). The case remains process-led and does not publish unverified booking, spend, ROI or sales-attribution totals.
