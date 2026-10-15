@@ -118,6 +118,23 @@ if(t&&n){
   document.addEventListener('click',function(e){if(n.classList.contains('open')&&!n.contains(e.target)&&!t.contains(e.target)){n.classList.remove('open');t.setAttribute('aria-expanded','false');}});
 }
 })();
+
+(function(){
+  var formLink=document.querySelector('a[href*="forms.gle/"]');
+  if(formLink){
+    formLink.addEventListener('click',function(){
+      if(typeof window.gtag==='function'){
+        window.gtag('event','resume_jd_form_handoff',{
+          form_provider:'google_forms',
+          handoff_type:'external_form',
+          link_url:formLink.href
+        });
+      }
+    });
+  }
+})();
+
 </script>
+<script src="site-interactions.js" defer></script>
 </body>
 </html>
