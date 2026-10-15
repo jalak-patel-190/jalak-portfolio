@@ -392,3 +392,11 @@ Lighthouse flagged render-blocking Google Fonts CSS and large images. Specific r
 ## YouTube thumbnail-to-target consistency — 14 October 2026
 
 PR [#86](https://github.com/jalak-patel-190/jalak-portfolio/pull/86) added a test-only browser regression check across the 27 primary pages. In run [38524093421](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38524093421), 123 tests passed and 7 were skipped by configuration. No mismatches were found between YouTube thumbnail IDs and linked target video IDs for eligible `a.output-card` pairs. This does not validate intended-video identity, actual playback or LinkedIn/Instagram reachability.
+
+
+## Closure checkpoint — 15 October 2026
+
+- PR [#90](https://github.com/jalak-patel-190/jalak-portfolio/pull/90) merged; the unverified “43 dates planned across seven months” claim was replaced with “Seasonal festival planning”.
+- Post-merge run [38685901558](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38685901558): browser QA passed, 127 passed and 3 skipped. Desktop/mobile automated WCAG scans passed across the 27 primary pages. Lighthouse passed. Pages deployment [38685900996](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38685900996) succeeded.
+- Still open: external social-link reachability and manual destination confirmation; intended video identity/playback; manual keyboard, touch and screen-reader review; human contrast review; image/font optimization decision and retest; factual evidence boundaries for Jalan claims.
+- Automated checks are not certification. Lighthouse is a lab snapshot, not field Core Web Vitals.
