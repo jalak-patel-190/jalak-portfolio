@@ -590,3 +590,7 @@ footer {
 .output-card:focus-visible,
 .link-chip:focus-visible,
 .carousel-btn:focus-visible { outline: 3px solid var(--cta-start, #B8441B); outline-offset: 3px; }
+
+
+/* Explicit mobile-menu keyboard focus: retain the theme accent with a measurable ring. */
+.nav-toggle:focus-visible { outline: 3px solid var(--cta-start); outline-offset: 3px; }
