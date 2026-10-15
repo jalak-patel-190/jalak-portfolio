@@ -35,16 +35,13 @@
 .page-nav .back{background:#fff;border:1.5px solid #e8e4dc;color:#141414}
 .page-nav .primary{background:linear-gradient(135deg,#C2410C,#9D3A72);color:#fff}
 .nav-trio .back:nth-child(2){margin-left:auto;margin-right:auto}
-/* YT 16:9 | IG reels 9:16 only */
-.output-card:has(.ig-badge),
-.output-card:has(.platform-tile.ig){flex:0 0 min(42%,160px)}
-.output-card:has(.ig-badge) img,
-.platform-tile.ig{aspect-ratio:9/16!important}
-.platform-tile.yt{aspect-ratio:16/9!important}
+/* Instagram reels only — 9:16 */
+.output-card.is-ig{flex:0 0 min(42%,160px)!important}
+.output-card.is-ig img,.output-card.is-ig .platform-tile,.platform-tile.ig{aspect-ratio:9/16!important;object-fit:cover;width:100%}
+@media(max-width:640px){.output-card.is-ig{flex-basis:min(48%,150px)!important}}
 </style>
   <meta property="og:type" content="article">
   <meta property="og:title" content="Building the Channel and Page Network | Jalan Mega Mart | Jalak Patel">
-  <meta property="og:description" content="Case 01: building a channel and page network for Jalan Mega Mart.">
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -68,11 +65,6 @@
     <p class="eyebrow">Case 01 · Jalan Mega Mart</p>
     <h1>Building the channel and page network</h1>
     <p class="lede">Building and maintaining a channel and page network to support retail demand and local-language reach.</p>
-    <div class="metric-row">
-      <span class="metric-pill"><strong>Multi-channel</strong> presence</span>
-      <span class="metric-pill"><strong>Local language</strong> reach</span>
-      <span class="metric-pill"><strong>Retail</strong> demand support</span>
-    </div>
   </section>
   <section class="section" id="context">
     <p class="section-label">Context</p>
@@ -82,7 +74,7 @@
   <section class="section">
     <p class="section-label">Problem</p>
     <h2>One surface was not enough</h2>
-    <p>A single company page left gaps in language, product category, and festival timing. Buyers searching in regional terms did not land on a consistent public presence.</p>
+    <p>A single company page left gaps in language, product category, and festival timing.</p>
   </section>
   <section class="section">
     <p class="section-label">Execution</p>
@@ -97,7 +89,6 @@
   <section class="section" id="channels">
     <p class="section-label">Language channels</p>
     <h2>Regional YouTube network</h2>
-    <p>Separate language channels carried product and festival demand in the languages buyers actually searched and watched.</p>
     <p class="chip-row">
       <a class="link-chip" href="https://www.youtube.com/@JMMMarathishorts" target="_blank" rel="noopener noreferrer">Marathi Shorts</a>
       <a class="link-chip" href="https://www.youtube.com/@JalanmegamartMarathi" target="_blank" rel="noopener noreferrer">Jalan Marathi</a>
@@ -107,7 +98,6 @@
   <section class="section" id="outputs">
     <p class="section-label">Work output</p>
     <h2>Selected videos from the network</h2>
-    <p class="section-intro">Tap any tile to open the video on YouTube.</p>
     <div class="output-carousel" data-output-carousel>
       <button type="button" class="carousel-btn prev" aria-label="Previous">←</button>
       <div class="output-carousel-track">
@@ -134,23 +124,22 @@
   <section class="section" id="instagram">
     <p class="section-label">Instagram</p>
     <h2>Selected reels</h2>
-    <p class="section-intro">Live posts. Tap any tile to open on Instagram.</p>
     <div class="output-carousel" data-output-carousel>
       <button type="button" class="carousel-btn prev" aria-label="Previous">←</button>
       <div class="output-carousel-track">
-        <a class="output-card" href="https://www.instagram.com/reel/DJs7nrjTN0x/" target="_blank" rel="noopener noreferrer">
+        <a class="output-card is-ig" href="https://www.instagram.com/reel/DJs7nrjTN0x/" target="_blank" rel="noopener noreferrer">
           <div class="platform-tile ig"><span class="pt-icon">IG</span><span class="pt-label">Reel</span><span class="pt-sub">Open on Instagram</span></div>
           <span class="output-cap"><span class="ig-badge">IG</span> Reel</span>
         </a>
-        <a class="output-card" href="https://www.instagram.com/reel/C9txGksyQpW/" target="_blank" rel="noopener noreferrer">
+        <a class="output-card is-ig" href="https://www.instagram.com/reel/C9txGksyQpW/" target="_blank" rel="noopener noreferrer">
           <div class="platform-tile ig"><span class="pt-icon">IG</span><span class="pt-label">Reel</span><span class="pt-sub">Open on Instagram</span></div>
           <span class="output-cap"><span class="ig-badge">IG</span> Reel</span>
         </a>
-        <a class="output-card" href="https://www.instagram.com/reel/C5aJjaerPS4/" target="_blank" rel="noopener noreferrer">
+        <a class="output-card is-ig" href="https://www.instagram.com/reel/C5aJjaerPS4/" target="_blank" rel="noopener noreferrer">
           <div class="platform-tile ig"><span class="pt-icon">IG</span><span class="pt-label">Reel</span><span class="pt-sub">Open on Instagram</span></div>
           <span class="output-cap"><span class="ig-badge">IG</span> Reel</span>
         </a>
-        <a class="output-card" href="https://www.instagram.com/reel/C3CYCgPs1YM/" target="_blank" rel="noopener noreferrer">
+        <a class="output-card is-ig" href="https://www.instagram.com/reel/C3CYCgPs1YM/" target="_blank" rel="noopener noreferrer">
           <div class="platform-tile ig"><span class="pt-icon">IG</span><span class="pt-label">Reel</span><span class="pt-sub">Open on Instagram</span></div>
           <span class="output-cap"><span class="ig-badge">IG</span> Reel</span>
         </a>
