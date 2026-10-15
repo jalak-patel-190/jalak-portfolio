@@ -403,13 +403,13 @@ test('live YouTube targets expose public video metadata', async ({ request }) =>
     const response = await request.get(new URL(route, liveBaseURL).toString(), { timeout: 15000 });
     expect(response.status(), `live page should respond while collecting video targets: ${route}`).toBe(200);
     const html = await response.text();
-    for (const match of html.matchAll(/<a\b[^>]*\bhref=["'](https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)[^"'\s]+)["'][^>]*>/gi)) {
+    for (const match of html.matchAll(/<a\b[^>]*\bhref=["'](https?:\/\/(?:www\.)?(?:youtube\.com\/(?:watch\?v=|shorts\/|live\/|embed\/)|youtu\.be\/)[^"'\s]+)["'][^>]*>/gi)) {
       const rawURL = match[1].replace(/&amp;/g, '&');
       try {
         const parsed = new URL(rawURL);
         const videoId = parsed.hostname.endsWith('youtu.be')
-          ? parsed.pathname.slice(1).split('/')[0]
-          : parsed.searchParams.get('v');
+          ? parsed.pathname.split('/').filter(Boolean)[0]
+          : parsed.searchParams.get('v') || parsed.pathname.match(/^\/(?:shorts|live|embed)\/([^/]+)/)?.[1];
         if (videoId) videoURLs.add(`https://www.youtube.com/watch?v=${videoId}`);
       } catch (_) {
         // Ignore malformed external hrefs; other link checks cover local navigation.
