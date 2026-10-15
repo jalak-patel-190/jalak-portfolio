@@ -1,159 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case 01 | Data tooling | Cinekorn | Jalak Patel</title>
-<meta name="description" content="Turning a manual data task into a content decision: AI-assisted classification of 6,000 to 8,000 rows completed in two days with human-led checks.">
-<link rel="canonical" href="https://jalak-patel-190.github.io/jalak-portfolio/case-studies/cinekorn/01-data-tooling.html">
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="Jalak Patel Portfolio">
-<meta property="og:title" content="Case 01 | Data tooling | Cinekorn | Jalak Patel">
-<meta property="og:description" content="Turning a manual data task into a content decision: AI-assisted classification of 6,000 to 8,000 rows completed in two days with human-led checks.">
-<meta property="og:url" content="https://jalak-patel-190.github.io/jalak-portfolio/case-studies/cinekorn/01-data-tooling.html">
-<meta property="og:image" content="https://jalak-patel-190.github.io/jalak-portfolio/media/cinekorn/case-01-colab.png">
-<meta property="og:image:alt" content="Google Colab notebook used for AI-assisted row classification">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Case 01 | Data tooling | Cinekorn | Jalak Patel">
-<meta name="twitter:description" content="Turning a manual data task into a content decision: AI-assisted classification of 6,000 to 8,000 rows completed in two days with human-led checks.">
-<meta name="twitter:image" content="https://jalak-patel-190.github.io/jalak-portfolio/media/cinekorn/case-01-colab.png">
-<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Bottleneck and AI-Assisted Tooling | Cinekorn | Jalak Patel</title>
+  <meta name="description" content="Using an AI-assisted Python workflow to classify 6,000 to 8,000 rows for Cinekorn film catalogue operations.">
+  <link rel="canonical" href="https://jalak-patel-190.github.io/jalak-portfolio/case-studies/cinekorn/01-data-tooling.html">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="cinekorn-case-shared.css">
-  <link rel="stylesheet" href="cinekorn-chart-motion.css">
+  <link rel="stylesheet" href="cinekorn-case-shared.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Data Bottleneck and AI-Assisted Tooling | Cinekorn | Jalak Patel">
+  <meta property="og:description" content="Using an AI-assisted Python workflow to classify 6,000 to 8,000 rows for Cinekorn film catalogue operations.">
+  <meta name="twitter:card" content="summary">
 </head>
 <body>
-<a class="skip-link" href="#context">Skip to content</a>
-<header>
-<div class="header-inner">
-<a href="../../index.html" class="logo-wrapper"><span class="logo">JALAK PATEL</span><span class="logo-subtitle">Creative Strategist</span></a>
-<button class="nav-toggle" id="navToggle" aria-label="Menu" aria-controls="mainNav" aria-expanded="false">Menu</button>
-<nav id="mainNav">
-<a href="index.html">Cinekorn Hub</a>
-<a href="../../index.html#work">All Cases</a>
-<a href="../../index.html#contact" class="btn-nav">Get In Touch</a>
+  <a class="skip-link" href="#context">Skip to content</a>
+  <header>
+    <div class="header-inner">
+      <a href="../../index.html" class="logo-wrapper">
+        <span class="logo">JALAK PATEL</span>
+        <span class="logo-subtitle">Creative Strategist</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">Menu</button>
+      <nav id="mainNav">
+        <a href="index.html">Cinekorn Hub</a>
+        <a href="../../index.html#work">All Cases</a>
+        <a href="../../index.html#contact" class="btn-nav">Get In Touch</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">Home</a> · <a href="index.html">Cinekorn</a> · Case 01
+    </nav>
+    <header class="case-hero">
+      <p class="eyebrow">Case 01 · Data tooling</p>
+      <h1>Data bottleneck and AI-assisted tooling</h1>
+      <p class="lede">Using an AI-assisted Python workflow to classify 6,000 to 8,000 rows, with human checks and interpretation.</p>
+    </header>
+    <section class="section" id="context">
+      <p class="section-label">Context</p>
+      <h2>Catalogue volume blocked decisions</h2>
+      <p>Film catalogue work at this scale required consistent classification before distribution choices could be defended. Manual review alone could not keep pace with the row volume.</p>
+    </section>
+    <section class="section" id="problem">
+      <p class="section-label">Problem</p>
+      <h2>Too many rows, not enough structure</h2>
+      <p>Without a repeatable classification path, the same titles were hard to group, prioritise, and measure across channels.</p>
+    </section>
+    <section class="section" id="strategy">
+      <p class="section-label">Strategy</p>
+      <h2>AI assist with human ownership</h2>
+      <p>Build a Python workflow that proposes labels, then keep human review on ambiguous or high-stakes rows so the system stays accountable.</p>
+    </section>
+    <section class="section" id="evidence">
+      <p class="section-label">Evidence</p>
+      <h2>Workflow in practice</h2>
+      <figure class="evidence-figure">
+        <img src="../../media/cinekorn/case-01-colab.png" alt="Google Colab notebook used for AI-assisted row classification" loading="lazy" class="zoom-trigger">
+        <figcaption>Colab workflow used to process catalogue rows with AI assist and human checks.</figcaption>
+      </figure>
+    </section>
+    <section class="section" id="takeaway">
+      <p class="section-label">Takeaway</p>
+      <h2>Speed without giving up judgment</h2>
+      <p>The goal was not full automation. It was a defensible way to move thousands of rows into a structure the distribution work could use.</p>
+    </section>
+    <section class="whats-next" aria-labelledby="whats-next-title">
+      <h2 id="whats-next-title">What's Next</h2>
+      <div class="next-grid">
+        <a class="next-card" href="02-telugu-kannada.html"><div class="n">Case 02</div><div class="t">Telugu and Kannada channel systems</div><p>Regional language channels with their own catalog logic.</p></a>
+        <a class="next-card" href="03-movies-catalog.html"><div class="n">Case 03</div><div class="t">Movies catalogue operations</div><p>Separating lifetime views from tenure publishing.</p></a>
+      </div>
+    </section>
+<nav class="page-nav nav-trio" aria-label="Case navigation">
+<a class="back" href="index.html">← Hub</a>
+<a class="back" href="index.html">Hub</a>
+<a class="primary" href="02-telugu-kannada.html">Next →</a>
 </nav>
-</div>
-</header>
-<main class="container">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../index.html">Home</a> · <a href="index.html">Cinekorn</a> · Case 01</nav>
-<section class="case-hero">
-<p class="eyebrow">Case 01 · Data tooling</p>
-<h1>Turning a manual data task into a content decision</h1>
-<p class="lede">Using AI-assisted tooling to remove repetitive classification work while keeping judgment, checking and interpretation human-led.</p>
-<div class="metric-row">
-<span class="metric-pill"><strong>3-4</strong> files</span>
-<span class="metric-pill"><strong>6K-8K</strong> rows</span>
-<span class="metric-pill"><strong>2 days</strong> completion</span>
-</div>
-</section>
-<section class="section" id="context">
-<p class="section-label">Context</p>
-<h2>Content work does not always begin with a creative brief</h2>
-<p>Sometimes it begins with a messy spreadsheet. Early in the Cinekorn role, multiple files containing roughly 6,000 to 8,000 rows needed to be sorted and classified by tier before the information could be used for analysis.</p>
-</section>
-<section class="section">
-<p class="section-label">Problem</p>
-<h2>Repetition blocked useful decisions</h2>
-<p>The repeated work was classification, not analysis. The data needed to be organised consistently before it could support a useful content decision.</p>
-</section>
-<section class="section">
-<p class="section-label">Decision</p>
-<h2>AI as production tooling, not authority</h2>
-<p>Gemini helped generate the Python workflow. The process ran through Google Colab. AI accelerated the repetitive part. Checks, interpretation and final use of the data stayed human responsibilities.</p>
-<div class="flow">
-<div class="flow-step">Source files</div>
-<div class="flow-step">Colab + Gemini code</div>
-<div class="flow-step">Human review</div>
-<div class="flow-step">Content decisions</div>
-</div>
-</section>
-<section class="section" id="evidence">
-<p class="section-label">Evidence</p>
-<h2>Workflow, not a magic number</h2>
-<div class="chart-card">
-<h3>From raw files to usable decisions</h3>
-<p class="chart-sub">A two-day AI-assisted workflow with human review, not autonomous analysis</p>
-<div class="flow">
-<div class="flow-step">3–4 source files, 6,000–8,000 rows</div>
-<div class="flow-step">Gemini-assisted Python in Google Colab</div>
-<div class="flow-step">Human review of classifications</div>
-<div class="flow-step">Tiered output ready in two days</div>
-</div>
-<p class="chart-caption">The script handled repetitive classification. Human review remained responsible for checking the output before it informed content decisions.</p>
-</div>
-<p class="evidence-note">Google Colab workflow used to process classification with human checking of output.</p>
-<div class="evidence-block">
-<figure class="figure">
-<img class="zoom-trigger" src="../../media/cinekorn/case-01-colab.png" alt="Google Colab notebook used for tier classification workflow" width="960" height="540" loading="lazy">
-<figcaption>Colab notebook used for the classification run. Output was reviewed before any content decision used the data.</figcaption>
-</figure>
-</div>
-</section>
-<section class="section" id="results">
-<p class="section-label">Results</p>
-<h2>Task completed in two days</h2>
-<p>The classification finished in two days. No inflated efficiency percentage is claimed. The strategic value came from checking the output and deciding what the information meant for content work.</p>
-</section>
-<section class="section" id="takeaway">
-<p class="section-label">Takeaway</p>
-<h2>What this showed</h2>
-<p>When a task is repetitive, structured and large enough to become a bottleneck, AI can reduce the manual production burden. The strategic value still comes from checking the output and deciding what the information means.</p>
-</section>
-<section class="whats-next" aria-labelledby="whats-next-title">
-<h2 id="whats-next-title">What's Next</h2>
-<div class="next-grid">
-<a class="next-card" href="02-telugu-kannada.html"><img class="next-thumb" src="../../media/cinekorn/yt-kannada.png" alt="Kannada YouTube channel evidence" loading="lazy"><div class="next-copy"><div class="n">Case 02 · Regional channels</div><div class="t">Making weak source material work</div><p>A closer look at decisions made when the available catalogue limited what the content could promise.</p></div></a>
-<a class="next-card" href="03-movies-catalog.html"><img class="next-thumb" src="../../media/cinekorn/yt-movies.png" alt="Cinekorn Movies channel evidence" loading="lazy"><div class="next-copy"><div class="n">Case 03 · Attribution</div><div class="t">Separate catalogue history from tenure results</div><p>How inherited lifetime views were separated from videos published during the role.</p></div></a>
-</div>
-</section>
 <section class="section cta-band">
 <h2>Explore the rest of the portfolio</h2>
-<div class="hero-actions">
-<a class="btn-primary" href="../../index.html#work">View All Work</a>
-</div>
+<div class="hero-actions"><a class="btn-primary" href="../../index.html#work">View All Work</a></div>
 </section>
-</main>
-<footer>
-<p>&copy; 2026 Jalak Patel</p>
-<p>Designed and built by <strong>Jalak Patel</strong></p>
-</footer>
-<script>
-(function(){
-  var t=document.getElementById('navToggle'),n=document.getElementById('mainNav');
-if(t&&n){
-  t.addEventListener('click',function(){
-    var o=n.classList.toggle('open');
-    t.setAttribute('aria-expanded',o?'true':'false');
-  });
-  n.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click',function(){
-      n.classList.remove('open');
-      t.setAttribute('aria-expanded','false');
-    });
-  });
-  document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'&&n.classList.contains('open')){
-      n.classList.remove('open');
-      t.setAttribute('aria-expanded','false');
-      t.focus();
-    }
-  });
-  document.addEventListener('click',function(e){
-    if(n.classList.contains('open')&&!n.contains(e.target)&&!t.contains(e.target)){
-      n.classList.remove('open');
-      t.setAttribute('aria-expanded','false');
-    }
-  });
-}
-
-  
-
-})();
-</script>
-<script src="chart-animate.js" defer></script>
+  </main>
+  <footer>
+    <p>&copy; 2026 Jalak Patel</p>
+    <p class="footer-credit">Designed and built by <strong>Jalak Patel</strong></p>
+  </footer>
+  <script>
+    (function () {
+      var navToggle = document.getElementById('navToggle');
+      var mainNav = document.getElementById('mainNav');
+      if (navToggle && mainNav) {
+        navToggle.addEventListener('click', function () {
+          var open = mainNav.classList.toggle('open');
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        mainNav.querySelectorAll('a').forEach(function (a) {
+          a.addEventListener('click', function () {
+            mainNav.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    })();
+  </script>
 <script src="lightbox.js" defer></script>
 </body>
 </html>
