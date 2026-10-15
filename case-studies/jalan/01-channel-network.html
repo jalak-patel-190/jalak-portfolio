@@ -13,21 +13,21 @@
 .output-carousel{position:relative;margin:1.25rem 0 .5rem;padding:0 2.5rem}
 .output-carousel-track{display:flex;gap:.85rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:.35rem 0 .75rem}
 .output-carousel-track::-webkit-scrollbar{display:none}
-.output-card{flex:0 0 min(42%,160px);scroll-snap-align:start;border-radius:14px;overflow:hidden;background:#fff;border:1px solid #e8e4dc;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.output-card{flex:0 0 min(70%,260px);scroll-snap-align:start;border-radius:14px;overflow:hidden;background:#fff;border:1px solid #e8e4dc;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
 .output-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.08)}
-.output-card img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#f0ebe3}
+.output-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#f0ebe3}
 .output-cap{display:block;padding:.55rem .75rem;font-size:.78rem;font-weight:700;color:#5a5a5a;border-top:1px solid #e8e4dc}
 .ig-badge{display:inline-block;background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af);color:#fff;font-size:.65rem;padding:.1rem .35rem;border-radius:4px;margin-right:.25rem}
 .yt-badge{display:inline-block;background:#c40000;color:#fff;font-size:.65rem;padding:.1rem .35rem;border-radius:4px;margin-right:.25rem}
-.platform-tile{aspect-ratio:9/16;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;padding:1.25rem;text-align:center;color:#fff}
-.platform-tile.ig{background:linear-gradient(145deg,#833ab4 0%,#fd1d1d 50%,#fcb045 100%)}
+.platform-tile{aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;padding:1.25rem;text-align:center;color:#fff}
+.platform-tile.ig{background:linear-gradient(145deg,#833ab4 0%,#fd1d1d 50%,#fcb045 100%);aspect-ratio:9/16}
 .platform-tile.yt{background:#c4302b;aspect-ratio:16/9}
 .platform-tile .pt-icon{font-size:1.6rem;line-height:1}
 .platform-tile .pt-label{font-size:.85rem;font-weight:700}
 .platform-tile .pt-sub{font-size:.72rem;opacity:.85}
 .carousel-btn{position:absolute;top:42%;transform:translateY(-50%);width:40px;height:40px;border-radius:999px;border:1px solid #e8e4dc;background:#fff;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;font-size:1.15rem;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .carousel-btn.prev{left:0}.carousel-btn.next{right:0}
-@media(max-width:640px){.output-carousel{padding:0 2rem}.output-card{flex-basis:min(48%,150px)}}
+@media(max-width:640px){.output-carousel{padding:0 2rem}.output-card{flex-basis:min(85%,240px)}}
 .chip-row{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
 .link-chip{display:inline-block;padding:.45rem .85rem;border-radius:999px;border:1px solid #e8e4dc;background:#fff;font-size:.78rem;font-weight:600;text-decoration:none;color:#141414}
 .page-nav{display:flex;flex-wrap:wrap;gap:.65rem;align-items:center;justify-content:space-between;margin:2rem 0 1.25rem;padding:1rem 0;border-top:1px solid #e8e4dc}
@@ -35,6 +35,12 @@
 .page-nav .back{background:#fff;border:1.5px solid #e8e4dc;color:#141414}
 .page-nav .primary{background:linear-gradient(135deg,#C2410C,#9D3A72);color:#fff}
 .nav-trio .back:nth-child(2){margin-left:auto;margin-right:auto}
+/* YT 16:9 | IG reels 9:16 only */
+.output-card:has(.ig-badge),
+.output-card:has(.platform-tile.ig){flex:0 0 min(42%,160px)}
+.output-card:has(.ig-badge) img,
+.platform-tile.ig{aspect-ratio:9/16!important}
+.platform-tile.yt{aspect-ratio:16/9!important}
 </style>
   <meta property="og:type" content="article">
   <meta property="og:title" content="Building the Channel and Page Network | Jalan Mega Mart | Jalak Patel">
@@ -190,7 +196,7 @@
     var prev = root.querySelector('.carousel-btn.prev');
     var next = root.querySelector('.carousel-btn.next');
     if(!track) return;
-    function step(){ return Math.min(track.clientWidth * 0.85, 200); }
+    function step(){ return Math.min(track.clientWidth * 0.85, 280); }
     if(prev) prev.addEventListener('click', function(){ track.scrollBy({left: -step(), behavior: 'smooth'}); });
     if(next) next.addEventListener('click', function(){ track.scrollBy({left: step(), behavior: 'smooth'}); });
   });
