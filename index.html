@@ -170,7 +170,7 @@
     <div class="cco">Cinekorn Entertainment</div>
     <div class="ct">Multi-channel film distribution</div>
     <div class="cbr">Work across YouTube, Facebook, and LinkedIn. Case studies distinguish existing catalogue performance from tenure work.</div>
-    <div class="tags"><span class="tag">YouTube</span><span class="tag">Distribution</span><span class="tag">108M+ lifetime views</span></div>
+    <div class="tags"><span class="tag">YouTube</span><span class="tag">Distribution</span><span class="tag">108M+ lifetime views across six channels*</span></div>
     <span class="ccta">Explore company hub</span>
   </div>
 </a>
@@ -306,6 +306,34 @@ if(t&&n){
     }
   });
 }
+
+
+/* GA4 interaction events: measure intent, not just page views. */
+(function(){
+  function send(name,params){
+    if(typeof window.gtag==='function') window.gtag('event',name,params||{});
+  }
+  document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){
+    a.addEventListener('click',function(){
+      send('portfolio_contact_click',{contact_method:'email',link_url:a.href});
+    });
+  });
+  document.querySelectorAll('a[href*="linkedin.com/in/"]').forEach(function(a){
+    a.addEventListener('click',function(){
+      send('portfolio_contact_click',{contact_method:'linkedin',link_url:a.href});
+    });
+  });
+  document.querySelectorAll('a[href="resume-jd-system.html"]').forEach(function(a){
+    a.addEventListener('click',function(){
+      send('resume_jd_open',{link_location:a.closest('header')?'navigation':'page_content'});
+    });
+  });
+  document.querySelectorAll('a[href^="case-studies/"]').forEach(function(a){
+    a.addEventListener('click',function(){
+      send('portfolio_case_study_click',{destination:a.getAttribute('href')||''});
+    });
+  });
+})();
 
 /* Popup: show once per session */
 (function(){
