@@ -19,7 +19,6 @@ header{position:sticky;top:0;z-index:100;height:var(--hh);background:rgba(247,24
 .nav-toggle{display:none;background:var(--surface);border:1px solid var(--border);min-width:48px;min-height:42px;padding:0 .75rem;border-radius:8px;font-weight:700;cursor:pointer}
 nav{display:flex;align-items:center;gap:1.5rem}
 nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.9rem}
-nav a:hover{color:var(--text)}
 .btn-nav,.nav-cta{padding:.55rem 1.1rem;border-radius:999px;font-size:.82rem;font-weight:700;color:#fff!important;background:linear-gradient(135deg,var(--cta1),var(--cta2));text-decoration:none}
 .container{max-width:var(--max);margin:0 auto;padding:0 1.5rem 3rem}
 .breadcrumb{font-size:.85rem;color:var(--muted);padding:1.25rem 0 .5rem}
@@ -28,73 +27,54 @@ nav a:hover{color:var(--text)}
 .eyebrow,.section-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--cta1);margin-bottom:.5rem}
 .case-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.1;letter-spacing:.3px;margin-bottom:.75rem}
 .lede{font-size:1.05rem;color:var(--muted);max-width:40rem}
-.metric-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.25rem}
-.metric-pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:.4rem .85rem;font-size:.82rem;box-shadow:var(--shadow)}
 .section{padding:1.75rem 0;scroll-margin-top:calc(var(--hh) + 12px)}
-.section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.35rem,2.5vw,1.75rem);margin-bottom:.65rem;letter-spacing:.3px}
+.section h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.35rem,2.5vw,1.75rem);margin-bottom:.65rem}
 .section p,.section-intro{color:var(--muted);max-width:40rem;margin-bottom:.75rem}
-.figure,figure.figure{margin:1.25rem 0}
-.figure img,figure img{width:100%;border-radius:var(--radius);border:1px solid var(--border);display:block}
-figcaption{font-size:.8rem;color:var(--muted);margin-top:.5rem}
 .flow{display:flex;flex-direction:column;gap:.5rem}
 .flow-step{background:#f7f3ec;border-radius:8px;padding:.65rem .85rem;font-size:.9rem;font-weight:600}
 .whats-next{padding:2rem 0 1rem}
 .whats-next h2{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;margin-bottom:1rem}
 .next-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.next-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.15rem;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform .2s}
-.next-card:hover{transform:translateY(-2px)}
+.next-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.15rem;text-decoration:none;color:inherit;box-shadow:var(--shadow)}
 .next-card .n{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--cta1)}
 .next-card .t{font-weight:700;margin:.25rem 0}
 .next-card p{font-size:.85rem;color:var(--muted);margin:0}
 .cta-band{text-align:center;padding:2rem 0}
 .cta-band h2{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;margin-bottom:1rem}
-.btn-primary{display:inline-flex;align-items:center;padding:.7rem 1.25rem;border-radius:999px;font-weight:700;font-size:.9rem;text-decoration:none;color:#fff;background:linear-gradient(135deg,var(--cta1),var(--cta2))}
 footer{border-top:1px solid var(--border);padding:1.75rem 1.5rem;text-align:center;font-size:.8rem;color:var(--muted)}
 .page-nav{display:flex;flex-wrap:wrap;gap:.65rem;align-items:center;justify-content:space-between;margin:2rem 0 1.25rem;padding:1rem 0;border-top:1px solid var(--border)}
-.page-nav a{display:inline-flex;align-items:center;min-height:42px;padding:.55rem 1rem;border-radius:999px;font-size:.85rem;font-weight:700;text-decoration:none}
+.page-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:.55rem 1rem;border-radius:999px;font-size:.85rem;font-weight:700;text-decoration:none}
 .page-nav .back{background:#fff;border:1.5px solid var(--border);color:var(--text)}
 .page-nav .primary{background:linear-gradient(135deg,var(--cta1),var(--cta2));color:#fff}
 .nav-trio .back:nth-child(2){margin-left:auto;margin-right:auto}
 
-/* Output carousel — YouTube default 16:9 */
+/* Hub buttons */
+.hero-actions{display:flex!important;flex-wrap:wrap;gap:.75rem;align-items:center;margin-top:1.15rem}
+a.btn-primary,.btn-primary{display:inline-flex!important;align-items:center;justify-content:center;padding:.7rem 1.35rem!important;border-radius:999px!important;font-weight:700!important;font-size:.9rem!important;text-decoration:none!important;color:#fff!important;background:linear-gradient(135deg,var(--cta1),var(--cta2))!important;border:none!important}
+a.btn-secondary,.btn-secondary{display:inline-flex!important;align-items:center;justify-content:center;padding:.65rem 1.25rem!important;border-radius:999px!important;font-weight:700!important;font-size:.9rem!important;text-decoration:none!important;color:#141414!important;background:#fff!important;border:1.5px solid var(--border)!important}
+
+/* Carousel */
 .output-carousel{position:relative;margin:1.25rem 0 .5rem;padding:0 2.5rem}
-.output-carousel-track{display:flex;gap:.85rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:.25rem 0 .75rem}
+.output-carousel-track{display:flex;gap:.85rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:.25rem 0 .75rem}
 .output-carousel-track::-webkit-scrollbar{display:none}
-.output-card{
-  flex:0 0 min(70%,260px);scroll-snap-align:start;border-radius:var(--radius);
-  overflow:hidden;border:1px solid var(--border);background:var(--surface);
-  text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s
-}
-.output-card:hover,.output-card:focus-visible{transform:translateY(-3px);box-shadow:0 12px 28px rgba(20,20,20,.1)}
+.output-card{flex:0 0 min(70%,260px);scroll-snap-align:start;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);background:var(--surface);text-decoration:none;color:inherit}
 .output-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#f0ebe3}
 .output-cap{display:block;padding:.55rem .7rem;font-size:.75rem;font-weight:700;color:var(--muted);border-top:1px solid var(--border)}
 .ig-badge{display:inline-block;font-size:.65rem;font-weight:700;padding:.1rem .35rem;border-radius:4px;background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af);color:#fff;margin-right:.25rem}
-.platform-tile{aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.35rem;color:#fff;text-align:center;padding:1rem}
-.platform-tile.ig{background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af);aspect-ratio:9/16}
-.platform-tile.yt{background:#c00;aspect-ratio:16/9}
-.carousel-btn{position:absolute;top:40%;transform:translateY(-50%);z-index:2;width:40px;height:40px;border-radius:999px;border:1px solid var(--border);background:#fff;cursor:pointer;font-size:1.1rem;box-shadow:var(--shadow)}
+.carousel-btn{position:absolute;top:40%;transform:translateY(-50%);z-index:2;width:40px;height:40px;border-radius:999px;border:1px solid var(--border);background:#fff;cursor:pointer}
 .carousel-btn.prev{left:0}.carousel-btn.next{right:0}
+.output-card.is-ig{flex:0 0 min(42%,160px)!important}
+.output-card.is-ig img{aspect-ratio:9/16!important;object-fit:cover;width:100%}
 
 @media(max-width:768px){
-  .nav-toggle{display:inline-flex;align-items:center}
-  nav{display:none;position:absolute;top:var(--hh);left:0;right:0;background:rgba(247,244,239,.98);flex-direction:column;padding:1rem 1.5rem;border-bottom:1px solid var(--border);gap:.5rem}
+  .nav-toggle{display:inline-flex}
+  nav{display:none;position:absolute;top:var(--hh);left:0;right:0;background:rgba(247,244,239,.98);flex-direction:column;padding:1rem 1.5rem;border-bottom:1px solid var(--border)}
   nav.open{display:flex}
   .next-grid{grid-template-columns:1fr}
-  .output-carousel{padding:0 2rem}
-  .output-card{flex-basis:min(85%,240px)}
 }
 
-/* Instagram reels only — 9:16 portrait (explicit .is-ig class) */
-.output-card.is-ig{
-  flex:0 0 min(42%,160px)!important;
-}
-.output-card.is-ig img,
-.output-card.is-ig .platform-tile,
-.platform-tile.ig{
-  aspect-ratio:9/16!important;
-  object-fit:cover;
-  width:100%;
-}
-@media(max-width:640px){
-  .output-card.is-ig{flex-basis:min(48%,150px)!important}
+/* Mobile: Prev|Hub|Next one row (not stacked) */
+@media(max-width:560px){
+  .page-nav.nav-trio,.nav-trio{flex-direction:row!important;flex-wrap:nowrap!important;gap:.4rem}
+  .page-nav.nav-trio a,.nav-trio a{width:auto!important;flex:1 1 0;text-align:center;justify-content:center;padding:.5rem .45rem;font-size:.75rem}
 }
