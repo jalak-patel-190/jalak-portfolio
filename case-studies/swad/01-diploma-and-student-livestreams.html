@@ -74,19 +74,19 @@
 <img src="https://img.youtube.com/vi/dsKzY5CL4HY/hqdefault.jpg" alt="Student / diploma live" loading="lazy">
 <span class="output-cap">Student / diploma live</span>
 </a>
-<a class="output-card" href="https://www.instagram.com/reel/DHJHuNXBWDM" target="_blank" rel="noopener noreferrer">
+<a class="output-card is-ig" href="https://www.instagram.com/reel/DHJHuNXBWDM" target="_blank" rel="noopener noreferrer">
 <img src="../../media/swad/ig-01-student-01.jpg.jpeg" alt="Student reel" loading="lazy">
 <span class="output-cap"><span class="ig-badge">IG</span> Student reel</span>
 </a>
-<a class="output-card" href="https://www.instagram.com/reel/DG7qnsUt-Hz" target="_blank" rel="noopener noreferrer">
+<a class="output-card is-ig" href="https://www.instagram.com/reel/DG7qnsUt-Hz" target="_blank" rel="noopener noreferrer">
 <img src="../../media/swad/ig-01-student-02.jpg.jpeg" alt="Course proof reel" loading="lazy">
 <span class="output-cap"><span class="ig-badge">IG</span> Course proof reel</span>
 </a>
-<a class="output-card" href="https://www.instagram.com/reel/DGqLE73BVx0" target="_blank" rel="noopener noreferrer">
+<a class="output-card is-ig" href="https://www.instagram.com/reel/DGqLE73BVx0" target="_blank" rel="noopener noreferrer">
 <img src="../../media/swad/ig-01-student-03.jpg.jpeg" alt="Classroom share" loading="lazy">
 <span class="output-cap"><span class="ig-badge">IG</span> Classroom share</span>
 </a>
-<a class="output-card" href="https://www.instagram.com/reel/DGQccY9qiIe" target="_blank" rel="noopener noreferrer">
+<a class="output-card is-ig" href="https://www.instagram.com/reel/DGQccY9qiIe" target="_blank" rel="noopener noreferrer">
 <img src="../../media/swad/ig-01-student-04.jpg.jpeg" alt="Basic course reel" loading="lazy">
 <span class="output-cap"><span class="ig-badge">IG</span> Basic course reel</span>
 </a>
@@ -128,19 +128,11 @@ var prev=root.querySelector('.carousel-btn.prev');
 var next=root.querySelector('.carousel-btn.next');
 if(!track)return;
 function step(){return Math.min(track.clientWidth*0.85,280);}
-if(prev)prev.addEventListener('click',function(){track.scrollBy({left:-step(),behavior:(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)?'auto':'smooth'});});
-if(next)next.addEventListener('click',function(){track.scrollBy({left:step(),behavior:(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)?'auto':'smooth'});});
+if(prev)prev.addEventListener('click',function(){track.scrollBy({left:-step(),behavior:'smooth'});});
+if(next)next.addEventListener('click',function(){track.scrollBy({left:step(),behavior:'smooth'});});
 });
 })();
 </script>
 <script src="lightbox.js" defer></script>
-<script>
-(function(){
-var t=document.getElementById('navToggle'),n=document.getElementById('mainNav');
-if(!t||!n)return;
-document.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){n.classList.remove('open');t.setAttribute('aria-expanded','false');t.focus();}});
-document.addEventListener('click',function(e){if(n.classList.contains('open')&&!n.contains(e.target)&&!t.contains(e.target)){n.classList.remove('open');t.setAttribute('aria-expanded','false');}});
-})();
-</script>
 </body>
 </html>
