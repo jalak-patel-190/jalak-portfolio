@@ -405,3 +405,11 @@ Manual keyboard/touch/screen-reader and human contrast review; LinkedIn/Instagra
 - Browser/Lighthouse PR run [38524093421](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38524093421) succeeded: 123 passed, 7 skipped by configuration.
 - The new test visited the 27 primary pages and compared parsed video IDs for linked `a.output-card` YouTube thumbnails and their target URLs. No mismatches were found in the pairs eligible for comparison.
 - This confirms thumbnail-to-link ID consistency for tested output cards. It does not confirm that the video itself is the intended case-study evidence, that playback works, or that LinkedIn/Instagram destinations are reachable.
+
+
+## Latest closure checkpoint — 15 October 2026
+
+- PR [#90](https://github.com/jalak-patel-190/jalak-portfolio/pull/90) is merged. The unsupported “43 dates planned across seven months” count is removed; use “Seasonal festival planning”.
+- Post-merge deployment and browser QA passed on commit `688bbcc2a9e4b02b36995c6eada0ef23a708ba65`: [Pages deployment](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38685900996) and [browser QA](https://github.com/jalak-patel-190/jalak-portfolio/actions/runs/38685901558). Browser QA: 127 passed, 3 skipped; automated WCAG 2.1 A/AA scans passed. Lighthouse job passed.
+- Remaining before sign-off: confirm external social destinations and intended video playback/identity; complete manual keyboard/touch/screen-reader and human contrast review; decide whether image/font optimizations are worth the change risk; rerun QA after any source changes. Keep Jalan sales attribution and other evidence-dependent claims constrained to records actually available.
+- Limits: automated axe scans do not certify WCAG conformance; one-run Lighthouse scores are lab snapshots, not field Core Web Vitals. LinkedIn fetches may be blocked to automated clients, so an inaccessible response is inconclusive, not proof of a broken destination.
