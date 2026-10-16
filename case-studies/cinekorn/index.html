@@ -10,18 +10,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="cinekorn-case-shared.css">
 <style>
-.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin:1.5rem 0 2rem}
-.case-card{display:flex;flex-direction:column;background:#fff;border:1px solid #E8E2D8;border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 8px 30px rgba(20,20,20,.06);transition:transform .2s,box-shadow .2s}
-.case-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(20,20,20,.1)}
-.case-card-media{height:160px;background:#111;overflow:hidden}
-.case-card-media img{width:100%;height:100%;object-fit:cover}
-.case-card-body{padding:1.1rem 1.15rem;display:flex;flex-direction:column;flex:1;gap:.35rem}
+.case-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;margin:1.5rem 0 2rem}
+.case-card{display:flex;flex-direction:column;background:#fff;border:1px solid #E8E2D8;border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 8px 30px rgba(20,20,20,.06);transition:transform .25s ease,box-shadow .25s ease}
+.case-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(20,20,20,.1)}
+.case-card-media{aspect-ratio:16/10;background:#f0ebe3;overflow:hidden}
+.case-card-media img{width:100%;height:100%;object-fit:cover;display:block}
+.case-card-body{padding:1.15rem 1.2rem 1.3rem;display:flex;flex-direction:column;flex:1;gap:.35rem}
 .case-num{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#C2410C}
-.case-card-body h3{font-size:1.05rem;font-weight:700;margin:0}
-.case-card-body p{font-size:.88rem;color:#5A5A5A;line-height:1.45;flex:1;margin:0}
-.case-card-body .read{font-size:.85rem;font-weight:700;color:#C2410C;margin-top:.35rem}
-.continue-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
-@media(max-width:900px){.case-grid,.continue-grid{grid-template-columns:1fr}}
+.case-card-body h3{font-size:1.08rem;font-weight:700;margin:0;line-height:1.25}
+.case-card-body p{font-size:.88rem;color:#5A5A5A;line-height:1.5;flex:1;margin:0}
+.case-card-body .read{font-size:.85rem;font-weight:700;color:#C2410C;margin-top:.4rem}
+@media(max-width:720px){.case-grid{grid-template-columns:1fr}}
 .fade-up{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
 .fade-up.is-in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.fade-up{opacity:1!important;transform:none!important}}
@@ -54,7 +53,7 @@
 <div class="case-grid">
 <a class="case-card" href="01-data-tooling.html"><div class="case-card-media"><img src="../../media/cinekorn/case-01-colab.png" alt="Colab notebook" loading="lazy"></div><div class="case-card-body"><div class="case-num">Case 01</div><h3>Data bottleneck and AI-assisted tooling</h3><p>Using an AI-assisted Python workflow to classify 6,000 to 8,000 rows.</p><span class="read">Read full case study</span></div></a>
 <a class="case-card" href="02-telugu-kannada.html"><div class="case-card-media"><img src="../../media/cinekorn/yt-kannada.png" alt="Kannada analytics" loading="lazy"></div><div class="case-card-body"><div class="case-num">Case 02</div><h3>Telugu and Kannada channel systems</h3><p>Regional language channels with their own catalog logic.</p><span class="read">Read full case study</span></div></a>
-<a class="case-card" href="03-movies-catalog.html"><div class="case-card-media"><img src="../../media/cinekorn/yt-movies.png" alt="Movies analytics" loading="lazy"></div><div class="case-card-body"><div class="case-num">Case 03</div><h3>Movies catalogue operations</h3><p>Separating lifetime views from tenure publishing.</p><span class="read">Read full case study</span></div></a>
+<a class="case-card" href="03-movies-catalog.html"><div class="case-card-media"><img src="../../media/cinekorn/yt-movie.png" alt="Movies analytics" loading="lazy"></div><div class="case-card-body"><div class="case-num">Case 03</div><h3>Movies catalogue operations</h3><p>Separating lifetime views from tenure publishing.</p><span class="read">Read full case study</span></div></a>
 <a class="case-card" href="04-gujarati-system.html"><div class="case-card-media"><img src="../../media/cinekorn/rakhewal-youtube-analytics.png" alt="Rakhewal analytics" loading="lazy"></div><div class="case-card-body"><div class="case-num">Case 04</div><h3>Gujarati multi-format distribution</h3><p>One film across full release, parts, Shorts, and Facebook.</p><span class="read">Read full case study</span></div></a>
 <a class="case-card" href="05-kalapi-linkedin.html"><div class="case-card-media"><img src="../../media/cinekorn/kalapi-profile.png" alt="Kalapi LinkedIn" loading="lazy"></div><div class="case-card-body"><div class="case-num">Case 05</div><h3>Kalapi LinkedIn</h3><p>Founder-facing LinkedIn presence and audience response.</p><span class="read">Read full case study</span></div></a>
 <a class="case-card" href="06-company-linkedin.html"><div class="case-card-media"><img src="../../media/cinekorn/cinekorn-linkedin-page.png" alt="Company LinkedIn" loading="lazy"></div><div class="case-card-body"><div class="case-num">Case 06</div><h3>Company LinkedIn</h3><p>Company page strategy and engagement trends.</p><span class="read">Read full case study</span></div></a>
