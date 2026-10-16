@@ -18,7 +18,7 @@
   --link: #1F5C6B;
   --cta-start: #B8441B;
   --cta-end: #A84580;
-  --shadow: 0 8px 30px rgba(20, 20, 20, 0.06);
+  --shadow: 0 10px 32px rgba(20, 20, 20, 0.07);
   --shadow-cta: 0 8px 24px rgba(232, 90, 42, 0.28);
   --radius: 20px;
   --max: 920px;
@@ -43,10 +43,6 @@ body {
   color: var(--text);
   line-height: 1.65;
   min-height: 100vh;
-  background-image:
-    radial-gradient(ellipse 90% 45% at 0% -5%, rgba(232,90,42,.10), transparent 50%),
-    radial-gradient(ellipse 70% 40% at 100% 0%, rgba(157,58,114,.08), transparent 45%);
-  background-attachment: fixed;
 }
 
 .skip-link {
