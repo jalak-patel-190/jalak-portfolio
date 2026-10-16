@@ -1,0 +1,46 @@
+/* Site-wide soft ambient glow + polish — phone & desktop */
+:root{
+  --glow-a: 232, 90, 42;
+  --glow-b: 157, 58, 114;
+  --glow-c: 31, 92, 107;
+  --glow-s: 0.13;
+  --shadow-lift: 0 14px 40px rgba(20,20,20,.09);
+  --shadow-soft: 0 8px 28px rgba(20,20,20,.06);
+}
+/* Soft ambient layer — large ellipses, high transparent stops = no hard edges */
+html body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse 95% 60% at 8% 5%, rgba(var(--glow-a), var(--glow-s)), transparent 72%),
+    radial-gradient(ellipse 85% 55% at 94% 8%, rgba(var(--glow-b), calc(var(--glow-s) * 0.9)), transparent 70%),
+    radial-gradient(ellipse 75% 50% at 50% 100%, rgba(var(--glow-c), calc(var(--glow-s) * 0.75)), transparent 68%);
+  transition: background 0.4s ease;
+}
+/* Prefer solid page bg; ambient sits behind */
+html body{
+  background-attachment: scroll !important;
+}
+/* Card polish — lifts off ambient on phone + desktop */
+.mc, .journey-card, .how-step, .cc, .case-teaser, .case-card, .output-card,
+.proof-slide, .next-card, .metric-pill, .flow-step, .channel-card, .stat-card, .chart-card{
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.mc:hover, .journey-card:hover, .cc:hover, .case-teaser:hover, .case-card:hover,
+.proof-slide:hover, .next-card:hover, .output-card:hover, .channel-card:hover{
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+@media(max-width:768px){
+  :root{ --glow-s: 0.11; }
+}
+@media(prefers-reduced-motion:reduce){
+  html body::before{ transition: none; }
+  .mc:hover, .journey-card:hover, .cc:hover, .case-teaser:hover, .case-card:hover,
+  .proof-slide:hover, .next-card:hover, .output-card:hover, .channel-card:hover{
+    transform: none;
+  }
+}
