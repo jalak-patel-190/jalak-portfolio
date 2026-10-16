@@ -27,7 +27,6 @@
 .rjd-popup .popup-actions{display:flex;flex-direction:column;gap:.55rem}
 .rjd-popup .btn-check{display:block;padding:.7rem 1.2rem;background:#141414;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;font-size:.92rem}
 .rjd-popup .btn-later{display:block;padding:.65rem 1.2rem;background:transparent;border:1px solid #e0dcd4;color:#5a5a5a;border-radius:8px;font-size:.88rem;cursor:pointer;font-family:inherit}
-/* Resume preview modal — shows before download */
 .resume-modal{position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;padding:1rem;background:rgba(20,20,20,.55);backdrop-filter:blur(6px)}
 .resume-modal.is-open{display:flex}
 .resume-modal-card{background:#F7F4EF;border-radius:16px;max-width:min(920px,96vw);width:100%;max-height:min(92vh,900px);display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(0,0,0,.35);overflow:hidden;border:1px solid #e8e2d8}
@@ -88,9 +87,9 @@
 <div class="proof-carousel" data-proof-carousel>
   <button type="button" class="proof-arrow proof-prev" data-proof-prev aria-label="Previous proof">‹</button>
   <div class="proof-track" data-proof-track>
-    <a class="proof-slide" href="case-studies/cinekorn/03-movies-catalog.html"><img src="media/cinekorn/yt-movies.png" alt="Cinekorn Movies YouTube analytics" loading="lazy"><span class="proof-cap">Cinekorn · Movies catalog</span></a>
+    <a class="proof-slide" href="case-studies/cinekorn/03-movies-catalog.html"><img src="media/cinekorn/yt-movie.png" alt="Cinekorn Movies YouTube analytics" loading="lazy"><span class="proof-cap">Cinekorn · Movies catalog</span></a>
     <a class="proof-slide" href="case-studies/ajmera/06-ceo-personal-brand.html"><img src="media/ajmera/linkedin-ajay-ajmera-breakfast.jpg" alt="Ajmera founder LinkedIn content" loading="lazy"><span class="proof-cap">Ajmera · Founder content</span></a>
-    <a class="proof-slide" href="case-studies/swad/04-sneha-channel-growth.html"><img src="media/swad/sneha-channel-analytics.png" alt="Sneha channel analytics" loading="lazy"><span class="proof-cap">Swad · Sneha channel</span></a>
+    <a class="proof-slide" href="case-studies/swad/04-sneha-channel-growth.html"><img src="media/swad/sneha-thakkar-recipes.png" alt="Sneha channel analytics" loading="lazy"><span class="proof-cap">Swad · Sneha channel</span></a>
     <a class="proof-slide" href="case-studies/cinekorn/04-gujarati-system.html"><img src="media/cinekorn/rakhewal-youtube-analytics.png" alt="Rakhewal YouTube analytics" loading="lazy"><span class="proof-cap">Cinekorn · Rakhewal tenure</span></a>
     <a class="proof-slide" href="case-studies/swad/01-diploma-and-student-livestreams.html"><img src="media/swad/swad-cooking.png" alt="Swad Cooking Institute analytics" loading="lazy"><span class="proof-cap">Swad · Institute growth</span></a>
     <a class="proof-slide" href="case-studies/cinekorn/06-company-linkedin.html"><img src="media/cinekorn/cinekorn-linkedin-content-analytics.png" alt="Cinekorn LinkedIn content analytics" loading="lazy"><span class="proof-cap">Cinekorn · Company LinkedIn</span></a>
@@ -193,6 +192,7 @@
   </div>
 </div>
 
+<script src="media/portfolio-animate.js" defer></script>
 <script>
 (function(){
 var t=document.getElementById('navToggle'),n=document.getElementById('mainNav');
@@ -223,57 +223,45 @@ if('IntersectionObserver' in window){
     entries.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); io.unobserve(e.target);} });
   },{threshold:0.3});
   nums.forEach(function(el){ io.observe(el); });
-  document.querySelectorAll('.sec, .hero, .how-step, .cc, .journey-card, .mc').forEach(function(el){ el.classList.add('fade-up'); });
-  var fo=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-in'); fo.unobserve(e.target);} });
-  },{threshold:0.12});
-  document.querySelectorAll('.fade-up').forEach(function(el){ fo.observe(el); });
-} else { nums.forEach(countUp); }
-(function(){
-  var root=document.querySelector('[data-proof-carousel]');
-  if(!root) return;
+}
+document.querySelectorAll('[data-proof-carousel]').forEach(function(root){
   var track=root.querySelector('[data-proof-track]');
   var prev=root.querySelector('[data-proof-prev]');
   var next=root.querySelector('[data-proof-next]');
-  if(!track) return;
-  function step(){ return Math.min(track.clientWidth * 0.85, 320); }
-  if(prev) prev.addEventListener('click', function(){ track.scrollBy({left: -step(), behavior: 'smooth'}); });
-  if(next) next.addEventListener('click', function(){ track.scrollBy({left: step(), behavior: 'smooth'}); });
-})();
-})();
-(function () {
-  var modal = document.getElementById('resumeModal');
-  var frame = document.getElementById('resumePreviewFrame');
-  var dl = document.getElementById('resumeModalDownload');
-  var resumeSrc = 'media/Jalak%20Patel%20(Creative%20Resume).pdf';
-  if (!modal) return;
-  function openModal(src) {
-    src = src || resumeSrc;
-    if (frame) frame.src = src;
-    if (dl) { dl.href = src; dl.setAttribute('download', 'Jalak-Patel-Resume.pdf'); }
-    modal.hidden = false;
-    modal.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
+  if(!track)return;
+  function step(){return Math.min(track.clientWidth*0.85,320);}
+  if(prev)prev.addEventListener('click',function(){track.scrollBy({left:-step(),behavior:'smooth'});});
+  if(next)next.addEventListener('click',function(){track.scrollBy({left:step(),behavior:'smooth'});});
+});
+(function(){
+  var modal=document.getElementById('resumeModal');
+  var frame=document.getElementById('resumePreviewFrame');
+  var dl=document.getElementById('resumeModalDownload');
+  var closeBtn=document.getElementById('resumeModalClose');
+  var cancelBtn=document.getElementById('resumeModalCancel');
+  if(!modal)return;
+  function openModal(src){
+    if(frame)frame.src=src;
+    if(dl){dl.href=src;}
+    modal.hidden=false;modal.classList.add('is-open');
+    document.body.style.overflow='hidden';
   }
-  function closeModal() {
-    modal.classList.remove('is-open');
-    modal.hidden = true;
-    document.body.style.overflow = '';
+  function closeModal(){
+    modal.classList.remove('is-open');modal.hidden=true;
+    document.body.style.overflow='';
+    if(frame)frame.src='';
   }
-  document.querySelectorAll('.js-resume-preview').forEach(function (el) {
-    el.addEventListener('click', function (e) {
+  document.querySelectorAll('.js-resume-preview').forEach(function(a){
+    a.addEventListener('click',function(e){
       e.preventDefault();
-      openModal(el.getAttribute('data-resume-src') || el.getAttribute('href') || resumeSrc);
+      openModal(a.getAttribute('data-resume-src')||a.getAttribute('href'));
     });
   });
-  var closeBtn = document.getElementById('resumeModalClose');
-  var cancelBtn = document.getElementById('resumeModalCancel');
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-  if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
-  });
+  if(closeBtn)closeBtn.addEventListener('click',closeModal);
+  if(cancelBtn)cancelBtn.addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('is-open'))closeModal();});
+})();
 })();
 </script>
 </body>
