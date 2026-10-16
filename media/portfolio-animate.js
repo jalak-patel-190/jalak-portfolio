@@ -3,10 +3,10 @@
  * - Injects media/global-ambient.css on every page that loads this script
  * - Scroll-linked gradient color shift (phone + desktop)
  * - Count-up, fade-up, chart bars
+ * - Carousel loop for [data-output-carousel]
  * Respects prefers-reduced-motion.
  */
 (function () {
-  /* —— Inject ambient CSS (same folder as this script) —— */
   try {
     var scriptEl = document.currentScript || document.querySelector('script[src*="portfolio-animate.js"]');
     if (scriptEl && scriptEl.src && !document.querySelector('link[data-global-ambient]')) {
@@ -18,7 +18,6 @@
     }
   } catch (e) {}
 
-  /* —— Scroll-linked ambient colors —— */
   (function () {
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var root = document.documentElement;
@@ -60,20 +59,10 @@
     var suffix = el.getAttribute('data-suffix') || '';
     var prefix = el.getAttribute('data-prefix') || '';
     var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
-
     function finalText() {
-      return (
-        prefix +
-        (decimals ? target.toFixed(decimals) : Math.round(target).toLocaleString('en-IN')) +
-        suffix
-      );
+      return prefix + (decimals ? target.toFixed(decimals) : Math.round(target).toLocaleString('en-IN')) + suffix;
     }
-
-    if (reduce) {
-      el.textContent = finalText();
-      return;
-    }
-
+    if (reduce) { el.textContent = finalText(); return; }
     var from = target * 0.55;
     var duration = 850;
     var start = null;
@@ -82,10 +71,7 @@
       var p = Math.min(1, (ts - start) / duration);
       var e = 1 - Math.pow(1 - p, 3);
       var val = from + (target - from) * e;
-      el.textContent =
-        prefix +
-        (decimals ? val.toFixed(decimals) : Math.round(val).toLocaleString('en-IN')) +
-        suffix;
+      el.textContent = prefix + (decimals ? val.toFixed(decimals) : Math.round(val).toLocaleString('en-IN')) + suffix;
       if (p < 1) requestAnimationFrame(frame);
       else el.textContent = finalText();
     }
@@ -104,17 +90,11 @@
     return;
   }
 
-  var countObs = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          countUp(e.target);
-          countObs.unobserve(e.target);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
+  var countObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { countUp(e.target); countObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.2 });
   document.querySelectorAll('.metric-count[data-count], [data-count].teaser-stat, .teaser-stat[data-count], [data-count].count-up, .count-up[data-count]').forEach(function (el) {
     countObs.observe(el);
   });
@@ -124,38 +104,45 @@
     el.style.transitionDelay = reduce ? '0s' : Math.min(i * 0.07, 0.42) + 's';
   });
 
-  var fadeObs = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          markIn(e.target);
-          fadeObs.unobserve(e.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
-  );
-  document.querySelectorAll('.fade-up').forEach(function (el) {
-    fadeObs.observe(el);
-  });
+  var fadeObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { markIn(e.target); fadeObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.fade-up').forEach(function (el) { fadeObs.observe(el); });
 
-  var chartObs = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          markIn(e.target);
-          e.target.querySelectorAll('.bar-fill').forEach(function (bar) {
-            var w = bar.style.getPropertyValue('--w') || bar.getAttribute('data-w') || bar.dataset.w;
-            if (w && !String(w).includes('%') && !isNaN(parseFloat(w))) w = w + '%';
-            if (w) bar.style.setProperty('--w', w);
-          });
-          chartObs.unobserve(e.target);
-        }
-      });
-    },
-    { threshold: 0.25 }
-  );
+  var chartObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        markIn(e.target);
+        e.target.querySelectorAll('.bar-fill').forEach(function (bar) {
+          var w = bar.style.getPropertyValue('--w') || bar.getAttribute('data-w') || bar.dataset.w;
+          if (w && !String(w).includes('%') && !isNaN(parseFloat(w))) w = w + '%';
+          if (w) bar.style.setProperty('--w', w);
+        });
+        chartObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.25 });
   document.querySelectorAll('.chart-card, .bars, [data-chart-animate]').forEach(function (el) {
     chartObs.observe(el);
+  });
+
+  /* Carousel loop for any [data-output-carousel] */
+  document.querySelectorAll('[data-output-carousel]').forEach(function (root) {
+    var track = root.querySelector('.output-carousel-track');
+    var prev = root.querySelector('.carousel-btn.prev');
+    var next = root.querySelector('.carousel-btn.next');
+    if (!track) return;
+    function step() { return Math.min(track.clientWidth * 0.85, 280); }
+    function go(dir) {
+      var max = track.scrollWidth - track.clientWidth;
+      var nextPos = track.scrollLeft + dir * step();
+      if (nextPos > max - 4) track.scrollTo({ left: 0, behavior: 'smooth' });
+      else if (nextPos < 4 && dir < 0) track.scrollTo({ left: max, behavior: 'smooth' });
+      else track.scrollBy({ left: dir * step(), behavior: 'smooth' });
+    }
+    if (prev) prev.addEventListener('click', function () { go(-1); });
+    if (next) next.addEventListener('click', function () { go(1); });
   });
 })();
