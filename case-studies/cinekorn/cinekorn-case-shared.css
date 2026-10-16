@@ -3,7 +3,7 @@
 :root{
   --bg:#F7F4EF;--surface:#fff;--text:#141414;--text-muted:#5A5A5A;--border:#E8E2D8;
   --link:#1F5C6B;--cta-start:#B8441B;--cta-end:#A84580;--legacy:#5A5348;--tenure:#E85A2A;
-  --shadow:0 8px 30px rgba(20,20,20,.06);--radius:12px;--max:720px;--max-wide:1040px;--header-h:68px
+  --shadow:0 10px 32px rgba(20,20,20,.07);--radius:12px;--max:720px;--max-wide:1040px;--header-h:68px
 }
 html{scroll-behavior:smooth}
 main[id],section[id]{scroll-margin-top:calc(var(--header-h) + 14px)}
@@ -17,11 +17,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--cta-start);outline-
 body{
   font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);
   line-height:1.65;min-height:100vh;overflow-x:hidden;
-  background-image:
-    radial-gradient(ellipse 90% 45% at 0% -5%, rgba(232,90,42,.10), transparent 50%),
-    radial-gradient(ellipse 70% 40% at 100% 0%, rgba(157,58,114,.08), transparent 45%),
-    radial-gradient(ellipse 50% 30% at 50% 100%, rgba(31,92,107,.06), transparent 40%);
-  background-attachment:fixed;
 }
 .skip-link{position:absolute;left:-9999px;top:12px;padding:10px 16px;background:var(--text);color:var(--bg);z-index:9999;text-decoration:none;font-weight:700;border-radius:6px}
 .skip-link:focus{left:12px}
