@@ -1,9 +1,55 @@
 /**
- * Portfolio scroll animations: count-up, fade-up stagger, chart bars.
+ * Portfolio scroll animations + site-wide ambient glow.
+ * - Injects media/global-ambient.css on every page that loads this script
+ * - Scroll-linked gradient color shift (phone + desktop)
+ * - Count-up, fade-up, chart bars
  * Respects prefers-reduced-motion.
- * Count-up never wipes the final HTML value to 0 on first paint.
  */
 (function () {
+  /* —— Inject ambient CSS (same folder as this script) —— */
+  try {
+    var scriptEl = document.currentScript || document.querySelector('script[src*="portfolio-animate.js"]');
+    if (scriptEl && scriptEl.src && !document.querySelector('link[data-global-ambient]')) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = scriptEl.src.replace(/portfolio-animate\.js(\?.*)?$/, 'global-ambient.css');
+      link.setAttribute('data-global-ambient', '1');
+      document.head.appendChild(link);
+    }
+  } catch (e) {}
+
+  /* —— Scroll-linked ambient colors —— */
+  (function () {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var root = document.documentElement;
+    var stops = [
+      { a: [232, 90, 42], b: [157, 58, 114], c: [31, 92, 107] },
+      { a: [194, 65, 12], b: [120, 70, 160], c: [20, 110, 120] },
+      { a: [180, 80, 40], b: [100, 60, 140], c: [40, 90, 100] }
+    ];
+    function lerp(a, b, t) { return Math.round(a + (b - a) * t); }
+    function mix(c1, c2, t) {
+      return [lerp(c1[0], c2[0], t), lerp(c1[1], c2[1], t), lerp(c1[2], c2[2], t)];
+    }
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      var p = Math.min(1, Math.max(0, window.scrollY / max));
+      var seg = p < 0.5 ? 0 : 1;
+      var t = p < 0.5 ? p * 2 : (p - 0.5) * 2;
+      var from = stops[seg], to = stops[seg + 1];
+      root.style.setProperty('--glow-a', mix(from.a, to.a, t).join(', '));
+      root.style.setProperty('--glow-b', mix(from.b, to.b, t).join(', '));
+      root.style.setProperty('--glow-c', mix(from.c, to.c, t).join(', '));
+      root.style.setProperty('--glow-s', String(0.11 + p * 0.07));
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+  })();
+
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function countUp(el) {
@@ -28,7 +74,6 @@
       return;
     }
 
-    // Start from ~55% so the number never looks empty / stagnant at 0
     var from = target * 0.55;
     var duration = 850;
     var start = null;
@@ -74,7 +119,7 @@
     countObs.observe(el);
   });
 
-  document.querySelectorAll('.case-teaser, .case-card, .journey-card').forEach(function (el, i) {
+  document.querySelectorAll('.case-teaser, .case-card, .journey-card, .how-step, .cc, .next-card, .output-card, .section').forEach(function (el, i) {
     el.classList.add('fade-up');
     el.style.transitionDelay = reduce ? '0s' : Math.min(i * 0.07, 0.42) + 's';
   });
