@@ -93,7 +93,19 @@ nav a:hover{color:var(--text)}
   transition:transform .35s ease,box-shadow .35s ease
 }
 .mc:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(20,20,20,.08)}
-.mv{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,3vw,2rem);letter-spacing:.5px;background:linear-gradient(135deg,var(--cta1),var(--cta2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.mv{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(1.6rem,3vw,2rem);
+  letter-spacing:.5px;
+  color:var(--cta1); /* solid fallback so metrics never look washed out */
+  background:linear-gradient(135deg,var(--cta1),var(--cta2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+@supports not (-webkit-background-clip:text) {
+  .mv{color:var(--cta1);-webkit-text-fill-color:unset;background:none}
+}
 .ml{font-size:.78rem;color:var(--muted);margin-top:.25rem;line-height:1.35}
 .metric-note{font-size:.8rem;color:var(--muted);max-width:42rem;line-height:1.5}
 .sec{padding:3.25rem 0 1.25rem;position:relative;scroll-margin-top:calc(var(--hh) + 12px)}
@@ -177,6 +189,7 @@ nav a:hover{color:var(--text)}
 .how-step:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(20,20,20,.09)}
 .how-num{
   font-family:'Bebas Neue',sans-serif;font-size:1.5rem;
+  color:var(--cta1);
   background:linear-gradient(135deg,var(--cta1),var(--cta2));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
   margin-bottom:.35rem
