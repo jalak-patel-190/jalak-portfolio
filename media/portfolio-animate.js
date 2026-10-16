@@ -1,6 +1,7 @@
 /**
  * Portfolio scroll animations: count-up, fade-up stagger, chart bars.
  * Respects prefers-reduced-motion.
+ * Count-up never wipes the final HTML value to 0 on first paint.
  */
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -13,22 +14,35 @@
     var suffix = el.getAttribute('data-suffix') || '';
     var prefix = el.getAttribute('data-prefix') || '';
     var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+
+    function finalText() {
+      return (
+        prefix +
+        (decimals ? target.toFixed(decimals) : Math.round(target).toLocaleString('en-IN')) +
+        suffix
+      );
+    }
+
     if (reduce) {
-      el.textContent = prefix + (decimals ? target.toFixed(decimals) : Math.round(target)) + suffix;
+      el.textContent = finalText();
       return;
     }
-    var duration = 900;
+
+    // Start from ~55% so the number never looks empty / stagnant at 0
+    var from = target * 0.55;
+    var duration = 850;
     var start = null;
     function frame(ts) {
       if (!start) start = ts;
       var p = Math.min(1, (ts - start) / duration);
       var e = 1 - Math.pow(1 - p, 3);
-      var val = target * e;
+      var val = from + (target - from) * e;
       el.textContent =
         prefix +
         (decimals ? val.toFixed(decimals) : Math.round(val).toLocaleString('en-IN')) +
         suffix;
       if (p < 1) requestAnimationFrame(frame);
+      else el.textContent = finalText();
     }
     requestAnimationFrame(frame);
   }
@@ -54,7 +68,7 @@
         }
       });
     },
-    { threshold: 0.35 }
+    { threshold: 0.2 }
   );
   document.querySelectorAll('.metric-count[data-count], [data-count].teaser-stat, .teaser-stat[data-count], [data-count].count-up, .count-up[data-count]').forEach(function (el) {
     countObs.observe(el);
