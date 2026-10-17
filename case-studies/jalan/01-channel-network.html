@@ -26,6 +26,7 @@
 .link-chip{display:inline-block;padding:.45rem .85rem;border-radius:999px;border:1px solid #e8e4dc;background:#fff;font-size:.78rem;font-weight:600;text-decoration:none;color:#141414}
 .output-card.is-ig{flex:0 0 min(42%,160px)!important}
 .output-card.is-ig .platform-tile{aspect-ratio:9/16!important}
+.output-card.is-ig img{aspect-ratio:9/16!important;object-fit:cover;width:100%}
 </style>
 </head>
 <body>
@@ -97,19 +98,19 @@
       <button type="button" class="carousel-btn prev" aria-label="Previous">←</button>
       <div class="output-carousel-track">
         <a class="output-card is-ig" href="https://www.instagram.com/reel/DJs7nrjTN0x/" target="_blank" rel="noopener noreferrer">
-          <div class="platform-tile ig"><span>IG</span><span>Reel</span></div>
+          <img src="../../media/Jalan/Jalan-ig-01.jpg.jpeg" alt="Jalan Instagram reel" loading="lazy">
           <span class="output-cap"><span class="ig-badge">IG</span> Reel</span>
         </a>
         <a class="output-card is-ig" href="https://www.instagram.com/reel/C9txGksyQpW/" target="_blank" rel="noopener noreferrer">
-          <div class="platform-tile ig"><span>IG</span><span>Reel</span></div>
+          <img src="../../media/Jalan/Jalan-ig-03.jpg.jpeg" alt="Jalan Instagram reel" loading="lazy">
           <span class="output-cap"><span class="ig-badge">IG</span> Reel</span>
         </a>
         <a class="output-card is-ig" href="https://www.instagram.com/reel/C5aJjaerPS4/" target="_blank" rel="noopener noreferrer">
-          <div class="platform-tile ig"><span>IG</span><span>Reel</span></div>
+          <img src="../../Jalan-ig-04.jpg.jpeg" alt="Jalan Instagram reel" loading="lazy">
           <span class="output-cap"><span class="ig-badge">IG</span> Reel</span>
         </a>
         <a class="output-card is-ig" href="https://www.instagram.com/reel/C3CYCgPs1YM/" target="_blank" rel="noopener noreferrer">
-          <div class="platform-tile ig"><span>IG</span><span>Reel</span></div>
+          <img src="../../media/Jalan/Jalan-ig-01.jpg.jpeg" alt="Jalan Instagram reel" loading="lazy">
           <span class="output-cap"><span class="ig-badge">IG</span> Reel</span>
         </a>
       </div>
@@ -117,31 +118,12 @@
     </div>
   </section>
 <nav class="page-nav nav-trio" aria-label="Case navigation">
-<a class="back" href="index.html">← Hub</a>
-<a class="back" href="../../index.html#work">All Work</a>
+<a class="back" href="index.html">Hub</a>
 <a class="primary" href="02-influencer-marketing.html">Next →</a>
 </nav>
 </main>
-<footer>
-  <p>&copy; 2026 Jalak Patel</p>
-</footer>
-<script>
-(function(){
-  var t=document.getElementById('navToggle'),n=document.getElementById('mainNav');
-  if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});}
-})();
-(function(){
-  document.querySelectorAll('[data-output-carousel]').forEach(function(root){
-    var track = root.querySelector('.output-carousel-track');
-    var prev = root.querySelector('.carousel-btn.prev');
-    var next = root.querySelector('.carousel-btn.next');
-    if(!track) return;
-    function step(){ return Math.min(track.clientWidth * 0.85, 280); }
-    if(prev) prev.addEventListener('click', function(){ track.scrollBy({left: -step(), behavior: 'smooth'}); });
-    if(next) next.addEventListener('click', function(){ track.scrollBy({left: step(), behavior: 'smooth'}); });
-  });
-})();
-</script>
+<footer><p>&copy; 2026 Jalak Patel</p></footer>
+<script>(function(){var t=document.getElementById('navToggle'),n=document.getElementById('mainNav');if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});}})();</script>
 <script src="../../media/portfolio-animate.js" defer></script>
 </body>
 </html>
