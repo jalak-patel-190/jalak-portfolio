@@ -76,7 +76,7 @@
 <div class="metrics">
 <div class="mc"><div class="mv metric-count" data-count="108" data-suffix="M+">108M+</div><div class="ml">Lifetime YouTube views</div></div>
 <div class="mc"><div class="mv">~50</div><div class="ml">Ajmera accounts tracked</div></div>
-<div class="mc"><div class="mv metric-count" data-count="6">6</div><div class="ml">Cinekorn case studies</div></div>
+<div class="mc"><div class="mv metric-count" data-count="7">7</div><div class="ml">Cinekorn case studies</div></div>
 <div class="mc"><div class="mv metric-count" data-count="4">4</div><div class="ml">Company hubs</div></div>
 </div>
 <p class="metric-note">The ~50 account count refers to Ajmera’s cross-platform tracker. The 108M+ figure is lifetime views across six Cinekorn YouTube channels and includes pre-tenure catalogue performance.</p>
@@ -95,9 +95,10 @@
     <a class="proof-slide" href="case-studies/ajmera/06-ceo-personal-brand.html"><img src="media/ajmera/linkedin-ajay-ajmera-breakfast.jpg" alt="Ajmera founder LinkedIn content" loading="lazy"><span class="proof-cap">Ajmera · Founder content</span></a>
     <a class="proof-slide" href="case-studies/swad/04-sneha-channel-growth.html"><img src="media/swad/sneha-thakkar-recipes.png" alt="Sneha channel analytics" loading="lazy"><span class="proof-cap">Swad · Sneha channel</span></a>
     <a class="proof-slide" href="case-studies/cinekorn/04-gujarati-system.html"><img src="media/cinekorn/rakhewal-youtube-analytics.png" alt="Rakhewal YouTube analytics" loading="lazy"><span class="proof-cap">Cinekorn · Rakhewal tenure</span></a>
+    <a class="proof-slide" href="case-studies/cinekorn/05-gujarati-platform-fit.html"><img src="media/cinekorn/v-a-ckg-p.jpg" alt="Ventilator playlist analytics" loading="lazy"><span class="proof-cap">Cinekorn · Platform fit</span></a>
     <a class="proof-slide" href="case-studies/swad/01-diploma-and-student-livestreams.html"><img src="media/swad/swad-cooking.png" alt="Swad Cooking Institute analytics" loading="lazy"><span class="proof-cap">Swad · Institute growth</span></a>
-    <a class="proof-slide" href="case-studies/cinekorn/06-company-linkedin.html"><img src="media/cinekorn/cinekorn-linkedin-content-analytics.png" alt="Cinekorn LinkedIn content analytics" loading="lazy"><span class="proof-cap">Cinekorn · Company LinkedIn</span></a>
-    <a class="proof-slide" href="case-studies/cinekorn/05-kalapi-linkedin.html"><img src="media/cinekorn/kalapi-analytics.png" alt="Kalapi LinkedIn analytics" loading="lazy"><span class="proof-cap">Cinekorn · Founder LinkedIn</span></a>
+    <a class="proof-slide" href="case-studies/cinekorn/07-company-linkedin.html"><img src="media/cinekorn/cinekorn-linkedin-content-analytics.png" alt="Cinekorn LinkedIn content analytics" loading="lazy"><span class="proof-cap">Cinekorn · Company LinkedIn</span></a>
+    <a class="proof-slide" href="case-studies/cinekorn/06-kalapi-linkedin.html"><img src="media/cinekorn/kalapi-analytics.png" alt="Kalapi LinkedIn analytics" loading="lazy"><span class="proof-cap">Cinekorn · Founder LinkedIn</span></a>
     <a class="proof-slide" href="case-studies/cinekorn/02-telugu-kannada.html"><img src="media/cinekorn/yt-telugu.png" alt="Cinekorn Telugu channel analytics" loading="lazy"><span class="proof-cap">Cinekorn · Telugu channel</span></a>
   </div>
   <button type="button" class="proof-arrow proof-next" data-proof-next aria-label="Next proof">›</button>
@@ -219,22 +220,24 @@ document.querySelectorAll('[data-proof-carousel]').forEach(function(root){
   var dl=document.getElementById('resumeModalDownload');
   var closeBtn=document.getElementById('resumeModalClose');
   var cancelBtn=document.getElementById('resumeModalCancel');
-  if(!modal)return;
+  if(!modal||!frame)return;
   function openModal(src){
-    if(frame)frame.src=src;
+    frame.src=src;
     if(dl){dl.href=src;}
-    modal.hidden=false;modal.classList.add('is-open');
+    modal.hidden=false;
+    modal.classList.add('is-open');
     document.body.style.overflow='hidden';
   }
   function closeModal(){
-    modal.classList.remove('is-open');modal.hidden=true;
+    modal.classList.remove('is-open');
+    modal.hidden=true;
+    frame.src='about:blank';
     document.body.style.overflow='';
-    if(frame)frame.src='';
   }
-  document.querySelectorAll('.js-resume-preview').forEach(function(a){
-    a.addEventListener('click',function(e){
+  document.querySelectorAll('.js-resume-preview').forEach(function(el){
+    el.addEventListener('click',function(e){
       e.preventDefault();
-      openModal(a.getAttribute('data-resume-src')||a.getAttribute('href'));
+      openModal(el.getAttribute('data-resume-src')||el.getAttribute('href'));
     });
   });
   if(closeBtn)closeBtn.addEventListener('click',closeModal);
